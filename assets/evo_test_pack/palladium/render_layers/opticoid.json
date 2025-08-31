@@ -12,6 +12,40 @@
           }
         }
       },
+      "texture": {
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        },
+        "base": "evo_test_pack:textures/models/aliens/alien_110/eyeglow.png"
+      },
+      "render_type": "glow"
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        }
+      },
+      "texture": {
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        },
+        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110.png"
+      }
+
+    },
+    {
       "animation_file": "evo_test_pack:animations/opticoid.animation.json",
       "animation_controller": [
         {
@@ -24,20 +58,9 @@
             "arm_down": "arm_down"
           }
         }        
-      ],
-      
-      "texture": {
-        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110.png",
-        "bones": {
-          "head": "Head",
-          "body": "Body",
-          "right_arm": "rightArm",
-          "left_arm": "leftArm",
-          "right_leg": "rightLeg",
-          "left_leg": "leftLeg"
-        }
-      }
+      ]
     },
+    
    {
       "type": "geckolib:default",
       "model": {
@@ -118,7 +141,9 @@
         },
         "base": "alienevo:textures/models/badge/badge_#X_#BADGE.png"
       }
+      
     },
+    
     {
       "type": "geckolib:default",
       "model": {
