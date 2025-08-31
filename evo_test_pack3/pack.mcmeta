@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "id": "evo_test_pack",
+    "description": "Test pack for custom aliens",
+    "pack_format": 15,
+    "version": "1.0.0"
+  },
+  "dependencies": {
+    "common": {
+    },
+    "fabric": {
+    },
+    "forge": {
+    }
+  }
+}

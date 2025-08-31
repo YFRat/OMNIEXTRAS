@@ -1,0 +1,28 @@
+modLoader = 'lowcodefml'
+showAsResourcePack = false
+loaderVersion="[47,)"
+license="All rights reserved"
+
+[[mods]]
+modId="evo_test_pack"
+displayName="evo_test_pack"
+version="1.0.0"
+logoFile = "logo.png"
+logoBlur = false
+description='''
+AlienEvo Test Pack
+'''
+
+[[dependencies.evo_test_pack]]
+modId = "palladium"
+mandatory = true
+versionRange = ""
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.evo_test_pack]]
+modId = "alienevo_pack"
+mandatory = true
+versionRange = ""
+ordering = "NONE"
+side = "BOTH"

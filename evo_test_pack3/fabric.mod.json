@@ -1,0 +1,11 @@
+{
+    "schemaVersion": 1,
+    "authors": ["Quill"],
+    "environment": "*",
+    "name": "evo_test_pack",
+    "id": "evo_test_pack",
+    "version": "1.0.0",
+    "description": "AlienEvo Test Pack",
+    "icon": "logo.png",
+    "license": "Uhh insert License ig.."
+}

@@ -1,0 +1,108 @@
+{
+    "type": "palladium:compound",
+  "layers": [
+  {
+    "type": "geckolib:default",
+    "model": {
+      "base": "evo_test_pack:geo/talpaedan.geo.json",
+      "variables": {
+        "UNIFORM": {
+          "type": "palladium:string_property",
+          "property": "uniform"
+        }
+      }
+    },
+    "texture": {
+      "base": "evo_test_pack:textures/models/aliens/alien_190/armodrillo.png",
+      "bones": {
+        "head": "Head",
+        "body": "Body",
+        "right_arm": "rightArm",
+        "left_arm": "leftArm",
+        "right_leg": "rightLeg",
+        "left_leg": "leftLeg"
+    } 
+  }
+      },
+    {
+      "type": "geckolib:default",
+      "model": "evo_test_pack:geo/badge.geo.json",
+      "texture": "alienevo:textures/models/badge/os/badge_os.png",
+      "conditions": [
+          {
+          "type": "palladium:objective_score",
+          "objective": "AlienEvo.10kPhase",
+          "min_score": 0,
+          "max_score": 1
+          }
+      ]
+    },
+    {
+      "type": "geckolib:default",
+      "model": "evo_test_pack:geo/badge.geo.json",
+      "render_type": "glow",
+      "texture": {
+        "base": "alienevo:textures/models/badge/os/badge_#X.png",
+        "transformers": [],
+        "variables": {
+          "X": {
+            "type": "palladium:string_property",
+            "property": "AlienEvo.Color"
+          }
+        },
+        "output": "alienevo:textures/models/badge/os/badgeoutput_#X.png"
+      },
+        "conditions": [
+          {
+          "type": "palladium:objective_score",
+          "objective": "AlienEvo.10kPhase",
+          "min_score": 0,
+          "max_score": 1
+          }
+        ]   
+    },
+    {
+      "type": "geckolib:default",
+      "model": "evo_test_pack:geo/badge.geo.json",
+      "texture": "alienevo:textures/models/badge/os/badge_red.png",
+      "render_type": "glow",
+      "conditions": [
+          {
+          "type": "palladium:objective_score",
+          "objective": "AlienEvo.10kPhase",
+          "min_score": 0,
+          "max_score": 1
+          },
+          {
+          "type": "palladium:or",
+          "conditions": [
+            {
+              "type": "palladium:objective_score",
+              "objective": "AlienEvo.Timer",
+              "min_score": 5940,
+              "max_score": 5950
+            },
+            {
+              "type": "palladium:objective_score",
+              "objective": "AlienEvo.Timer",
+              "min_score": 5960,
+              "max_score": 5970
+            },
+            {
+              "type": "palladium:objective_score",
+              "objective": "AlienEvo.Timer",
+              "min_score": 5960,
+              "max_score": 5970
+            },
+            {
+              "type": "palladium:objective_score",
+              "objective": "AlienEvo.Timer",
+              "min_score": 5980,
+              "max_score": 6000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
