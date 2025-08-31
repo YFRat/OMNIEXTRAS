@@ -196,7 +196,7 @@
       "hidden_in_bar": false,
       "start_value": 0,
       "max_value": 20,
-      "list_index": 0,
+      "list_index": 3,
       "description": "Shoot out a high-damaging §aLaser§r from your §aChest-Eye",
       "gui_position":[
         0,
@@ -207,7 +207,7 @@
          {
           "type": "palladium:held",
           "cooldown": 150,
-          "key_type": "right_click"
+          "key_type": "key_bind"
         }
       ]
       }
@@ -215,7 +215,7 @@
     "beam_laser": {
     "type": "palladium:energy_beam",
     "energy_beam": "evo_test_pack:eye_beam",
-    "damage": 18,
+    "damage": 25,
     "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
     "hidden": true,
     "conditions": {
@@ -344,7 +344,7 @@
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 0,
+      "list_index": 2,
       "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
       "gui_position":[
         2,
@@ -470,7 +470,7 @@
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 3,
+      "list_index": 4,
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
       "gui_position":[
         -2,
@@ -548,6 +548,50 @@
       ]
     }
   },
+      "shoulder-beams": {
+      "type": "palladium:aim",
+      "title": "Shoulder-Beams",
+      "time": 2,
+      "icon": "minecraft:blaze_rod",
+      "bar_color": "green",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 4,
+       "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 10,
+            "needs_empty_hand": false,
+            "key_type": "right_click"
+          }
+        ]
+      }
+    },
+        "Shoulder-Lasers": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:blaze_rod",
+      "title": "Fire-Beam",
+      "bar_color": "green",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": "null",
+      "description": "null",
+      "energy_beam": "evo_test_pack:shoulder_beams",
+      "damage": 10,
+      "max_distance": 10,
+      "cause_fire": false,
+      "smelt_blocks": false,
+    "conditions": {
+      "enabling": [
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "shoulder-beams"
+        }
+      ]
+    }
+  },
     "base_form": {
       "type": "alienevo:omnitrix_detransform",
       "icon": "#alienevo:detransform",
@@ -578,6 +622,7 @@
         ]
       }
     },
+    
     "timeout_function": {
       "type": "alienevo:omnitrix_timer",
       "hidden": true,

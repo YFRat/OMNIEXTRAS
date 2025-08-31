@@ -1,0 +1,32 @@
+[
+  {
+    "type": "palladium:lightning",
+    "segments": 4,
+    "frequency": 1,
+    "spread": 3,
+    "body_part": "right_arm",
+    "glow_color": "#4AFF00",
+    "core_color": "#FFFFFF",
+    "bloom": 6,
+    "size": [4, 4],
+    "rotation_speed": 30,
+        "offset": { 
+      "first_person": [4, 1.35, 5],
+      "third_person": [4, 1.35, -4]}
+  },
+  {
+    "type": "palladium:lightning",
+    "body_part": "left_arm",
+    "segments": 4,
+    "frequency": 1,
+    "spread": 3,
+    "glow_color": "#4AFF00",
+    "core_color": "#FFFFFF",
+    "bloom": 6,
+    "size": [4, 4],
+    "rotation_speed": 30,
+      "offset": { 
+      "first_person": [-4, 1.35, 5],
+      "third_person": [-4, 1.35, -4]}
+}
+]
