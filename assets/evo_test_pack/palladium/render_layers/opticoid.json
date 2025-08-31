@@ -3,6 +3,7 @@
   "layers": [
     {
       "type": "geckolib:default",
+      "render_type": "glow",
       "model": {
         "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
         "variables": {
@@ -12,40 +13,6 @@
           }
         }
       },
-      "texture": {
-        "variables": {
-          "UNIFORM": {
-            "type": "palladium:string_property",
-            "property": "uniform"
-          }
-        },
-        "base": "evo_test_pack:textures/models/aliens/alien_110/eyeglow.png"
-      },
-      "render_type": "glow"
-    },
-    {
-      "type": "geckolib:default",
-      "model": {
-        "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
-        "variables": {
-          "UNIFORM": {
-            "type": "palladium:string_property",
-            "property": "uniform"
-          }
-        }
-      },
-      "texture": {
-        "variables": {
-          "UNIFORM": {
-            "type": "palladium:string_property",
-            "property": "uniform"
-          }
-        },
-        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110.png"
-      }
-
-    },
-    {
       "animation_file": "evo_test_pack:animations/opticoid.animation.json",
       "animation_controller": [
         {
@@ -58,9 +25,60 @@
             "arm_down": "arm_down"
           }
         }        
-      ]
+      ],
+      "texture": {
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        },
+        "base": "evo_test_pack:textures/models/aliens/alien_110/eyeglow.png",
+        "bones": {
+        "head": "armorHead",
+        "body": "armorBody",
+        "right_arm": "armorRightArm",
+        "left_arm": "armorLeftArm",
+        "right_leg": "armorRightLeg",
+        "left_leg": "armorLeftLeg"
+    } 
+      }
     },
-    
+    {
+      "type": "geckolib:default",
+      "model": {
+        "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        }
+      },
+      "animation_file": "evo_test_pack:animations/opticoid.animation.json",
+      "animation_controller": [
+        {
+          "name": "eye",
+          "transition_tick_time": 0,
+          "triggers": {
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
+          }
+        }        
+      ],
+      "texture": {
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        },
+        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110.png"
+      }
+
+    },
    {
       "type": "geckolib:default",
       "model": {
