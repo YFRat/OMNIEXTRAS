@@ -470,7 +470,7 @@
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 4,
+      "list_index": 1,
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
       "gui_position":[
         -2,
@@ -551,12 +551,13 @@
       "shoulder-beams": {
       "type": "palladium:aim",
       "title": "Shoulder-Beams",
+      "arm": "none",
       "time": 2,
       "icon": "minecraft:blaze_rod",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 4,
+      "list_index": 0,
        "conditions": {
         "enabling": [
           {
@@ -571,7 +572,7 @@
         "Shoulder-Lasers": {
       "type": "palladium:energy_beam",
       "icon": "minecraft:blaze_rod",
-      "title": "Fire-Beam",
+      "title": "Shoulder-Beams",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
