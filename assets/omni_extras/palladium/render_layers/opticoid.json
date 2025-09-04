@@ -561,12 +561,18 @@
           {
             "type": "palladium:color",
             "color": "##PRIMARY_3",
-            "filter": "#101011",
+            "filter": "#171515",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_4",
+            "filter": "#101011",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_5",
             "filter": "#000001",
             "ignore_blank": true
           }
@@ -607,6 +613,10 @@
           "PRIMARY_4": {
             "type": "palladium:string_property",
             "property": "uniform_primary_color_4"
+          },
+          "PRIMARY_5": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_5"
           }
         }
       }

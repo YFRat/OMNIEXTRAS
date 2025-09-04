@@ -47,11 +47,6 @@
       "commands": [
       "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]
     },
-      "eyeguy_shader": {
-      "type": "palladium:shader_effect",
-      "hidden": true,
-      "shader": "omni_extras:shaders/post/eyeguyshader.json"
-    },
     "hideBody": {
       "type": "palladium:hide_body_part",
       "icon": "alienevo:textures/gui/ability_bar/interface.png",
@@ -240,7 +235,7 @@
     "Eye-Beam": {
       "type": "palladium:animation_timer",
       "title": "Eye-Beam",
-      "icon": "minecraft:ender_eye",
+      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
       "bar_color": "orange",
       "hidden": true,
       "hidden_in_bar": false,
@@ -466,7 +461,7 @@
     },
     "eye_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:ender_eye",
+      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
       "title": "§aEye-Beam",
       "uuid": "30ac4f24-1e6a-4851-9558-f456f2d9b6cd",
       "hidden": false,
@@ -529,7 +524,7 @@
       "title": "Freeze-Beam",
       "arm": "main_arm",
       "time": 2,
-      "icon": "minecraft:snowball",
+      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
       "uuid":"59b2b689-d4ed-421c-9d9b-bab41d99eb5f",
       "bar_color": "green",
       "energy_bar_usage": {
@@ -579,7 +574,7 @@
     },
       "freeze_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:snowball",
+      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
       "title": "Freeze-Beam",
       "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
       "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
@@ -638,7 +633,7 @@
     },
      "shoulder_beams_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:ender_eye",
+      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
       "title": "Shoulder-Beams",
       "description": "yfrat u edit ts urself",
@@ -769,7 +764,7 @@
       "title": "Fire-Beam",
       "arm": "left_arm",
       "time": 2,
-      "icon": "minecraft:blaze_rod",
+      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
@@ -822,7 +817,7 @@
     },
       "fire_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:lava_bucket",
+      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
       "title": "Fire-Beam",
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
       "hidden_in_bar": true,
@@ -879,7 +874,7 @@
       "title": "Shoulder-Beams",
       "arm": "none",
       "time": 2,
-      "icon": "minecraft:blaze_rod",
+      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
