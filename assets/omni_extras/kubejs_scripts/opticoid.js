@@ -1,6 +1,6 @@
 PalladiumEvents.registerAnimations((event) => {
     event.register("etp/opticoid", 10, (builder) => {
-        if (abilityUtil.isEnabled(builder.getPlayer(), "evo_test_pack_aliens:opticoid", "renderLayer")) {
+        if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:opticoid", "renderLayer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
                     .setX(1.3)

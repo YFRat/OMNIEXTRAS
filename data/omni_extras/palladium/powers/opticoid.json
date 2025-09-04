@@ -50,7 +50,7 @@
       "eyeguy_shader": {
       "type": "palladium:shader_effect",
       "hidden": true,
-      "shader": "evo_test_pack:shaders/post/eyeguyshader.json"
+      "shader": "omni_extras:shaders/post/eyeguyshader.json"
     },
     "hideBody": {
       "type": "palladium:hide_body_part",
@@ -75,16 +75,16 @@
         "head_overlay"
       ]
     },
-    "changeName": {
+    "name_change": {
       "type": "palladium:name_change",
       "icon": "minecraft:blaze_rod",
       "title": "null",
-      "hidden": true,
       "bar_color": "light_gray",
-      "list_index": -1,
+      "hidden": true,
       "hidden_in_bar": true,
+      "list_index": -1,
       "name": {
-      "translate": "species.alienevo_aliens.110"
+        "translate": "species.alienevo_aliens.110"
       },
       "conditions": {
         "enabling": [],
@@ -120,11 +120,11 @@
       "list_index": -1,
       "name": [
         {
-          "nbt": "KubeJSPersistentData.alienevo_110",
+          "nbt": "KubeJSPersistentData.110",
           "entity": "@s"
         }
       ],
-       "conditions": {
+      "conditions": {
         "enabling": [],
         "unlocking": [
           {
@@ -156,7 +156,7 @@
     "renderLayer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "evo_test_pack:opticoid"
+      "render_layer": "omni_extras:opticoid"
     },
     "sizeChange": {
       "type": "palladium:size",
@@ -277,7 +277,7 @@
     },
     "beam_laser": {
     "type": "palladium:energy_beam",
-    "energy_beam": "evo_test_pack:eye_beam",
+    "energy_beam": "omni_extras:eye_beam",
     "damage": 25,
     "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
     
@@ -303,7 +303,7 @@
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "hidden_in_bar": true,
-      "render_layer": "evo_test_pack:opticoid",
+      "render_layer": "omni_extras:opticoid",
       "controller": "eye",
       "animation_trigger": "arm_up",
       "conditions": {
@@ -320,7 +320,7 @@
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "hidden_in_bar": true,
-      "render_layer": "evo_test_pack:opticoid",
+      "render_layer": "omni_extras:opticoid",
       "controller": "eye",
       "animation_trigger": "arm_down",
       "conditions": {
@@ -700,7 +700,7 @@
       "list_index": 2,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:freeze_beam",
+      "energy_beam": "omni_extras:freeze_beam",
       "damage": 5,
       "max_distance": 10,
       "set_on_fire_seconds": 0,
@@ -859,7 +859,7 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:fire_beam",
+      "energy_beam": "omni_extras:fire_beam",
       "damage": 5,
       "max_distance": 10,
       "set_on_fire_seconds": 6,
@@ -909,7 +909,7 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:shoulder_beams",
+      "energy_beam": "omni_extras:shoulder_beams",
       "damage": 10,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",

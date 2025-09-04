@@ -1,11 +1,11 @@
 modLoader = 'lowcodefml'
 showAsResourcePack = false
-loaderVersion="[47,)"
+loaderVersion="[47,]"
 license="All rights reserved"
 
 [[mods]]
-modId="evo_test_pack"
-displayName="evo_test_pack"
+modId="omni_extras"
+displayName="OmniExtras"
 version="1.0.0"
 logoFile = "logo.png"
 logoBlur = false
