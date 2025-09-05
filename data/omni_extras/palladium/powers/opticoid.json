@@ -115,7 +115,7 @@
       "list_index": -1,
       "name": [
         {
-          "nbt": "KubeJSPersistentData.110",
+          "nbt": "KubeJSPersistentData.alienevo_110",
           "entity": "@s"
         }
       ],
@@ -235,7 +235,7 @@
     "Eye-Beam": {
       "type": "palladium:animation_timer",
       "title": "Eye-Beam",
-      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
+      "icon": "#omni_extras:opticoid/eye_beam",
       "bar_color": "orange",
       "hidden": true,
       "hidden_in_bar": false,
@@ -294,6 +294,48 @@
       ]
     }
   },
+  "hover": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "forge:entity_gravity",
+      "hidden": true,
+      "amount": -0.08,
+      "uuid": "f6c6a0eb-6c13-474f-ba07-a03a33bdfd27",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "Eye-Beam"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Hover"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:on_ground"
+            }
+          }
+        ]
+      }
+    },
+   "hovering": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "function omni_extras:hover"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "Eye-Beam"
+          }
+        ]
+      }
+    },
       "arm_up": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
@@ -524,7 +566,7 @@
       "title": "Freeze-Beam",
       "arm": "main_arm",
       "time": 2,
-      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
+      "icon": "#omni_extras:opticoid/ice_beam",
       "uuid":"59b2b689-d4ed-421c-9d9b-bab41d99eb5f",
       "bar_color": "green",
       "energy_bar_usage": {
@@ -574,7 +616,7 @@
     },
       "freeze_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
+      "icon": "#omni_extras:opticoid/ice_beam",
       "title": "Freeze-Beam",
       "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
       "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
@@ -701,6 +743,8 @@
       "set_on_fire_seconds": 0,
       "cause_fire": false,
       "smelt_blocks": false,
+      "commands_on_entity_hit": [
+        "function omni_extras:freeze" ],
     "conditions": {
       "enabling": [
         {
@@ -710,28 +754,6 @@
       ]
     }
   },
-    "iceprofreeze": {
-      "type": "palladium:command",
-      "hidden": true,
-      "commands": [
-        "execute as @s at @s anchored eyes positioned ^ ^ ^ anchored feet run function afomni:start_ray",
-        "execute as @s at @s anchored eyes positioned ^ ^ ^ anchored feet run function afomni:necrofriggian/start_ray"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:ability_enabled",
-                "power": "null",
-                "ability": "ice_beam"
-              }
-            ]
-          }
-        ]
-      }
-    },
   "show_both_arms":{
     "type": "palladium:show_both_arms",
     "icon": "minecraft:blaze_rod",
@@ -764,7 +786,7 @@
       "title": "Fire-Beam",
       "arm": "left_arm",
       "time": 2,
-      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
+      "icon": "#omni_extras:opticoid/fire_beam",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
@@ -874,7 +896,7 @@
       "title": "Shoulder-Beams",
       "arm": "none",
       "time": 2,
-      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
+      "icon": "#omni_extras:opticoid/shoulder_beams",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
