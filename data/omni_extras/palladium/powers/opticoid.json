@@ -173,7 +173,7 @@
     "renderLayer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "evo_test_pack:opticoid"
+      "render_layer": "omni_extras:opticoid"
     },
     "sizeChange": {
       "type": "palladium:size",
@@ -280,7 +280,7 @@
     "Eye-Beam": {
       "type": "palladium:animation_timer",
       "title": "Eye-Beam",
-      "icon": "evo_test_pack:textures/gui/playlists/eye_beam/eye_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
       "bar_color": "orange",
       "hidden": true,
       "hidden_in_bar": false,
@@ -317,7 +317,7 @@
     },
     "beam_laser": {
     "type": "palladium:energy_beam",
-    "energy_beam": "evo_test_pack:eye_beam",
+    "energy_beam": "omni_extras:eye_beam",
     "damage": 25,
     "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
     
@@ -370,7 +370,7 @@
       "first_tick_commands": [],
       "last_tick_commands": [],
       "commands": [
-        "function evo_test_pack_aliens:hover"
+        "function omni_extras:hover"
       ],
       "conditions": {
         "enabling": [
@@ -385,7 +385,7 @@
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "hidden_in_bar": true,
-      "render_layer": "evo_test_pack:opticoid",
+      "render_layer": "omni_extras:opticoid",
       "controller": "eye",
       "animation_trigger": "arm_up",
       "conditions": {
@@ -402,7 +402,7 @@
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "hidden_in_bar": true,
-      "render_layer": "evo_test_pack:opticoid",
+      "render_layer": "omni_extras:opticoid",
       "controller": "eye",
       "animation_trigger": "arm_down",
       "conditions": {
@@ -548,7 +548,7 @@
     },
     "eye_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "evo_test_pack:textures/gui/playlists/eye_beam/eye_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
       "title": "§aEye-Beam",
       "uuid": "30ac4f24-1e6a-4851-9558-f456f2d9b6cd",
       "hidden": false,
@@ -611,7 +611,7 @@
       "title": "Freeze-Beam",
       "arm": "main_arm",
       "time": 2,
-      "icon": "evo_test_pack:textures/gui/playlists/ice_beam/ice_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
       "uuid":"59b2b689-d4ed-421c-9d9b-bab41d99eb5f",
       "bar_color": "green",
       "energy_bar_usage": {
@@ -661,7 +661,7 @@
     },
       "freeze_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "evo_test_pack:textures/gui/playlists/ice_beam/ice_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/ice_beam/ice_beam.png",
       "title": "Freeze-Beam",
       "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
       "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
@@ -720,7 +720,7 @@
     },
      "shoulder_beams_unlock": {
       "type": "palladium:dummy",
-      "icon": "evo_test_pack:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
+      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
       "title": "Shoulder-Beams",
       "description": "Shoot a double §elightning§r strike from your shoulder §aeyes",
@@ -782,14 +782,14 @@
       "list_index": 2,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:freeze_beam",
+      "energy_beam": "omni_extras:freeze_beam",
       "damage": 5,
       "max_distance": 10,
       "set_on_fire_seconds": 0,
       "cause_fire": false,
       "smelt_blocks": false,
       "commands_on_entity_hit": [
-        "function evo_test_pack_aliens:freeze" ],
+        "function omni_extras:freeze" ],
     "conditions": {
       "enabling": [
         {
@@ -831,7 +831,7 @@
       "title": "Fire-Beam",
       "arm": "left_arm",
       "time": 2,
-      "icon": "evo_test_pack:textures/gui/playlists/fire_beam/fire_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
@@ -884,7 +884,7 @@
     },
       "fire_beam_unlock": {
       "type": "palladium:dummy",
-      "icon": "evo_test_pack:textures/gui/playlists/fire_beam/fire_beam.png",
+      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
       "title": "Fire-Beam",
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
       "hidden_in_bar": true,
@@ -921,7 +921,7 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:fire_beam",
+      "energy_beam": "omni_extras:fire_beam",
       "damage": 5,
       "max_distance": 10,
       "set_on_fire_seconds": 6,
@@ -941,7 +941,7 @@
       "title": "Shoulder-Beams",
       "arm": "none",
       "time": 2,
-      "icon": "evo_test_pack:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
+      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
@@ -971,7 +971,7 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "evo_test_pack:shoulder_beams",
+      "energy_beam": "omni_extras:shoulder_beams",
       "damage": 10,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",

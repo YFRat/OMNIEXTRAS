@@ -1,6 +1,6 @@
 {
   "pack": {
-    "id": "evo_test_pack",
+    "id": "omni_extras",
     "description": "Test pack for custom aliens",
     "pack_format": 15,
     "version": "1.0.0"
