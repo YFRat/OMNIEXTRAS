@@ -5,7 +5,7 @@
       "type": "geckolib:default",
       "render_type": "glow",
       "model": {
-        "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
+        "base": "evo_test_pack:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -33,7 +33,7 @@
             "property": "uniform"
           }
         },
-        "base": "evo_test_pack:textures/models/aliens/alien_110/eyeglow.png",
+        "base": "evo_test_pack:textures/models/aliens/alien_110/opticoid_glow_#UNIFORM.png",
         "bones": {
         "head": "armorHead",
         "body": "armorBody",
@@ -47,7 +47,7 @@
     {
       "type": "geckolib:default",
       "model": {
-        "base": "evo_test_pack:geo/aliens/alien_110/opticoid.geo.json",
+        "base": "evo_test_pack:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -75,7 +75,7 @@
             "property": "uniform"
           }
         },
-        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110.png"
+        "base": "evo_test_pack:textures/models/aliens/alien_110/alien_110_#UNIFORM.png"
       }
 
     },
