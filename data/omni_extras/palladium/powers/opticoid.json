@@ -38,7 +38,8 @@
         "scale set pehkui:falling 1.2 @s",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.Level dummy",
-        "scoreboard objectives add Opticoid.SkillPoint dummy"
+        "scoreboard objectives add Opticoid.SkillPoint dummy",
+        "tag @s add Opticoid.owned"
       ],
       "last_tick_commands": [
         "scale reset",
@@ -46,6 +47,28 @@
       ],
       "commands": [
       "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]
+    },
+     "hearing_sense": {
+      "type": "palladium:entity_glow",
+      "icon": "minecraft:glow_berries",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "mode": "others",
+      "color": "#00fc00",
+      "distance": 50,
+      "conditions": {
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"eyeguy_sense_unlock"
+          }
+        ]
+      }
     },
     "hideBody": {
       "type": "palladium:hide_body_part",
@@ -201,7 +224,30 @@
       "attribute": "minecraft:generic.movement_speed",
       "uuid": "a9a48154-df71-4786-8072-634ed74849cd",
       "hidden":true,
-      "amount": -0.0025
+      "amount": -0.0025,
+      "conditions": {
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"opticoid_loop"
+          }
+        ]
+      }
+     },
+     "Speed_upgrade": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.movement_speed",
+      "uuid": "40707694-89f7-4772-844d-eca6043eb88f",
+      "hidden":true,
+      "amount": 0.0750,
+      "conditions": {
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"speed1_unlock"
+          }
+        ]
+      }
      },
      "leap": {
       "type": "alienevo:motion",
@@ -275,7 +321,8 @@
     "energy_beam": "omni_extras:eye_beam",
     "damage": 25,
     "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
-    
+    "commands_on_entity_hit": [
+        "function omni_extras:grantxp1" ],
     "hidden": true,
     "conditions": {
       "enabling": [
@@ -532,10 +579,25 @@
         ]
       }
     },
-  "attack_damage_unlock": {
+  "defense_upgrade": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor",
+      "hidden": true,
+      "uuid": "31609334-f593-4a05-a8d9-7cac53b34083",
+      "amount": 5,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"defense1_unlock"
+          }
+        ]
+      }
+    },
+  "defense1_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:iron_sword",
-      "title": "Attack Damage §a+1",
+      "icon": "minecraft:iron_chestplate",
+      "title": "Defense §a+1",
       "uuid":"698bcba6-7092-4386-b544-66d71134b882",
       "hidden_in_bar": true,
       "hidden": false,
@@ -678,7 +740,7 @@
       "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
       "title": "Shoulder-Beams",
-      "description": "yfrat u edit ts urself",
+      "description": "Shoot a double §elightning§r strike from your shoulder §aeyes",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,
@@ -935,6 +997,8 @@
       "max_distance": 10,
       "cause_fire": false,
       "smelt_blocks": false,
+      "commands_on_entity_hit": [
+        "function omni_extras:grantxp2" ],
     "conditions": {
       "enabling": [
         {

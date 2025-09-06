@@ -551,63 +551,58 @@
           {
             "type": "palladium:color",
             "color": "##SECONDARY_2",
-            "filter": "#e5eff1",
+            "filter": "#edf4f4",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_3",
-            "filter": "#dadedf",
+            "filter": "#d6dfe1",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_4",
-            "filter": "#c3cdd3",
+            "filter": "#bdc7cf",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_5",
-            "filter": "#b8bdbe",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SECONDARY_6",
-            "filter": "#979b9d",
+            "filter": "#97a2b0",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_1",
-            "filter": "#2c2828",
+            "filter": "#3a3333",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_2",
-            "filter": "#232020",
+            "filter": "#2c2828",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_3",
-            "filter": "#171515",
+            "filter": "#232020",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_4",
-            "filter": "#101011",
+            "filter": "#171515",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_5",
-            "filter": "#000001",
+            "filter": "#000000",
             "ignore_blank": true
           }
+      
         ],
         "variables": {
           "UNIFORM": {
@@ -634,10 +629,6 @@
             "type": "palladium:string_property",
             "property": "uniform_secondary_color_5"
           },
-          "SECONDARY_6": {
-            "type": "palladium:string_property",
-            "property": "uniform_secondary_color_6"
-          },
           "PRIMARY_1": {
             "type": "palladium:string_property",
             "property": "uniform_primary_color_1"
@@ -658,7 +649,7 @@
             "type": "palladium:string_property",
             "property": "uniform_primary_color_5"
           }
-        
+
         }
       }
     },
