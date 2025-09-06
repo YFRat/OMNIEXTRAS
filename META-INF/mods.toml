@@ -1,11 +1,11 @@
 modLoader = 'lowcodefml'
 showAsResourcePack = false
-loaderVersion="[47,]"
+loaderVersion="[47,)"
 license="All rights reserved"
 
 [[mods]]
 modId="omni_extras"
-displayName="omni_extras"
+displayName="OmniExtras"
 version="1.0.0"
 logoFile = "logo.png"
 logoBlur = false
@@ -13,16 +13,16 @@ description='''
 OMNIEXTRAS WAHOOO
 '''
 
-[[dependencies.omni_extras]]
+[[dependencies.alienevo_pack]]
 modId = "palladium"
 mandatory = true
-versionRange = ""
+versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.omni_extras]]
-modId = "alienevo_pack"
+[[dependencies.alienevo_pack]]
+modId = "minecraft"
 mandatory = true
-versionRange = ""
+versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"

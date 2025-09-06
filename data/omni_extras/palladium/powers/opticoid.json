@@ -26,7 +26,7 @@
         0,
         0
       ],
-      "description": "Dude, watch the puns! Pretty soon, you use up all the eye-conic ones, and they just get cornea and cornea...",
+      "description": "As an §eOpticoid§f, physical combat is not your specialty. Try engaging in §4long-range§r §ffights",
       "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
       "first_tick_commands": [
         "scale easing set palladium:ability pehkui:exponential_out",
@@ -209,6 +209,7 @@
     "Armor": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.armor",
+      "uuid": "52b339cb-6b71-4fa7-afcd-4975fdae3729",
       "hidden": true,
       "amount": 10
     },
@@ -320,7 +321,8 @@
     "energy_beam": "omni_extras:eye_beam",
     "damage": 25,
     "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
-    
+    "commands_on_entity_hit": [
+        "function omni_extras:grantxp1" ],
     "hidden": true,
     "conditions": {
       "enabling": [
@@ -577,10 +579,25 @@
         ]
       }
     },
-  "attack_damage_unlock": {
+    "defense_upgrade": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor",
+      "hidden": true,
+      "uuid": "31609334-f593-4a05-a8d9-7cac53b34083",
+      "amount": 5,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"defense1_unlock"
+          }
+        ]
+      }
+    },
+  "defense1_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:iron_sword",
-      "title": "Attack Damage §a+1",
+      "icon": "minecraft:iron_chestplate",
+      "title": "Defense §a+1",
       "uuid":"698bcba6-7092-4386-b544-66d71134b882",
       "hidden_in_bar": true,
       "hidden": false,
@@ -980,6 +997,8 @@
       "max_distance": 10,
       "cause_fire": false,
       "smelt_blocks": false,
+      "commands_on_entity_hit": [
+        "function omni_extras:grantxp2" ],
     "conditions": {
       "enabling": [
         {

@@ -1,0 +1,2 @@
+global.alienevo_alien_110 = ['omni_extras:opticoid']
+

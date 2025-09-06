@@ -1,11 +1,11 @@
 {
     "schemaVersion": 1,
-    "authors": ["Quill"],
+    "authors": [],
     "environment": "*",
-    "name": "omni_extras",
+    "name": "OmniExtras",
     "id": "omni_extras",
     "version": "1.0.0",
-    "description": "AlienEvo Test Pack",
+    "description": "OmniExtras is an addonpack being developed by the OmniExtras team",
     "icon": "logo.png",
-    "license": "Uhh insert License ig.."
+    "license": "All rights to Alien Evolution are reserved by The AlienEvo Dev team"
 }
