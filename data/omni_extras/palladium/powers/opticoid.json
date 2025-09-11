@@ -499,7 +499,7 @@
           {
             "type": "palladium:ability_unlocked",
             "power":"null",
-            "ability":"attack_damage_unlock"
+            "ability":"defense1_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",

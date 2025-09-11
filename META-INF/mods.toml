@@ -1,6 +1,6 @@
 modLoader = 'lowcodefml'
 showAsResourcePack = false
-loaderVersion="[47,]"
+loaderVersion="[47,)"
 license="All rights reserved"
 
 [[mods]]
@@ -10,19 +10,19 @@ version="1.0.0"
 logoFile = "logo.png"
 logoBlur = false
 description='''
-AlienEvo Test Pack
+OMNIEXTRAS WAHOOO
 '''
 
-[[dependencies.evo_test_pack]]
+[[dependencies.alienevo_pack]]
 modId = "palladium"
 mandatory = true
-versionRange = ""
+versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.evo_test_pack]]
-modId = "alienevo_pack"
+[[dependencies.alienevo_pack]]
+modId = "minecraft"
 mandatory = true
-versionRange = ""
+versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
