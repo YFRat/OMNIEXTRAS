@@ -1,0 +1,321 @@
+{
+  "name": {
+    "text": "opticoid_scanned"
+  },
+  "icon": "alienevo:textures/gui/omni_extras_scan/omnitrix_scan_extras.png",
+  "background": "alienevo:textures/gui/power_screen/power_screen.png",
+  "primary_color": "#8ed721",
+  "allow_bar_shrinking": false,
+  "hidden": true,
+  "persistent_data": true,
+  "secondary_color": "#332e27",
+  "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
+  "abilities": {
+    "scan_loop": {
+      "type": "palladium:command",
+      "hidden": false,
+      "title": "EyeGuY!",
+      "gui_position": [
+        0,
+        0
+      ],
+      "description": "A wolf-like alien with enhanced agility and senses, capable of unleashing powerful sonic howls and leaping great distances",
+      "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+      "first_tick_commands": [
+        "alienautoadd @s omni_extras:opticoid"
+      ],
+      "last_tick_commands": [
+        
+      ],
+      "commands": [
+        "scoreboard players add @s omni_extras_scan 1",
+        "scoreboard players set @s AlienEvo.SelfDestruct 0",
+        "scoreboard players set @s AlienEvo.SdmFrame 0",
+        "scoreboard players set @s AlienEvo.SdmBlink 0",
+        "superpower remove selfdestruct:prototype_omnitrix_sdm",
+        "superpower remove alienevo:prototype_omnitrix",
+        "superpower remove alienevo:quick_change"
+      ]
+    },
+    "replace": {
+      "type": "palladium:command",
+      "hidden": false,
+      "title": "Furry Species",
+      "gui_position": [
+        0,
+        0
+      ],
+      "description": "A wolf-like alien with enhanced agility and senses, capable of unleashing powerful sonic howls and leaping great distances",
+      "icon": "alienevo:textures/gui/playlists/playlist_1/alien_209.png",
+      "first_tick_commands": [
+        "superpower replace omni_extras:opticoid_scanned alienevo:prototype_omnitrix"
+      ],
+      "last_tick_commands": [
+        "scoreboard players set @s omni_extras_scan 0",
+        "superpower add alienevo:prototype_omnitrix"
+      ],
+      "commands": [
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "omni_extras_scan",
+            "min_score": 120,
+            "max_score": 120
+          }
+        ]
+      }
+    },
+    "sound_activate ": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [
+        "playsound omni_extras:scanning_anur master @s"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "omni_extras_scan",
+            "min_score": 1,
+            "max_score": 5
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:has_tag",
+              "tag": "AlienEvo.Transformation"
+            }
+          }
+        ]
+      }
+    },
+    "rollcredits": {
+      "type": "palladium:animation_timer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 10,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "omni_extras_scan",
+            "min_score": 10,
+            "max_score": 105
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:has_tag",
+              "tag": "AlienEvo.Transformation"
+            }
+          }
+        ]
+      }
+    },
+    "show_arm": {
+      "type": "palladium:show_both_arms",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "omni_extras_scan",
+            "min_score": 10,
+            "max_score": 115
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:has_tag",
+              "tag": "AlienEvo.Transformation"
+            }
+          }
+        ]
+      }
+    },
+    "dummy1": {
+      "type": "palladium:animation_timer",
+      "icon": "alienevo:textures/gui/fakeatrix/omnitrix_activate_scan.png",
+      "title": "Prime Omnitrix",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "dummy2": {
+      "type": "palladium:animation_timer",
+      "icon": "alienevo:textures/gui/fakeatrix/omnitrix_scan.png",
+      "title": "Omnitrix Settings",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "dummy3": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "Transform",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 2,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:has_tag",
+          "tag": "missingstufflol"
+        },
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "dummy4": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "Remove Core",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 3,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:has_tag",
+          "tag": "missingstufflol"
+        },
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "dummy5": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "Cycle Playlist",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 4,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "unlocking": {
+          "type": "palladium:has_tag",
+          "tag": "missingstufflol"
+        },
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "base_form": {
+      "type": "alienevo:omnitrix_detransform",
+      "icon": "#alienevo:detransform",
+      "title": {
+        "translate": "ability.alienevo.omnitrix.base_form"
+      },
+      "hidden": true,
+      "list_index": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "dummy"
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 1,
+            "disabled_ticks": 1
+          }
+        ]
+      }
+    },
+     "scan_geo-2": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "render_layer": "omni_extras:omnitrix",
+      "controller": "spin",
+      "animation_trigger": "scan2_trigger",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "omni_extras_scan",
+            "min_score": 20,
+            "max_score": 100
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:has_tag",
+              "tag": "AlienEvo.Transformation"
+            }
+          }
+        ]
+      }
+    },
+    "renderLayer2-2": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "omni_extras:omnitrix",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:has_tag",
+              "tag": "AlienEvo.Transformation"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

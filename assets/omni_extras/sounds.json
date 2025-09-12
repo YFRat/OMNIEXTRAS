@@ -1,0 +1,22 @@
+{
+    "eyebeam": {
+    "category": "player",
+    "sounds": ["omni_extras:eyebeam"]
+  },
+    "stalk": {
+    "category": "player",
+    "sounds": ["omni_extras:stalk"]
+  },
+  "openeye": {
+    "category": "player",
+    "sounds": ["omni_extras:openeye"]
+  },
+   "otherbeam": {
+    "category": "player",
+    "sounds": ["omni_extras:otherbeam"]
+  },
+   "scanning_anur": {
+    "category": "player",
+    "sounds": ["omni_extras:scanning_anur"]
+  }
+}

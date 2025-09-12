@@ -13,8 +13,9 @@
 		"hidden": true,
 		"hidden_in_bar": true,
 		"list_index": -1,
-		"first_tick_commands": ["function omni_extras:vialgrant",
-								"item replace entity @s weapon.mainhand with air"],
+		"first_tick_commands": ["execute as @a run scoreboard players set @s AlienEvo.Timer 5999",
+                            "execute as @s run superpower add omni_extras:opticoid_scanned @s",
+								            "item replace entity @s weapon.mainhand with air"],
 		"last_tick_commands": [],
 		"commands": [],
 		"conditions": {
