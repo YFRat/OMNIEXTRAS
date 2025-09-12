@@ -287,7 +287,7 @@
       "hidden_in_bar": false,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 20
+        "amount": 10
       },
       "start_value": 0,
       "max_value": 20,
@@ -633,7 +633,7 @@
       "bar_color": "green",
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 30
+        "amount": 20
       },
       "hidden": true,
       "hidden_in_bar": false,
@@ -854,7 +854,7 @@
       "hidden_in_bar": false,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 30
+        "amount": 25
       },
       "list_index": 1,
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
