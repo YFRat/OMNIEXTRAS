@@ -447,7 +447,7 @@
       "type": "palladium:attribute_modifier",
       "attribute": "forge:entity_gravity",
       "hidden": true,
-      "amount": -0.25,
+      "amount": -0.15,
       "uuid": "f6c6a0eb-6c13-474f-ba07-a03a33bdfd27",
       "conditions": {
         "enabling": [
@@ -464,23 +464,6 @@
             "conditions": {
               "type": "palladium:on_ground"
             }
-          }
-        ]
-      }
-    },
-   "hovering1": {
-      "type": "palladium:command",
-      "hidden": true,
-      "first_tick_commands": [],
-      "last_tick_commands": [],
-      "commands": [
-        "function omni_extras:hover"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "hand_beams"
           }
         ]
       }
