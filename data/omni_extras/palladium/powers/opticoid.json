@@ -38,8 +38,7 @@
         "scale set pehkui:falling 1.2 @s",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.Level dummy",
-        "scoreboard objectives add Opticoid.SkillPoint dummy",
-        "tag @s add Opticoid.owned"
+        "scoreboard objectives add Opticoid.SkillPoint dummy"
       ],
       "last_tick_commands": [
         "scale reset",
@@ -201,6 +200,21 @@
       "uuid": "20b779e7-a3e4-4f74-967b-12b3bd19b748",
       "amount": 4.5
     },
+     "fall_resistance_beam": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:fall_resistance",
+      "hidden": true,
+      "uuid": "94211002-f947-4dc6-ad56-1b4097a4155c",
+      "amount": 10,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"Eye-Beam"
+          }
+        ]
+      }
+    },
     "knockbackResistance": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.knockback_resistance",
@@ -274,6 +288,28 @@
           {
             "type":"palladium:ability_unlocked",
             "ability": "leap_unlock"
+          },
+          {
+            "type":"palladium:on_ground"
+            
+          }
+        ]
+      }
+    },
+    "leap_sound": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "list_index": -1,
+      "sound": "minecraft:entity.ender_dragon.shoot",
+      "volume": 0.5,
+      "pitch": 2,
+      "looping": false,
+      "play_self": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "leap"
           }
         ]
       }
@@ -287,7 +323,7 @@
       "hidden_in_bar": false,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 10
+        "amount": 12
       },
       "start_value": 0,
       "max_value": 20,
@@ -314,6 +350,72 @@
             "ability": "eye_beam_unlock"
            }
       ]
+      }
+    },
+
+    "eye_sound": {
+      "type":"palladium:play_sound",
+      "sound":"alienevo:stalk",
+      "hidden": true,
+      "list_index": -1,
+      "looping": false,
+      "volume": 3,
+      "play_self": false,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"Eye-Beam"
+          }
+        ]
+      }
+    },
+    "beam_sound": {
+      "type":"palladium:play_sound",
+      "sound":"alienevo:eyebeam",
+      "hidden": true,
+      "list_index": -1,
+      "looping": true,
+      "volume": 0.3,
+      "play_self": false,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"Eye-Beam"
+          }
+        ]
+      }
+    },
+    "otherbeam_sound": {
+      "type":"palladium:play_sound",
+      "sound":"alienevo:otherbeam",
+      "hidden": true,
+      "list_index": -1,
+      "looping": true,
+      "volume": 0.3,
+      "play_self": false,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:or", 
+            "conditions":[
+              {
+            "type":"palladium:ability_enabled",
+            "ability":"hand_beams"
+              },
+              {
+            "type":"palladium:ability_enabled",
+            "ability":"fire_beam"
+              },
+              {
+            "type":"palladium:ability_enabled",
+            "ability":"ice_beam"
+              }
+            ]
+          }
+          
+        ]
       }
     },
     "beam_laser": {
@@ -345,7 +447,7 @@
       "type": "palladium:attribute_modifier",
       "attribute": "forge:entity_gravity",
       "hidden": true,
-      "amount": -0.08,
+      "amount": -0.25,
       "uuid": "f6c6a0eb-6c13-474f-ba07-a03a33bdfd27",
       "conditions": {
         "enabling": [
@@ -355,7 +457,7 @@
           },
           {
             "type": "palladium:has_tag",
-            "tag": "Opticoid.Hover"
+            "tag": "Opticoid.Boost"
           },
           {
             "type": "palladium:not",
@@ -366,7 +468,7 @@
         ]
       }
     },
-   "hovering": {
+   "hovering1": {
       "type": "palladium:command",
       "hidden": true,
       "first_tick_commands": [],
@@ -378,11 +480,29 @@
         "enabling": [
           {
             "type": "palladium:ability_enabled",
+            "ability": "hand_beams"
+          }
+        ]
+      }
+    },
+    "boost": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "function omni_extras:boost"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
             "ability": "Eye-Beam"
           }
         ]
       }
     },
+    
       "arm_up": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
@@ -631,10 +751,7 @@
       "icon": "#omni_extras:opticoid/ice_beam",
       "uuid":"59b2b689-d4ed-421c-9d9b-bab41d99eb5f",
       "bar_color": "green",
-      "energy_bar_usage": {
-        "energy_bar": "energy_meter",
-        "amount": 20
-      },
+      
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 2,
@@ -837,6 +954,11 @@
            "type":"palladium:ability_enabled",
             "power":"null",
             "ability":"Eye-Beam"
+          },
+          {
+           "type":"palladium:ability_enabled",
+            "power":"null",
+            "ability":"hand_beams"
           }
           ]
         }
@@ -852,10 +974,7 @@
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-      "energy_bar_usage": {
-        "energy_bar": "energy_meter",
-        "amount": 25
-      },
+      
       "list_index": 1,
       "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
       "gui_position":[
@@ -953,10 +1072,10 @@
       ]
     }
   },
-    "shoulder-beams": {
+    "hand_beams": {
       "type": "palladium:aim",
       "title": "Hand-Beams",
-      "arm": "main_arm",
+      "arm": "both",
       "time": 2,
       "icon": "#omni_extras:opticoid/shoulder_beams",
       "bar_color": "green",
@@ -994,7 +1113,7 @@
         "energy_bar": "energy_meter",
         "amount": 8
       },
-      "max_distance": 10,
+      "max_distance": 20,
       "cause_fire": false,
       "smelt_blocks": false,
       "commands_on_entity_hit": [
@@ -1003,7 +1122,7 @@
       "enabling": [
         {
           "type": "palladium:ability_enabled",
-          "ability": "shoulder-beams"
+          "ability": "hand_beams"
         }
       ]
     }
