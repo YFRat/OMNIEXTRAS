@@ -8,13 +8,8 @@
   },
   "energy_bars": {
     "stomach": {
-      "max": 300,
-      "color": "#FFBF00",
-      "synced_value": {
-      "type": "score",
-      "objective": "stomach",
-      "fallback": 0
-    }
+      "max": 1500,
+      "color": "#32CD32"
     }
   },
   "persistent_data": true,
@@ -41,7 +36,9 @@
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy"
       ],
-      "last_tick_commands": [],
+      "last_tick_commands": [
+        "tag @s remove Upchuck.Flattable"
+      ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
       ]
@@ -222,19 +219,34 @@
         ]
       }
     },
+    "energy_drain": {
+			"type": "palladium:command",
+			"title": "drainbar",
+			"bar_color": "blue",
+			"hidden": true,
+			"hidden_in_bar": true,
+			"list_index": -1,
+			"hide_particles": true,
+			"description": "drain energy bar",
+			"commands": ["energybar value subtract @s upchuck:gourmand stomach 1"]
+		},
      "energy_blast": {
       "type": "palladium:projectile",
       "icon": "minecraft:textures/block/green_stained_glass.png",
-      "title": "Vomit",
+      "title": "Burp",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
+       "energy_bar_usage": {
+        "energy_bar": "stomach",
+        "amount": 15
+      },
       "list_index": 0,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {
         "Damage": 10,
         "Gravity": 0,
-        "Size": 3,
+        "Size": 0.5,
         "Lifetime": 100,
         "DieOnEntityHit": true,
         "DieOnBlockHit": false,
@@ -258,6 +270,84 @@
             "cooldown": 10,
             "key_type": "right_click",
             "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+           "type": "palladium:energy_bar",
+            "energy_bar": "stomach",
+            "min": 30
+          }
+    
+        ]
+      }
+    },
+    "test": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "carry": {
+      "type": "palladium:command",
+      "hidden": true,
+      "last_tick_commands": [],
+      "commands": [],
+      "first_tick_commands": [
+        "tag @s add AlienEvo.BallCarry"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "test"
+          }
+        ] 
+      }
+    },
+    "entity_vaccum": {
+      "type": "alienevo:entity_vacuum",
+      "search_radius": 3,
+      "hidden": true,
+      "debug_mode": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.BallCarry"
+          }
+        ]
+      }
+    },
+    "carry_remove": {
+      "type": "palladium:command",
+      "hidden": true,
+      "last_tick_commands": [],
+      "commands": [],
+      "first_tick_commands": [
+        "tag @s remove AlienEvo.BallCarry"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "test"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.BallCarry"
           }
         ]
       }
