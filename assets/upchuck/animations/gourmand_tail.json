@@ -4,6 +4,7 @@
 		"tail": {
 			"loop": true,
 			"animation_length": 32.0417,
+			"override_previous_animation": true,
 			"bones": {
 				"TAIL_BASE": {
 					"rotation": {

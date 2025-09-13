@@ -6,6 +6,17 @@
     "type": "palladium:texture",
     "texture": "#alienevo:alien_sel"
   },
+  "energy_bars": {
+    "stomach": {
+      "max": 300,
+      "color": "#FFBF00",
+      "synced_value": {
+      "type": "score",
+      "objective": "stomach",
+      "fallback": 0
+    }
+    }
+  },
   "persistent_data": true,
   "hidden": false,
   "background": "alienevo:textures/gui/power_screen/power_screen.png",
@@ -25,6 +36,7 @@
       ],
       "first_tick_commands": [
         "scale set pehkui:hitbox_width 1.1 @s",
+        "tag @s add Upchuck.Flattable",
         "scoreboard objectives add Gourmand.XP dummy",
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy"
@@ -65,31 +77,6 @@
       "title": "Size Change",
       "hidden": true,
       "scale": 0.57
-    },
-    "tail_timer": {
-      "type": "palladium:animation_timer",
-      "title": "tail_timer",
-      "bar_color": "orange",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "start_value": 0,
-      "max_value": 1,
-      "conditions": {
-        "enabling": [
-         {
-          "type": "palladium:ability_enabled",
-          "ability": "gourmand_loop"
-         }
-       ]
-      }
-    },
-    "tail_wag": {
-      "type": "geckolib:render_layer_animation",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "render_layer": "upchuck:gourmand",
-      "controller": "tail_move",
-      "animation_trigger": "tail"
     },
      "Health": {
       "type": "palladium:attribute_modifier",
@@ -145,6 +132,132 @@
                 "tag": "AlienEvo.MasterControl"
               }
             ]
+          }
+        ]
+      }
+    },
+     "leap_unlock": {
+      "type": "palladium:dummy",
+      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
+      "title":"Leap",
+      "uuid":"eff11c45-452f-41fd-ab8f-f77a4869b2c1",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0.5,
+        0.5
+      ],
+      "description": {
+        "translate": "desc.alienevo_aliens.2.leap"
+      },
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"gourmand_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "leap": {
+      "type": "alienevo:motion",
+      "bar_color": "orange",
+      "title": "Leap",
+      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
+      "uuid":"4832400d-b0b3-4e06-858e-76e6cf97daa0",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 3,
+      "motion": 1.7,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 50,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:crouching"
+          },
+          {
+            "type":"palladium:ability_unlocked",
+            "ability": "leap_unlock"
+          },
+          {
+            "type":"palladium:on_ground"
+            
+          }
+        ]
+      }
+    },
+    "leap_sound": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "list_index": -1,
+      "sound": "minecraft:entity.ender_dragon.shoot",
+      "uuid":"6345e4e9-c638-4e18-b24e-ab931c28960a",
+      "volume": 0.5,
+      "pitch": 2,
+      "looping": false,
+      "play_self": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "leap"
+          }
+        ]
+      }
+    },
+     "energy_blast": {
+      "type": "palladium:projectile",
+      "icon": "minecraft:textures/block/green_stained_glass.png",
+      "title": "Vomit",
+      "bar_color": "green",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {
+        "Damage": 10,
+        "Gravity": 0,
+        "Size": 3,
+        "Lifetime": 100,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": false,
+        "Appearances": [
+          {
+            "Type": "laser",
+            "Thickness": 1,
+            "Color": "#36f174"
+          }
+        ]
+      },
+      "inaccuracy": 3,
+      "velocity": 2,
+      "swinging_arm": "none",
+      "damage_from_player": false,
+      "ignore_player_movement": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 10,
+            "key_type": "right_click",
+            "needs_empty_hand": false
           }
         ]
       }

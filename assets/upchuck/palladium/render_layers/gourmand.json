@@ -18,9 +18,7 @@
         {
           "name": "tail_move",
           "transition_tick_time": 0,
-          "triggers": {
-            "tail": "tail"
-          }
+          "animation": "tail"
         }        
       ],
       "third_person_conditions": true,
@@ -531,6 +529,14 @@
           }
         }
       },
+       "animation_file": "upchuck:animations/gourmand_tail.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        }        
+      ],
       "third_person_conditions": true,
       "texture": {
         "base": "upchuck:textures/models/aliens/alien_111/gourmand_uniform_#UNIFORM.png",
@@ -588,7 +594,7 @@
           {
             "type": "palladium:color",
             "color": "##PRIMARY_3",
-            "filter": "#232020",
+            "filter": "#171515",
             "ignore_blank": true
           },
           {
@@ -657,7 +663,14 @@
           }
         }
       },
-      "animation_file": "upchuck:animations/gourmand.animation.json", 
+       "animation_file": "upchuck:animations/gourmand_tail.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        }        
+      ],
       "texture": {
         "base": "upchuck:textures/models/aliens/alien_111/gourmand_glow_#UNIFORM.png",
         "transformers": [
