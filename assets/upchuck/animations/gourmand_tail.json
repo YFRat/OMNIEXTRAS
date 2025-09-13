@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"tail": {
+			"loop": true,
+			"animation_length": 32.0417,
+			"bones": {
+				"TAIL_BASE": {
+					"rotation": {
+						"vector": [-29.69257, "0.3324+math.sin(query.anim_time*224)*15", 2.70506]
+					}
+				},
+				"TAIL_LOWMID": {
+					"rotation": {
+						"vector": [-5, "math.sin(query.anim_time*224-50)*20", 0]
+					}
+				},
+				"TAIL_HIGHMID": {
+					"rotation": {
+						"vector": [12.5, "math.sin(query.anim_time*224-150)*25", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

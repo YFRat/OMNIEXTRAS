@@ -1,81 +1,43 @@
 {
-  "name": "Opticoid",
-  "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-
-    "energy_bars": {
-    "energy_meter": {
-      "max": 500,
-      "auto_increase_per_tick": 3,
-      "color": "#4AFF00"
-    }
+  "name": {
+    "text": "Gourmand"
   },
-
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "#alienevo:alien_sel"
+  },
   "persistent_data": true,
+  "hidden": false,
   "background": "alienevo:textures/gui/power_screen/power_screen.png",
   "primary_color": "#8ed721",
-  "allow_bar_shrinking": false,
   "secondary_color": "#332e27",
+  "allow_bar_shrinking": false,
   "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
-  "hidden": false,
   "abilities": {
-    "opticoid_loop": {
+    "gourmand_loop": {
       "type": "palladium:command",
       "hidden": false,
-      "title": "Opticoid",
+      "title": {"translate":"species.alienevo_aliens.111"},
+      "icon": "#alienevo:alien_sel",
       "gui_position": [
         0,
         0
       ],
-      "description": "Dude, watch the puns! Pretty soon, you use up all the eye-conic ones, and they just get cornea and cornea...",
-      "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
       "first_tick_commands": [
-        "scale easing set palladium:ability pehkui:exponential_out",
-        "scale set pehkui:eye_height 1.2 @s",
-        "scale set pehkui:hitbox_height 1.7 @s",
-        "scale set pehkui:entity_reach 0.70 @s",
-        "scale set pehkui:block_reach 1.5 @s",
-        "scale set pehkui:jump_height 1.3 @s",
-        "scale set pehkui:falling 1.2 @s",
-        "scoreboard objectives add Opticoid.XP dummy",
-        "scoreboard objectives add Opticoid.Level dummy",
-        "scoreboard objectives add Opticoid.SkillPoint dummy"
+        "scale set pehkui:hitbox_width 1.1 @s",
+        "scoreboard objectives add Gourmand.XP dummy",
+        "scoreboard objectives add Gourmand.Level dummy",
+        "scoreboard objectives add Gourmand.SkillPoint dummy"
       ],
-      "last_tick_commands": [
-        "scale reset",
-        "scale easing reset"
-      ],
+      "last_tick_commands": [],
       "commands": [
-      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]
+        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+      ]
     },
-     "hearing_sense": {
-      "type": "palladium:entity_glow",
-      "icon": "minecraft:glow_berries",
-      "title": "null",
-      "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": -1,
-      "gui_position": "null",
-      "description": "null",
-      "mode": "others",
-      "color": "#00fc00",
-      "distance": 50,
-      "conditions": {
-        "enabling":[
-          {
-            "type":"palladium:ability_unlocked",
-            "ability":"eyeguy_sense_unlock"
-          }
-        ]
-      }
-    },
-    "hideBody": {
+    "hide_body": {
       "type": "palladium:hide_body_part",
-      "icon": "alienevo:textures/gui/ability_bar/interface.png",
-      "bar_color": "light_gray",
       "hidden": true,
       "hidden_in_bar": true,
-      "affects_first_person": true,
       "body_parts": [
         "right_arm",
         "left_arm",
@@ -90,1026 +52,73 @@
         "left_leg_overlay",
         "head",
         "head_overlay"
-      ]
-    },
-    "name_change": {
-      "type": "palladium:name_change",
-      "icon": "minecraft:blaze_rod",
-      "title": "null",
-      "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "name": {
-        "translate": "species.alienevo_aliens.110"
-      },
-      "conditions": {
-        "enabling": [],
-        "unlocking": [
-          {
-            "type": "palladium:and",
-            "conditions": [
-              {
-                "type": "alienevo:current_alien_nickname",
-                "value": "species.alienevo_aliens.110"
-              },
-              {
-                "type": "palladium:not",
-                "conditions": [
-                  {
-                    "type": "palladium:has_tag",
-                    "tag": "alienevo.nickname"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "nickname": {
-      "type": "palladium:name_change",
-      "icon": "minecraft:blaze_rod",
-      "title": "null",
-      "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "name": [
-        {
-          "nbt": "KubeJSPersistentData.alienevo_110",
-          "entity": "@s"
-        }
       ],
-      "conditions": {
-        "enabling": [],
-        "unlocking": [
-          {
-            "type": "palladium:and",
-            "conditions": [
-              {
-                "type": "palladium:not",
-                "conditions": [
-                  {
-                    "type": "alienevo:current_alien_nickname",
-                    "value": "species.alienevo_aliens.110"
-                  }
-                ]
-              },
-              {
-                "type": "palladium:not",
-                "conditions": [
-                  {
-                    "type": "palladium:has_tag",
-                    "tag": "alienevo.nickname"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+      "affects_first_person": true
     },
-    "renderLayer": {
+    "render_layer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "omni_extras:opticoid"
+      "render_layer": "upchuck:gourmand"
     },
-    "sizeChange": {
+    "size_change": {
       "type": "palladium:size",
       "title": "Size Change",
       "hidden": true,
-      "scale": 1.15
+      "scale": 0.57
     },
-    "Health": {
+    "tail_timer": {
+      "type": "palladium:animation_timer",
+      "title": "tail_timer",
+      "bar_color": "orange",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 1,
+      "conditions": {
+        "enabling": [
+         {
+          "type": "palladium:ability_enabled",
+          "ability": "gourmand_loop"
+         }
+       ]
+      }
+    },
+    "tail_wag": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "upchuck:gourmand",
+      "controller": "tail_move",
+      "animation_trigger": "tail"
+    },
+     "Health": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.max_health",
+      "uuid": "40a31fa3-4eef-47bf-82bd-4063a176d0c1",
       "hidden": true,
-      "amount": 15
+      "amount": -6
     },
     "Strength": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.attack_damage",
+      "uuid": "e179ad49-bdac-4da9-bd4b-47351197a147",
       "hidden": true,
-      "amount": 5
+      "amount": 3
+    },
+    "jump": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:jump_power",
+      "uuid": "e179ad49-bdac-4da9-bd4b-47351197a147",
+      "hidden": true,
+      "amount": 0.5
     },
     "fall_resistance": {
       "type": "palladium:attribute_modifier",
       "attribute": "palladium:fall_resistance",
       "hidden": true,
-      "uuid": "20b779e7-a3e4-4f74-967b-12b3bd19b748",
+      "uuid": "8eb95447-22a4-4f08-af10-417c480ba4ba",
       "amount": 4.5
     },
-     "fall_resistance_beam": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "palladium:fall_resistance",
-      "hidden": true,
-      "uuid": "94211002-f947-4dc6-ad56-1b4097a4155c",
-      "amount": 10,
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
-          }
-        ]
-      }
-    },
-    "knockbackResistance": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.knockback_resistance",
-      "hidden": true,
-      "amount": 1
-    },
-    "Armor": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.armor",
-      "hidden": true,
-      "amount": 10
-    },
-    "armorToughness": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.armor_toughness",
-      "hidden": true,
-      "amount": 15
-    },
-      "Speed": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.movement_speed",
-      "uuid": "a9a48154-df71-4786-8072-634ed74849cd",
-      "hidden":true,
-      "amount": -0.0025,
-      "conditions": {
-        "enabling":[
-          {
-            "type":"palladium:ability_unlocked",
-            "ability":"opticoid_loop"
-          }
-        ]
-      }
-     },
-     "Speed_upgrade": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.movement_speed",
-      "uuid": "40707694-89f7-4772-844d-eca6043eb88f",
-      "hidden":true,
-      "amount": 0.0750,
-      "conditions": {
-        "enabling":[
-          {
-            "type":"palladium:ability_unlocked",
-            "ability":"speed1_unlock"
-          }
-        ]
-      }
-     },
-     "leap": {
-      "type": "alienevo:motion",
-      "bar_color": "orange",
-      "title": "Leap",
-      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
-      "uuid":"a88f311f-4438-4608-aeea-acd8eef9fdd6",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 3,
-      "motion": 2.5,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:action",
-            "cooldown": 50,
-            "key_type": "key_bind"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:crouching"
-          },
-          {
-            "type":"palladium:ability_unlocked",
-            "ability": "leap_unlock"
-          },
-          {
-            "type":"palladium:on_ground"
-            
-          }
-        ]
-      }
-    },
-    "leap_sound": {
-      "type": "palladium:play_sound",
-      "hidden": true,
-      "list_index": -1,
-      "sound": "minecraft:entity.ender_dragon.shoot",
-      "volume": 0.5,
-      "pitch": 2,
-      "looping": false,
-      "play_self": false,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "leap"
-          }
-        ]
-      }
-    },
-    "Eye-Beam": {
-      "type": "palladium:animation_timer",
-      "title": "Eye-Beam",
-      "icon": "#omni_extras:opticoid/eye_beam",
-      "bar_color": "orange",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "energy_bar_usage": {
-        "energy_bar": "energy_meter",
-        "amount": 12
-      },
-      "start_value": 0,
-      "max_value": 20,
-      "list_index": 3,
-      "gui_position":[
-        0,
-        1
-      ],
-      "conditions": {
-        "enabling": [
-         {
-          "type": "palladium:held",
-          "key_type": "key_bind"
-        }
-      ],
-      "unlocking":[
-         {
-            "type": "palladium:energy_bar",
-            "energy_bar": "energy_meter",
-            "min": 50
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "eye_beam_unlock"
-           }
-      ]
-      }
-    },
-
-    "eye_sound": {
-      "type":"palladium:play_sound",
-      "sound":"alienevo:stalk",
-      "hidden": true,
-      "list_index": -1,
-      "looping": false,
-      "volume": 3,
-      "play_self": false,
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
-          }
-        ]
-      }
-    },
-    "beam_sound": {
-      "type":"palladium:play_sound",
-      "sound":"alienevo:eyebeam",
-      "hidden": true,
-      "list_index": -1,
-      "looping": true,
-      "volume": 0.3,
-      "play_self": false,
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
-          }
-        ]
-      }
-    },
-    "otherbeam_sound": {
-      "type":"palladium:play_sound",
-      "sound":"alienevo:otherbeam",
-      "hidden": true,
-      "list_index": -1,
-      "looping": true,
-      "volume": 0.3,
-      "play_self": false,
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:or", 
-            "conditions":[
-              {
-            "type":"palladium:ability_enabled",
-            "ability":"hand_beams"
-              },
-              {
-            "type":"palladium:ability_enabled",
-            "ability":"fire_beam"
-              },
-              {
-            "type":"palladium:ability_enabled",
-            "ability":"ice_beam"
-              }
-            ]
-          }
-          
-        ]
-      }
-    },
-    "beam_laser": {
-    "type": "palladium:energy_beam",
-    "energy_beam": "omni_extras:eye_beam",
-    "damage": 25,
-    "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
-    "commands_on_entity_hit": [
-        "function omni_extras:grantxp1" ],
-    "hidden": true,
-    "conditions": {
-      "enabling": [
-        {
-          "type": "palladium:ability_enabled",
-          "ability": "Eye-Beam"
-        },
-        {
-            "type": "palladium:ability_integer_property",
-            "power": "null",
-            "ability": "Eye-Beam",
-            "property": "value",
-            "min": 3,
-            "max": 20
-          }
-      ]
-    }
-  },
-  "hover": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "forge:entity_gravity",
-      "hidden": true,
-      "amount": -0.15,
-      "uuid": "f6c6a0eb-6c13-474f-ba07-a03a33bdfd27",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "Eye-Beam"
-          },
-          {
-            "type": "palladium:has_tag",
-            "tag": "Opticoid.Boost"
-          },
-          {
-            "type": "palladium:not",
-            "conditions": {
-              "type": "palladium:on_ground"
-            }
-          }
-        ]
-      }
-    },
-    "boost": {
-      "type": "palladium:command",
-      "hidden": true,
-      "first_tick_commands": [],
-      "last_tick_commands": [],
-      "commands": [
-        "function omni_extras:boost"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "Eye-Beam"
-          }
-        ]
-      }
-    },
-    
-      "arm_up": {
-      "type": "geckolib:render_layer_animation",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "render_layer": "omni_extras:opticoid",
-      "controller": "eye",
-      "animation_trigger": "arm_up",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "Eye-Beam"
-          }
-        ]
-      }
-    },
-    "arm_down": {
-      "type": "geckolib:render_layer_animation",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "render_layer": "omni_extras:opticoid",
-      "controller": "eye",
-      "animation_trigger": "arm_down",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "Eye-Beam"
-              }
-            ]
-          }
-        ]
-      }
-    },
-     "BeamSpeed": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.movement_speed",
-      "uuid": "e6f01d28-c74f-4711-95a1-955cea6ff22f",
-      "amount": -1,
-      "hidden": true,
-      "conditions": {
-        "enabling": [
-          {
-              "type": "palladium:ability_enabled",
-              "ability": "Eye-Beam"
-            }
-          
-        ]
-      }
-    },
-    "surface_climbing_new": {
-      "type": "alienevo:wall_climb",
-      "climb_speed": 0.1,
-      "data_name": "climb",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 1,
-      "icon": "alienevo:textures/gui/misc/climb.png",
-      "title": "Climb",
-      "bar_color": "orange",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-            "needs_empty_hand": false,
-            "key_type": "key_bind"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "climb_unlock"
-          },
-          {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:crouching"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "power": "null",
-                "ability": "surface_climbing_new"
-              }
-            ]
-          }
-        ]
-      }
-    },
-     "climb_unlock": {
-      "type": "palladium:dummy",
-      "icon": "alienevo:textures/gui/misc/climb.png",
-      "title": {
-        "translate": "ability.alienevo_aliens.2.climb"
-      },
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        -1,
-        2
-      ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.climb"
-      },
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"defense1_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": {
-              "translate": "§eOpticoid Skill Point"
-            }
-          }
-          
-        ]
-      }
-    },
-    "leap_unlock": {
-      "type": "palladium:dummy",
-      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
-      "title":"Leap",
-      "uuid":"c396487f-cdc6-4ca1-a990-b1ad538aebb2",
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0.5,
-        0.5
-      ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.leap"
-      },
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"opticoid_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": {
-              "translate": "§eOpticoid Skill Point"
-            }
-          }
-          
-        ]
-      }
-    },
-    "eye_beam_unlock": {
-      "type": "palladium:dummy",
-      "icon": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png",
-      "title": "§aEye-Beam",
-      "uuid": "30ac4f24-1e6a-4851-9558-f456f2d9b6cd",
-      "hidden": false,
-      "description": "Shoot out a high-damaging §aLaser§r from your §aChest-Eye",
-      "list_index": -1,
-      "gui_position": [
-        0,
-        2.4
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 3,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": {
-              "translate": "§eOpticoid Skill Point"
-            }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"eyeguy_sense_unlock"
-          }
-        ]
-      }
-    },
-  "defense_upgrade": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.armor",
-      "hidden": true,
-      "uuid": "31609334-f593-4a05-a8d9-7cac53b34083",
-      "amount": 5,
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:ability_unlocked",
-            "ability":"defense1_unlock"
-          }
-        ]
-      }
-    },
-  "defense1_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:iron_chestplate",
-      "title": "Defense §a+1",
-      "uuid":"698bcba6-7092-4386-b544-66d71134b882",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        -1,
-        1
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "fire_beam_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
-    "ice_beam": {
-      "type": "palladium:aim",
-      "title": "Freeze-Beam",
-      "arm": "main_arm",
-      "time": 2,
-      "icon": "#omni_extras:opticoid/ice_beam",
-      "uuid":"59b2b689-d4ed-421c-9d9b-bab41d99eb5f",
-      "bar_color": "green",
-      
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 2,
-      "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
-       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:held",
-            "cooldown": 10,
-            "needs_empty_hand": false,
-            "key_type": "key_bind"
-          }
-        ],
-        "unlocking":[
-          {
-            "type":"palladium:and",
-            "conditions":[
-              {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "freeze_beam_unlock"
-          },
-          {
-          "type":"palladium:not",
-          "conditions":[
-            {
-              "type":"palladium:ability_enabled",
-              "ability":"Eye-Beam"
-            }
-          ]
-        },
-          {
-            "type": "palladium:energy_bar",
-            "energy_bar": "energy_meter",
-            "min": 100
-          }
-            ]
-          }
-        ]
-      }
-    },
-      "freeze_beam_unlock": {
-      "type": "palladium:dummy",
-      "icon": "#omni_extras:opticoid/ice_beam",
-      "title": "Freeze-Beam",
-      "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
-      "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        1,
-        2
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "speed1_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
-    "speed1_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:textures/mob_effect/speed.png",
-      "uuid": "4129de1f-9739-4348-94c1-2a2b9a6e5066",
-      "title": "Speed §a+2",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        1,
-        1
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "leap_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
-     "shoulder_beams_unlock": {
-      "type": "palladium:dummy",
-      "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
-      "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
-      "title": "Hand-Beams",
-      "description": "Shoot a §elightning§r strike from your hand §aeyes",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0,
-        1
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "opticoid_loop"
-          }
-
-        ]
-      }
-    },
-     "eyeguy_sense_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:ender_eye",
-      "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
-      "title": "§aIncreased Awareness",
-      "description": "yfrat u edit ts urself",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0,
-        1.7
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "opticoid_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
-    "freeze_laser": {
-      "type": "palladium:energy_beam",
-      "icon": "minecraft:snowball",
-      "title": "Freeze-Beam",
-      "bar_color": "green",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 2,
-      "gui_position": "null",
-      "description": "null",
-      "energy_beam": "omni_extras:freeze_beam",
-      "damage": 5,
-      "max_distance": 10,
-      "set_on_fire_seconds": 0,
-      "cause_fire": false,
-      "smelt_blocks": false,
-      "commands_on_entity_hit": [
-        "function omni_extras:freeze" ],
-    "conditions": {
-      "enabling": [
-        {
-          "type": "palladium:ability_enabled",
-          "ability": "ice_beam"
-        }
-      ]
-    }
-  },
-  "show_both_arms":{
-    "type": "palladium:show_both_arms",
-    "icon": "minecraft:blaze_rod",
-    "bar_color": "light_gray",
-    "hidden": true,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "conditions":{
-      "enabling":[
-        {
-          "type":"palladium:or",
-          "conditions":[
-            {
-            "type":"palladium:ability_enabled",
-            "power":"null",
-            "ability":"fire_beam"
-          },
-          {
-           "type":"palladium:ability_enabled",
-            "power":"null",
-            "ability":"Eye-Beam"
-          },
-          {
-           "type":"palladium:ability_enabled",
-            "power":"null",
-            "ability":"hand_beams"
-          }
-          ]
-        }
-      ]
-    }
-},
-    "fire_beam": {
-      "type": "palladium:aim",
-      "title": "Fire-Beam",
-      "arm": "left_arm",
-      "time": 2,
-      "icon": "#omni_extras:opticoid/fire_beam",
-      "bar_color": "green",
-      "hidden": true,
-      "hidden_in_bar": false,
-      
-      "list_index": 1,
-      "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
-      "gui_position":[
-        -2,
-        1
-      ],
-       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:held",
-            "needs_empty_hand": false,
-            "key_type": "key_bind"
-          }
-        ],
-        "unlocking":[
-          {
-            "type":"palladium:and",
-            "conditions":[
-              {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "fire_beam_unlock"
-          }, 
-           {
-            "type": "palladium:energy_bar",
-            "energy_bar": "energy_meter",
-            "min": 100
-           },
-           {
-          "type":"palladium:not",
-          "conditions":[
-            {
-              "type":"palladium:ability_enabled",
-              "ability":"Eye-Beam"
-          
-            }
-          ]
-         }
-            ]
-          }
-       ]
-      }
-    },
-      "fire_beam_unlock": {
-      "type": "palladium:dummy",
-      "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
-      "title": "Fire-Beam",
-      "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-       -0.5,
-        0.5
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "opticoid_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
-    "fire_laser": {
-      "type": "palladium:energy_beam",
-      "icon": "minecraft:blaze_rod",
-      "title": "Fire-Beam",
-      "bar_color": "green",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 0,
-      "gui_position": "null",
-      "description": "null",
-      "energy_beam": "omni_extras:fire_beam",
-      "damage": 5,
-      "max_distance": 10,
-      "set_on_fire_seconds": 6,
-      "cause_fire": true,
-      "smelt_blocks": false,
-    "conditions": {
-      "enabling": [
-        {
-          "type": "palladium:ability_enabled",
-          "ability": "fire_beam"
-        }
-      ]
-    }
-  },
-    "hand_beams": {
-      "type": "palladium:aim",
-      "title": "Hand-Beams",
-      "arm": "both",
-      "time": 2,
-      "icon": "#omni_extras:opticoid/shoulder_beams",
-      "bar_color": "green",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 0,
-       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:held",
-            "needs_empty_hand": true,
-            "key_type": "right_click"
-          },
-          {
-            "type": "palladium:energy_bar",
-            "energy_bar": "energy_meter",
-            "min": 30
-          }
-        ]
-      }
-    },
-      "Shoulder-Lasers": {
-      "type": "palladium:energy_beam",
-      "icon": "minecraft:blaze_rod",
-      "title": "Hand-Beams",
-      "bar_color": "green",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 0,
-      "gui_position": "null",
-      "description": "null",
-      "energy_beam": "omni_extras:hand_beams",
-      "damage": 10,
-      "energy_bar_usage": {
-        "energy_bar": "energy_meter",
-        "amount": 8
-      },
-      "max_distance": 20,
-      "cause_fire": false,
-      "smelt_blocks": false,
-      "commands_on_entity_hit": [
-        "function omni_extras:grantxp2" ],
-    "conditions": {
-      "enabling": [
-        {
-          "type": "palladium:ability_enabled",
-          "ability": "hand_beams"
-        }
-      ]
-    }
-  },
     "base_form": {
       "type": "alienevo:omnitrix_detransform",
       "icon": "#alienevo:detransform",
@@ -1140,12 +149,87 @@
         ]
       }
     },
-    
     "timeout_function": {
       "type": "alienevo:omnitrix_timer",
+      "hidden": true
+    },
+    "name_change": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
       "hidden": true,
-      "watch_name": "prototype",
-      "detransform_sound": "prototype"
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": {
+        "translate": "species.alienevo_aliens.111"
+      },
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "alienevo:current_alien_nickname",
+                "value": "species.alienevo_aliens.111"
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nickname": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": [
+        {
+          "nbt": "KubeJSPersistentData.alienevo_111",
+          "entity": "@s"
+        }
+      ],
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "alienevo:current_alien_nickname",
+                    "value": "species.alienevo_aliens.111"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
     "slot_restriction": {
       "type": "palladium:restrict_slots",

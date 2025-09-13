@@ -3,8 +3,9 @@
   "layers": [
     {
       "type": "geckolib:default",
+      "render_type": "cutout",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
+        "base": "upchuck:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -12,22 +13,19 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
+      "animation_file": "upchuck:animations/gourmand_tail.json",
       "animation_controller": [
         {
-          "name": "eye",
+          "name": "tail_move",
           "transition_tick_time": 0,
           "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
+            "tail": "tail"
           }
         }        
       ],
       "third_person_conditions": true,
       "texture": {
-        "base": "omni_extras:textures/models/aliens/alien_110/opticoid_skin_#UNIFORM.png",
+        "base": "upchuck:textures/models/aliens/alien_111/gourmand_skin_#UNIFORM.png",
         "bones": {
         "head": "armorHead",
         "body": "armorBody",
@@ -40,109 +38,121 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_1",
-            "filter": "#fff899",
+            "filter": "#b5eb20",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_2",
-            "filter": "#f8dd72",
+            "filter": "#9dda13",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_3",
-            "filter": "#dac893",
+            "filter": "#9dd82c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_4",
-            "filter": "#c5b57f",
+            "filter": "#99d030",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_5",
-            "filter": "#a79866",
+            "filter": "#8ed721",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_6",
-            "filter": "#978752",
+            "filter": "#82be11",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_1",
-            "filter": "#917526",
+            "color": "##SKIN_PROTO_7",
+            "filter": "#7ab015",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_2",
-            "filter": "#8c7035",
+            "color": "##SKIN_PROTO_8",
+            "filter": "#659e0e",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_3",
-            "filter": "#877741",
+            "color": "##SKIN_PROTO_9",
+            "filter": "#4f8506",
             "ignore_blank": true
           },
            {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_4",
-            "filter": "#7a5e25",
+            "color": "##SKIN_PROTO_10",
+            "filter": "#4a7e0b",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_5",
-            "filter": "#5b4312",
+            "color": "##SKIN_PROTO_11",
+            "filter": "#517f0b",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P3_1",
-            "filter": "#f192a2",
+            "color": "##SKIN_PROTO_12",
+            "filter": "#4e7503",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P3_2",
-            "filter": "#e48393",
+            "color": "##SKIN_PROTO_13",
+            "filter": "#4a7605",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P3_3",
-            "filter": "#e57386",
+            "color": "##SKIN_PROTO_14",
+            "filter": "#426004",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P3_4",
-            "filter": "#d27282",
+            "color": "##SKIN_PROTO_15",
+            "filter": "#335e08",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P3_5",
-            "filter": "#bb5f6f",
+            "color": "##SKIN_PROTO_16",
+            "filter": "#384a03",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_10K_1",
-            "filter": "#94ffff",
+            "color": "##SKIN_PROTO_17",
+            "filter": "#2a3402",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_2",
             "filter": "#66fced",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#8bdace",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#8bdace",
             "ignore_blank": true
           },
           {
@@ -321,187 +331,191 @@
           },
           "SKIN_PROTO_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_1"
+            "property": "gourmand_prototype_skincolor_palette_1_color_1"
           },
           "SKIN_PROTO_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_2"
+            "property": "gourmand_prototype_skincolor_palette_1_color_2"
           },
           "SKIN_PROTO_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_3"
+            "property": "gourmand_prototype_skincolor_palette_1_color_3"
           },
           "SKIN_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_4"
+            "property": "gourmand_prototype_skincolor_palette_1_color_4"
           },
           "SKIN_PROTO_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_5"
+            "property": "gourmand_prototype_skincolor_palette_1_color_5"
           },
           "SKIN_PROTO_6": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_6"
+            "property": "gourmand_prototype_skincolor_palette_1_color_6"
           },
-          "SKIN_PROTO_P2_1": {
+          "SKIN_PROTO_7": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_2_color_1"
+            "property": "gourmand_prototype_skincolor_palette_1_color_7"
           },
-          "SKIN_PROTO_P2_2": {
+          "SKIN_PROTO_8": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_2_color_2"
+            "property": "gourmand_prototype_skincolor_palette_1_color_8"
           },
-          "SKIN_PROTO_P2_3": {
+          "SKIN_PROTO_9": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_2_color_3"
+            "property": "gourmand_prototype_skincolor_palette_1_color_9"
           },
-          "SKIN_PROTO_P2_4": {
+          "SKIN_PROTO_10": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_2_color_4"
+            "property": "gourmand_prototype_skincolor_palette_1_color_10"
           },
-           "SKIN_PROTO_P2_5": {
+           "SKIN_PROTO_11": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_2_color_5"
+            "property": "gourmand_prototype_skincolor_palette_1_color_11"
           },
-          "SKIN_PROTO_P3_1": {
+          "SKIN_PROTO_12": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_3_color_1"
+            "property": "gourmand_prototype_skincolor_palette_1_color_12"
           },
-          "SKIN_PROTO_P3_2": {
+          "SKIN_PROTO_13": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_3_color_2"
+            "property": "gourmand_prototype_skincolor_palette_1_color_13"
           },
-          "SKIN_PROTO_P3_3": {
+          "SKIN_PROTO_14": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_3_color_3"
+            "property": "gourmand_prototype_skincolor_palette_1_color_14"
           },
-          "SKIN_PROTO_P3_4": {
+          "SKIN_PROTO_15": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_3_color_4"
+            "property": "gourmand_prototype_skincolor_palette_1_color_15"
           },
-          "SKIN_PROTO_P3_5": {
+          "SKIN_PROTO_16": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_3_color_5"
+            "property": "gourmand_prototype_skincolor_palette_1_color_16"
+          },
+          "SKIN_PROTO_17": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_17"
           },
           "SKIN_10K_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_1"
+            "property": "gourmand_10k_skincolor_palette_1_color_1"
           },
           "SKIN_10K_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_2"
+            "property": "gourmand_10k_skincolor_palette_1_color_2"
           },
           "SKIN_10K_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_3"
+            "property": "gourmand_10k_skincolor_palette_1_color_3"
           },
           "SKIN_10K_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_4"
+            "property": "gourmand_10k_skincolor_palette_1_color_4"
           },
           "SKIN_10K_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_5"
+            "property": "gourmand_10k_skincolor_palette_1_color_5"
           },
           "SKIN_10K_6": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_1_color_6"
+            "property": "gourmand_10k_skincolor_palette_1_color_6"
           },
           "SKIN_10K_P2_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_1"
+            "property": "gourmand_10k_skincolor_palette_2_color_1"
           },
           "SKIN_10K_P2_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_2"
+            "property": "gourmand_10k_skincolor_palette_2_color_2"
           },
           "SKIN_10K_P2_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_3"
+            "property": "gourmand_10k_skincolor_palette_2_color_3"
           },
           "SKIN_10K_P2_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_4"
+            "property": "gourmand_10k_skincolor_palette_2_color_4"
           },
           "SKIN_10K_P2_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_5"
+            "property": "gourmand_10k_skincolor_palette_2_color_5"
           },
           "SKIN_10K_P3_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_3_color_1"
+            "property": "gourmand_10k_skincolor_palette_3_color_1"
           },
           "SKIN_10K_P3_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_3_color_2"
+            "property": "gourmand_10k_skincolor_palette_3_color_2"
           },
           "SKIN_10K_P3_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_3_color_3"
+            "property": "gourmand_10k_skincolor_palette_3_color_3"
           },
            "SKIN_10K_P3_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_3_color_4"
+            "property": "gourmand_10k_skincolor_palette_3_color_4"
           },
            "SKIN_10K_P3_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_3_color_5"
+            "property": "gourmand_10k_skincolor_palette_3_color_5"
           },
           "SKIN_DEFAULT_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_1"
+            "property": "gourmand_default_skincolor_palette_1_color_1"
           },
           "SKIN_DEFAULT_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_2"
+            "property": "gourmand_default_skincolor_palette_1_color_2"
           },
           "SKIN_DEFAULT_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_3"
+            "property": "gourmand_default_skincolor_palette_1_color_3"
           },
           "SKIN_DEFAULT_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_4"
+            "property": "gourmand_default_skincolor_palette_1_color_4"
           },
           "SKIN_DEFAULT_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_5"
+            "property": "gourmand_default_skincolor_palette_1_color_5"
           },
           "SKIN_DEFAULT_6": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_6"
+            "property": "gourmand_default_skincolor_palette_1_color_6"
           },
           "SKIN_DEFAULT_7": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_7"
+            "property": "gourmand_default_skincolor_palette_1_color_7"
           },
           "SKIN_DEFAULT_P2_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_1"
+            "property": "gourmand_default_skincolor_palette_2_color_1"
           },
           "SKIN_DEFAULT_P2_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_2"
+            "property": "gourmand_default_skincolor_palette_2_color_2"
           },
           "SKIN_DEFAULT_P2_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_3"
+            "property": "gourmand_default_skincolor_palette_2_color_3"
           },
           "SKIN_DEFAULT_P2_4": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_4"
+            "property": "gourmand_default_skincolor_palette_2_color_4"
           },
           "SKIN_DEFAULT_P2_5": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_5"
+            "property": "gourmand_default_skincolor_palette_2_color_5"
           },
           "SKIN_DEFAULT_P2_6": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_6"
+            "property": "gourmand_default_skincolor_palette_2_color_6"
           },
           "SKIN_DEFAULT_P2_7": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_7"
+            "property": "gourmand_default_skincolor_palette_2_color_7"
           }
         }
       }
@@ -509,7 +523,7 @@
      {
       "type": "geckolib:default",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
+        "base": "upchuck:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -517,22 +531,9 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        }        
-      ],
       "third_person_conditions": true,
       "texture": {
-        "base": "omni_extras:textures/models/aliens/alien_110/opticoid_uniform_#UNIFORM.png",
+        "base": "upchuck:textures/models/aliens/alien_111/gourmand_uniform_#UNIFORM.png",
         "bones": {
         "head": "armorHead",
         "body": "armorBody",
@@ -551,37 +552,37 @@
           {
             "type": "palladium:color",
             "color": "##SECONDARY_2",
-            "filter": "#edf4f4",
+            "filter": "#e5eff1",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_3",
-            "filter": "#d6dfe1",
+            "filter": "#dadedf",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_4",
-            "filter": "#bdc7cf",
+            "filter": "#b8bdbe",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SECONDARY_5",
-            "filter": "#97a2b0",
+            "filter": "#979b9d",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_1",
-            "filter": "#3a3333",
+            "filter": "#2c2828",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##PRIMARY_2",
-            "filter": "#2c2828",
+            "filter": "#232020",
             "ignore_blank": true
           },
           {
@@ -593,16 +594,10 @@
           {
             "type": "palladium:color",
             "color": "##PRIMARY_4",
-            "filter": "#171515",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##PRIMARY_5",
-            "filter": "#000000",
+            "filter": "#000001",
             "ignore_blank": true
           }
-      
+         
         ],
         "variables": {
           "UNIFORM": {
@@ -644,11 +639,8 @@
           "PRIMARY_4": {
             "type": "palladium:string_property",
             "property": "uniform_primary_color_4"
-          },
-          "PRIMARY_5": {
-            "type": "palladium:string_property",
-            "property": "uniform_primary_color_5"
           }
+          
 
         }
       }
@@ -657,7 +649,7 @@
       "type": "geckolib:default",
       "render_type": "glow",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
+        "base": "upchuck:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -665,44 +657,20 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        }        
-      ],
+      "animation_file": "upchuck:animations/gourmand.animation.json", 
       "texture": {
-        "base": "omni_extras:textures/models/aliens/alien_110/opticoid_glow_#UNIFORM.png",
+        "base": "upchuck:textures/models/aliens/alien_111/gourmand_glow_#UNIFORM.png",
         "transformers": [
           {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_1",
-            "filter": "#b3ff40",
+            "filter": "#ffffff",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_2",
-            "filter": "#8ed721",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##GLOW_PROTO_3",
-            "filter": "#82be11",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##GLOW_PROTO_4",
-            "filter": "#628e0c",
+            "filter": "#dadedf",
             "ignore_blank": true
           },
           {
@@ -737,35 +705,27 @@
           },
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_glowcolor_1_color_1"
+            "property": "gourmand_prototype_glowcolor_1_color_1"
           },
           "GLOW_PROTO_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_prototype_glowcolor_1_color_2"
-          },
-          "GLOW_PROTO_3": {
-            "type": "palladium:string_property",
-            "property": "opticoid_prototype_glowcolor_1_color_3"
-          },
-          "GLOW_PROTO_4": {
-            "type": "palladium:string_property",
-            "property": "opticoid_prototype_glowcolor_1_color_4"
+            "property": "gourmand_prototype_glowcolor_1_color_2"
           },
           "GLOW_10K_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_glowcolor_1_color_1"
+            "property": "gourmand_10k_glowcolor_1_color_1"
           },
           "GLOW_10K_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_glowcolor_1_color_2"
+            "property": "gourmand_10k_glowcolor_1_color_2"
           },
           "GLOW_10K_3": {
             "type": "palladium:string_property",
-            "property": "opticoid_10k_glowcolor_1_color_3"
+            "property": "gourmand_10k_glowcolor_1_color_3"
           },
           "GLOW_DEFAULT_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_glowcolor_1_color_1"
+            "property": "gourmand_default_glowcolor_1_color_1"
           }
         }
       }
@@ -773,7 +733,7 @@
     {
       "type": "geckolib:default",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/badge_#BADGE.geo.json",
+        "base": "upchuck:geo/aliens/alien_111/badge_#BADGE.geo.json",
         "variables": {
           "BADGE": {
             "type": "palladium:string_property",
@@ -829,7 +789,7 @@
       "type": "geckolib:default",
       "render_type": "glow",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/badge_#BADGE.geo.json",
+        "base": "upchuck:geo/aliens/alien_111/badge_#BADGE.geo.json",
         "variables": {
           "BADGE": {
             "type": "palladium:string_property",
