@@ -4,8 +4,8 @@ loaderVersion="[47,)"
 license="All rights reserved"
 
 [[mods]]
-modId="omni_extras"
-displayName="OmniExtras"
+modId="upchuck"
+displayName="Gourmand"
 version="1.0.0"
 logoFile = "logo.png"
 logoBlur = false
