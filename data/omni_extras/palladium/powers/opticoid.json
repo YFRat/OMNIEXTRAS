@@ -30,8 +30,8 @@
       "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
       "first_tick_commands": [
         "scale easing set palladium:ability pehkui:exponential_out",
-        "scale set pehkui:eye_height 1.2 @s",
-        "scale set pehkui:hitbox_height 1.7 @s",
+        "scale set pehkui:eye_height 1.1 @s",
+        "scale set pehkui:hitbox_height 1.4 @s",
         "scale set pehkui:entity_reach 0.70 @s",
         "scale set pehkui:block_reach 1.5 @s",
         "scale set pehkui:jump_height 1.3 @s",
