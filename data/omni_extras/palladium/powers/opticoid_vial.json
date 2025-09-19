@@ -1,6 +1,6 @@
 {
-  "name": "DNA Crystal",
-  "icon": "omni_extras:textures/item/crystalthing.png",
+  "name": "DNA Vial",
+  "icon": "omni_extras:textures/item/opticoidDNAvial.png",
   "background": "alienevo:textures/gui/power_screen/power_screen.png",
     "primary_color": "#8ed721",
     "allow_bar_shrinking": false,
@@ -14,31 +14,39 @@
 		"hidden_in_bar": true,
 		"list_index": -1,
 		"first_tick_commands": ["function omni_extras:vialgrant",
-								"item replace entity @s weapon.mainhand with air"],
+    "item replace entity @s weapon.mainhand with air",
+    "playsound alienevo:prototype_core_place player @s"
+								],
 		"last_tick_commands": [],
 		"commands": [],
 		"conditions": {
 			"enabling": [
 				{
 					"type": "palladium:action",
-					"key_type": "right_click"
-				},
-				 {
+          "key_type": "right_click"
+				}
+			], 
+      "unlocking":[
+        {
+          "type": "palladium:has_power",
+          "power":"alienevo:prototype_omnitrix"
+        },
+        {
                         "type": "palladium:not",
                         "conditions": [
                             {
                                 "type": "palladium:or",
                                 "conditions": [
-                                {
+                                    {
                                         "type": "palladium:ability_unlocked",
                                         "power": "alienevo:prototype_omnitrix",
                                         "ability": "removed_core"
-                                 }
-                             ]
-                         }
-                    ]
-             	 }
-			]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+      ]
 		}
 	}
   }

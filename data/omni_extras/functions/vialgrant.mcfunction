@@ -1,2 +1,2 @@
 alienautoadd @s omni_extras:opticoid
-item replace entity @s weapon.mainhand with air
+tellraw @s {"text":"The Omnitrix seems a bit different...","bold":true,"italic":true,"color":"yellow"}
