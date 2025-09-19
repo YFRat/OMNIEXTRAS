@@ -40,67 +40,61 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_1",
-            "filter": "#fff899",
+            "filter": "#ffe5a0",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_2",
-            "filter": "#f8dd72",
+            "filter": "#fedb89",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_3",
-            "filter": "#dac893",
+            "filter": "#fbcc74",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_4",
-            "filter": "#c5b57f",
+            "filter": "#e7b463",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_5",
-            "filter": "#a79866",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_PROTO_6",
-            "filter": "#978752",
+            "filter": "#d09e52",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_1",
-            "filter": "#917526",
+            "filter": "#c79801",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_2",
-            "filter": "#8c7035",
+            "filter": "#bd9000",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_3",
-            "filter": "#877741",
+            "filter": "#b48900",
             "ignore_blank": true
           },
            {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_4",
-            "filter": "#7a5e25",
+            "filter": "#a67f02",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_5",
-            "filter": "#5b4312",
+            "filter": "#9e7902",
             "ignore_blank": true
           },
           {
@@ -338,10 +332,6 @@
           "SKIN_PROTO_5": {
             "type": "palladium:string_property",
             "property": "opticoid_prototype_skincolor_palette_1_color_5"
-          },
-          "SKIN_PROTO_6": {
-            "type": "palladium:string_property",
-            "property": "opticoid_prototype_skincolor_palette_1_color_6"
           },
           "SKIN_PROTO_P2_1": {
             "type": "palladium:string_property",
