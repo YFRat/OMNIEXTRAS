@@ -1,1 +1,0 @@
-execute as @a at @s run function omni_extras:detection
