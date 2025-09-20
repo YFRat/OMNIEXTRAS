@@ -7,6 +7,7 @@
       "max": 500,
       "auto_increase_per_tick": 3,
       "color": "#4AFF00"
+    
     }
   },
 
@@ -36,7 +37,6 @@
         "scale set pehkui:block_reach 1.5",
         "scale set pehkui:jump_height 1.3",
         "scale set pehkui:falling 1.2",
-        "scale set pehkui:width 1.1",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.Level dummy",
         "scoreboard objectives add Opticoid.SkillPoint dummy"
@@ -250,21 +250,23 @@
         ]
       }
      },
-     "Speed_upgrade": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.movement_speed",
-      "uuid": "40707694-89f7-4772-844d-eca6043eb88f",
-      "hidden":true,
-      "amount": 0.0750,
+     "energy_upgrade": {
+      "type": "palladium:command",
+      "hidden": true,
+      "uuid": "b3ca0d9e-0cda-4f52-9d79-680c3f657b69",
+      "first_tick_commands": ["energybar max set @s omni_extras:opticoid energy_meter 1000"],
+      "last_tick_commands": [],
+      "commands": [
+      ],
       "conditions": {
-        "enabling":[
+        "enabling": [
           {
-            "type":"palladium:ability_unlocked",
-            "ability":"speed1_unlock"
+            "type": "palladium:ability_unlocked",
+            "ability": "energy_bar_unlock"
           }
         ]
       }
-     },
+    },
      "leap": {
       "type": "alienevo:motion",
       "bar_color": "orange",
@@ -445,6 +447,49 @@
       ]
     }
   },
+  "beam_destruction": {
+      "type": "palladium:projectile",
+      "entity_type": "palladium:custom_projectile",
+      "icon": "minecraft:snowball",
+      "title": "null",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 0,
+      "velocity": 4,
+      "entity_data": {
+        "Damage": 0,
+        "Gravity": 0,
+        "Size": 2,
+        "Lifetime": 7,
+        "DieOnEntityHit": true,
+        "Tags": [
+          "eye.beam"
+        ],
+        "DieOnBlockHit": false,
+        "Appearances": []
+      },
+      "inaccuracy": 0,
+      "swinging_arm": "none",
+      "damage_from_player": true,
+      "ignore_player_movement": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "Eye-Beam"
+          }
+        ],
+        "unlocking": [
+            {
+                "type": "palladium:ability_unlocked",
+                "power": "null",
+                "ability": "eye_beam_unlock"
+              }
+          
+        ]
+      }
+    },
   "hover": {
       "type": "palladium:attribute_modifier",
       "attribute": "forge:entity_gravity",
@@ -630,9 +675,7 @@
         0.5,
         0.5
       ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.leap"
-      },
+      "description": "While §9crouching§f, launch yourself through the air and cover large distances quickly.",
       "conditions": {
         "unlocking": [
           {
@@ -702,7 +745,7 @@
   "defense1_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:iron_chestplate",
-      "title": "Defense §a+1",
+      "title": "Defense §a+2",
       "uuid":"698bcba6-7092-4386-b544-66d71134b882",
       "hidden_in_bar": true,
       "hidden": false,
@@ -740,7 +783,7 @@
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 2,
-      "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
+      "description": "Shoot out a §bfreezing§r §aLaser§r from your §aHand-Eyes",
        "conditions": {
         "enabling": [
           {
@@ -783,7 +826,7 @@
       "icon": "#omni_extras:opticoid/ice_beam",
       "title": "Freeze-Beam",
       "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
-      "description": "Shoot out a freezing §aLaser§r from your §aHand-Eye",
+      "description": "Shoot out a §bfreezing§r §aLaser§r §ffrom your §aHand-Eyes",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,
@@ -796,7 +839,7 @@
           {
             "type": "palladium:ability_unlocked",
             "power": "null",
-            "ability": "speed1_unlock"
+            "ability": "energy_bar_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -808,11 +851,11 @@
         ]
       }
     },
-    "speed1_unlock": {
+    "energy_bar_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:textures/mob_effect/speed.png",
+      "icon": "minecraft:redstone",
       "uuid": "4129de1f-9739-4348-94c1-2a2b9a6e5066",
-      "title": "Speed §a+2",
+      "title": "Energy Capacity §a+5",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,
@@ -842,7 +885,7 @@
       "icon": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beams.png",
       "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
       "title": "Hand-Beams",
-      "description": "Shoot a §elightning§r strike from your hand §aeyes",
+      "description": "Shoot an §eelectrifying§r §aLaser §ffrom your §aHand-Eyes",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,
@@ -866,7 +909,7 @@
       "icon": "minecraft:ender_eye",
       "uuid": "fd0e711a-3af1-474e-899d-3e6870e6c409",
       "title": "§aIncreased Awareness",
-      "description": "yfrat u edit ts urself",
+      "description": "Obtain the ability to detect any entity nearby due to their enhanced ears. ",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,
@@ -961,7 +1004,7 @@
       "hidden_in_bar": false,
       
       "list_index": 1,
-      "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
+      "description": "Shoot out a §4burning§r §alaser§r from your §aHand-Eyes",
       "gui_position":[
         -2,
         1
@@ -970,6 +1013,7 @@
         "enabling": [
           {
             "type": "palladium:held",
+            "cooldown": 15,
             "needs_empty_hand": false,
             "key_type": "key_bind"
           }
@@ -1007,7 +1051,7 @@
       "type": "palladium:dummy",
       "icon": "omni_extras:textures/gui/playlists/fire_beam/fire_beam.png",
       "title": "Fire-Beam",
-      "description": "Shoot out a burning §aLaser§r from your §aHand-Eye",
+      "description": "Shoot out a §4burning§r §aLaser§r §ffrom your §aHand-Eyes",
       "hidden_in_bar": true,
       "hidden": false,
       "list_index": -1,

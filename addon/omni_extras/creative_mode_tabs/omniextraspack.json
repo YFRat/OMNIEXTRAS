@@ -3,6 +3,7 @@
 	"items": [
 	   "omni_extras:opticoid_vial",
 	   "omni_extras:empty_vial",
-	   "omni_extras:opticoid_slime"
+	   "omni_extras:opticoid_slime",
+	   "omni_extras:filled_vial"
 	]
 }

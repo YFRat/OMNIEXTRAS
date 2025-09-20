@@ -3,6 +3,7 @@ StartupEvents.registry('block', event => {
         .displayName("Alien Goo")
         .soundType('honey_block')
         .opaque(true)
+        .noDrops()
         .box(0, 0, 0, 16, 16, 16)
         .textureAll('omni_extras:block/opticoid_goo');
 });

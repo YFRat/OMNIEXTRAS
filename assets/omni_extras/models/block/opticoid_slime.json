@@ -7,7 +7,8 @@
 		"2": "omni_extras:block/opticoid_goo",
 		"3": "omni_extras:block/opticoid_goo",
 		"4": "omni_extras:block/opticoid_goo",
-		"particle": "omni_extras:block/opticoid_goo"
+		"particle": "omni_extras:block/opticoid_goo",
+		"render_type": "translucent"
 	},
 	"elements": [
 		{

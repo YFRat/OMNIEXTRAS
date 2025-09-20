@@ -41,27 +41,27 @@
         "variables": {
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_1"
+            "property": "opticoid_prototype_glowcolor_1_color_1"
           },
           "GLOW_PROTO_2": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_2"
+            "property": "opticoid_prototype_glowcolor_1_color_2"
           },
           "GLOW_PROTO_3": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_3"
+            "property": "opticoid_prototype_glowcolor_1_color_3"
           },
           "GLOW_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_4"
+            "property": "opticoid_prototype_glowcolor_1_color_4"
           },
           "GLOW_PROTO_5": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_5"
+            "property": "opticoid_prototype_glowcolor_1_color_5"
           },
           "GLOW_PROTO_6": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_6"
+            "property": "opticoid_prototype_glowcolor_1_color_6"
           }
           
         },

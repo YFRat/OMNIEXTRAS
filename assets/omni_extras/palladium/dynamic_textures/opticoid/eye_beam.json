@@ -4,54 +4,45 @@
           {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_1",
-            "filter": "#b3ff40",
+            "filter": "#d0ec55",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_2",
-            "filter": "#8ed721",
+            "filter": "#b0df1e",
             "ignore_blank": true
           },
            {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_3",
-            "filter": "#80bc25",
+            "filter": "#7fba18",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_4",
-            "filter": "#82be11",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##GLOW_PROTO_5",
-            "filter": "#628e0c",
+            "filter": "#589311",
             "ignore_blank": true
           }
+          
         ],
         "variables": {
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_1"
+            "property": "opticoid_prototype_glowcolor_1_color_1"
           },
           "GLOW_PROTO_2": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_2"
+            "property": "opticoid_prototype_glowcolor_1_color_2"
           },
           "GLOW_PROTO_3": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_3"
+            "property": "opticoid_prototype_glowcolor_1_color_3"
           },
           "GLOW_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_4"
-          },
-           "GLOW_PROTO_5": {
-            "type": "palladium:string_property",
-            "property": "loboan_prototype_glowcolor_1_color_5"
+            "property": "opticoid_prototype_glowcolor_1_color_4"
           }
         },
   "base": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png"
