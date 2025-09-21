@@ -11,7 +11,7 @@
     "minecraft:flower_forest"
   ],
   "step": "underground_structures",
-  "terrain_adaptation": "encapsulate",
+  "terrain_adaptation": "bury",
   "spawn_overrides": {},
   "start_pool": "omni_extras:goo_cave",
   "size": 1,
