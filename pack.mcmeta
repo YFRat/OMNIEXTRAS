@@ -1,7 +1,7 @@
 {
   "pack": {
     "id": "omni_extras",
-    "description": "epic lecool alien",
+    "description": "an addonpack being developed by the OmniExtras team that adds new transformations to the Omnitrix",
     "pack_format": 15,
     "version": "1.0.0"
   },

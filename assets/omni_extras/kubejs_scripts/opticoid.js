@@ -3,8 +3,11 @@ PalladiumEvents.registerAnimations((event) => {
         if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:opticoid", "renderLayer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
-                    .setX(1.3)
-                    .setZ(1.7);
+                    .setX(-2)
+                    .setZ(4)
+                    builder.get("left_arm")
+                    .setX(2)
+                    .setZ(4);
             }
             else {
                 if (builder.getPlayer().isCrouching()) {

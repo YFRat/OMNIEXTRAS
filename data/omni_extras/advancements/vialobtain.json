@@ -1,0 +1,36 @@
+{
+  "display": {
+    "title": {
+      "text": "Ewgh....",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Filled a vial with Alien Goo"
+    },
+    "icon": {
+      "item": "omni_extras:filled_vial"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "omni_extras:root",
+  "criteria": {
+    "dummy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player"
+        },
+        "items": [
+          {
+            "items": [
+              "omni_extras:filled_vial"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
