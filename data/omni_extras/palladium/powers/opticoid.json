@@ -39,7 +39,8 @@
         "scale set pehkui:falling 1.2",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.Level dummy",
-        "scoreboard objectives add Opticoid.SkillPoint dummy"
+        "scoreboard objectives add Opticoid.SkillPoint dummy",
+        "tag @s add Opticoid.Unlocked"
       ],
       "last_tick_commands": [
         "scale reset",

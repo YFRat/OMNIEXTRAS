@@ -6,5 +6,6 @@ BlockEvents.rightClicked(event => {
         event.item.count--;
         event.player.give('omni_extras:filled_vial');
         event.cancel();
+        
     }
 });
