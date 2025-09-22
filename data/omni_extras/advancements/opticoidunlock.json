@@ -13,9 +13,9 @@
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
-  "parent": "omni_extras:root",
+  "parent": "omni_extras:vialobtain",
   "criteria": {
     "unlock": {
       "trigger": "minecraft:tick",

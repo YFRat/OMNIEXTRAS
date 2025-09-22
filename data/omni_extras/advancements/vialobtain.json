@@ -10,10 +10,10 @@
     "icon": {
       "item": "omni_extras:filled_vial"
     },
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": true
+    "hidden": false
   },
   "parent": "omni_extras:root",
   "criteria": {
