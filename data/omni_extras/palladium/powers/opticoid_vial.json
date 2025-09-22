@@ -1,6 +1,6 @@
 {
   "name": "DNA Vial",
-  "icon": "omni_extras:textures/item/opticoidDNAvial.png",
+  "icon": "omni_extras:textures/item/opticoid_vial.png",
   "background": "alienevo:textures/gui/power_screen/power_screen.png",
     "primary_color": "#8ed721",
     "allow_bar_shrinking": false,
