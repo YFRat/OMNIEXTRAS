@@ -18,7 +18,7 @@
         "show_toast": false,
         "announce_to_chat": true,
         "hidden": true,
-        "background": "minecraft:textures/block/deepslate_tiles.png"
+        "background": "minecraft:textures/block/end_stone.png"
     },
     "criteria": {
         "tick": {
