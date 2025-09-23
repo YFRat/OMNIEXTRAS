@@ -1,5 +1,5 @@
 {
-  "name": "omni_extras:mysterious_cave",
+  "name": "omni_extras:abandoned_lab",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,7 +7,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "omni_extras:mysterious_cave",
+        "location": "omni_extras:abandoned_lab",
         "processors": "minecraft:empty"
       }
     }

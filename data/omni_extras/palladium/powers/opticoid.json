@@ -251,7 +251,7 @@
         ]
       }
      },
-     "it_hurts": {
+     "my_eyes": {
       "type": "palladium:command",
       "hidden": true,
       "hidden_in_bar": true,
