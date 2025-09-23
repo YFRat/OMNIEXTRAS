@@ -1,0 +1,33 @@
+[
+    {
+      "type": "palladium:laser",
+      "body_part": "right_arm",
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
+    "core_color": "#FFFFFF",      
+      "bloom": 4,
+      "size": [2, 2],
+      "rotation_speed": 20,
+      "offset": { 
+      "first_person": [-0, -15, -1],
+      "third_person": [-2, -16, -4]}
+    },
+    {
+      "body_part": "left_arm",
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
+    "core_color": "#FFFFFF",
+      "bloom": 4,
+      "size": [2, 2],
+      "rotation_speed": 20,
+      "offset": { 
+        "first_person": [0, -15, -1],
+        "third_person": [2, -16, -4]}
+      
+    
+  }
+]

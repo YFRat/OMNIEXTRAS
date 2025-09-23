@@ -5,7 +5,10 @@
     "frequency": 1,
     "spread": 2,
     "body_part": "chest",
-    "glow_color": "#4AFF00",
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
     "core_color": "#FFFFFF",
     "bloom": 2,
     "size": [1, 1],
@@ -20,7 +23,10 @@
     "segments": 4,
     "frequency": 1,
     "spread": 2,
-    "glow_color": "#4AFF00",
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
     "core_color": "#FFFFFF",
     "bloom": 2,
     "size": [1, 1],

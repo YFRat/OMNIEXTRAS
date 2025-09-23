@@ -1,0 +1,30 @@
+{
+  "display": {
+    "title": {
+      "text": "What's the big Eye-Dea?",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Transform into an Opticoid for the very first time"
+    },
+    "icon": {
+      "item": "minecraft:air"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "omni_extras:vialobtain",
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "nbt": "{Tags:[\"Opticoid.Unlocked\"]}"
+        }
+      }
+    }
+  }
+}

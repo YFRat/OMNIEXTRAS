@@ -1,7 +1,9 @@
 {
-	"icon": "omni_extras:vial",
+	"icon": "omni_extras:opticoid_vial",
 	"items": [
-	   "omni_extras:vial"
-	   
+	   "omni_extras:opticoid_vial",
+	   "omni_extras:empty_vial",
+	   "omni_extras:opticoid_slime",
+	   "omni_extras:filled_vial"
 	]
 }

@@ -1,0 +1,33 @@
+{
+    "display": {
+        "title": {
+            "text": "Omni Extras",
+            "color": "light_purple",
+            "bold": false,
+            "obfuscated": false,
+            "strikethrough": false,
+            "underlined": false
+        },
+        "description": {
+            "text": "Who knows what awaits.. (by the OmniExtras team)"
+        },
+        "icon": {
+            "item": "omni_extras:opticoid_vial"
+        },
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": true,
+        "hidden": true,
+        "background": "minecraft:textures/block/end_stone.png"
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "tick"
+        ]
+    ]
+}

@@ -1,22 +1,25 @@
 PalladiumEvents.registerAnimations((event) => {
     event.register("etp/opticoid", 10, (builder) => {
-        if (abilityUtil.isEnabled(builder.getPlayer(), "evo_test_pack_aliens:opticoid", "renderLayer")) {
+        if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:opticoid", "renderLayer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
-                    .setX(1.3)
-                    .setZ(1.7);
+                    .setX(-2)
+                    .setZ(4)
+                    builder.get("left_arm")
+                    .setX(2)
+                    .setZ(4);
             }
             else {
                 if (builder.getPlayer().isCrouching()) {
                     builder.get("head")
-                        .moveZ(-5.2)
-                        .moveY(-3.7);
+                        .moveZ(-4.3)
+                        .moveY(-3.1);
                     builder.get("right_arm")
-                        .setZ(-6)
-                        .setY(1);
+                        .setZ(-3.1)
+                        .setY(2.4);
                     builder.get("left_arm")
-                        .setZ(-6) //negative = forwards
-                        .setY(1); //negative = higher placement
+                        .setZ(-3.1) //negative = forwards
+                        .setY(2.4); //negative = higher placement
                     builder.get("right_leg")
                         .setZ(1)
                         .setY(10);
@@ -24,8 +27,8 @@ PalladiumEvents.registerAnimations((event) => {
                         .setZ(1)
                         .setY(10);
                     builder.get("chest")
-                        .setZ(-7)
-                        .setY(-0.8);
+                        .setZ(-5)
+                        .setY(0.1);
                 }
             }
         }

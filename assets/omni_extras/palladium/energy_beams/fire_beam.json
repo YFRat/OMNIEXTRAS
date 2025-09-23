@@ -12,7 +12,7 @@
     "size": [2, 2],
     "rotation_speed": 20,
       "offset": { 
-      "first_person": [6, -28, -3],
-      "third_person": [8, -17, -11]}
+        "first_person": [-0, -15, -1],
+        "third_person": [2, -16, -4]}
     }
   ]
