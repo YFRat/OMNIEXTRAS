@@ -52,15 +52,10 @@
      "hearing_sense": {
       "type": "palladium:entity_glow",
       "icon": "minecraft:glow_berries",
-      "title": "null",
-      "bar_color": "light_gray",
       "hidden": true,
-      "hidden_in_bar": false,
       "list_index": -1,
-      "gui_position": "null",
-      "description": "null",
       "mode": "others",
-      "color": "#00fc00",
+      "color": "null",
       "distance": 50,
       "conditions": {
         "enabling":[
@@ -1072,7 +1067,7 @@
         "enabling": [
           {
             "type": "palladium:held",
-            "cooldown": 18,
+            "cooldown": 25,
             "needs_empty_hand": false,
             "key_type": "key_bind"
           }
