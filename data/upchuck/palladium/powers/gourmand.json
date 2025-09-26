@@ -76,14 +76,14 @@
       "type": "palladium:size",
       "title": "Size Change",
       "hidden": true,
-      "scale": 0.57
+      "scale": 0.63
     },
      "Health": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.max_health",
       "uuid": "40a31fa3-4eef-47bf-82bd-4063a176d0c1",
       "hidden": true,
-      "amount": -6
+      "amount": -3
     },
     "Armor": {
       "type": "palladium:attribute_modifier",
@@ -275,39 +275,69 @@
 			"description": "drain energy bar",
 			"commands": ["energybar value subtract @s upchuck:gourmand stomach 1"]
 		},
-     "energy_blast": {
-      "type": "palladium:projectile",
-      "icon": "minecraft:textures/block/green_stained_glass.png",
+    "boost": {
+      "type": "alienevo:motion",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "motion": -1,
+      "conditions":{
+        "enabling":[
+         {
+          "type":"palladium:and",
+          "conditions":[
+            {
+              "type":"palladium:ability_last_tick",
+              "ability":"energy_blast_timer"
+            },
+            {
+              "type":"palladium:not",
+              "conditions":[
+                {
+                  "type":"palladium:on_ground"
+                }
+              ]
+            }
+          ]
+         }
+        ]
+      }
+    },
+    "boost2": {
+      "type": "alienevo:motion",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "motion": -3,
+      "conditions":{
+        "enabling":[
+         {
+          "type":"palladium:and",
+          "conditions":[
+            {
+              "type":"palladium:ability_last_tick",
+              "ability":"mega_blast"
+            },
+            {
+              "type":"palladium:not",
+              "conditions":[
+                {
+                  "type":"palladium:on_ground"
+                }
+              ]
+            }
+          ]
+         }
+        ]
+      }
+    },
+    "energy_blast_timer": {
+      "type":"palladium:animation_timer",
+      "icon": "minecraft:snowball",
       "title": "Burp",
-      "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-       "energy_bar_usage": {
-        "energy_bar": "stomach",
-        "amount": 15
-      },
       "list_index": 0,
-      "entity_type": "palladium:custom_projectile",
-      "entity_data": {
-        "Damage": 10,
-        "Gravity": 0,
-        "Size": 0.5,
-        "Lifetime": 100,
-        "DieOnEntityHit": true,
-        "DieOnBlockHit": false,
-        "Appearances": [
-          {
-            "Type": "laser",
-            "Thickness": 1,
-            "Color": "#36f174"
-          }
-        ]
-      },
-      "inaccuracy": 0,
-      "velocity": 2,
-      "swinging_arm": "none",
-      "damage_from_player": false,
-      "ignore_player_movement": false,
+      "start_value": 0,
+      "max_value": 5,
       "conditions": {
         "enabling": [
           {
@@ -340,24 +370,59 @@
         ]
       }
     },
-    "immunity_blast": {
-    "type": "palladium:damage_immunity",
-    "title": "Bouncy Skin",
-    "description": "Immune to projectiles",
-    "hidden": false,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": [
-      0,
-      -0.5
-    ],
-    "damage_sources": [
-        "minecraft:is_projectile"
-    ]
-},
+     "energy_blast_pro": {
+      "type": "palladium:projectile",
+      "icon": "minecraft:textures/block/green_stained_glass.png",
+      "title": "Burp",
+      "bar_color": "green",
+      "hidden": true,
+      "hidden_in_bar": true,
+       "energy_bar_usage": {
+        "energy_bar": "stomach",
+        "amount": 15
+      },
+      "list_index": -1,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {
+        "Damage": 10,
+        "Gravity": 0,
+        "Size": 0.5,
+        "Lifetime": 100,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": false,
+        "Appearances": [
+          {
+            "Type": "laser",
+            "Thickness": 1,
+            "Color": "#36f174"
+          },
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:explosion",
+            "Spread": 3,
+            "Amount": 1
+          }
+        ]
+      },
+      "inaccuracy": 0,
+      "velocity": 1.5,
+      "swinging_arm": "none",
+      "damage_from_player": false,
+      "ignore_player_movement": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability":"energy_blast_timer",
+            "min": 1,
+            "max": 4
+          }
+        ]
+      }
+    },
     "mega_blast_timer": {
       "type": "palladium:animation_timer",
-       "icon": "minecraft:fire_charge",
+      "icon": "minecraft:fire_charge",
       "title": "Super Burp",
       "hidden": true,
       "hidden_in_bar": false,
@@ -398,10 +463,10 @@
       "list_index": 0,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {                                  
-        "Damage": 24,
+        "Damage": 10,
         "Gravity": 0,
         "Size": 1.3,
-        "Lifetime": 300,
+        "Lifetime": 100,
         "ExplosionBlockInteraction": "destroy",
         "ExplosionRadius": 15,
         "DieOnEntityHit": true,
@@ -425,7 +490,7 @@
         ]
       },
       "inaccuracy": 3,
-      "velocity": 3,
+      "velocity": 1.2,
       "swinging_arm": "none",
       "damage_from_player": false,
       "ignore_player_movement": false,
@@ -511,6 +576,68 @@
         ]
       }
     },
+     "cooldown_entity_swallow": {
+      "type": "palladium:command",
+      "hidden": true,
+      "last_tick_commands": [
+        "tag @s add AlienEvo.CooldownSwallow"
+      ],
+      "commands": [
+        ""
+      ],
+      "first_tick_commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "swallow_prompt"
+          
+          }
+        ]
+      }
+    },
+    "swallow_reset": {
+      "type": "palladium:repeating_animation_timer",
+      "title": "Cooldown",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "bar_color": "yellow",
+      "list_index": 2,
+      "start_value": 0,
+      "max_value": 50,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.CooldownSwallow"
+          }
+        ]
+      }
+    },
+    "cooldown_swallow_remove": {
+      "type": "palladium:command",
+      "hidden": true,
+      "last_tick_commands": [
+        "tag @s remove AlienEvo.CooldownSwallow"
+      ],
+      "commands": [
+        ""
+      ],
+      "first_tick_commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_integer_property",
+            "power": "null",
+            "ability": "swallow_reset",
+            "property": "value",
+            "min": 50,
+            "max": 50
+          }
+        ]
+      }
+    },
     "swallow_prompt": {
       "type": "palladium:dummy",
       "icon": "minecraft:cooked_beef",
@@ -524,6 +651,17 @@
             "type": "palladium:toggle",
             "key_type": "key_bind",
             "needs_empty_hand": false
+          }
+        ],
+        "unlocking":[
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type":"palladium:has_tag",
+                "tag":"AlienEvo.CooldownSwallow"
+              }
+            ]
           }
         ]
       }
@@ -542,6 +680,7 @@
             "power": "null",
             "ability": "swallow_prompt"
           }
+          
         ]
       }
     },
@@ -652,9 +791,16 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:held",
-            "cooldown": 30,
+            "type": "palladium:action",
+            "cooldown": 15,
             "key_type": "key_bind"
+          }
+        ],
+        "unlocking":[
+          {
+            "type":"palladium:energy_bar",
+            "energy_bar":"stomach",
+            "max": 1300
           }
         ]
       }
