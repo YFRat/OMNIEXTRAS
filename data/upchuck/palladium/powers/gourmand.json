@@ -2,10 +2,7 @@
   "name": {
     "text": "Gourmand"
   },
-  "icon": {
-    "type": "palladium:texture",
-    "texture": "#alienevo:alien_sel"
-  },
+  "icon": "#upchuck:gourmand/upchuck",
   "energy_bars": {
     "stomach": {
       "max": 1500,
@@ -32,6 +29,7 @@
       "first_tick_commands": [
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add Upchuck.Flattable",
+        "scale set pehkui:drops 2 @s",
         "scoreboard objectives add Gourmand.XP dummy",
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy",
@@ -39,7 +37,7 @@
       ],
       "last_tick_commands": [
         "tag @s remove Upchuck.Flattable",
-        "tag @s add Upchuck",
+        "tag @s remove Upchuck",
         "scale reset",
         "scale easing reset"
         
@@ -86,6 +84,14 @@
       "uuid": "40a31fa3-4eef-47bf-82bd-4063a176d0c1",
       "hidden": true,
       "amount": -6
+    },
+    "Armor": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor",
+      "uuid": "595ec3bf-f9d2-4f14-8784-0915a4a03569",
+      "hidden": true,
+      "amount": 8
+  
     },
     "Strength": {
       "type": "palladium:attribute_modifier",
@@ -297,7 +303,7 @@
           }
         ]
       },
-      "inaccuracy": 3,
+      "inaccuracy": 0,
       "velocity": 2,
       "swinging_arm": "none",
       "damage_from_player": false,
@@ -334,47 +340,30 @@
         ]
       }
     },
-     "mega_blast": {
-      "type": "palladium:projectile",
-      "icon": "minecraft:fire_charge",
-      "title": "super burp",
-      "bar_color": "green",
+    "immunity_blast": {
+    "type": "palladium:damage_immunity",
+    "title": "Bouncy Skin",
+    "description": "Immune to projectiles",
+    "hidden": false,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": [
+      0,
+      -0.5
+    ],
+    "damage_sources": [
+        "minecraft:is_projectile"
+    ]
+},
+    "mega_blast_timer": {
+      "type": "palladium:animation_timer",
+       "icon": "minecraft:fire_charge",
+      "title": "Super Burp",
       "hidden": true,
       "hidden_in_bar": false,
-       "energy_bar_usage": {
-        "energy_bar": "stomach",
-        "amount": 1000
-      },
       "list_index": 0,
-      "entity_type": "palladium:custom_projectile",
-      "entity_data": {
-        "Damage": 15,
-        "Gravity": 0,
-        "Size": 0.5,
-        "Lifetime": 20,
-        "ExplosionBlockInteraction": "destroy",
-        "ExplosionRadius": 8,
-        "DieOnEntityHit": true,
-        "DieOnBlockHit": true,
-        "Appearances": [
-          {
-            "Type": "laser",
-            "Thickness": 10,
-            "Color": "#36f174"
-          },
-          {
-            "Type": "particles",
-            "ParticleType": "minecraft:explosion",
-            "Spread": 5,
-            "Amount": 1
-          }
-        ]
-      },
-      "inaccuracy": 3,
-      "velocity": 2,
-      "swinging_arm": "none",
-      "damage_from_player": false,
-      "ignore_player_movement": false,
+      "start_value": 0,
+      "max_value": 5,
       "conditions": {
         "enabling": [
           {
@@ -388,12 +377,66 @@
           {
            "type": "palladium:energy_bar",
             "energy_bar": "stomach",
-            "min": 1300
+            "min": 500
           },
           {
             "type":"palladium:crouching"
           }
     
+        ]
+      }
+    },
+     "mega_blast": {
+      "type": "palladium:projectile",
+      "bar_color": "green",
+      "hidden": true,
+      "hidden_in_bar": false,
+       "energy_bar_usage": {
+        "energy_bar": "stomach",
+        "amount": 250
+      },
+      "list_index": 0,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {                                  
+        "Damage": 24,
+        "Gravity": 0,
+        "Size": 1.3,
+        "Lifetime": 300,
+        "ExplosionBlockInteraction": "destroy",
+        "ExplosionRadius": 15,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "PreventShooterInteraction": true,
+        "Tags": [
+          "upchuck_mega"
+        ],
+        "Appearances": [
+          {
+            "Type": "laser",
+            "Thickness": 3,
+            "Color": "#36f174"
+          },
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:explosion",
+            "Spread": 3,
+            "Amount": 1
+          }
+        ]
+      },
+      "inaccuracy": 3,
+      "velocity": 3,
+      "swinging_arm": "none",
+      "damage_from_player": false,
+      "ignore_player_movement": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "mega_blast_timer",
+            "min": 2,
+            "max": 3
+          }
         ]
       }
     },
@@ -468,18 +511,36 @@
         ]
       }
     },
-    "DISABLED": {
+    "swallow_prompt": {
       "type": "palladium:dummy",
+      "icon": "minecraft:cooked_beef",
+      "title": "Swallow Entity",
       "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "conditions":{
-        "enabling":[
+      "hidden_in_bar": false,
+      "list_index": 2,
+      "conditions": {
+        "enabling": [
           {
             "type": "palladium:toggle",
-            "cooldown": 0,
-            "needs_empty_hand": false,
-            "key_type": "key_bind"
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ]
+      }
+    },
+     "yummy_in_my_tummy": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:cooked_beef",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 11,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "swallow_prompt"
           }
         ]
       }
@@ -494,10 +555,12 @@
       ],
       "conditions": {
         "enabling": [
-          {
-            "type": "palladium:ability_enabled",
+           {
+            "type": "palladium:animation_timer_ability",
             "power": "null",
-            "ability": "test"
+            "ability": "yummy_in_my_tummy",
+            "min": 10,
+            "max": 10
           }
         ] 
       }
@@ -507,6 +570,7 @@
       "search_radius": 3,
       "hidden": true,
       "debug_mode": false,
+      "max_hearts": 800,
       "conditions": {
         "enabling": [
           {
@@ -526,10 +590,12 @@
       ],
       "conditions": {
         "enabling": [
-          {
-            "type": "palladium:ability_enabled",
+           {
+            "type": "palladium:animation_timer_ability",
             "power": "null",
-            "ability": "test"
+            "ability": "yummy_in_my_tummy",
+            "min": 9,
+            "max": 9
           },
           {
             "type": "palladium:has_tag",
@@ -538,40 +604,62 @@
         ]
       }
     },
-    "swallow_pro": {
-      "type": "palladium:projectile",
-      "icon": "minecraft:arrow",
-      "title": "skibidi upchuck",
-      "bar_color": "green",
+     "carry_remove_kill": {
+      "type": "palladium:command",
       "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": 0,
-      "entity_type": "palladium:custom_projectile",
-      "entity_data": {
-        "Damage": 0,
-        "Gravity": 0,
-        "Size": 2,
-        "Lifetime": 50,
-        "DieOnEntityHit": false,
-        "DieOnBlockHit": true,
-        "CommandOnEntityHit": "",
-        "CommandOnBlockHit": "energybar value add @p[tag=Upchuck] upchuck:gourmand stomach 100"
-      },
-      "inaccuracy": 0,
-      "velocity": 1,
-      "swinging_arm": "none",
-      "damage_from_player": false,
-      "ignore_player_movement": false,
+      "last_tick_commands": [
+        "kill @e[tag=!Upchuck,distance=0..2]"
+      ],
+      "commands": [],
+      "first_tick_commands": [
+        "tag @s remove AlienEvo.BallCarry"
+      
+      ],
       "conditions": {
         "enabling": [
+           {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "null",
+                "ability": "yummy_in_my_tummy",
+                "min": 9,
+                "max": 9
+              },
+              {"type":"palladium:crouching"
+            }
+           ]
+         },
           {
-            "type": "palladium:ability_enabled",
-            "ability": "swallow"
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.BallCarry"
           }
         ]
       }
     },
-     "swallow": {
+    "swallow_timer": {
+      "type": "palladium:animation_timer",
+       "icon": "alienevo:textures/gui/aliens/alien_2/dig.png",
+      "title": {
+        "translate": "ability.alienevo_aliens.2.dig"
+      },
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "start_value": 1,
+      "max_value": 5,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 30,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+     "swallow_comm": {
       "type": "palladium:command",
       "icon": "alienevo:textures/gui/aliens/alien_2/dig.png",
       "title": {
@@ -580,22 +668,35 @@
       "bar_color": "orange",
       "hidden": true,
       "commands": [
-        "function alienevo:mining/exe",
+        "function upchuck:mining_mod/exe",
         
         "effect give @s minecraft:saturation 3 1 true"
       ],
-      "hidden_in_bar": false,
+      "hidden_in_bar": true,
       "list_index": 1,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "cooldown": 25,
-            "key_type": "key_bind"
+            "type": "palladium:animation_timer_ability",
+            "min": 1,
+            "max": 5,
+            "ability": "swallow_timer"
+          },
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "min": 1,
+                "max": 1,
+                "ability": "swallow_timer"
+              }
+            ]
           }
         ]
       }
     },
+    
     "timeout_function": {
       "type": "alienevo:omnitrix_timer",
       "hidden": true

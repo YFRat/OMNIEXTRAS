@@ -1,0 +1,1 @@
+/execute as @e[type=minecraft:arrow] at @s run execute as @a[distance=..3,limit=1,sort=nearest] run tellraw @s {"text":"Arrow nearby"}

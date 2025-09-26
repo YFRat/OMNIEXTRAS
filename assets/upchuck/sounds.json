@@ -1,0 +1,6 @@
+{
+    "swallow": {
+    "category": "player",
+    "sounds": ["upchuck:swallow"]
+    }
+}
