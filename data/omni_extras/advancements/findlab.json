@@ -10,7 +10,7 @@
     "icon": {
       "item": "alienevo:machined_metal"
     },
-    "frame": "goal",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": true
