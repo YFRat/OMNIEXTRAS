@@ -55,7 +55,7 @@
       "hidden": true,
       "list_index": -1,
       "mode": "others",
-      "color": "null",
+      "color": "#7fba18",
       "distance": 50,
       "conditions": {
         "enabling":[
@@ -445,7 +445,7 @@
     "beam_laser": {
       "type": "palladium:energy_beam",
       "energy_beam": "omni_extras:eye_beam",
-      "damage": 25,
+      "damage": 17.5,
       "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
       "max_distance": 50,
       "commands_on_entity_hit": [
@@ -1197,7 +1197,7 @@
       "gui_position": "null",
       "description": "null",
       "energy_beam": "omni_extras:hand_beams",
-      "damage": 8,
+      "damage": 6.5,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
         "amount": 12

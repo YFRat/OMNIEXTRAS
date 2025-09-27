@@ -2,7 +2,7 @@
   "display": {
     "title": {
       "text": "Ewgh....",
-      "color": "light_purple"
+      "color": "green"
     },
     "description": {
       "text": "Filled a vial with Alien Goo"
@@ -13,9 +13,9 @@
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
-  "parent": "omni_extras:root",
+  "parent": "omni_extras:findlab",
   "criteria": {
     "dummy": {
       "trigger": "minecraft:inventory_changed",

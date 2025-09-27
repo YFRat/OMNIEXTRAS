@@ -2,7 +2,7 @@ global.alienevo_alien_110 = ['omni_extras:opticoid']
 global.alienevo_randomization_110 = [true];
 
 global.alienevo_regen_110 = [0]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
-global.alienevo_scale_110 = [55]; // Scale of the alien preview render. 55 is default
+global.alienevo_scale_110 = [70]; // Scale of the alien preview render. 55 is default
 global.alienevo_textcolor_110 = [0xa8865a]; // Text color of the alien species name
 global.alienevo_background_110 = ['minecraft:textures/block/end_stone.png']; // Tiled texture that appears behind the alien preview render
 

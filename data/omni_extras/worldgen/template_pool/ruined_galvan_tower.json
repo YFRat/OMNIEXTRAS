@@ -1,5 +1,5 @@
 {
-  "name": "omni_extras:abandoned_lab",
+  "name": "omni_extras:ruined_galvan_tower",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,7 +7,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "omni_extras:abandoned_lab",
+        "location": "omni_extras:ruined_galvan_tower",
         "processors": "minecraft:empty"
       }
     }
