@@ -445,6 +445,7 @@
     "beam_laser": {
       "type": "palladium:energy_beam",
       "energy_beam": "omni_extras:eye_beam",
+      "damage_type": "alienevo:energy_beam",
       "damage": 17.5,
       "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
       "max_distance": 50,
@@ -990,6 +991,7 @@
     "freeze_laser": {
       "type": "palladium:energy_beam",
       "icon": "minecraft:snowball",
+      "damage_type": "alienevo:energy_beam",
       "title": "Freeze-Beam",
       "bar_color": "green",
       "hidden": true,
@@ -1145,6 +1147,7 @@
       "gui_position": "null",
       "description": "null",
       "energy_beam": "omni_extras:fire_beam",
+      "damage_type": "alienevo:energy_beam",
       "damage": 2,
       "max_distance": 14,
       "set_on_fire_seconds": 6,
@@ -1197,6 +1200,7 @@
       "gui_position": "null",
       "description": "null",
       "energy_beam": "omni_extras:hand_beams",
+      "damage_type": "alienevo:energy_beam",
       "damage": 6.5,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
