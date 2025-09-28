@@ -390,8 +390,17 @@
       "conditions": {
         "enabling": [
           {
+            "type":"palladium:or",
+            "conditions":[
+              {
             "type": "palladium:ability_enabled",
             "ability": "energy_blast_timer"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "carry_remove"
+              }
+            ]
           }
         ]
       }
@@ -884,39 +893,35 @@
         ]
       }
     },
-     "carry_remove_kill": {
+    "bite_exp": {
       "type": "palladium:command",
       "hidden": true,
-      "last_tick_commands": [
-        ""
-      ],
       "commands": [
-        ""
-      ],
-      "first_tick_commands": [
-        "kill @e[tag=!Upchuck,distance=0..2]"
-      
+        "scoreboard players add @s Gourmand.XP 1"
       ],
       "conditions": {
         "enabling": [
-           {
-            "type":"palladium:and",
-            "conditions":[
-              {
-                "type": "palladium:animation_timer_ability",
-                "power": "null",
-                "ability": "yummy_in_my_tummy",
-                "min": 9,
-                "max": 9
-              },
-              {"type":"palladium:crouching"
-            }
-           ]
-         },
           {
-            "type": "palladium:has_tag",
-            "tag": "AlienEvo.BallCarry"
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "bite_timer"
           }
+        ]
+      }
+    },
+    "spit_out": {
+      "type": "alienevo:sonic_clap",
+      "knockback": 3,
+      "damage": 4,
+      "radius": 1,
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+              {
+            "type": "palladium:ability_enabled",
+            "ability": "carry_remove"
+              }
+              
         ]
       }
     },
@@ -948,6 +953,24 @@
         ]
       }
     },
+    "bite_aoe": {
+    "type": "afomni:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "radius": 3,
+      "damage": 5,
+      "fire_seconds": 0,
+      "tag_ex": "exclusion_tag",
+      "damage_type": "minecraft:player_attack",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "bite_timer"
+          }
+        ]
+      }
+    },    
      "bite_comm": {
       "type": "palladium:command",
       "icon": "alienevo:textures/gui/aliens/alien_2/dig.png",
@@ -995,6 +1018,9 @@
       "list_index": -1,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {
+        "Tags":[
+          "bite_pro"
+        ],
         "Damage": 7,
         "Gravity": 0,
         "Size": 3,
