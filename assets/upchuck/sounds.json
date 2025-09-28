@@ -2,5 +2,9 @@
     "swallow": {
     "category": "player",
     "sounds": ["upchuck:swallow"]
+    },
+    "blast": {
+    "category": "player",
+    "sounds": ["upchuck:blast"]
     }
 }

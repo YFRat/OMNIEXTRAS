@@ -4,7 +4,7 @@ PalladiumEvents.registerAnimations((event) => {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
                     .setX(10)
-                    .setZ(7)
+                    .setZ(11)
                     .scaleX(1.4)
                     .scaleY(1.4)
                     .scaleZ(1.4);
@@ -12,8 +12,8 @@ PalladiumEvents.registerAnimations((event) => {
             else {
                 if (builder.getPlayer().isCrouching()) {
                     builder.get("head")
-                        .moveZ(-6)
-                        .moveY(-5.7);
+                        .moveZ(-4)
+                        .moveY(-5.4);
                     builder.get("right_arm")
                         .setZ(-4)
                         .setY(-1);
@@ -33,4 +33,66 @@ PalladiumEvents.registerAnimations((event) => {
             }
         }
     });
+});
+PalladiumEvents.registerAnimations((event) => {
+    event.register('gourmand/tongue_whip_arms', 40, (builder) => {
+        let spinwhip = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'upchuck:gourmand', 'whip_timer_arms', builder.getPartialTicks());
+        if (spinwhip > 0 && !builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .rotateZDegrees(10)
+                .setXRotDegrees(0)
+                .animate('easeOutBack', spinwhip);
+            builder.get('left_arm')
+                .rotateZDegrees(-10)
+                .setXRotDegrees(0)
+                .animate('easeOutBack', spinwhip);
+            builder.get('left_leg')
+                .setXRotDegrees(0)
+                .setYRotDegrees(0)
+                .setZRotDegrees(0)
+                .animate('easeOutBack', spinwhip);
+            builder.get('right_leg')
+                .setXRotDegrees(0)
+                .setYRotDegrees(0)
+                .setZRotDegrees(0)
+                .animate('easeOutBack', spinwhip);
+        }
+        if (spinwhip > 0.0 && builder.isFirstPerson()) {
+
+
+        }
+    });
+});
+
+PalladiumEvents.registerAnimations((event) => {
+    event.register('gourmand/tongue_whip', 40, (builder) => {
+        let spinwhip = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'upchuck:gourmand', 'whip_timer', builder.getPartialTicks());
+        if (spinwhip > 0 && !builder.isFirstPerson()) {
+            builder.get('body').rotateYDegrees(-360 * 2).animate('easeInOutSine', spinwhip);
+
+        }
+        if (spinwhip > 0.0 && builder.isFirstPerson()) {
+
+
+        }
+    });
+});
+ClientEvents.tick(event => {
+    if (abilityUtil.hasPower(event.player, "upchuck:gourmand")) {
+        if (abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer")) {
+            let mode = Client.options.getCameraType();
+            if (mode !== 'third_person_back' && mode !== 'third_person_front') {
+                event.player.persistentData.camera_reset = 1;
+                Client.options.setCameraType('third_person_back');
+            }
+        }
+
+        let end = event.player.persistentData.camera_reset;
+        if (!abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer") && end === 1) {
+            event.player.persistentData.camera_reset = 0;
+            Client.options.setCameraType('first_person');
+        }
+    }
 });

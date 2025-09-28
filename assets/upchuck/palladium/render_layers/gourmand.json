@@ -3,7 +3,6 @@
   "layers": [
     {
       "type": "geckolib:default",
-      "render_type": "cutout",
       "model": {
         "base": "upchuck:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
         "variables": {
@@ -13,13 +12,24 @@
           }
         }
       },
-      "animation_file": "upchuck:animations/gourmand_tail.json",
+       "animation_file": "upchuck:animations/gourmand_anims.json",
       "animation_controller": [
         {
           "name": "tail_move",
           "transition_tick_time": 0,
           "animation": "tail"
-        }        
+        },
+        {
+          "name": "upchuck",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin"
+
+          }
+        }   
       ],
       "third_person_conditions": true,
       "texture": {
@@ -529,13 +539,25 @@
           }
         }
       },
-       "animation_file": "upchuck:animations/gourmand_tail.json",
+       "animation_file": "upchuck:animations/gourmand_anims.json",
       "animation_controller": [
         {
           "name": "tail_move",
           "transition_tick_time": 0,
           "animation": "tail"
-        }        
+        },
+        {
+          "name": "upchuck",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin"
+            
+
+          }
+        }   
       ],
       "third_person_conditions": true,
       "texture": {
@@ -663,13 +685,24 @@
           }
         }
       },
-       "animation_file": "upchuck:animations/gourmand_tail.json",
+       "animation_file": "upchuck:animations/gourmand_anims.json",
       "animation_controller": [
         {
           "name": "tail_move",
           "transition_tick_time": 0,
           "animation": "tail"
-        }        
+        },
+        {
+          "name": "upchuck",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin"
+
+          }
+        }   
       ],
       "texture": {
         "base": "upchuck:textures/models/aliens/alien_111/gourmand_glow_#UNIFORM.png",
