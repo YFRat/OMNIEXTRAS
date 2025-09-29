@@ -78,7 +78,8 @@
     "description": "null",
     "damage_sources": [
         "minecraft:is_explosion",
-        "minecraft:is_fall"
+        "minecraft:is_fall",
+        "minecraft:is_projectile"
     ]
 },
     "render_layer": {
@@ -284,6 +285,7 @@
 		},
     "boost": {
       "type": "alienevo:motion",
+      "uuid": "13f7f673-6a39-478d-99aa-4b9e3c3de2d1",
       "hidden": true,
       "hidden_in_bar": true,
       "motion": -1,
@@ -311,17 +313,18 @@
     },
     "boost2": {
       "type": "alienevo:motion",
+      "uuid": "fdd1420d-d13d-4d56-9621-9a2b085cf953",
       "hidden": true,
       "hidden_in_bar": true,
-      "motion": -3,
+      "motion": -2.5,
       "conditions":{
         "enabling":[
          {
           "type":"palladium:and",
           "conditions":[
             {
-              "type":"palladium:ability_last_tick",
-              "ability":"mega_blast"
+              "type":"palladium:ability_first_tick",
+              "ability":"mega_blast_timer"
             },
             {
               "type":"palladium:not",
@@ -482,7 +485,7 @@
         "Appearances": [
           {
             "Type": "laser",
-            "Thickness": 1,
+            "Thickness": 2.4,
             "Color": "#36f174"
           },
           {
@@ -517,7 +520,7 @@
       "hidden_in_bar": false,
       "list_index": 0,
       "start_value": 0,
-      "max_value": 5,
+      "max_value": 10,
       "conditions": {
         "enabling": [
           {
