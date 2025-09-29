@@ -10,13 +10,18 @@
       "bloom": 4,
       "size": [2, 2],
       "rotation_speed": 20,
-      "offset": { 
-      "first_person": [-0, -15, -1],
-      "third_person": [-2, -16, -4]}
+      "offset": {
+        "first_person":[-0, -10, -1],
+        "third_person":[-2, -16, -4]
+      },
+      "visiblity": {
+        "first_person": true,
+        "third_person": true
+      }
     },
     {
       "body_part": "left_arm",
-    "glow_color": {
+      "glow_color": {
       "type": "palladium:string_property",
       "property": "galvanic_mechamorph_beam_color"
     },
@@ -24,9 +29,14 @@
       "bloom": 4,
       "size": [2, 2],
       "rotation_speed": 20,
-      "offset": { 
-        "first_person": [0, -15, -1],
-        "third_person": [2, -16, -4]}
+      "offset": {
+        "first_person":[0, -15, -1],
+        "third_person":[2, -16, -4]
+      },
+      "visiblity": {
+        "first_person": true,
+        "third_person": true
+      }
       
     
   }
