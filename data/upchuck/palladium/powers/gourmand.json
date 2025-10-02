@@ -157,7 +157,7 @@
       "hidden": true,
       "hidden_in_bar": true,
       "commands": [
-        "effect give @s minecraft:nausea 15 20 true"
+        "effect give @s minecraft:nausea 5 20 true"
       ],
       "conditions": {
         "enabling": [
@@ -169,23 +169,7 @@
         ]
       }
     },
-    "im_so_hungry": {
-      "type": "palladium:command",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "commands": [
-        "effect clear @s minecraft:nausea"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:energy_bar",
-            "energy_bar": "stomach",
-            "max": 1150
-          }
-        ]
-      }
-    },
+    
      "leap_unlock": {
       "type": "palladium:dummy",
       "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
