@@ -24,3 +24,16 @@ ItemEvents.foodEaten(event =>{
         }
     }
 });
+
+ItemEvents.rightClicked(event =>{
+    if (event.item.id === 'minecraft:nether_star') {
+        if (palladium.superpowers.hasSuperpower(event.player, 'upchuck:gourmand')) {
+            event.item.count--;
+            event.player.tell("§2Yummy!")
+            event.server.runCommandSilent(
+                `energybar value add ${event.player.name.string} upchuck:gourmand stomach 1000`
+            );
+         
+        }
+    }
+})

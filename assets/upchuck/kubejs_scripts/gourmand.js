@@ -3,8 +3,8 @@ PalladiumEvents.registerAnimations((event) => {
         if (abilityUtil.isEnabled(builder.getPlayer(), "upchuck:gourmand", "render_layer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
-                    .setX(10)
-                    .setZ(11)
+                    .setX(12)
+                    .setZ(10)
                     .scaleX(1.4)
                     .scaleY(1.4)
                     .scaleZ(1.4);

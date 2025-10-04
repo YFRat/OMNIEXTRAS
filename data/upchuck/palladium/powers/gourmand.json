@@ -30,6 +30,7 @@
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add Upchuck.Flattable",
         "scale set pehkui:drops 2 @s",
+        "scoreboard objectives add Upchuck.Swallow dummy",
         "scoreboard objectives add Gourmand.XP dummy",
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy",
@@ -38,12 +39,14 @@
       "last_tick_commands": [
         "tag @s remove Upchuck.Flattable",
         "tag @s remove Upchuck",
+        "scoreboard players set @s Upchuck.Swallow 0",
         "scale reset",
         "scale easing reset"
         
       ],
       "commands": [
-        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
+        "effect clear @s alienevo:goo"
       ]
     },
     "hide_body": {
@@ -80,8 +83,29 @@
         "minecraft:is_explosion",
         "minecraft:is_fall",
         "minecraft:is_projectile"
-    ]
-},
+      ]
+    },
+    "hunger":{
+      "icon": "minecraft:rotten_flesh",
+      "title": "Glutton",
+      "description": "as a Gourmand, your stomach demands to constantly be fed",
+      "type": "alienevo:slower_hunger",
+      "hidden": false,
+      "gui_position":[
+        0,
+        -0.7
+      ],
+      "hidden_in_bar": true,
+      "reduction_factor": 9,
+      "conditions": {
+        "unlocking":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability": "gourmand_loop"
+          }
+        ]
+      }
+    },
     "render_layer": {
       "type": "palladium:render_layer",
       "hidden": true,
@@ -357,6 +381,16 @@
                     "type":"palladium:crouching"
                   }
                 ]
+              },
+              {
+                "type":"palladium:not",
+                "conditions":[
+                  {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "swallow_prompt"
+                  }
+                ]
               }
             ]
           }
@@ -424,6 +458,10 @@
                 "ability": "energy_blast_timer",
                 "min": 0,
                 "max":0
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "carry_remove"
               }
 
             ]
@@ -522,7 +560,17 @@
           },
           {
             "type":"palladium:crouching"
-          }
+          },
+           {
+                "type":"palladium:not",
+                "conditions":[
+                  {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "swallow_prompt"
+                  }
+                ]
+              }
     
         ]
       }
@@ -689,7 +737,17 @@
                 "type":"palladium:crouching"
               }
             ]
-          }
+          },
+           {
+                "type":"palladium:not",
+                "conditions":[
+                  {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "swallow_prompt"
+                  }
+                ]
+              }
         ]
       }
     },
@@ -756,9 +814,11 @@
       }
     },
     "swallow_prompt": {
-      "type": "palladium:dummy",
+      "type": "palladium:animation_timer",
       "icon": "minecraft:cooked_beef",
       "title": "Swallow Entity",
+      "start_value": 1,
+      "max_value": 3,
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 2,
@@ -787,6 +847,40 @@
         ]
       }
     },
+    "digestion": {
+			"type": "palladium:command",
+			"title": "digest",
+			"bar_color": "blue",
+			"hidden": true,
+			"hidden_in_bar": true,
+			"list_index": -1,
+			"hide_particles": true,
+      "first_tick_commands":[
+        "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 150",
+        "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 1000",
+        "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 850",
+        "execute as @s if entity @e[type=minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 900"
+    ],
+			"commands": [],
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:and",
+            "conditions":[
+              {
+            "type":"palladium:animation_timer_ability",
+            "ability":"yummy_in_my_tummy",
+            "min": 11,
+            "max": 11
+             }
+             
+            ]
+          }
+        
+        
+        ]
+      }
+		},
      "yummy_in_my_tummy": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:cooked_beef",
@@ -802,6 +896,38 @@
             "ability": "swallow_prompt"
           }
           
+        ]
+      }
+    },
+    "swallow_comm": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands":[
+      ],
+      "first_tick_commands": [
+        "playsound upchuck:swallow master @s ~ ~ ~ 3 1"
+      ],
+      "hidden_in_bar": true,
+      "list_index": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "swallow_prompt",
+            "min": 1,
+            "max": 2
+          },
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "min": 1,
+                "max": 1,
+                "ability": "swallow_prompt"
+              }
+            ]
+          }
         ]
       }
     },
@@ -936,8 +1062,19 @@
             "type":"palladium:energy_bar",
             "energy_bar":"stomach",
             "max": 1300
-          }
+          },
+          {
+                "type":"palladium:not",
+                "conditions":[
+                  {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "swallow_prompt"
+                  }
+                ]
+              }
         ]
+        
       }
     },
     "bite_aoe": {
@@ -976,10 +1113,15 @@
       "conditions": {
         "enabling": [
           {
+            "type":"palladium:or",
+            "conditions":[
+              {
             "type": "palladium:animation_timer_ability",
             "min": 1,
             "max": 5,
             "ability": "bite_timer"
+          }
+            ]
           },
           {
             "type":"palladium:not",
@@ -993,6 +1135,7 @@
             ]
           }
         ]
+        
       }
     },
     "bite_pro":{
