@@ -25,9 +25,11 @@
         ""
       ],
       "commands": [
+        "tag @s add Upchuck.Ache",
         "effect give @s minecraft:nausea 5 15 true",
         "effect give @s minecraft:hunger 5 200 true",
-        "effect give @s minecraft:weakness 2 3 true"
+        "effect give @s minecraft:weakness 2 3 true",
+        "effect give @s minecraft:slowness 2 10 true"
       ],
       "conditions": {
         "enabling": [
@@ -49,6 +51,7 @@
       "hidden": true,
       "shader": "upchuck:shaders/post/dizzy.json"
     },
+    
     "poison_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:blaze_rod",
@@ -76,6 +79,7 @@
         ""
       ],
       "commands": [
+        "tag @s remove Upchuck.Ache",
         "superpower remove upchuck:foodpoisoned @s"
       ],
       "conditions": {

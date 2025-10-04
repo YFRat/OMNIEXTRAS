@@ -6,7 +6,7 @@ license="All rights reserved"
 [[mods]]
 modId="upchuck"
 displayName="Gourmand"
-version="1.0.0"
+version="1.0.2"
 logoFile = "logo.png"
 logoBlur = false
 description='''

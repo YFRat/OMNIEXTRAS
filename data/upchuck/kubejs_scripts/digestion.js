@@ -24,16 +24,32 @@ ItemEvents.foodEaten(event =>{
         }
     }
 });
+ItemEvents.foodEaten(event => {
+    if (event.item.id !== 'upchuck:mysterious_tablet') return
+
+    const player = event.player
+
+    if (palladium.superpowers.hasSuperpower(player, 'upchuck:gourmand')) {
+        player.tell(Text.green("Yummy!"))
+        player.playSound('entity.player.burp')
+    } else {
+        player.runCommandSilent(`effect give ${player.name.string} minecraft:poison 5 1 true`)
+        player.tell(Text.red("I shouldn't have eaten that.."))
+    }
+})
 
 ItemEvents.rightClicked(event =>{
     if (event.item.id === 'minecraft:nether_star') {
+        const player = event.player
         if (palladium.superpowers.hasSuperpower(event.player, 'upchuck:gourmand')) {
-            event.item.count--;
-            event.player.tell("§2Yummy!")
+            event.item.count--
+            player.tell(Text.green("Yummy!"))
             event.server.runCommandSilent(
-                `energybar value add ${event.player.name.string} upchuck:gourmand stomach 1000`
+                `energybar value add ${player.name.string} upchuck:gourmand stomach 1000`
             );
-         
-        }
+        } else
+            
+            {
+        };
     }
-})
+});

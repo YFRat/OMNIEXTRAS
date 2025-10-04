@@ -66,11 +66,57 @@ PalladiumEvents.registerAnimations((event) => {
 });
 
 PalladiumEvents.registerAnimations((event) => {
+    event.register('gourmand/sick', 100, (builder) => {
+        let sick = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'upchuck:gourmand', 'sickness_timer', builder.getPartialTicks(), 1, 20);
+        if (sick > 0 && !builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .setZRotDegrees(-14)
+                .setXRotDegrees(-30)
+                .setYRotDegrees(-42)
+                .animate('easeOutBack', sick);
+            builder.get('left_arm')
+                .setZRotDegrees(14)
+                .setXRotDegrees(-30)
+                .setYRotDegrees(42)
+                .animate('easeOutBack', sick);
+            builder.get('body')
+                .setY(-4)
+                .animate('easeOutBack', sick);
+            builder.get('left_leg')
+                .setXRotDegrees(-71)
+                .setYRotDegrees(-14)
+                .setZRotDegrees(-4)
+                .setZ(-2)
+                .setY(11)
+                .animate('easeOutBack', sick);
+            builder.get('right_leg')
+                .setXRotDegrees(-76)
+                .setYRotDegrees(19)
+                .setZRotDegrees(4)
+                .setZ(-2)
+                .setY(11)
+                .animate('easeOutBack', sick);
+        }
+        if (sick > 0.0 && builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .setZRotDegrees(-30)
+                .setXRotDegrees(-10)
+                .setYRotDegrees(-30)
+                .setY(-6)
+                .setX(3)
+                .setZ(10)
+                .animate('easeOutBack', sick);
+        }
+    });
+});
+
+PalladiumEvents.registerAnimations((event) => {
     event.register('gourmand/tongue_whip', 40, (builder) => {
         let spinwhip = animationUtil.getAnimationTimerAbilityValue(
             builder.getPlayer(), 'upchuck:gourmand', 'whip_timer', builder.getPartialTicks());
         if (spinwhip > 0 && !builder.isFirstPerson()) {
-            builder.get('body').rotateYDegrees(-360 * 2).animate('easeInOutSine', spinwhip);
+            builder.get('body').rotateYDegrees(-360 * 3).animate('easeInOutSine', spinwhip);
 
         }
         if (spinwhip > 0.0 && builder.isFirstPerson()) {
