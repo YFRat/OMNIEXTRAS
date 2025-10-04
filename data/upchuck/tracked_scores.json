@@ -2,7 +2,6 @@
     "objectives": [
         "Gourmand.XP",
         "Gourmand.Level",
-        "Gourmand.SkillPoint",
-        "Upchuck.Swallow"
+        "Gourmand.SkillPoint"
     ]
 }
