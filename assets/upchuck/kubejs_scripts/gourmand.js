@@ -3,8 +3,8 @@ PalladiumEvents.registerAnimations((event) => {
         if (abilityUtil.isEnabled(builder.getPlayer(), "upchuck:gourmand", "render_layer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
-                    .setX(10)
-                    .setZ(11)
+                    .setX(12)
+                    .setZ(10)
                     .scaleX(1.4)
                     .scaleY(1.4)
                     .scaleZ(1.4);
@@ -66,11 +66,57 @@ PalladiumEvents.registerAnimations((event) => {
 });
 
 PalladiumEvents.registerAnimations((event) => {
+    event.register('gourmand/sick', 100, (builder) => {
+        let sick = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'upchuck:gourmand', 'sickness_timer', builder.getPartialTicks(), 1, 13);
+        if (sick > 0 && !builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .setZRotDegrees(-14)
+                .setXRotDegrees(-30)
+                .setYRotDegrees(-42)
+                .animate('easeOutBack', sick);
+            builder.get('left_arm')
+                .setZRotDegrees(14)
+                .setXRotDegrees(-30)
+                .setYRotDegrees(42)
+                .animate('easeOutBack', sick);
+            builder.get('body')
+                .setY(-4)
+                .animate('easeOutBack', sick);
+            builder.get('left_leg')
+                .setXRotDegrees(-71)
+                .setYRotDegrees(-14)
+                .setZRotDegrees(-4)
+                .setZ(-2)
+                .setY(11)
+                .animate('easeOutBack', sick);
+            builder.get('right_leg')
+                .setXRotDegrees(-76)
+                .setYRotDegrees(19)
+                .setZRotDegrees(4)
+                .setZ(-2)
+                .setY(11)
+                .animate('easeOutBack', sick);
+        }
+        if (sick > 0.0 && builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .setZRotDegrees(-30)
+                .setXRotDegrees(-10)
+                .setYRotDegrees(-30)
+                .setY(-6)
+                .setX(3)
+                .setZ(10)
+                .animate('easeOutBack', sick);
+        }
+    });
+});
+
+PalladiumEvents.registerAnimations((event) => {
     event.register('gourmand/tongue_whip', 40, (builder) => {
         let spinwhip = animationUtil.getAnimationTimerAbilityValue(
             builder.getPlayer(), 'upchuck:gourmand', 'whip_timer', builder.getPartialTicks());
         if (spinwhip > 0 && !builder.isFirstPerson()) {
-            builder.get('body').rotateYDegrees(-360 * 2).animate('easeInOutSine', spinwhip);
+            builder.get('body').rotateYDegrees(-360 * 3).animate('easeInOutSine', spinwhip);
 
         }
         if (spinwhip > 0.0 && builder.isFirstPerson()) {
@@ -80,19 +126,33 @@ PalladiumEvents.registerAnimations((event) => {
     });
 });
 ClientEvents.tick(event => {
-    if (abilityUtil.hasPower(event.player, "upchuck:gourmand")) {
-        if (abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer")) {
-            let mode = Client.options.getCameraType();
-            if (mode !== 'third_person_back' && mode !== 'third_person_front') {
-                event.player.persistentData.camera_reset = 1;
-                Client.options.setCameraType('third_person_back');
-            }
-        }
+    const player = event.player;
+    if (!abilityUtil.hasPower(player, "upchuck:gourmand")) return;
 
-        let end = event.player.persistentData.camera_reset;
-        if (!abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer") && end === 1) {
-            event.player.persistentData.camera_reset = 0;
-            Client.options.setCameraType('first_person');
+    const cam = Client.options.getCameraType();
+    const data = player.persistentData;
+    const frontView = [
+        ["upchuck:destruction", "destruction_timer", "third_person_front"],
+        ["upchuck:gourmand", "swallow_prompt", "third_person_back"],
+        ["upchuck:gourmand", "whip_timer", "third_person_back"]
+    ];
+    let active = false;
+    let desiredMode = "first_person";
+
+    for (const [power, ability, cameraMode] of frontView) {
+        if (abilityUtil.isEnabled(player, power, ability)) {
+            active = true;
+            desiredMode = cameraMode;
+            break;
         }
+    }
+    if (active) {
+        if (cam !== desiredMode) {
+            data.camera_reset = 1;
+            Client.options.setCameraType(desiredMode);
+        }
+    } else if (data.camera_reset === 1) {
+        data.camera_reset = 0;
+        Client.options.setCameraType("first_person");
     }
 });
