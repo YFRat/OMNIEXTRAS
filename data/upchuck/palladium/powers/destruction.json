@@ -1,0 +1,95 @@
+{
+  "name": {
+    "text": "destructionBubble"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "habb:textures/gui/flash/flash_icon.png"
+  },
+  "persistent_data": false,
+  "hidden": true,
+  "abilities": {
+    "destruction_bubble": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "superpower remove upchuck:destruction"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "upchuck:destruction",
+            "ability": "destruction_timer",
+            "min": 90,
+            "max": 90
+          }
+        ]
+      }
+    },
+    "destruction_timer": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 90
+    },
+    "energy_destruction2": {
+      "type": "palladium:energy_beam",
+      "energy_beam": "upchuck:destruction2",
+      "damage": 0,
+      "max_distance": 3,
+      "speed": 200,
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:animation_timer_ability",
+            "ability":"destruction_timer",
+            "min": 70,
+            "max": 90
+          }
+        ]
+      }
+    },
+    "destruction_pro":{
+      "type": "palladium:projectile",
+      "icon": "minecraft:textures/block/green_stained_glass.png",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {
+        "Damage": 10,
+        "Gravity": 2,
+        "Size": 60,
+        "Lifetime": 10,
+        "ExplosionBlockInteraction": "destroy",
+        "ExplosionRadius": 100,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": false
+      },
+      "inaccuracy": 0,
+      "velocity": 0.6,
+      "swinging_arm": "none",
+      "damage_from_player": false,
+      "ignore_player_movement": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability":"destruction_timer",
+            "min": 80,
+            "max": 80
+          }
+        ]
+      }
+    }
+   
+  }
+}

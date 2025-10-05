@@ -14,5 +14,9 @@
     "whip": {
     "category": "player",
     "sounds": ["upchuck:whip"]
+    },
+    "gangsta": {
+    "category": "player",
+    "sounds": ["upchuck:gangsta"]
     }
 }

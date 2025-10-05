@@ -28,7 +28,9 @@
             "swallow": "open_mouth",
             "whip": "spin2",
             "hurt": "tummyache",
-            "unhurt": "untummyache"
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
 
           }
         }   
@@ -557,7 +559,10 @@
             "swallow": "open_mouth",
             "whip": "spin2",
             "hurt": "tummyache",
-            "unhurt": "untummyache"
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+            
 
           }
         }   
@@ -704,7 +709,9 @@
             "swallow": "open_mouth",
             "whip": "spin2",
             "hurt": "tummyache",
-            "unhurt": "untummyache"
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
 
           }
         }   
@@ -792,22 +799,7 @@
           }
         }
       },
-      "animation_file": "upchuck:animations/gourmand_anims.json",
-      "animation_controller": [
-        {
-          "name": "upchuck",
-          "transition_tick_time": 0,
-          "triggers": {
-            "bite":"bite",
-            "shoot":"shoot",
-            "swallow": "open_mouth",
-            "whip": "spin2",
-            "hurt": "tummyache",
-            "unhurt": "untummyache"
-
-          }
-        }   
-      ],
+      
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
         "transformers": [

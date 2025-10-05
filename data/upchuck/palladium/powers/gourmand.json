@@ -30,19 +30,19 @@
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add Upchuck.Flattable",
         "scale set pehkui:drops 2 @s",
-        "scoreboard objectives add Upchuck.Swallow dummy",
+        "scoreboard objectives add Gourmand.Swallow dummy",
         "scoreboard objectives add Gourmand.XP dummy",
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy",
         "tag @s add Upchuck",
-        "scoreboard players set @s Upchuck.Swallow 0"
+        "scoreboard players set @s Gourmand.Swallow 0"
       ],
       "last_tick_commands": [
         "tag @s remove Upchuck.Flattable",
         "tag @s remove Upchuck",
         "superpower remove upchuck:foodpoisoned @s",
         "effect clear @s",
-        "scoreboard players set @s Upchuck.Swallow 0",
+        "scoreboard players set @s Gourmand.Swallow 0",
         "scale reset",
         "scale easing reset"
         
@@ -213,7 +213,22 @@
         ]
       }
     },
-    
+    "cant_jump": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:jump_power",
+      "icon": "minecraft:textures/item/iron_sword.png",
+      "hidden": true,
+      "uuid": "2d9c3de5-dfcf-4794-a602-b5e3f8d4ade8",
+      "amount": -5,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Upchuck.Ache"
+          }
+        ]
+      }
+    },
     "tummyache":{
       "type": "geckolib:render_layer_animation",
       "hidden": true,
@@ -237,15 +252,26 @@
       "animation_trigger": "unhurt",
       "conditions": {
         "enabling":[
-           {
-            "type":"palladium:not",
+          {
+            "type":"palladium:or",
             "conditions":[
               {
-            "type": "palladium:has_tag",
-            "tag": "Upchuck.Ache"
-              }
+              "type": "palladium:animation_timer_ability",
+              "ability":"destruction_timer",
+              "min": 11,
+              "max": 11
+              },
+              {
+                "type":"palladium:not",
+                "conditions":[
+                {
+                "type": "palladium:has_tag",
+                "tag": "Upchuck.Ache"
+                }
             ]
            }
+            ]
+          }
         ] 
       }
     },
@@ -930,7 +956,9 @@
         "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 1000",
         "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 850",
         "execute as @s if entity @e[type=minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s upchuck:gourmand stomach 900",
-        "execute as @s if entity @e[sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run scoreboard players set @s Upchuck.Swallow 1"
+        "execute as @s if entity @e[type=#upchuck:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run effect give @s minecraft:levitation 10 1 true",
+        "execute as @s if entity @e[type=#upchuck:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run playsound upchuck:gangsta master @s ~ ~ ~ 2",
+        "execute as @s if entity @e[sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run scoreboard players set @s Gourmand.Swallow 1"
       ],
 			"commands": [],
       "conditions":{
@@ -1060,7 +1088,7 @@
       "commands": [],
       "first_tick_commands": [
         "tag @s remove AlienEvo.BallCarry",
-        "scoreboard players set @s Upchuck.Swallow 0"
+        "scoreboard players set @s Gourmand.Swallow 0"
       ],
       "conditions": {
         "enabling": [
@@ -1397,6 +1425,88 @@
             "property": "value",
             "min": 10,
             "max": 14
+          }
+        ]
+      }
+    },
+    "destruction_timer": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 1,
+      "max_value": 70,
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:action",
+            "cooldown": 140,
+            "key_type": "key_bind"
+            
+          }
+        ]
+      }
+    },
+    "kaboom_anim": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "render_layer": "upchuck:gourmand",
+      "controller": "upchuck",
+      "animation_trigger": "boom",
+      "conditions": {
+        "enabling": [
+              {
+              "type": "palladium:animation_timer_ability",
+              "ability":"destruction_timer",
+              "min": 1,
+              "max": 1
+              }
+              
+         ]
+       }
+    },
+    "idle": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "render_layer": "upchuck:gourmand",
+      "controller": "upchuck",
+      "animation_trigger": "idle",
+      "conditions": {
+        "enabling": [
+            {
+              "type":"palladium:not",
+              "conditions":[
+                {
+              "type": "palladium:animation_timer_ability",
+              "ability":"destruction_timer",
+              "min": 2,
+              "max": 69
+              }
+              ]
+            }
+              
+         ]
+       }
+    },
+    "obliterate":{
+      "type":"palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "first_tick_commands":[
+        "superpower add upchuck:destruction @s"
+      ],
+      "commands":[
+        ""
+      ],
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"destruction_timer"
           }
         ]
       }

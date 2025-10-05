@@ -68,7 +68,7 @@ PalladiumEvents.registerAnimations((event) => {
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmand/sick', 100, (builder) => {
         let sick = animationUtil.getAnimationTimerAbilityValue(
-            builder.getPlayer(), 'upchuck:gourmand', 'sickness_timer', builder.getPartialTicks(), 1, 20);
+            builder.getPlayer(), 'upchuck:gourmand', 'sickness_timer', builder.getPartialTicks(), 1, 13);
         if (sick > 0 && !builder.isFirstPerson()) {
             builder.get('right_arm')
                 .setZRotDegrees(-14)

@@ -46,12 +46,7 @@
         ]
       }
     },
-     "visual_prowess": {
-      "type": "palladium:shader_effect",
-      "hidden": true,
-      "shader": "upchuck:shaders/post/dizzy.json"
-    },
-    
+     
     "poison_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:blaze_rod",
