@@ -1431,10 +1431,15 @@
     },
     "destruction_timer": {
       "type": "palladium:animation_timer",
-      "icon": "minecraft:blaze_rod",
+      "title": "OBLITERATION",
+      "icon": "minecraft:tnt",
       "bar_color": "light_gray",
       "hidden": true,
       "hidden_in_bar": false,
+      "energy_bar_usage": {
+        "energy_bar": "stomach",
+        "amount": 1500
+      },
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
@@ -1446,7 +1451,13 @@
             "type": "palladium:action",
             "cooldown": 140,
             "key_type": "key_bind"
-            
+          }
+        ],
+        "unlocking":[
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "stomach",
+            "min": 1250
           }
         ]
       }
@@ -1497,7 +1508,8 @@
       "hidden": true,
       "hidden_in_bar": true,
       "first_tick_commands":[
-        "superpower add upchuck:destruction @s"
+        "superpower add upchuck:destruction @s",
+        "effect give @s minecraft:slowness 5 10 true"
       ],
       "commands":[
         ""

@@ -126,19 +126,33 @@ PalladiumEvents.registerAnimations((event) => {
     });
 });
 ClientEvents.tick(event => {
-    if (abilityUtil.hasPower(event.player, "upchuck:gourmand")) {
-        if (abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer")) {
-            let mode = Client.options.getCameraType();
-            if (mode !== 'third_person_back' && mode !== 'third_person_front') {
-                event.player.persistentData.camera_reset = 1;
-                Client.options.setCameraType('third_person_back');
-            }
-        }
+    const player = event.player;
+    if (!abilityUtil.hasPower(player, "upchuck:gourmand")) return;
 
-        let end = event.player.persistentData.camera_reset;
-        if (!abilityUtil.isEnabled(event.player, "upchuck:gourmand", "whip_timer") && end === 1) {
-            event.player.persistentData.camera_reset = 0;
-            Client.options.setCameraType('first_person');
+    const cam = Client.options.getCameraType();
+    const data = player.persistentData;
+    const frontView = [
+        ["upchuck:destruction", "destruction_timer", "third_person_front"],
+        ["upchuck:gourmand", "swallow_prompt", "third_person_back"],
+        ["upchuck:gourmand", "whip_timer", "third_person_back"]
+    ];
+    let active = false;
+    let desiredMode = "first_person";
+
+    for (const [power, ability, cameraMode] of frontView) {
+        if (abilityUtil.isEnabled(player, power, ability)) {
+            active = true;
+            desiredMode = cameraMode;
+            break;
         }
+    }
+    if (active) {
+        if (cam !== desiredMode) {
+            data.camera_reset = 1;
+            Client.options.setCameraType(desiredMode);
+        }
+    } else if (data.camera_reset === 1) {
+        data.camera_reset = 0;
+        Client.options.setCameraType("first_person");
     }
 });

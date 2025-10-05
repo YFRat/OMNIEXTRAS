@@ -27,6 +27,14 @@
         ]
       }
     },
+    "cant_jump": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:jump_power",
+      "icon": "minecraft:textures/item/iron_sword.png",
+      "hidden": true,
+      "uuid": "b0af4384-5b18-4ca1-8c70-df354e4dc4b8",
+      "amount": -5
+    },
     "destruction_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:blaze_rod",
@@ -84,8 +92,8 @@
           {
             "type": "palladium:animation_timer_ability",
             "ability":"destruction_timer",
-            "min": 80,
-            "max": 80
+            "min": 70,
+            "max": 70
           }
         ]
       }
