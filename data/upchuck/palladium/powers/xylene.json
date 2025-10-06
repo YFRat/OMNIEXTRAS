@@ -1,0 +1,36 @@
+{
+    "name": {
+        "text": "Xylene"
+    },
+    "icon": {
+        "type": "palladium:texture",
+        "texture": "alienevo:textures/gui/playlists/playlist_2/head_0.png"
+    },
+    "persistent_data": true,
+    "hidden": false,
+    "background": "alienevo:textures/gui/power_screen/power_screen.png",
+    "primary_color": "#86d698",
+    "secondary_color": "#332e27",
+    "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
+    "abilities": {
+        "galvan_villager_03": {
+            "type": "palladium:render_layer",
+            "hidden": true,
+            "render_layer": "alienevo:aliens/galvan_villager/galvan_villager_03"
+        },
+        "villager_loop": {
+            "type": "palladium:command",
+            "hidden": false,
+            "first_tick_commands": [
+                "scale set pehkui:held_item 0",
+                "scale set pehkui:jump_height 1.33",
+                "scale set pehkui:motion 0.5",
+                "scale set pehkui:hitbox_height 0.3",
+                "scale set pehkui:hitbox_width 0.5",
+                "scale set pehkui:eye_height 0.5"
+            ],
+            "last_tick_commands": [],
+            "commands": []
+        }
+    }
+}

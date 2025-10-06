@@ -4,6 +4,7 @@ StartupEvents.registry('item', event => {
         .texture('upchuck:item/upchuck_tablet')
         .displayName('Tablet of Unknown Origin')
         .rarity('rare')
+        .tooltip(`§5§l"Seems important.. I should hold on to it"`)
         .food(food => 
             food
                 .hunger(2)

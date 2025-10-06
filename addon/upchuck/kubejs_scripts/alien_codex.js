@@ -1,5 +1,5 @@
 global.alienevo_alien_111 = ['upchuck:gourmand']
-global.alienevo_randomization_111 = [true];
+global.alienevo_randomization_111 = [false];
 
 global.alienevo_regen_111 = [0]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
 global.alienevo_scale_111 = [55]; // Scale of the alien preview render. 55 is default
