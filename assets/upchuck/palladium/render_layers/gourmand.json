@@ -153,7 +153,13 @@
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_7",
             "filter": "#2d4508",
-            "ignore_blank": true
+            "ignore_blank": true 
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_8",
+            "filter": "#213109",
+             "ignore_blank": true
           },
            {
             "type": "palladium:color",
