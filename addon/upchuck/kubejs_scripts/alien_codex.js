@@ -19,7 +19,7 @@ global.alienevo_111_default_skincolor_palette_1 = ["fff899", "f8dd72", "dac893",
 global.alienevo_111_default_skincolor_palette_2 = ["917526", "8c7035", "877741", "7a5e25", "5b4312"];
 global.alienevo_111_default_skincolor_palette_3 = ["f192a2", "e48393", "e57386", "d27282", "bb5f6f"];
 
-global.alienevo_111_prototype_skincolor_palette_1 = ["b5eb20", "9dda13", "9dd82c", "99d030", "8ed721", "82be11", "7ab015","659e0e", "517f0b","4f8506","4a7e0b","4e7503","4a7605","426004","335e08","384a03","2a3402"];
+global.alienevo_111_prototype_skincolor_palette_1 = ["b5eb20", "9dda13", "82be11", "659e0e", "4a7e0b", "335e08", "4f8506","4a7605","426004","384a03","2a3402"];
 global.alienevo_111_prototype_skincolor_palette_2 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508"];
 
 global.alienevo_111_10k_glowcolor_1 = ["ffffff", "dadedf"];
