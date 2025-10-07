@@ -31,6 +31,7 @@
         "tag @s add Upchuck.Flattable",
         "scale set pehkui:drops 2 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
+        "scoreboard objectives add Gourmand.ObliterationPoint dummy",
         "scoreboard objectives add Gourmand.XP dummy",
         "scoreboard objectives add Gourmand.Level dummy",
         "scoreboard objectives add Gourmand.SkillPoint dummy",
@@ -40,9 +41,10 @@
       "last_tick_commands": [
         "tag @s remove Upchuck.Flattable",
         "tag @s remove Upchuck",
-        "superpower remove upchuck:foodpoisoned @s",
+        "superpower remove upchuck:not_aliens/foodpoisoned @s",
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",
+        "scoreboard players set @s ObliterationPoint 0",
         "scale reset",
         "scale easing reset"
         
@@ -89,9 +91,9 @@
       ]
     },
     "hunger":{
-      "icon": "minecraft:rotten_flesh",
+      "icon": "minecraft:cake",
       "title": "Glutton",
-      "description": "as a Gourmand, your stomach demands to constantly be fed",
+      "description": "as a §aGourmand§f, your §4§lstomach §fdemands to §4§lconstantly be fed",
       "type": "alienevo:slower_hunger",
       "hidden": false,
       "gui_position":[
@@ -132,7 +134,7 @@
       "attribute": "minecraft:generic.armor",
       "uuid": "595ec3bf-f9d2-4f14-8784-0915a4a03569",
       "hidden": true,
-      "amount": 8
+      "amount": 10
   
     },
     "Strength": {
@@ -256,12 +258,6 @@
             "type":"palladium:or",
             "conditions":[
               {
-              "type": "palladium:animation_timer_ability",
-              "ability":"destruction_timer",
-              "min": 11,
-              "max": 11
-              },
-              {
                 "type":"palladium:not",
                 "conditions":[
                 {
@@ -288,45 +284,11 @@
         ]
       }
     },
-     "leap_unlock": {
-      "type": "palladium:dummy",
-      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
-      "title":"Leap",
-      "uuid":"eff11c45-452f-41fd-ab8f-f77a4869b2c1",
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0.5,
-        0.5
-      ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.leap"
-      },
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"gourmand_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Gourmand.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
-            "description": {
-              "translate": "§eGourmand Skill Point"
-            }
-          }
-          
-        ]
-      }
-    },
     "leap": {
       "type": "alienevo:motion",
       "bar_color": "orange",
       "title": "Leap",
-      "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
+      "icon": "#upchuck:leap/leap",
       "uuid":"4832400d-b0b3-4e06-858e-76e6cf97daa0",
       "hidden": true,
       "hidden_in_bar": false,
@@ -687,7 +649,7 @@
       "duration": 10,
       "tag_name": "AlienEvo.ScreenShake"
     },
-    "mega_blast_shake": {
+    "shake": {
       "type": "palladium:command",
       "hidden": true,
       "last_tick_commands":[],
@@ -698,17 +660,23 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:ability_integer_property",
-            "property":"value",
-            "power":"upchuck:gourmand",
-            "ability": "mega_blast_timer",
-            "min": 1,
-            "max": 1
-          },
-           {
-            "type": "palladium:ability_enabled",
-            "ability": "mega_blast_timer"
+            "type":"palladium:or",
+            "conditions":[
+              {
+                "type": "palladium:ability_integer_property",
+                "property":"value",
+                "power":"upchuck:gourmand",
+                "ability": "mega_blast_timer",
+                "min": 1,
+                "max": 1
+              },
+              {
+                "type":"palladium:ability_enabled",
+                "ability": "carry_remove"
+              }
+            ]
           }
+          
         ]
       }
     },
@@ -911,8 +879,8 @@
     },
     "swallow_prompt": {
       "type": "palladium:animation_timer",
-      "icon": "minecraft:cooked_beef",
-      "title": "Swallow Entity",
+      "icon": "#upchuck:swallow/swallow",
+      "title": "Swallow",
       "start_value": 1,
       "max_value": 3,
       "hidden": true,
@@ -1140,10 +1108,8 @@
     },
     "bite_timer": {
       "type": "palladium:animation_timer",
-       "icon": "alienevo:textures/gui/aliens/alien_2/dig.png",
-      "title": {
-        "translate": "ability.alienevo_aliens.2.dig"
-      },
+       "icon": "#upchuck:bite/bite",
+      "title": "Chomp",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
@@ -1197,10 +1163,8 @@
     },    
      "bite_comm": {
       "type": "palladium:command",
-      "icon": "alienevo:textures/gui/aliens/alien_2/dig.png",
-      "title": {
-        "translate": "ability.alienevo_aliens.2.dig"
-      },
+      "icon": "#upchuck:bite/bite",
+      "title": "Chomp",
       "bar_color": "orange",
       "hidden": true,
       "commands": [
@@ -1209,7 +1173,7 @@
         "effect give @s minecraft:saturation 3 1 true"
       ],
       "hidden_in_bar": true,
-      "list_index": 1,
+      "list_index": -1,
       "conditions": {
         "enabling": [
           {
@@ -1326,9 +1290,8 @@
     },
     "whip_timer": {
       "type": "palladium:repeating_animation_timer",
-      "icon": "minecraft:lead",
+      "icon": "#upchuck:whip/whip",
       "title": "Tongue Whip",
-      "bar_color": "orange",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 2,
@@ -1455,9 +1418,9 @@
         ],
         "unlocking":[
           {
-            "type": "palladium:energy_bar",
-            "energy_bar": "stomach",
-            "min": 1250
+           "type": "palladium:objective_score",
+           "objective": "Gourmand.ObliterationPoint",
+           "min_score": 6
           }
         ]
       }
@@ -1508,7 +1471,8 @@
       "hidden": true,
       "hidden_in_bar": true,
       "first_tick_commands":[
-        "superpower add upchuck:destruction @s",
+        "superpower add upchuck:not_aliens/destruction @s",
+        "scoreboard players set @s Gourmand.ObliterationPoint 0",
         "effect give @s minecraft:slowness 5 10 true"
       ],
       "commands":[
@@ -1562,6 +1526,332 @@
         ]
       }
     },
+    "leap_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#upchuck:leap/leap",
+      "title":"Leap",
+      "uuid":"eff11c45-452f-41fd-ab8f-f77a4869b2c1",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        1,
+        1
+      ],
+      "description": {
+        "translate": "desc.alienevo_aliens.2.leap"
+      },
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"blast_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "filler_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:dirt",
+      "title":"Filler",
+      "uuid":"d529ecad-4c6f-41ed-b452-b6cc1da278f2",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        1,
+        1.7
+      ],
+      "description": "yap yap",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"leap_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+     "mega_blast_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:fire_charge",
+      "title":"Mega Blast",
+      "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0.5,
+        2.2
+      ],
+      "description": "yap yap",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"filler_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "obliteration_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:tnt",
+      "title":"OBLITERATION",
+      "uuid":"206f656c-9249-4ccf-b202-9285d42cacd8",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0,
+        2.5
+      ],
+      "description": "yap yap",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"mega_blast_unlock"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"energy_conversion_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "blast_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:bow",
+      "title": "Energy Blast",
+      "uuid": "4220971e-4b0c-4d52-b191-bf82e1e341eb",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0.5,
+        0.5
+      ],
+      "description": "Use the energy you obtain from eating organic materials to shoot out an energy blast",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"gourmand_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "chomp_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:bow",
+      "title": "Chomp",
+      "uuid": "aa916107-7859-4400-afe8-cb0be47d4625",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        -0.5,
+        0.5
+      ],
+      "description": "Chomp on organic materials and projectiles to obtain energy",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"gourmand_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "swallow_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#upchuck:swallow/swallow",
+      "title": "Swallow",
+      "uuid": "8ca49b5d-f84c-4763-a2d7-28926e104a72",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        -1,
+        1
+      ],
+      "description": "Pull mobs inside you via your extendable tongue and be able to spit them out any time",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"chomp_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+     "defense_increase_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:textures/mob_effect/resistance.png",
+      "title": "Defense +2",
+      "uuid": "3137a532-370f-437a-8784-ed877393f38a",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        -1,
+        1.7
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"swallow_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "energy_conversion_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:redstone",
+      "title": "Energy Absorption",
+      "uuid": "069bb9c7-7917-4cf5-9817-649b41bd72a7",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        -0.5,
+        2.2
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"defense_increase_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    "vomit_unlock": {
+      "type": "palladium:dummy",
+      "icon": "alienevo:textures/gui/aliens/alien_7/slimebomb.png",
+      "title": "Vomit",
+      "uuid": "97c7f0be-ffcb-4c53-b99b-cf66633979f8",
+      "description": "replace this with stinkflys shit",
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0,
+        1
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"gourmand_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Gourmand.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
+            "description": {
+              "translate": "§eGourmand Skill Point"
+            }
+          }
+          
+        ]
+      }
+    },
+    
     "nickname": {
       "type": "palladium:name_change",
       "icon": "minecraft:blaze_rod",

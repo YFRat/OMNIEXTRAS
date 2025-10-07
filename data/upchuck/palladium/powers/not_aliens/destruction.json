@@ -13,13 +13,13 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-        "superpower remove upchuck:destruction"
+        "superpower remove upchuck:not_aliens/destruction @s"
       ],
       "conditions": {
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "power": "upchuck:destruction",
+            "power": "upchuck:not_aliens/destruction",
             "ability": "destruction_timer",
             "min": 90,
             "max": 90
@@ -58,6 +58,7 @@
         "enabling": [
           {
             "type":"palladium:animation_timer_ability",
+            "power": "upchuck:not_aliens/destruction",
             "ability":"destruction_timer",
             "min": 70,
             "max": 90
@@ -91,6 +92,7 @@
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
+            "power": "upchuck:not_aliens/destruction",
             "ability":"destruction_timer",
             "min": 70,
             "max": 70

@@ -13,13 +13,14 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-       "function upchuck:yoink"
+       "function upchuck:yoink",
+       "tag @s add Gourmand.Obtained"
       ],
       "conditions": {
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "power": "upchuck:tempremove",
+            "power": "upchuck:not_aliens/tempremove",
             "ability": "temp_timer",
             "min": 0,
             "max": 129
@@ -37,7 +38,7 @@
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "power": "upchuck:tempremove",
+            "power": "upchuck:not_aliens/tempremove",
             "ability": "temp_timer",
             "min": 130,
             "max": 130

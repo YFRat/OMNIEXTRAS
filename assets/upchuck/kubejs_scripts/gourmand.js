@@ -132,7 +132,7 @@ ClientEvents.tick(event => {
     const cam = Client.options.getCameraType();
     const data = player.persistentData;
     const frontView = [
-        ["upchuck:destruction", "destruction_timer", "third_person_front"],
+        ["upchuck:not_aliens/destruction", "destruction_timer", "third_person_front"],
         ["upchuck:gourmand", "swallow_prompt", "third_person_back"],
         ["upchuck:gourmand", "whip_timer", "third_person_back"]
     ];

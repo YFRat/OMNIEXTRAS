@@ -1,0 +1,111 @@
+{
+  "transformers": [
+        {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_1",
+            "filter": "#b5eb20",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_2",
+            "filter": "#9dda13",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_8",
+            "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_1",
+            "filter": "#13ba39",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_2",
+            "filter": "#11aa38",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_3",
+            "filter": "#0f9336",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_4",
+            "filter": "#0c7c33",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_5",
+            "filter": "#0a662e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_6",
+            "filter": "#084f26",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_7",
+            "filter": "#2d4508",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+            "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "SKIN_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_1"
+          },
+          "SKIN_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_2"
+          },
+          "SKIN_PROTO_8": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_8"
+          },
+           "SKIN_PROTO_P2_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_1"
+          },
+           "SKIN_PROTO_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_2"
+          },
+           "SKIN_PROTO_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_3"
+          },
+           "SKIN_PROTO_P2_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_4"
+          },
+           "SKIN_PROTO_P2_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_5"
+          },
+           "SKIN_PROTO_P2_6": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_6"
+          },
+          "SKIN_PROTO_P2_7": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_7"
+          }
+        },
+  "base": "upchuck:textures/gui/playlists/bite.png"
+}

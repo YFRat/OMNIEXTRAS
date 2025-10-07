@@ -75,7 +75,7 @@
       ],
       "commands": [
         "tag @s remove Upchuck.Ache",
-        "superpower remove upchuck:foodpoisoned @s"
+        "superpower remove upchuck:not_aliens/foodpoisoned @s"
       ],
       "conditions": {
         "enabling": [

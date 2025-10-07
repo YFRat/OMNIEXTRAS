@@ -3,6 +3,7 @@
         "Gourmand.XP",
         "Gourmand.Level",
         "Gourmand.SkillPoint",
-        "Gourmand.Swallow"
+        "Gourmand.Swallow",
+        "Gourmand.ObliterationPoint"
     ]
 }
