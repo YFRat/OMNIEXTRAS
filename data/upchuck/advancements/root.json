@@ -1,0 +1,34 @@
+{
+    "display": {
+        "title": {
+            "text": "Upchuck",
+            "color": "green",
+            "bold": false,
+            "obfuscated": false,
+            "strikethrough": false,
+            "underlined": false
+        },
+        "description": {
+            "text": "Submission for the AlienEvo Custom Alien Contest"
+        },
+        "icon": {
+            "item": "minecraft:air"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "background": "minecraft:textures/block/end_stone.png"
+    },
+    
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "tick"
+        ]
+    ]
+}
