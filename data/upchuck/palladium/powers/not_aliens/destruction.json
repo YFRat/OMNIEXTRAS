@@ -13,7 +13,8 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-        "superpower remove upchuck:not_aliens/destruction @s"
+        "superpower remove upchuck:not_aliens/destruction @s",
+        "effect give @s minecraft:hunger 2 150"
       ],
       "conditions": {
         "enabling": [

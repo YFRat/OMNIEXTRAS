@@ -93,7 +93,7 @@
     "hunger":{
       "icon": "minecraft:cake",
       "title": "Glutton",
-      "description": "as a §aGourmand§f, your §4§lstomach §fdemands to §4§lconstantly be fed",
+      "description": "as a §aGourmand§f, your §estomach §fdemands to §4§lconstantly be fed",
       "type": "alienevo:slower_hunger",
       "hidden": false,
       "gui_position":[
@@ -101,7 +101,7 @@
         -0.7
       ],
       "hidden_in_bar": true,
-      "reduction_factor": 9,
+      "reduction_factor": 11,
       "conditions": {
         "unlocking":[
           {
@@ -135,7 +135,28 @@
       "uuid": "595ec3bf-f9d2-4f14-8784-0915a4a03569",
       "hidden": true,
       "amount": 10
-  
+    },
+    "Toughness": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor_toughness",
+      "uuid": "4d3390f2-a1ca-4f3f-ad29-7f5785aac740",
+      "hidden": true,
+      "amount": 16
+    },
+    "Armor2": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor",
+      "uuid": "bf8a4b36-c65d-4d04-8b84-f58bacc55f84",
+      "hidden": true,
+      "amount": 3,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"defense_increase_unlock"
+          }
+        ]
+      }
     },
     "Strength": {
       "type": "palladium:attribute_modifier",
@@ -271,22 +292,8 @@
         ] 
       }
     },
-    "visual_prowess": {
-      "type": "palladium:shader_effect",
-      "hidden": true,
-      "shader": "upchuck:shaders/post/dizzy.json",
-      "conditions":{
-        "enabling":[
-          {
-            "type":"palladium:ability_enabled",
-            "ability": "im_so_full"
-          }
-        ]
-      }
-    },
     "leap": {
       "type": "alienevo:motion",
-      "bar_color": "orange",
       "title": "Leap",
       "icon": "#upchuck:leap/leap",
       "uuid":"4832400d-b0b3-4e06-858e-76e6cf97daa0",
@@ -408,6 +415,10 @@
       "icon": "minecraft:snowball",
       "title": "Burp",
       "hidden": true,
+      "energy_bar_usage": {
+        "energy_bar": "stomach",
+        "amount": 30
+      },
       "hidden_in_bar": true,
       "list_index": -1,
       "start_value": 0,
@@ -422,6 +433,11 @@
           }
         ],
         "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"blast_unlock"
+          },
           {
             "type": "palladium:and",
             "conditions": [
@@ -547,14 +563,10 @@
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": true,
-       "energy_bar_usage": {
-        "energy_bar": "stomach",
-        "amount": 15
-      },
       "list_index": -1,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {
-        "Damage": 10,
+        "Damage": 6.5,
         "Gravity": 0,
         "Size": 0.5,
         "Lifetime": 100,
@@ -611,6 +623,11 @@
           }
         ],
         "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"mega_blast_unlock"
+          },
           {
            "type": "palladium:energy_bar",
             "energy_bar": "stomach",
@@ -741,7 +758,7 @@
       "icon": "alienevo:textures/gui/aliens/alien_7/slimebomb.png",
       "hidden": true,
       "hidden_in_bar": false,
-      "title": {"translate":"ability.alienevo_aliens.7.slime_shot"},
+      "title": "Stick Spit",
       "list_index": 3,
       "swinging_arm": "none",
       "velocity": 1.7,
@@ -795,6 +812,11 @@
             "min": 100
           },
           {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"vomit_unlock"
+          },
+          {
             "type":"palladium:not",
             "conditions":[
               {
@@ -812,6 +834,27 @@
                   }
                 ]
               }
+        ]
+      }
+    },
+    "vomit_sound":{
+      "type": "palladium:play_sound",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": "upchuck:blast",
+      "volume": 1,
+      "pitch": 1,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"slime_shot"
+          }
         ]
       }
     },
@@ -880,7 +923,7 @@
     "swallow_prompt": {
       "type": "palladium:animation_timer",
       "icon": "#upchuck:swallow/swallow",
-      "title": "Swallow",
+      "title": "Tongue Ingestion",
       "start_value": 1,
       "max_value": 3,
       "hidden": true,
@@ -895,6 +938,11 @@
           }
         ],
         "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"swallow_unlock"
+          },
           {
             "type":"palladium:not",
             "conditions":[
@@ -1036,15 +1084,55 @@
     },
     "entity_vaccum": {
       "type": "alienevo:entity_vacuum",
-      "search_radius": 3,
+      "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
+      "search_radius": 2,
       "hidden": true,
       "debug_mode": false,
-      "max_hearts": 800,
+      "max_hearts": 100,
       "conditions": {
         "enabling": [
           {
+            "type":"palladium:and",
+            "conditions":[
+              {
             "type": "palladium:has_tag",
             "tag": "AlienEvo.BallCarry"
+              },
+              {
+            "type":"palladium:not",
+            "conditions":[
+                  {
+                "type":"palladium:ability_unlocked",
+                "ability":"eating_limit_unlock"
+                  }
+                ]
+              }
+            ] 
+          }
+        ]
+      }
+    },
+    "entity_vaccum2": {
+      "type": "alienevo:entity_vacuum",
+      "search_radius": 2,
+      "uuid":"cc88f9e8-45f0-4011-ac4c-aa7292602a32",
+      "hidden": true,
+      "debug_mode": false,
+      "max_hearts": 1000,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:and",
+            "conditions":[
+              {
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.BallCarry"
+              },
+              {
+                "type":"palladium:ability_unlocked",
+                "ability":"eating_limit_unlock"
+              } 
+            ]
           }
         ]
       }
@@ -1099,10 +1187,9 @@
       "conditions": {
         "enabling": [
               {
-            "type": "palladium:ability_enabled",
+            "type": "palladium:ability_last_tick",
             "ability": "carry_remove"
               }
-              
         ]
       }
     },
@@ -1124,6 +1211,11 @@
           }
         ],
         "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"chomp_unlock"
+          },
           {
             "type":"palladium:energy_bar",
             "energy_bar":"stomach",
@@ -1291,7 +1383,7 @@
     "whip_timer": {
       "type": "palladium:repeating_animation_timer",
       "icon": "#upchuck:whip/whip",
-      "title": "Tongue Whip",
+      "title": "Long Prehensile Tongues",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 2,
@@ -1317,6 +1409,11 @@
         ],
         "unlocking":[
           {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"whip_unlock"
+          },
+          {
             "type":"palladium:crouching"
           },
           {
@@ -1325,10 +1422,6 @@
               {
                 "type": "palladium:ability_enabled",
                 "ability":"swallow_prompt"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "ability":"carry_remove_kill"
               }
             ]
           }
@@ -1394,7 +1487,7 @@
     },
     "destruction_timer": {
       "type": "palladium:animation_timer",
-      "title": "OBLITERATION",
+      "title": "Sub-Energy Destruction",
       "icon": "minecraft:tnt",
       "bar_color": "light_gray",
       "hidden": true,
@@ -1417,6 +1510,11 @@
           }
         ],
         "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"obliteration_unlock"
+          },
           {
            "type": "palladium:objective_score",
            "objective": "Gourmand.ObliterationPoint",
@@ -1537,9 +1635,7 @@
         1,
         1
       ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.leap"
-      },
+      "description": "§9(Crouch)§f Launch yourself through the air and cover large distances quickly.",
       "conditions": {
         "unlocking": [
           {
@@ -1560,10 +1656,10 @@
         ]
       }
     },
-    "filler_unlock": {
+    "whip_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:dirt",
-      "title":"Filler",
+      "icon": "#upchuck:whip/whip",
+      "title":"Long Prehensile Tongues",
       "uuid":"d529ecad-4c6f-41ed-b452-b6cc1da278f2",
       "hidden": false,
       "list_index": -1,
@@ -1571,7 +1667,7 @@
         1,
         1.7
       ],
-      "description": "yap yap",
+      "description": "Spin and §a§lextend§r§f your tongue outwards to hit §4§lanyone§r§f nearby",
       "conditions": {
         "unlocking": [
           {
@@ -1595,7 +1691,7 @@
      "mega_blast_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:fire_charge",
-      "title":"Mega Blast",
+      "title":"Mega Energy Regurgitation",
       "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
       "list_index": -1,
@@ -1603,13 +1699,13 @@
         0.5,
         2.2
       ],
-      "description": "yap yap",
+      "description": "§9(Crouch)§f Use a §4§lhuge§r§f chunk of your §a§lenergy§r§f to shoot out a §4§ldestructive§r§f blast",
       "conditions": {
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "power":"null",
-            "ability":"filler_unlock"
+            "ability":"whip_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1627,31 +1723,26 @@
     "obliteration_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:tnt",
-      "title":"OBLITERATION",
+      "title":"Sub-Energy Destruction",
       "uuid":"206f656c-9249-4ccf-b202-9285d42cacd8",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
         0,
-        2.5
+        1.7
       ],
-      "description": "yap yap",
+      "description": "Upon eating an item that contains §d§lhigh§r§f amounts of §a§lenergy§r§f, §d§lunleash§r§f a §d§lhighly§r§f §4§ldestructive§r§f blast",
       "conditions": {
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "power":"null",
-            "ability":"mega_blast_unlock"
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"energy_conversion_unlock"
+            "ability":"vomit_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
             "objective": "Gourmand.SkillPoint",
-            "score": 1,
+            "score": 2,
             "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
             "description": {
               "translate": "§eGourmand Skill Point"
@@ -1664,7 +1755,7 @@
     "blast_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:bow",
-      "title": "Energy Blast",
+      "title": "Energy Regurgitation",
       "uuid": "4220971e-4b0c-4d52-b191-bf82e1e341eb",
       "hidden": false,
       "list_index": -1,
@@ -1672,7 +1763,7 @@
         0.5,
         0.5
       ],
-      "description": "Use the energy you obtain from eating organic materials to shoot out an energy blast",
+      "description": "Use a §cportion§f of your §a§lenergy§r§f to shoot out an §a§lenergy §r§fblast",
       "conditions": {
         "unlocking": [
           {
@@ -1695,7 +1786,7 @@
     },
     "chomp_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:bow",
+      "icon": "#upchuck:bite/bite",
       "title": "Chomp",
       "uuid": "aa916107-7859-4400-afe8-cb0be47d4625",
       "hidden": false,
@@ -1704,31 +1795,21 @@
         -0.5,
         0.5
       ],
-      "description": "Chomp on organic materials and projectiles to obtain energy",
+      "description": "Chomp on §eorganic materials§f and §eprojectiles§f to obtain §a§lenergy",
       "conditions": {
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "power":"null",
             "ability":"gourmand_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Gourmand.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_111.png",
-            "description": {
-              "translate": "§eGourmand Skill Point"
-            }
           }
-          
         ]
       }
     },
     "swallow_unlock": {
       "type": "palladium:dummy",
       "icon": "#upchuck:swallow/swallow",
-      "title": "Swallow",
+      "title": "Tongue Ingestion",
       "uuid": "8ca49b5d-f84c-4763-a2d7-28926e104a72",
       "hidden": false,
       "list_index": -1,
@@ -1736,7 +1817,7 @@
         -1,
         1
       ],
-      "description": "Pull mobs inside you via your extendable tongue and be able to spit them out any time",
+      "description": "Pull mobs inside you via your §a§lextendable§r§f tongue and be able to §espit them out§f any time",
       "conditions": {
         "unlocking": [
           {
@@ -1760,7 +1841,7 @@
      "defense_increase_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:textures/mob_effect/resistance.png",
-      "title": "Defense +2",
+      "title": "Defense §a+2",
       "uuid": "3137a532-370f-437a-8784-ed877393f38a",
       "hidden": false,
       "list_index": -1,
@@ -1788,10 +1869,11 @@
         ]
       }
     },
-    "energy_conversion_unlock": {
+    "eating_limit_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:redstone",
-      "title": "Energy Absorption",
+      "icon": "minecraft:textures/mob_effect/regeneration.png",
+      "title": "Enhanced Ingestion",
+      "description": "Enhances §eswallowing capacity§f, allowing ingestion of §4§llarger§r §fand §4§lbeefier§f§r targets.",
       "uuid": "069bb9c7-7917-4cf5-9817-649b41bd72a7",
       "hidden": false,
       "list_index": -1,
@@ -1822,9 +1904,9 @@
     "vomit_unlock": {
       "type": "palladium:dummy",
       "icon": "alienevo:textures/gui/aliens/alien_7/slimebomb.png",
-      "title": "Vomit",
+      "title": "Stick Spit",
       "uuid": "97c7f0be-ffcb-4c53-b99b-cf66633979f8",
-      "description": "replace this with stinkflys shit",
+      "description": "Use your §a§lvomit§r§f to trap §4§lenemies§r§f in place.",
       "hidden": false,
       "list_index": -1,
       "gui_position": [

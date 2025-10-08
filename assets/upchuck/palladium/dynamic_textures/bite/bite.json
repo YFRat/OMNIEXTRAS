@@ -12,53 +12,59 @@
             "filter": "#9dda13",
             "ignore_blank": true
           },
-          {
+           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_8",
+            "color": "##SKIN_PROTO_4",
             "filter": "#659e0e",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_1",
+            "color": "##SKIN_PROTO_P3_1",
             "filter": "#13ba39",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_2",
+            "color": "##SKIN_PROTO_P3_2",
             "filter": "#11aa38",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_3",
+            "color": "##SKIN_PROTO_P3_3",
             "filter": "#0f9336",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_4",
+            "color": "##SKIN_PROTO_P3_4",
             "filter": "#0c7c33",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_5",
+            "color": "##SKIN_PROTO_P3_5",
             "filter": "#0a662e",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_6",
+            "color": "##SKIN_PROTO_P3_6",
             "filter": "#084f26",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_7",
+            "color": "##SKIN_PROTO_P3_7",
             "filter": "#2d4508",
-            "ignore_blank": true
+            "ignore_blank": true 
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_8",
+            "filter": "#213109",
+             "ignore_blank": true
           }
         ],
         "variables": {
@@ -74,38 +80,43 @@
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_2"
           },
-          "SKIN_PROTO_8": {
+          "SKIN_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_8"
+            "property": "gourmand_prototype_skincolor_palette_1_color_4"
           },
-           "SKIN_PROTO_P2_1": {
+          "SKIN_PROTO_P3_1": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_1"
+            "property": "gourmand_prototype_skincolor_palette_3_color_1"
           },
-           "SKIN_PROTO_P2_2": {
+          "SKIN_PROTO_P3_2": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_2"
+            "property": "gourmand_prototype_skincolor_palette_3_color_2"
           },
-           "SKIN_PROTO_P2_3": {
+           "SKIN_PROTO_P3_3": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_3"
+            "property": "gourmand_prototype_skincolor_palette_3_color_3"
           },
-           "SKIN_PROTO_P2_4": {
+           "SKIN_PROTO_P3_4": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_4"
+            "property": "gourmand_prototype_skincolor_palette_3_color_4"
           },
-           "SKIN_PROTO_P2_5": {
+           "SKIN_PROTO_P3_5": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_5"
+            "property": "gourmand_prototype_skincolor_palette_3_color_5"
           },
-           "SKIN_PROTO_P2_6": {
+           "SKIN_PROTO_P3_6": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_6"
+            "property": "gourmand_prototype_skincolor_palette_3_color_6"
           },
-          "SKIN_PROTO_P2_7": {
+          "SKIN_PROTO_P3_7": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_7"
+            "property": "gourmand_prototype_skincolor_palette_3_color_7"
+          },
+          "SKIN_PROTO_P3_8": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_8"
           }
+   
         },
   "base": "upchuck:textures/gui/playlists/bite.png"
 }

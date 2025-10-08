@@ -14,19 +14,25 @@
           },
            {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_10",
+            "color": "##SKIN_PROTO_4",
+            "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_5",
             "filter": "#4a7e0b",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_15",
+            "color": "##SKIN_PROTO_6",
             "filter": "#335e08",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_17",
+            "color": "##SKIN_PROTO_P2_5",
             "filter": "#2a3402",
             "ignore_blank": true
           }
@@ -45,18 +51,23 @@
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_2"
           },
-          "SKIN_PROTO_10": {
+          "SKIN_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_10"
+            "property": "gourmand_prototype_skincolor_palette_1_color_4"
           },
-          "SKIN_PROTO_15": {
+          "SKIN_PROTO_5": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_15"
+            "property": "gourmand_prototype_skincolor_palette_1_color_5"
           },
-          "SKIN_PROTO_17": {
+          "SKIN_PROTO_6": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_17"
+            "property": "gourmand_prototype_skincolor_palette_1_color_6"
+          },
+           "SKIN_PROTO_P2_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_5"
           }
+   
         },
   "base": "upchuck:textures/gui/playlists/leap.png"
 }

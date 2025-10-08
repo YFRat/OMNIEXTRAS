@@ -45,6 +45,8 @@ ItemEvents.rightClicked(e =>{
             e.item.count--
             player.tell(Text.yellow("Yummy!"))
             e.server.runCommandSilent(
+                `effect give ${player.name.string} minecraft:saturation 10 5 true`);
+            e.server.runCommandSilent(
                 `energybar value add ${player.name.string} upchuck:gourmand stomach 1500`);
             e.server.runCommandSilent(
                 `scoreboard players set ${player.name.string} Gourmand.ObliterationPoint 6`);
@@ -61,6 +63,8 @@ ItemEvents.rightClicked(e =>{
         if (palladium.superpowers.hasSuperpower(e.player, 'upchuck:gourmand')) {
             e.item.count--
             player.tell(Text.yellow("That was delicious, but I think I need more!"))
+            e.server.runCommandSilent(
+                `effect give ${player.name.string} minecraft:saturation 10 1 true`);
             e.server.runCommandSilent(
                 `energybar value add ${player.name.string} upchuck:gourmand stomach 300`);
             e.server.runCommandSilent(

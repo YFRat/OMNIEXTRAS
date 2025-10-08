@@ -3,25 +3,27 @@ ItemEvents.entityInteracted('upchuck:mysterious_tablet', e => {
 
     if (!target || !target.isLiving()) return;
 
+    if (target.type === 'minecraft:pillager' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
     if (!palladium.superpowers.hasSuperpower(e.player, 'alienevo:prototype_omnitrix')) {
         const roll = Math.floor(Math.random() * 3) + 1;
         switch (roll) {
             case 1:
-                player.tell(Text.red("§lGet out."));
+                e.player.tell(Text.red("§lGet out."));
                 break;
             case 2:
-                player.tell(Text.red("§lWhat are you looking at?"));
+                e.player.tell(Text.red("§lWhat are you looking at?"));
                 break;
             case 3:
-                player.tell(Text.red("§lGet out."));
+                e.player.tell(Text.red("§lGet out."));
                 break;
         }
         return;
     }
+}
 
     const hasGourmand = e.player.tags.contains('Gourmand.Obtained');
 
-    if (target.type === 'minecraft:villager' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
+    if (target.type === 'minecraft:pillager' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
         e.item.count--;
         if (!hasGourmand) {
             e.player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
