@@ -1,9 +1,9 @@
 {
   "pack": {
     "id": "upchuck",
-    "description": "epic lecool alien",
+    "description": "submission for the event",
     "pack_format": 15,
-    "version": "1.0.2"
+    "version": "1.0.3"
   },
   "dependencies": {
     "common": {

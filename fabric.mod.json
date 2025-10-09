@@ -4,8 +4,8 @@
     "environment": "*",
     "name": "upchuck",
     "id": "upchuck",
-    "version": "1.0.2",
-    "description": "OmniExtras is an addonpack being developed by the OmniExtras team",
+    "version": "1.0.3",
+    "description": "Gourmand submission for AlienEvo custom alien contest",
     "icon": "logo.png",
     "license": "All rights to Alien Evolution are reserved by The AlienEvo Dev team"
 }

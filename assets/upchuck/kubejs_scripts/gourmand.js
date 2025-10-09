@@ -110,6 +110,27 @@ PalladiumEvents.registerAnimations((event) => {
         }
     });
 });
+PalladiumEvents.registerAnimations((event) => {
+    event.register('gourmand/swallow', 100, (builder) => {
+        let fix = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'upchuck:gourmand', 'yummy_in_my_tummy', builder.getPartialTicks(), 1, 5);
+        if (fix > 0 && !builder.isFirstPerson()) {
+            builder.get('right_arm')
+                .setZRotDegrees(0)
+                .setXRotDegrees(0)
+                .setYRotDegrees(0)
+                .animate('easeOutBack', fix);
+            builder.get('left_arm')
+                .setZRotDegrees(0)
+                .setXRotDegrees(0)
+                .setYRotDegrees(0)
+                .animate('easeOutBack', fix);
+        }
+        if (fix > 0.0 && builder.isFirstPerson()) {
+           
+        }
+    });
+});
 
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmand/tongue_whip', 40, (builder) => {

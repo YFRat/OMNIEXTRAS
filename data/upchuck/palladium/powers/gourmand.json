@@ -710,12 +710,12 @@
       "list_index": 0,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {                                  
-        "Damage": 10,
+        "Damage": 3,
         "Gravity": 0,
         "Size": 1.3,
         "Lifetime": 100,
         "ExplosionBlockInteraction": "destroy",
-        "ExplosionRadius": 15,
+        "ExplosionRadius": 8.5,
         "DieOnEntityHit": true,
         "DieOnBlockHit": true,
         "PreventShooterInteraction": true,
@@ -737,7 +737,7 @@
         ]
       },
       "inaccuracy": 3,
-      "velocity": 1.2,
+      "velocity": 0.8,
       "swinging_arm": "none",
       "damage_from_player": false,
       "ignore_player_movement": false,
