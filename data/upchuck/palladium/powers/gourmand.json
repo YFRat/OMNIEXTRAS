@@ -1691,7 +1691,7 @@
     },
      "mega_blast_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:fire_charge",
+      "icon": "#upchuck:mega_spit/mega_spit",
       "title":"Mega Energy Regurgitation",
       "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
@@ -1755,7 +1755,7 @@
     },
     "blast_unlock": {
       "type": "palladium:dummy",
-      "icon": "minecraft:bow",
+      "icon": "#upchuck:spit/spit",
       "title": "Energy Regurgitation",
       "uuid": "4220971e-4b0c-4d52-b191-bf82e1e341eb",
       "hidden": false,
