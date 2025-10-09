@@ -3,7 +3,7 @@ ItemEvents.entityInteracted('upchuck:mysterious_tablet', e => {
 
     if (!target || !target.isLiving()) return;
 
-    if (target.type === 'minecraft:pillager' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
+    if (target.type === 'minecraft:zombified_piglin' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
     if (!palladium.superpowers.hasSuperpower(e.player, 'alienevo:prototype_omnitrix')) {
         const roll = Math.floor(Math.random() * 3) + 1;
         switch (roll) {
@@ -23,7 +23,7 @@ ItemEvents.entityInteracted('upchuck:mysterious_tablet', e => {
 
     const hasGourmand = e.player.tags.contains('Gourmand.Obtained');
 
-    if (target.type === 'minecraft:pillager' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
+    if (target.type === 'minecraft:zombified_piglin' && palladium.superpowers.hasSuperpower(target, 'upchuck:xylene')) {
         e.item.count--;
         if (!hasGourmand) {
             e.player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
@@ -34,5 +34,24 @@ ItemEvents.entityInteracted('upchuck:mysterious_tablet', e => {
         e.player.runCommandSilent(`playsound alienevo:prototype_decouple master ${e.player.name.string}`);
         e.player.runCommandSilent(`playsound alienevo:prototype_master_control master ${e.player.name.string}`);
         e.player.runCommandSilent(`superpower add upchuck:not_aliens/tempremove ${e.player.name.string}`);
+    }
+});
+
+EntityEvents.hurt(event => {
+    let entity = event.entity;
+    if (
+        abilityUtil.hasPower(entity, "upchuck:xylene")
+    ) {
+        let oldHealth = entity.health;
+        event.server.scheduleInTicks(1, () => {
+            if (entity.health < oldHealth) {
+                entity.level.playSound(null, entity.x, entity.y, entity.z, "minecraft:entity.witch.hurt", "master", 1, 1.3)
+            }
+            event.server.scheduleInTicks(1, () => {
+            if (entity.health === 0) {
+                entity.level.playSound(null, entity.x, entity.y, entity.z, "minecraft:entity.witch.death", "master", 1, 1.7)
+            }
+        });
+        });
     }
 });

@@ -1,0 +1,15 @@
+{
+  "name": "upchuck:xylene_landing",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "upchuck:xylene_landing",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

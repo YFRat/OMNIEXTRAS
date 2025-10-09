@@ -1,0 +1,16 @@
+{
+    "type": "palladium:compound",
+    "layers": [
+        {
+            "type": "geckolib:default",
+            "model": "upchuck:geo/xylene.geo.json",
+            "texture": "upchuck:textures/models/aliens/xylene_model.png"
+        },
+        {
+            "type": "geckolib:default",
+            "model": "upchuck:geo/xylene.geo.json",
+            "render_type": "glow",
+            "texture": "upchuck:textures/models/aliens/xylene_glow.png"
+        }
+    ]
+}
