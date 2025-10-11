@@ -367,36 +367,17 @@
           "type":"palladium:and",
           "conditions":[
             {
-              "type":"palladium:ability_last_tick",
-              "ability":"energy_blast_timer"
-            },
-            {
-              "type":"palladium:not",
+              "type":"palladium:or",
               "conditions":[
                 {
-                  "type":"palladium:on_ground"
+                  "type":"palladium:ability_last_tick",
+                  "ability":"energy_blast_timer"
+                },
+                {
+                 "type":"palladium:ability_last_tick",
+                  "ability":"mega_blast_timer"
                 }
               ]
-            }
-          ]
-         }
-        ]
-      }
-    },
-    "boost2": {
-      "type": "alienevo:motion",
-      "uuid": "fdd1420d-d13d-4d56-9621-9a2b085cf953",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "motion": -2.5,
-      "conditions":{
-        "enabling":[
-         {
-          "type":"palladium:and",
-          "conditions":[
-            {
-              "type":"palladium:ability_first_tick",
-              "ability":"mega_blast_timer"
             },
             {
               "type":"palladium:not",
@@ -413,6 +394,7 @@
     },
     "energy_blast_timer": {
       "type":"palladium:animation_timer",
+      "uuid":"74527a86-b771-4793-be18-d1532c31ced0",
       "icon": "minecraft:snowball",
       "title": "Burp",
       "hidden": true,
@@ -452,12 +434,7 @@
                 "conditions":[
                   {
                     "type":"palladium:crouching"
-                  }
-                ]
-              },
-              {
-                "type":"palladium:not",
-                "conditions":[
+                  },
                   {
                     "type": "palladium:ability_enabled",
                     "power": "null",
@@ -608,6 +585,7 @@
     "mega_blast_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:fire_charge",
+      "uuid":"ba859121-ed8c-4a35-936a-653dcb18507b",
       "title": "Super Burp",
       "hidden": true,
       "hidden_in_bar": true,
@@ -625,6 +603,9 @@
         ],
         "unlocking": [
           {
+            "type":"palladium:and",
+            "conditions":[
+              {
             "type": "palladium:ability_unlocked",
             "power":"null",
             "ability":"mega_blast_unlock"
@@ -647,7 +628,8 @@
                   }
                 ]
               }
-    
+            ]
+          }
         ]
       }
     },
@@ -737,7 +719,7 @@
         ]
       },
       "inaccuracy": 3,
-      "velocity": 0.8,
+      "velocity": 1,
       "swinging_arm": "none",
       "damage_from_player": false,
       "ignore_player_movement": false,
@@ -875,7 +857,6 @@
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "swallow_prompt"
-          
           }
         ]
       }
@@ -886,14 +867,23 @@
       "hidden": true,
       "hidden_in_bar": false,
       "bar_color": "yellow",
-      "list_index": 2,
+      "list_index": 1,
       "start_value": 0,
       "max_value": 50,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:has_tag",
-            "tag": "AlienEvo.CooldownSwallow"
+            "type":"palladium:or",
+            "conditions":[
+              {
+               "type": "palladium:has_tag",
+                "tag": "AlienEvo.CooldownSwallow"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Missed"
+                }
+            ]
           }
         ]
       }
@@ -929,11 +919,11 @@
       "max_value": 3,
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 2,
+      "list_index": 1,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:toggle",
+            "type": "palladium:held",
             "key_type": "key_bind",
             "needs_empty_hand": false
           }
@@ -977,7 +967,9 @@
         "execute as @s if entity @e[type=#upchuck:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run playsound upchuck:gangsta master @s ~ ~ ~ 2",
         "execute as @s if entity @e[sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run scoreboard players set @s Gourmand.Swallow 1"
       ],
-			"commands": [],
+			"commands": [
+        "execute as @s if score @s Gourmand.Swallow matches 1 run energybar value add @s upchuck:gourmand stomach 4"
+      ],
       "conditions":{
         "enabling":[
           {
@@ -1084,11 +1076,11 @@
       }
     },
     "entity_vaccum": {
-      "type": "alienevo:entity_vacuum",
+      "type": "upchuck:look_entity_vacuum",
       "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
       "search_radius": 2,
       "hidden": true,
-      "debug_mode": false,
+      "debug_mode": true,
       "max_hearts": 100,
       "conditions": {
         "enabling": [
@@ -1200,7 +1192,7 @@
       "title": "Chomp",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 1,
+      "list_index": 0,
       "start_value": 1,
       "max_value": 5,
       "conditions": {
@@ -1262,8 +1254,8 @@
       "hidden": true,
       "commands": [
         "function upchuck:mining_mod/exe",
-        "playsound upchuck:swallow master @s ~ ~ ~ 3 1",
-        "effect give @s minecraft:saturation 3 1 true"
+        "playsound upchuck:swallow master @s ~ ~ ~ 3 1"
+        
       ],
       "hidden_in_bar": true,
       "list_index": -1,
@@ -1387,7 +1379,7 @@
       "title": "Long Prehensile Tongues",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 2,
+      "list_index": 1,
       "start_value": 0,
       "max_value": 15,
       "conditions": {
@@ -1497,7 +1489,7 @@
         "energy_bar": "stomach",
         "amount": 1500
       },
-      "list_index": 0,
+      "list_index": 2,
       "gui_position": "null",
       "description": "null",
       "start_value": 1,
@@ -1524,6 +1516,7 @@
         ]
       }
     },
+    
     "kaboom_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
@@ -1700,7 +1693,7 @@
         0.5,
         2.2
       ],
-      "description": "§9(Crouch)§f Use a §4§lhuge§r§f chunk of your §a§lenergy§r§f to shoot out a §4§ldestructive§r§f blast",
+      "description": "§9(Crouch+RightClick)§f Use a §4§lhuge§r§f chunk of your §a§lenergy§r§f to shoot out a §4§ldestructive§r§f blast",
       "conditions": {
         "unlocking": [
           {
@@ -1764,7 +1757,7 @@
         0.5,
         0.5
       ],
-      "description": "Use a §cportion§f of your §a§lenergy§r§f to shoot out an §a§lenergy §r§fblast",
+      "description": "§9(RightClick)§f Use a §cportion§f of your §a§lenergy§r§f to shoot out an §a§lenergy §r§fblast",
       "conditions": {
         "unlocking": [
           {

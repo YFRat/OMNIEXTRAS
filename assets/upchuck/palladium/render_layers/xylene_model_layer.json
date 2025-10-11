@@ -1,0 +1,16 @@
+{
+    "type": "palladium:compound",
+    "layers": [
+        {
+            "type": "minecraft:villager",
+            "model_layer": "upchuck:xylene#xylene_model",
+            "texture": "upchuck:textures/models/aliens/xylene_model.png"
+        },
+        {
+            "type": "minecraft:villager",
+            "model_layer": "upchuck:xylene#xylene_model",
+            "render_type": "glow",
+            "texture": "upchuck:textures/models/aliens/xylene_glow.png"
+        }
+    ]
+}
