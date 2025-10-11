@@ -15,14 +15,14 @@ global.alienevo_111_10k_skincolor_palette_1 = ["fff899", "f8dd72","dac893", "c5b
 global.alienevo_111_10k_skincolor_palette_2 = ["917526", "8c7035", "877741", "7a5e25", "5b4312"];
 global.alienevo_111_10k_skincolor_palette_3 = ["f192a2", "e48393", "e57386", "d27282", "bb5f6f"];
 
-global.alienevo_111_default_skincolor_palette_1 = ["fff899", "f8dd72", "dac893", "c5b57f", "a79866", "978752"];
-global.alienevo_111_default_skincolor_palette_2 = ["917526", "8c7035", "877741", "7a5e25", "5b4312"];
-global.alienevo_111_default_skincolor_palette_3 = ["f192a2", "e48393", "e57386", "d27282", "bb5f6f"];
+global.alienevo_111_default_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
+global.alienevo_111_default_skincolor_palette_2 = ["559910","457e0c","335e08"];
+global.alienevo_111_default_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
 
 global.alienevo_111_prototype_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
 global.alienevo_111_prototype_skincolor_palette_2 = ["559910","457e0c","335e08"];
 global.alienevo_111_prototype_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
 
 global.alienevo_111_10k_glowcolor_1 = ["ffffff", "dadedf"];
-global.alienevo_111_default_glowcolor_1 = ["41cb27"];
+global.alienevo_111_default_glowcolor_1 = ["b8ff00", "8ed721"];
 global.alienevo_111_prototype_glowcolor_1 = ["ffffff", "dadedf"];

@@ -26,44 +26,20 @@
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_5",
-            "filter": "#4a7e0b",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_PROTO_6",
-            "filter": "#335e08",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_1",
-            "filter": "#4f8506",
+            "filter": "#559910",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_2",
-            "filter": "#4a7605",
+            "filter": "#457e0c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_3",
-            "filter": "#426004",
-            "ignore_blank": true
-          },
-           {
-            "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_4",
-            "filter": "#384a03",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_5",
-            "filter": "#2a3402",
+            "filter": "#335e08",
             "ignore_blank": true
           },
          {
@@ -102,14 +78,6 @@
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_4"
           },
-          "SKIN_PROTO_5": {
-            "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_5"
-          },
-           "SKIN_PROTO_6": {
-            "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_6"
-          },
           "SKIN_PROTO_P2_1": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_2_color_1"
@@ -121,14 +89,6 @@
           "SKIN_PROTO_P2_3": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_2_color_3"
-          },
-          "SKIN_PROTO_P2_4": {
-            "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_4"
-          },
-          "SKIN_PROTO_P2_5": {
-            "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_5"
           },
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",

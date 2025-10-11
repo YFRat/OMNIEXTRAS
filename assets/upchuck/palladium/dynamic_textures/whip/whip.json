@@ -20,22 +20,17 @@
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_5",
-            "filter": "#4a7e0b",
+            "color": "##SKIN_PROTO_P2_2",
+            "filter": "#457e0c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_PROTO_6",
+            "color": "##SKIN_PROTO_P2_3",
             "filter": "#335e08",
             "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_PROTO_P2_5",
-            "filter": "#2a3402",
-            "ignore_blank": true
           }
+          
 
         ],
         "variables": {
@@ -55,17 +50,13 @@
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_4"
           },
-          "SKIN_PROTO_5": {
+           "SKIN_PROTO_P2_2": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_5"
+            "property": "gourmand_prototype_skincolor_palette_2_color_2"
           },
-          "SKIN_PROTO_6": {
+          "SKIN_PROTO_P2_3": {
             "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_1_color_6"
-          },
-           "SKIN_PROTO_P2_5": {
-            "type": "palladium:string_property",
-            "property": "gourmand_prototype_skincolor_palette_2_color_5"
+            "property": "gourmand_prototype_skincolor_palette_2_color_3"
           }
    
         },

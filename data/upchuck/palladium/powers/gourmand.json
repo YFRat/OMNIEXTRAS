@@ -21,7 +21,7 @@
       "type": "palladium:command",
       "hidden": false,
       "title": {"translate":"species.alienevo_aliens.111"},
-      "icon": "#alienevo:alien_sel",
+      "icon": "#upchuck:gourmand/upchuck",
       "gui_position": [
         0,
         0
