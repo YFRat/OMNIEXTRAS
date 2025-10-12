@@ -5,5 +5,8 @@
     "itemGroup.omni_extras.omniextraspack": "Omni Extras",
     "item.omni_extras.opticoid_vial": "DNA Vial",
     "item.omni_extras.empty_vial": "Empty Vial",
-    "item.omni_extras.filled_vial": "Filled Vial"
+    "item.omni_extras.filled_vial": "Filled Vial",
+    "species.alienevo_aliens.111": "Gourmand",
+    "alienevo.alien_desc.111": "§2Gourmands§f are a humanoid amoeba-like species and given the chance, a §2Gourmand§f will begin snacking on §lany§r kind of material in its §lvicinity.",
+    "entity.villager.omni_extras.aliengirl": "Xylene"
 }

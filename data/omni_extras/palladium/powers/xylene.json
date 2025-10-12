@@ -16,7 +16,7 @@
         "xylene_render": {
             "type": "palladium:render_layer",
             "hidden": true,
-            "render_layer": "upchuck:xylene_layer"
+            "render_layer": "omni_extras:xylene_layer"
         },
         "astrobot_loop": {
       "type": "palladium:command",
