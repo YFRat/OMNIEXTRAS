@@ -8,6 +8,12 @@ PalladiumEvents.registerAnimations((event) => {
                     .scaleX(1.4)
                     .scaleY(1.4)
                     .scaleZ(1.4);
+                builder.get("left_arm")
+                    .setX(-12)
+                    .setZ(10)
+                    .scaleX(1.4)
+                    .scaleY(1.4)
+                    .scaleZ(1.4);
             }
             else {
                 if (builder.getPlayer().isCrouching()) {

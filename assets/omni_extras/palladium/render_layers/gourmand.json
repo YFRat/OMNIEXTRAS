@@ -12,7 +12,7 @@
           }
         }
       },
-       "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_file": "omni_extras:animations/gourmand_anims.json",
       "animation_controller": [
         {
           "name": "tail_move",
@@ -793,7 +793,29 @@
           }
         }
       },
-      
+      "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        },
+        {
+          "name": "gourmand",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin2",
+            "hurt": "tummyache",
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+
+          }
+        }   
+      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
         "transformers": [
@@ -850,6 +872,29 @@
           }
         }
       },
+      "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        },
+        {
+          "name": "gourmand",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin2",
+            "hurt": "tummyache",
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+
+          }
+        }   
+      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",
         "transformers": [
