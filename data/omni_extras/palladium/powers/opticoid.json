@@ -380,7 +380,7 @@
 
     "eye_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:stalk",
+      "sound":"omni_extras:stalk",
       "hidden": true,
       "list_index": -1,
       "looping": false,
@@ -397,7 +397,7 @@
     },
     "beam_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:eyebeam",
+      "sound":"omni_extras:eyebeam",
       "hidden": true,
       "list_index": -1,
       "looping": true,
@@ -414,7 +414,7 @@
     },
     "otherbeam_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:otherbeam",
+      "sound":"omni_extras:otherbeam",
       "hidden": true,
       "list_index": -1,
       "looping": true,
