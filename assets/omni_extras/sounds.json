@@ -1,18 +1,38 @@
 {
     "eyebeam": {
     "category": "player",
-    "sounds": ["alienevo:eyebeam"]
+    "sounds": ["omni_extras:eyebeam"]
   },
     "stalk": {
     "category": "player",
-    "sounds": ["alienevo:stalk"]
+    "sounds": ["omni_extras:stalk"]
   },
   "openeye": {
     "category": "player",
-    "sounds": ["alienevo:openeye"]
+    "sounds": ["omni_extras:openeye"]
   },
    "otherbeam": {
     "category": "player",
-    "sounds": ["alienevo:otherbeam"]
-  }
+    "sounds": ["omni_extras:otherbeam"]
+  },
+  "swallow": {
+    "category": "player",
+    "sounds": ["omni_extras:swallow"]
+    },
+    "blast": {
+    "category": "player",
+    "sounds": ["omni_extras:blast"]
+    },
+    "chomp": {
+    "category": "player",
+    "sounds": ["omni_extras:chomp"]
+    },
+    "whip": {
+    "category": "player",
+    "sounds": ["omni_extras:whip"]
+    },
+    "gangsta": {
+    "category": "player",
+    "sounds": ["omni_extras:gangsta"]
+    }
 }

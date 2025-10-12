@@ -1,0 +1,900 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "geckolib:default",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        }
+      },
+       "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        },
+        {
+          "name": "gourmand",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin2",
+            "hurt": "tummyache",
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+
+          }
+        }   
+      ],
+      "third_person_conditions": true,
+      "texture": {
+        "base": "omni_extras:textures/models/aliens/alien_111/gourmand_skin_#UNIFORM.png",
+        "bones": {
+        "head": "armorHead",
+        "body": "armorBody",
+        "right_arm": "armorRightArm",
+        "left_arm": "armorLeftArm",
+        "right_leg": "armorRightLeg",
+        "left_leg": "armorLeftLeg"
+        },
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_1",
+            "filter": "#b5eb20",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_2",
+            "filter": "#9dda13", 
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_3",
+            "filter": "#82be11", 
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_4",
+            "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_1",
+            "filter": "#559910",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_2",
+            "filter": "#457e0c",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_3",
+            "filter": "#335e08",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_1",
+            "filter": "#13ba39",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_2",
+            "filter": "#11aa38",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_3",
+            "filter": "#0f9336",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_4",
+            "filter": "#0c7c33",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_5",
+            "filter": "#0a662e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_6",
+            "filter": "#084f26",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_7",
+            "filter": "#2d4508",
+            "ignore_blank": true 
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_8",
+            "filter": "#213109",
+             "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#8bdace",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#8bdace",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_3",
+            "filter": "#8bdace",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_4",
+            "filter": "#78c7bd",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_5",
+            "filter": "#5fa89e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_6",
+            "filter": "#4a988e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_1",
+            "filter": "#3a887e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_2",
+            "filter": "#1a907d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_3",
+            "filter": "#298872",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_4",
+            "filter": "#1a7560",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_5",
+            "filter": "#075643",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_1",
+            "filter": "#81ba60",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_2",
+            "filter": "#71ac50",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_3",
+            "filter": "#619a3e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_4",
+            "filter": "#5ea335",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_5",
+            "filter": "#4f852f",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_3",
+            "filter": "#b83535",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_1",
+            "filter": "#c21818",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_2",
+            "filter": "#800d0d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_3",
+            "filter": "#5e0707",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_1",
+            "filter": "#c90224",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_2",
+            "filter": "#a80722",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_3",
+            "filter": "#930f25",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_4",
+            "filter": "#8d1111",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_5",
+            "filter": "#740d0d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_6",
+            "filter": "#3e0909",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_7",
+            "filter": "#441010",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_8",
+            "filter": "#2c0b0b",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "SKIN_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_1"
+          },
+          "SKIN_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_2"
+          },
+          "SKIN_PROTO_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_3"
+          },
+          "SKIN_PROTO_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_1_color_4"
+          },
+          "SKIN_PROTO_P2_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_1"
+          },
+          "SKIN_PROTO_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_2"
+          },
+           "SKIN_PROTO_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_2_color_3"
+          },
+          "SKIN_PROTO_P3_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_1"
+          },
+           "SKIN_PROTO_P3_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_2"
+          },
+           "SKIN_PROTO_P3_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_3"
+          },
+           "SKIN_PROTO_P3_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_4"
+          },
+           "SKIN_PROTO_P3_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_5"
+          },
+           "SKIN_PROTO_P3_6": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_6"
+          },
+          "SKIN_PROTO_P3_7": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_7"
+          },
+          "SKIN_PROTO_P3_8": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_skincolor_palette_3_color_8"
+          },
+          "SKIN_10K_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_1"
+          },
+          "SKIN_10K_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_2"
+          },
+          "SKIN_10K_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_3"
+          },
+          "SKIN_10K_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_4"
+          },
+          "SKIN_10K_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_5"
+          },
+          "SKIN_10K_6": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_1_color_6"
+          },
+          "SKIN_10K_P2_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_2_color_1"
+          },
+          "SKIN_10K_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_2_color_2"
+          },
+          "SKIN_10K_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_2_color_3"
+          },
+          "SKIN_10K_P2_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_2_color_4"
+          },
+          "SKIN_10K_P2_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_2_color_5"
+          },
+          "SKIN_10K_P3_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_3_color_1"
+          },
+          "SKIN_10K_P3_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_3_color_2"
+          },
+          "SKIN_10K_P3_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_3_color_3"
+          },
+           "SKIN_10K_P3_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_3_color_4"
+          },
+           "SKIN_10K_P3_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_skincolor_palette_3_color_5"
+          },
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_2"
+          },
+          "SKIN_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_3"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_4"
+          },
+          "SKIN_DEFAULT_P2_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_1"
+          },
+          "SKIN_DEFAULT_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_2"
+          },
+          "SKIN_DEFAULT_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_3"
+          },
+          "SKIN_DEFAULT_P3_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_1"
+          },
+          "SKIN_DEFAULT_P3_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_2"
+          },
+          "SKIN_DEFAULT_P3_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_3"
+          },
+          "SKIN_DEFAULT_P3_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_4"
+          },
+          "SKIN_DEFAULT_P3_5": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_5"
+          },
+          "SKIN_DEFAULT_P3_6": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_6"
+          },
+          "SKIN_DEFAULT_P3_7": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_7"
+          },
+          "SKIN_DEFAULT_P3_8": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_3_color_8"
+          }
+        }
+      }
+    },
+     {
+      "type": "geckolib:default",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        }
+      },
+       "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        },
+        {
+          "name": "gourmand",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin2",
+            "hurt": "tummyache",
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+            
+
+          }
+        }   
+      ],
+      "third_person_conditions": true,
+      "texture": {
+        "base": "omni_extras:textures/models/aliens/alien_111/gourmand_uniform_#UNIFORM.png",
+        "bones": {
+        "head": "armorHead",
+        "body": "armorBody",
+        "right_arm": "armorRightArm",
+        "left_arm": "armorLeftArm",
+        "right_leg": "armorRightLeg",
+        "left_leg": "armorLeftLeg"
+        },
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_1",
+            "filter": "#ffffff",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_2",
+            "filter": "#e5eff1",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_3",
+            "filter": "#dadedf",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_4",
+            "filter": "#b8bdbe",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_5",
+            "filter": "#979b9d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_1",
+            "filter": "#2c2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_2",
+            "filter": "#232020",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_3",
+            "filter": "#171515",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_4",
+            "filter": "#000001",
+            "ignore_blank": true
+          }
+         
+        ],
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "SECONDARY_1": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_1"
+          },
+          "SECONDARY_2": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_2"
+          },
+          "SECONDARY_3": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_3"
+          },
+          "SECONDARY_4": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_4"
+          },
+          "SECONDARY_5": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_5"
+          },
+          "PRIMARY_1": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_1"
+          },
+          "PRIMARY_2": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_2"
+          },
+          "PRIMARY_3": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_3"
+          },
+          "PRIMARY_4": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_4"
+          }
+          
+
+        }
+      }
+    },
+     {
+      "type": "geckolib:default",
+      "render_type": "glow",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_111/gourmand_#UNIFORM.geo.json",
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          }
+        }
+      },
+       "animation_file": "omni_extras:animations/gourmand_anims.json",
+      "animation_controller": [
+        {
+          "name": "tail_move",
+          "transition_tick_time": 0,
+          "animation": "tail"
+        },
+        {
+          "name": "gourmand",
+          "transition_tick_time": 0,
+          "triggers": {
+            "bite":"bite",
+            "shoot":"shoot",
+            "swallow": "open_mouth",
+            "whip": "spin2",
+            "hurt": "tummyache",
+            "unhurt": "untummyache",
+            "boom": "kaboom",
+            "still": "idle"
+
+          }
+        }   
+      ],
+      "texture": {
+        "base": "omni_extras:textures/models/aliens/alien_111/gourmand_glow_#UNIFORM.png",
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_1",
+            "filter": "#ffffff",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_2",
+            "filter": "#dadedf",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_1",
+            "filter": "#fef364",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_2",
+            "filter": "#fcd720",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_3",
+            "filter": "#edb508",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_1",
+            "filter": "#b8ff00",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_2",
+            "filter": "#8ed721",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "GLOW_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_glowcolor_1_color_1"
+          },
+          "GLOW_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_prototype_glowcolor_1_color_2"
+          },
+          "GLOW_10K_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_glowcolor_1_color_1"
+          },
+          "GLOW_10K_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_glowcolor_1_color_2"
+          },
+          "GLOW_10K_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_10k_glowcolor_1_color_3"
+          },
+          "GLOW_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_glowcolor_1_color_1"
+          },
+          "GLOW_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_glowcolor_1_color_2"
+          }
+        }
+      }
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_111/badge_#BADGE.geo.json",
+        "variables": {
+          "BADGE": {
+            "type": "palladium:string_property",
+            "property": "badge"
+          }
+        }
+      },
+      
+      "texture": {
+        "base": "alienevo:textures/models/badge/badge_#BADGE.png",
+        "transformers": [
+          {
+            "type": "palladium:overlay",
+            "overlay": "alienevo:textures/models/badge/#BADGE/core_side/core_side_#Z.png"
+          },
+          {
+            "type": "palladium:overlay",
+            "overlay": "alienevo:textures/models/badge/#BADGE/core_top/core_top_#Y.png"
+          },
+          {
+            "type": "palladium:overlay",
+            "overlay": "alienevo:textures/models/badge/#BADGE/dial_inner/dial_inner_#X.png"
+          },
+          {
+            "type": "palladium:overlay",
+            "overlay": "alienevo:textures/models/badge/#BADGE/dial_outer/dial_outer_#W.png"
+          }
+        ],
+        "variables": {
+          "BADGE": {
+            "type": "palladium:string_property",
+            "property": "badge"
+          },
+          "Z": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.CoreSide"
+          },
+          "Y": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.CoreTop"
+          },
+          "X": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.DialInner"
+          },
+          "W": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.DialOuter"
+          }
+        }
+      }
+    },
+    {
+      "type": "geckolib:default",
+      "render_type": "glow",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_111/badge_#BADGE.geo.json",
+        "variables": {
+          "BADGE": {
+            "type": "palladium:string_property",
+            "property": "badge"
+          }
+        }
+      },
+      "texture": {
+        "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_1",
+            "filter": "#ffffff",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_2",
+            "filter": "#eaeaea",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_3",
+            "filter": "#cfcfdd",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "WATCHSTATE": {
+            "type": "palladium:string_property",
+            "property": "watch_state"
+          },
+          "BADGE": {
+            "type": "palladium:string_property",
+            "property": "badge"
+          },
+          "GLOW_1": {
+            "type": "palladium:string_property",
+            "property": "uniform_glow_color_1"
+          },
+          "GLOW_2": {
+            "type": "palladium:string_property",
+            "property": "uniform_glow_color_2"
+          },
+          "GLOW_3": {
+            "type": "palladium:string_property",
+            "property": "uniform_glow_color_3"
+          }
+        }
+      }
+    }
+  ]
+}

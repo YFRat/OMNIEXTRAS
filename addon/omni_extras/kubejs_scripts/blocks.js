@@ -10,13 +10,13 @@ StartupEvents.registry('block', event => {
 
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
   event.remove('omni_extras:opticoid_slime');
-  event.remove('upchuck:mysterious_tablet');
+  event.remove('omni_extras:mysterious_tablet');
 });
 
 StartupEvents.registry('item', event => {
-    event.create('upchuck:mysterious_tablet')
+    event.create('omni_extras:mysterious_tablet')
         .unstackable()
-        .texture('upchuck:item/upchuck_tablet')
+        .texture('omni_extras:item/upchuck_tablet')
         .displayName('Tablet of Unknown Origin')
         .rarity('rare')
         .tooltip(`§5§l"Seems important.. I should hold on to it"`)

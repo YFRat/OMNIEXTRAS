@@ -1,0 +1,24 @@
+{
+  "display": {
+    "title": {
+      "text": "Top Of The Food Chain",
+      "color": "dark_purple"
+    },
+    "description": {
+      "text": "Transform into a Gourmand for the very first time"
+    },
+    "icon": {
+      "item": "minecraft:cake"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "omni_extras:root",
+  "criteria": {
+    "obtainment": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

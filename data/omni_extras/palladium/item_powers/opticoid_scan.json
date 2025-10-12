@@ -3,5 +3,5 @@
   "item": [
     "omni_extras:opticoid_vial"
   ],
-  "power": "omni_extras:opticoid_vial"
+  "power": "omni_extras:not_aliens/opticoid_vial"
 }

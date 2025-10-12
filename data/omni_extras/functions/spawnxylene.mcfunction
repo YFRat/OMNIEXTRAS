@@ -1,0 +1,1 @@
+summon zombified_piglin ~ ~1 ~ {HandItems:[{id:"minecraft:air", Count: 0b,}], CustomName:'{"translate":"entity.villager.omni_extras.aliengirl"}', CustomNameVisible: 0b,  Silent: 1b,  Palladium: {    Properties: {      superpowers: ["omni_extras:xylene"]    }  }}

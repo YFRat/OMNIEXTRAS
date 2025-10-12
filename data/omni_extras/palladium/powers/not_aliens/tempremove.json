@@ -1,0 +1,63 @@
+{
+  "name": {
+    "text": "Yoinked"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "minecraft:redstone"
+  },
+  "persistent_data": false,
+  "hidden": true,
+  "abilities": {
+    "yoinked": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+       "function omni_extras:yoink",
+       "tag @s add Gourmand.Obtained"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "omni_extras:not_aliens/tempremove",
+            "ability": "temp_timer",
+            "min": 0,
+            "max": 129
+          }
+        ]
+      }
+    },
+    "unyoinked": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "omni_extras:not_aliens/tempremove",
+            "ability": "temp_timer",
+            "min": 130,
+            "max": 130
+          }
+        ]
+      }
+    },
+    "temp_timer": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 130
+    }
+  }
+}
