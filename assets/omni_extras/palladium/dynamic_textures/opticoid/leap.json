@@ -54,5 +54,5 @@
             "property": "opticoid_prototype_skincolor_palette_1_color_5"
           }
         },
-  "base": "omni_extras:textures/gui/playlists/leap/leap.png"
+  "base": "omni_extras:textures/gui/playlists/opticoid/leap.png"
 }

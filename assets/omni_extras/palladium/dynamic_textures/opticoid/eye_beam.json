@@ -45,5 +45,5 @@
             "property": "opticoid_prototype_glowcolor_1_color_4"
           }
         },
-  "base": "omni_extras:textures/gui/playlists/eye_beam/eye_beam.png"
+  "base": "omni_extras:textures/gui/playlists/opticoid/eye_beam.png"
 }

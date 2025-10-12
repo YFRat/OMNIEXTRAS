@@ -55,5 +55,5 @@
             "property": "opticoid_prototype_glowcolor_1_color_5"
           }
         },
-  "base": "omni_extras:textures/gui/playlists/shoulder_beams/shoulder_beam.png"
+  "base": "omni_extras:textures/gui/playlists/opticoid/shoulder_beam.png"
 }
