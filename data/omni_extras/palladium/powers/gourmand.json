@@ -1171,6 +1171,32 @@
         ]
       }
     },
+    "blast_exp": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scoreboard players add @s Gourmand.XP 2"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:or",
+            "conditions":[
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "energy_blast_timer"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "mega_blast_timer"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "spit_out": {
       "type": "alienevo:sonic_clap",
       "knockback": 3,

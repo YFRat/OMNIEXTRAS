@@ -11,6 +11,8 @@ StartupEvents.registry('block', event => {
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
   event.remove('omni_extras:opticoid_slime');
   event.remove('omni_extras:mysterious_tablet');
+  event.remove('omni_extras:granoall_bar');
+  event.remove('omni_extras:wrapper');
 });
 
 StartupEvents.registry('item', event => {
@@ -26,4 +28,24 @@ StartupEvents.registry('item', event => {
                 .saturation(0)
                 .alwaysEdible()
         )
+});
+
+StartupEvents.registry('item', event => {
+    event.create('omni_extras:granoall_bar')
+        .texture('omni_extras:item/granoallbar')
+        .displayName('GranoAll Bar')
+        .tooltip(`§5§l"This.. looks edible.."`)
+        .rarity('uncommon')
+        .food(food => 
+            food
+                .hunger(2)
+                .saturation(1)
+                .alwaysEdible()
+        )
+});
+StartupEvents.registry('item', event => {
+    event.create('omni_extras:wrapper')
+        .texture('omni_extras:item/wrapper')
+        .displayName('Wrapper')
+        .rarity('common')
 });

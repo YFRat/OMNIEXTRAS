@@ -30,13 +30,32 @@ ItemEvents.foodEaten(e => {
     const player = e.player
 
     if (palladium.superpowers.hasSuperpower(player, 'omni_extras:gourmand')) {
-        player.tell(Text.yellow("Yummy!"))
-        player.playSound('entity.player.burp')
+        player.tell(Text.yellow("Yummy!"));
+        player.playSound('entity.player.burp');
     } else {
-        player.runCommandSilent(`effect give ${player.name.string} minecraft:poison 5 1 true`)
-        player.tell(Text.red("I shouldn't have eaten that.."))
+        player.runCommandSilent(`effect give ${player.name.string} minecraft:poison 5 1 true`);
+        player.tell(Text.red("I shouldn't have eaten that.."));
     }
-})
+});
+
+ItemEvents.foodEaten(e => {
+    if (e.item.id !== 'omni_extras:granoall_bar') return
+
+    const player = e.player
+
+    if (palladium.superpowers.hasSuperpower(player, 'omni_extras:gourmand')) {
+        player.tell(Text.yellow("Scrumptious!"));
+        player.playSound('entity.player.burp');
+        player.runCommandSilent(
+            `energybar value add ${player.name.string} omni_extras:gourmand stomach 300`);
+    } else {
+        player.runCommandSilent(`effect give ${player.name.string} minecraft:poison 5 1 true`);
+        player.runCommandSilent(`effect give ${player.name.string} minecraft:hunger 9 150 true`);
+        player.runCommandSilent(`effect give ${player.name.string} minecraft:nausea 8 15 true`);
+        player.tell(Text.red("Oh.. God.. I'm gonna.."));
+    }
+    player.give('omni_extras:wrapper');
+});
 
 ItemEvents.rightClicked(e =>{
     if (e.item.id === 'minecraft:nether_star') {
