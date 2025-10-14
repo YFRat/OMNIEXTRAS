@@ -29,8 +29,37 @@
             "color": "##SKIN_PROTO_P2_3",
             "filter": "#335e08",
             "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_2",
+            "filter": "#800d0d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_3",
+            "filter": "#5e0707",
+            "ignore_blank": true
           }
-          
 
         ],
         "variables": {
@@ -57,8 +86,27 @@
           "SKIN_PROTO_P2_3": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_2_color_3"
+          },
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_2"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_4"
+          },
+           "SKIN_DEFAULT_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_2"
+          },
+          "SKIN_DEFAULT_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_3"
           }
-   
         },
-  "base": "omni_extras:textures/gui/playlists/gourmand/perk/tongue_spin.png"
+  "base": "omni_extras:textures/gui/playlists/gourmand/perk/tongue_spin_#UNIFORM.png"
 }

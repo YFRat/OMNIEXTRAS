@@ -53,9 +53,61 @@
             "color": "##GLOW_PROTO_2",
             "filter": "#dadedf",
             "ignore_blank": true
+         },
+         {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939", 
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_3",
+            "filter": "#b83535", 
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_1",
+            "filter": "#c21818",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_2",
+            "filter": "#800d0d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_3",
+            "filter": "#5e0707",
+            "ignore_blank": true
+          },
+         {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_1",
+            "filter": "#b8ff00",
+            "ignore_blank": true
+         },
+         {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_2",
+            "filter": "#8ed721",
+            "ignore_blank": true
          }
-         
-          
         ],
         "variables": {
             "UNIFORM": {
@@ -97,9 +149,45 @@
           "GLOW_PROTO_2": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_glowcolor_1_color_2"
+          },
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_2"
+          },
+          "SKIN_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_3"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_4"
+          },
+          "SKIN_DEFAULT_P2_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_1"
+          },
+          "SKIN_DEFAULT_P2_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_2"
+          },
+          "SKIN_DEFAULT_P2_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_2_color_3"
+          },
+          "GLOW_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_glowcolor_1_color_1"
+          },
+          "GLOW_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_glowcolor_1_color_2"
           }
           
           
         },
-  "base": "omni_extras:textures/icon/alien_111.png"
+  "base": "omni_extras:textures/icon/alien_111_#UNIFORM.png"
 }

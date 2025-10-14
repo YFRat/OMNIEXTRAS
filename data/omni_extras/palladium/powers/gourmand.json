@@ -312,7 +312,12 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:crouching"
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type":"palladium:crouching"
+              }
+            ]
           },
           {
             "type":"palladium:ability_unlocked",
@@ -800,12 +805,7 @@
             "ability":"vomit_unlock"
           },
           {
-            "type":"palladium:not",
-            "conditions":[
-              {
                 "type":"palladium:crouching"
-              }
-            ]
           },
            {
                 "type":"palladium:not",
@@ -1175,7 +1175,7 @@
       "type": "alienevo:sonic_clap",
       "knockback": 3,
       "damage": 4,
-      "radius": 1,
+      "radius": 0.5,
       "hidden": true,
       "conditions": {
         "enabling": [
@@ -1629,7 +1629,7 @@
         1,
         1
       ],
-      "description": "§9(Crouch)§f Launch yourself through the air and cover large distances quickly.",
+      "description": "Launch yourself through the air and cover large distances quickly.",
       "conditions": {
         "unlocking": [
           {
@@ -1661,7 +1661,7 @@
         1,
         1.7
       ],
-      "description": "Spin and §a§lextend§r§f your tongue outwards to hit §4§lanyone§r§f nearby",
+      "description": "§9(Crouch) §fSpin and §a§lextend§r§f your tongue outwards to hit §4§lanyone§r§f nearby",
       "conditions": {
         "unlocking": [
           {
@@ -1811,7 +1811,7 @@
         -1,
         1
       ],
-      "description": "§9(Hold)§fPull mobs inside you via your §a§lextendable§r§f tongue and be able to §espit them out§f any time",
+      "description": "§9(Hold) §fPull mobs inside you via your §a§lextendable§r§f tongue and be able to §espit them out§f any time",
       "conditions": {
         "unlocking": [
           {
@@ -1900,7 +1900,7 @@
       "icon": "alienevo:textures/gui/aliens/alien_7/slimebomb.png",
       "title": "Stick Spit",
       "uuid": "97c7f0be-ffcb-4c53-b99b-cf66633979f8",
-      "description": "Use your §a§lvomit§r§f to trap §4§lenemies§r§f in place.",
+      "description": "§9(Crouch) §fUse your §a§lvomit§r§f to trap §4§lenemies§r§f in place.",
       "hidden": false,
       "list_index": -1,
       "gui_position": [

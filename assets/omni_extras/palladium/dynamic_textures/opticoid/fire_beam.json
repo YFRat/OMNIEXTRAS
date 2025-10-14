@@ -28,6 +28,10 @@
           
         ],
         "variables": {
+           "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",
             "property": "opticoid_prototype_glowcolor_1_color_1"
@@ -50,5 +54,5 @@
           }
           
         },
-  "base": "omni_extras:textures/gui/playlists/opticoid/fire_beam.png"
+  "base": "omni_extras:textures/gui/playlists/opticoid/fire_beam_#UNIFORM.png"
 }

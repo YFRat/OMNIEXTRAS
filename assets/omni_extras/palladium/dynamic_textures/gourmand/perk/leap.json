@@ -88,5 +88,5 @@
           }
 
         },
-  "base": "omni_extras:textures/gui/playlists/gourmand/perk/leap.png"
+  "base": "omni_extras:textures/gui/playlists/gourmand/perk/leap_#UNIFORM.png"
 }

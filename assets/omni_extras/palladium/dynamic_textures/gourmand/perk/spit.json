@@ -12,7 +12,7 @@
             "filter": "#9dda13",
             "ignore_blank": true
           },
-           {
+          {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_3",
             "filter": "#82be11",
@@ -22,6 +22,30 @@
             "type": "palladium:color",
             "color": "##SKIN_PROTO_4",
             "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_3",
+            "filter": "#b83535",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
             "ignore_blank": true
           }
         ],
@@ -38,14 +62,30 @@
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_2"
           },
-          "SKIN_PROTO_3": {
+           "SKIN_PROTO_3": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_3"
           },
           "SKIN_PROTO_4": {
             "type": "palladium:string_property",
             "property": "gourmand_prototype_skincolor_palette_1_color_4"
+          },
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_2"
+          },
+           "SKIN_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_3"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "gourmand_default_skincolor_palette_1_color_4"
           }
         },
-  "base": "omni_extras:textures/gui/playlists/gourmand/perk/spit.png"
+  "base": "omni_extras:textures/gui/playlists/gourmand/perk/spit_#UNIFORM.png"
 }

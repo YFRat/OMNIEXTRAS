@@ -33,6 +33,10 @@
           }
         ],
         "variables": {
+           "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
           "SKIN_PROTO_1": {
             "type": "palladium:string_property",
             "property": "opticoid_prototype_skincolor_palette_1_color_1"
@@ -54,5 +58,5 @@
             "property": "opticoid_prototype_skincolor_palette_1_color_5"
           }
         },
-  "base": "omni_extras:textures/gui/playlists/opticoid/leap.png"
+  "base": "omni_extras:textures/gui/playlists/opticoid/leap_#UNIFORM.png"
 }
