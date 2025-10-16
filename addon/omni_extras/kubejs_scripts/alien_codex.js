@@ -25,8 +25,8 @@ global.alienevo_110_prototype_skincolor_palette_3 = ["f192a2", "e48393", "e57386
 
 
 global.alienevo_110_10k_glowcolor_1 = ["fef364", "fcd720", "edb508", "a48d1a"];
-global.alienevo_110_default_glowcolor_1 = ["b3ff40", "8ed721", "82be11", "628e0c"];
-global.alienevo_110_prototype_glowcolor_1 = ["b3ff40", "8ed721", "82be11", "628e0c"];
+global.alienevo_110_default_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311","628e0c",];
+global.alienevo_110_prototype_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311", "628e0c",];
 
 global.alienevo_alien_111 = ['omni_extras:gourmand']
 global.alienevo_randomization_111 = [false];

@@ -1,6 +1,6 @@
 {
   "name": "Opticoid",
-  "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+  "icon": "#omni_extras:opticoid/opticoid",
 
     "energy_bars": {
     "energy_meter": {
@@ -28,7 +28,7 @@
         0
       ],
       "description": "Dude, watch the puns! Pretty soon, you use up all the eye-conic ones, and they just get cornea and cornea...",
-      "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+      "icon": "#omni_extras:opticoid/opticoid",
       "first_tick_commands": [
         "scale easing set palladium:ability pehkui:exponential_out",
         "scale set pehkui:eye_height 1",
