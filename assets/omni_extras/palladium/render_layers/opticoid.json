@@ -226,87 +226,94 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_1",
-            "filter": "#doc522",
+            "filter": "#f79797",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_2",
-            "filter": "#c7bd25",
+            "filter": "#e56767",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_3",
-            "filter": "#c3b921",
+            "filter": "#c45454",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_4",
-            "filter": "#a49420",
+            "filter": "#9d4f4f",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_5",
-            "filter": "#1f2777",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_DEFAULT_6",
-            "filter": "#948021",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_DEFAULT_7",
-            "filter": "#8d7a20",
+            "filter": "#a44848",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_1",
-            "filter": "#6e788c",
+            "filter": "#f73737",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_2",
-            "filter": "#6a737e",
+            "filter": "#e03a3a",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_3",
-            "filter": "#5e656f",
+            "filter": "#c62a2a",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_4",
-            "filter": "#555b63",
+            "filter": "#b42020",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_5",
-            "filter": "#474e5a",
+            "filter": "#a01d1e",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_DEFAULT_P2_6",
-            "filter": "#454b53",
+            "color": "##SKIN_DEFAULT_P3_1",
+            "filter": "#63d95d",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_DEFAULT_P2_7",
-            "filter": "#3a4049",
+            "color": "##SKIN_DEFAULT_P3_2",
+            "filter": "#57bb52",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_3",
+            "filter": "#4ed747",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_4",
+            "filter": "#2ec826",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_5",
+            "filter": "#188413",
             "ignore_blank": true
           }
+          
         ],
         "variables": {
           "UNIFORM": {
@@ -457,14 +464,6 @@
             "type": "palladium:string_property",
             "property": "opticoid_default_skincolor_palette_1_color_5"
           },
-          "SKIN_DEFAULT_6": {
-            "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_6"
-          },
-          "SKIN_DEFAULT_7": {
-            "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_1_color_7"
-          },
           "SKIN_DEFAULT_P2_1": {
             "type": "palladium:string_property",
             "property": "opticoid_default_skincolor_palette_2_color_1"
@@ -485,13 +484,25 @@
             "type": "palladium:string_property",
             "property": "opticoid_default_skincolor_palette_2_color_5"
           },
-          "SKIN_DEFAULT_P2_6": {
+          "SKIN_DEFAULT_P3_1": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_6"
+            "property": "opticoid_default_skincolor_palette_3_color_1"
           },
-          "SKIN_DEFAULT_P2_7": {
+          "SKIN_DEFAULT_P3_2": {
             "type": "palladium:string_property",
-            "property": "opticoid_default_skincolor_palette_2_color_7"
+            "property": "opticoid_default_skincolor_palette_3_color_2"
+          },
+          "SKIN_DEFAULT_P3_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_3"
+          },
+          "SKIN_DEFAULT_P3_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_4"
+          },
+          "SKIN_DEFAULT_P3_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_5"
           }
         }
       }
@@ -715,8 +726,32 @@
           },
           {
             "type": "palladium:color",
+            "color": "##GLOW_10K_4",
+            "filter": "#a48d1a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
             "color": "##GLOW_DEFAULT_1",
-            "filter": "#45a61f",
+            "filter": "#7deef9",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_2",
+            "filter": "#35b2be",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_3",
+            "filter": "#33a9b4",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_4",
+            "filter": "#1f686e",
             "ignore_blank": true
           }
         ],
@@ -753,9 +788,25 @@
             "type": "palladium:string_property",
             "property": "opticoid_10k_glowcolor_1_color_3"
           },
+           "GLOW_10K_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_4"
+          },
           "GLOW_DEFAULT_1": {
             "type": "palladium:string_property",
             "property": "opticoid_default_glowcolor_1_color_1"
+          },
+           "GLOW_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_glowcolor_1_color_2"
+          },
+           "GLOW_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_glowcolor_1_color_3"
+          },
+           "GLOW_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_glowcolor_1_color_4"
           }
         }
       }
