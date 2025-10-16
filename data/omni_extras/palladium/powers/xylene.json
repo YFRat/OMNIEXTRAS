@@ -24,9 +24,9 @@
       "first_tick_commands": [
         "scale set pehkui:held_item 0",
         "team join passive @e[sort=nearest, distance=0..2]",
-        "scale set pehkui:hitbox_width 1.7",
-        "scale set pehkui:hitbox_height 2.3",
-        "scale set pehkui:eye_height 2.2"
+        "scale set pehkui:hitbox_width 1",
+        "scale set pehkui:hitbox_height 1.1",
+        "scale set pehkui:eye_height 1.15"
       ],
       "last_tick_commands": [""],
       "commands": []
