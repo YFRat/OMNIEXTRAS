@@ -1076,32 +1076,27 @@
       }
     },
     "entity_vaccum": {
-      "type": "omni_extras:look_entity_vacuum",
+      "type": "alienevo:entity_vacuum",
       "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
       "search_radius": 2,
       "hidden": true,
-      "debug_mode": true,
+      "debug_mode": false,
       "max_hearts": 100,
       "conditions": {
         "enabling": [
-          {
-            "type":"palladium:and",
-            "conditions":[
               {
             "type": "palladium:has_tag",
             "tag": "AlienEvo.BallCarry"
               },
-              {
+             {
             "type":"palladium:not",
             "conditions":[
-                  {
-                "type":"palladium:ability_unlocked",
-                "ability":"eating_limit_unlock"
-                  }
-                ]
+              {
+              "type":"palladium:ability_unlocked",
+              "ability":"eating_limit_unlock"
               }
-            ] 
-          }
+              ]
+            }
         ]
       }
     },
