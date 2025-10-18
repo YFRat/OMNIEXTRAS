@@ -1078,7 +1078,7 @@
     "entity_vaccum": {
       "type": "alienevo:entity_vacuum",
       "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
-      "search_radius": 2,
+      "search_radius": 1.2,
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 100,
@@ -1102,7 +1102,7 @@
     },
     "entity_vaccum2": {
       "type": "alienevo:entity_vacuum",
-      "search_radius": 2,
+      "search_radius": 1.2,
       "uuid":"cc88f9e8-45f0-4011-ac4c-aa7292602a32",
       "hidden": true,
       "debug_mode": false,
