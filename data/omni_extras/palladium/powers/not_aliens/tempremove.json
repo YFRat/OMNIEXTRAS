@@ -28,20 +28,205 @@
         ]
       }
     },
-    "unyoinked": {
+    "unyoinked1": {
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-        "function omni_extras:unyoink"
+        "function omni_extras:unyoink",
+        "superpower add alienevo:prototype_omnitrix @s",
+        "tag @s remove hasproto"
       ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:animation_timer_ability",
-            "power": "omni_extras:not_aliens/tempremove",
-            "ability": "temp_timer",
-            "min": 130,
-            "max": 130
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasproto"
+              }
+            ]
+          }
+        ]
+      }
+    },
+     "unyoinked2": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack_noncustom:recal_omnitrix @s",
+        "tag @s remove hasNCrecal"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasNCrecal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unyoinked3": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack_bug:prototype_omnitrix @s",
+        "tag @s remove hasbuggy"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasbuggy"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unyoinked4": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack_ult:ult_omnitrix @s",
+        "tag @s remove hasult"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasult"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unyoinked5": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack_ult_noncustom:ult_omnitrix @s",
+        "tag @s remove hasNCult"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasNCult"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unyoinked6": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack:recal_omnitrix @s",
+        "tag @s remove hasrecal"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasrecal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unyoinked7": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add evo_reds_alienpack_completed:completed_omnitrix @s",
+        "tag @s remove hasovtrix"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasovtrix"
+              }
+            ]
           }
         ]
       }

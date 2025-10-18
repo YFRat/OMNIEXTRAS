@@ -8,7 +8,7 @@
       "text": "Transform into an Opticoid for the very first time"
     },
     "icon": {
-      "item": "omni_extras:opticoid_vial"
+      "item": "omni_extras:opticoid_icon"
     },
     "frame": "challenge",
     "show_toast": true,

@@ -1,10 +1,19 @@
 ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
     const target = e.target;
+    const allowed = [
+    'alienevo:prototype_omnitrix',
+    'evo_reds_alienpack_noncustom:recal_omnitrix',
+    'evo_reds_alienpack_bug:prototype_omnitrix',
+    'evo_reds_alienpack_ult_noncustom:ult_omnitrix',
+    'evo_reds_alienpack_ult:ult_omnitrix',
+    'evo_reds_alienpack:recal_omnitrix',
+    'evo_reds_alienpack_completed:completed_omnitrix'
+];
 
     if (!target || !target.isLiving()) return;
 
     if (target.type === 'minecraft:zombified_piglin' && palladium.superpowers.hasSuperpower(target, 'omni_extras:xylene')) {
-    if (!palladium.superpowers.hasSuperpower(e.player, 'alienevo:prototype_omnitrix')) {
+    if (!allowed.some(p => palladium.superpowers.hasSuperpower(e.player, p))) {
         const roll = Math.floor(Math.random() * 3) + 1;
         switch (roll) {
             case 1:
@@ -31,7 +40,6 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
             e.player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
         }
 
-        e.player.runCommandSilent(`playsound alienevo:prototype_decouple master ${e.player.name.string}`);
         e.player.runCommandSilent(`playsound alienevo:prototype_master_control master ${e.player.name.string}`);
         e.player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${e.player.name.string}`);
     }

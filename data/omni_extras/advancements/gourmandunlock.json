@@ -8,7 +8,7 @@
       "text": "Transform into a Gourmand for the very first time"
     },
     "icon": {
-      "item": "minecraft:cake"
+      "item": "omni_extras:gourmand_icon"
     },
     "frame": "challenge",
     "show_toast": true,

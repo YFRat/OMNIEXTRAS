@@ -29,7 +29,7 @@
       "first_tick_commands": [
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add omni_extras.Flattable",
-        "advancement grant @s only omni_extras:topofthefoodchain",
+        "advancement grant @s only omni_extras:gourmandunlock",
         "scale set pehkui:drops 2 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
         "scoreboard objectives add Gourmand.ObliterationPoint dummy",
