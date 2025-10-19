@@ -13,14 +13,14 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-       "function omni_extras:yoink",
-       "tag @s add Perk.Obtained"
+       "function omni_extras:yoinkalt",
+       "tag @s add Murk.Obtained"
       ],
       "conditions": {
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "power": "omni_extras:not_aliens/tempremove",
+            "power": "omni_extras:not_aliens/tempremovealt",
             "ability": "temp_timer",
             "min": 0,
             "max": 129
@@ -43,7 +43,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -72,7 +72,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -101,7 +101,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -130,7 +130,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -159,7 +159,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -188,7 +188,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130
@@ -217,7 +217,7 @@
             "conditions":[
               {
                 "type": "palladium:animation_timer_ability",
-                "power": "omni_extras:not_aliens/tempremove",
+                "power": "omni_extras:not_aliens/tempremovealt",
                 "ability": "temp_timer",
                 "min": 130,
                 "max": 130

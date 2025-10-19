@@ -1,6 +1,55 @@
 ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
+    const player = e.player;
     const target = e.target;
-    const allowed = [
+    const item = e.item;
+    if (!target || !target.isLiving()) return;
+
+    if (target.type !== 'minecraft:zombified_piglin' || !palladium.superpowers.hasSuperpower(target, 'omni_extras:xylene'))
+        return;
+
+    if (!hasOmnitrix(player)) {
+        const roll = Math.floor(Math.random() * 3) + 1;
+        switch (roll) {
+            case 1:
+                player.tell(Text.red("§lGet out."));
+                break;
+            case 2:
+                player.tell(Text.red("§lWhat are you looking at?"));
+                break;
+            case 3:
+                player.tell(Text.red("§lGet out."));
+                break;
+        }
+        return;
+    }
+
+    const hasPerk = player.tags.contains('Perk.Obtained');
+    const hasMurk = player.tags.contains('Murk.Obtained');
+
+    item.count--;
+    if (!hasPerk && !hasMurk) {
+        player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
+        const roll = Math.floor(Math.random() * 2) + 1;
+        if (roll === 1) {
+            player.tell(Text.red("§lPerk"));
+            player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${player.name.string}`);
+        } else {
+            player.tell(Text.red("§lMurk"));
+            player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremovealt ${player.name.string}`);
+        }
+    } else if (hasPerk) {
+        player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
+        player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremovealt ${player.name.string}`);
+    } else if (hasMurk) {
+        player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
+        player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${player.name.string}`);
+    }
+
+    player.runCommandSilent(`playsound alienevo:prototype_master_control master ${player.name.string}`);
+});
+
+function hasOmnitrix(player) {
+  return [
     'alienevo:prototype_omnitrix',
     'evo_reds_alienpack_noncustom:recal_omnitrix',
     'evo_reds_alienpack_bug:prototype_omnitrix',
@@ -8,42 +57,8 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
     'evo_reds_alienpack_ult:ult_omnitrix',
     'evo_reds_alienpack:recal_omnitrix',
     'evo_reds_alienpack_completed:completed_omnitrix'
-];
-
-    if (!target || !target.isLiving()) return;
-
-    if (target.type === 'minecraft:zombified_piglin' && palladium.superpowers.hasSuperpower(target, 'omni_extras:xylene')) {
-    if (!allowed.some(p => palladium.superpowers.hasSuperpower(e.player, p))) {
-        const roll = Math.floor(Math.random() * 3) + 1;
-        switch (roll) {
-            case 1:
-                e.player.tell(Text.red("§lGet out."));
-                break;
-            case 2:
-                e.player.tell(Text.red("§lWhat are you looking at?"));
-                break;
-            case 3:
-                e.player.tell(Text.red("§lGet out."));
-                break;
-        }
-        return;
-    }
+  ].some(p => palladium.superpowers.hasSuperpower(player, p));
 }
-
-    const hasGourmand = e.player.tags.contains('Gourmand.Obtained');
-
-    if (target.type === 'minecraft:zombified_piglin' && palladium.superpowers.hasSuperpower(target, 'omni_extras:xylene')) {
-        e.item.count--;
-        if (!hasGourmand) {
-            e.player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
-        } else {
-            e.player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
-        }
-
-        e.player.runCommandSilent(`playsound alienevo:prototype_master_control master ${e.player.name.string}`);
-        e.player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${e.player.name.string}`);
-    }
-});
 
 EntityEvents.hurt(event => {
     let entity = event.entity;
