@@ -6,7 +6,9 @@
     "item.omni_extras.opticoid_vial": "DNA Vial",
     "item.omni_extras.empty_vial": "Empty Vial",
     "item.omni_extras.filled_vial": "Filled Vial",
-    "species.alienevo_aliens.111": "Gourmand",
+    "species.alienevo_aliens.111": "Gourmand (Perk)",
     "alienevo.alien_desc.111": "§2Gourmands§f are a humanoid amoeba-like species and given the chance, a §2Gourmand§f will begin snacking on §lany§r kind of material in its §lvicinity.",
+    "species.alienevo_aliens.112": "Gourmand (Murk)",
+    "alienevo.alien_desc.112": "§2Gourmands§f are a humanoid amoeba-like species and given the chance, a §2Gourmand§f will begin snacking on §lany§r kind of material in its §lvicinity.",
     "entity.villager.omni_extras.aliengirl": "The Deliverer"
 }

@@ -1,8 +1,8 @@
 {
   "name": {
-    "text": "Gourmand"
+    "text": "Gourmand (Murk)"
   },
-  "icon": "#omni_extras:gourmand/perk/upchuck",
+  "icon": "#omni_extras:gourmand/murk/upchuck",
   "energy_bars": {
     "stomach": {
       "max": 1500,
@@ -20,8 +20,8 @@
     "gourmand_loop": {
       "type": "palladium:command",
       "hidden": false,
-      "title": {"translate":"species.alienevo_aliens.111"},
-      "icon": "#omni_extras:gourmand/perk/upchuck",
+      "title": {"translate":"species.alienevo_aliens.112"},
+      "icon": "#omni_extras:gourmand/murk/upchuck",
       "gui_position": [
         0,
         0
@@ -33,10 +33,9 @@
         "scale set pehkui:drops 2 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
         "scoreboard objectives add Gourmand.ObliterationPoint dummy",
-        "scoreboard objectives add Gourmand.XP dummy",
-        "scoreboard objectives add Gourmand.Level dummy",
-        "scoreboard objectives add Gourmand.SkillPoint dummy",
-        "tag @s add omni_extras",
+        "scoreboard objectives add GourmandMurk.XP dummy",
+        "scoreboard objectives add GourmandMurk.Level dummy",
+        "scoreboard objectives add GourmandMurk.SkillPoint dummy",
         "scoreboard players set @s Gourmand.Swallow 0"
       ],
       "last_tick_commands": [
@@ -45,7 +44,7 @@
         "superpower remove omni_extras:not_aliens/foodpoisoned @s",
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",
-        "scoreboard players set @s ObliterationPoint 0",
+        "scoreboard players set @s Gourmand.ObliterationPoint 0",
         "scale reset",
         "scale easing reset"
         
@@ -115,7 +114,7 @@
     "render_layer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand"
+      "render_layer": "omni_extras:murk_gourmand"
     },
     "size_change": {
       "type": "palladium:size",
@@ -256,7 +255,7 @@
     "tummyache":{
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "hurt",
       "conditions": {
@@ -271,7 +270,7 @@
     "untummyache":{
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "unhurt",
       "conditions": {
@@ -358,7 +357,7 @@
 			"list_index": -1,
 			"hide_particles": true,
 			"description": "drain energy bar",
-			"commands": ["energybar value subtract @s omni_extras:gourmand stomach 1"]
+			"commands": ["energybar value subtract @s omni_extras:murk_gourmand stomach 1"]
 		},
     "boost": {
       "type": "alienevo:motion",
@@ -503,7 +502,7 @@
     "blast_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "shoot",
       "conditions": {
@@ -525,7 +524,7 @@
     "mega_blast_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "shoot",
       "conditions": {
@@ -1042,7 +1041,7 @@
       "swallow_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "swallow",
       "conditions": {
@@ -1358,7 +1357,7 @@
     "bite_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "bite",
       "conditions": {
@@ -1464,7 +1463,7 @@
     "whip_tongue_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "whip",
       "conditions": {
@@ -1541,7 +1540,7 @@
     "kaboom_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "boom",
       "conditions": {
@@ -1559,7 +1558,7 @@
     "idle": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:gourmand",
+      "render_layer": "omni_extras:murk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "idle",
       "conditions": {
@@ -1613,7 +1612,7 @@
       "hidden_in_bar": true,
       "list_index": -1,
       "name": {
-        "translate": "species.alienevo_aliens.111"
+        "translate": "species.alienevo_aliens.112"
       },
       "conditions": {
         "enabling": [],
@@ -1623,7 +1622,7 @@
             "conditions": [
               {
                 "type": "alienevo:current_alien_nickname",
-                "value": "species.alienevo_aliens.111"
+                "value": "species.alienevo_aliens.112"
               },
               {
                 "type": "palladium:not",
@@ -1959,7 +1958,7 @@
       "list_index": -1,
       "name": [
         {
-          "nbt": "KubeJSPersistentData.alienevo_111",
+          "nbt": "KubeJSPersistentData.alienevo_112",
           "entity": "@s"
         }
       ],
@@ -1974,7 +1973,7 @@
                 "conditions": [
                   {
                     "type": "alienevo:current_alien_nickname",
-                    "value": "species.alienevo_aliens.111"
+                    "value": "species.alienevo_aliens.112"
                   }
                 ]
               },

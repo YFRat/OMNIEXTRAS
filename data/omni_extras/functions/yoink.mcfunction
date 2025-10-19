@@ -22,4 +22,4 @@ execute if entity @s[palladium.power=evo_reds_alienpack_ult_noncustom:ult_omnitr
 execute if entity @s[palladium.power=evo_reds_alienpack:recal_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack_completed:completed_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 
-alienautoadd @s omni_extras:gourmand
+alienautoadd @s omni_extras:perk_gourmand

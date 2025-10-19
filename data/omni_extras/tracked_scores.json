@@ -6,6 +6,9 @@
         "Gourmand.XP",
         "Gourmand.Level",
         "Gourmand.SkillPoint",
+        "GourmandMurk.XP",
+        "GourmandMurk.Level",
+        "GourmandMurk.SkillPoint",
         "Gourmand.Swallow",
         "Gourmand.ObliterationPoint"
     ]

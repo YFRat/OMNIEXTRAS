@@ -1,3 +1,4 @@
+// EYE GUY SECTION
 global.alienevo_alien_110 = ['omni_extras:opticoid']
 global.alienevo_randomization_110 = [true];
 
@@ -28,7 +29,8 @@ global.alienevo_110_10k_glowcolor_1 = ["fef364", "fcd720", "edb508", "a48d1a"];
 global.alienevo_110_default_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311","628e0c",];
 global.alienevo_110_prototype_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311", "628e0c",];
 
-global.alienevo_alien_111 = ['omni_extras:gourmand']
+// GOURMAND SECTION
+global.alienevo_alien_111 = ['omni_extras:perk_gourmand']
 global.alienevo_randomization_111 = [false];
 
 global.alienevo_regen_111 = [10]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
@@ -41,9 +43,9 @@ global.alienevo_111_default_uniforms = [true, false, false]; // Glow (enabled), 
 global.alienevo_111_prototype_uniforms = [true, true, true];
 
 // Make sure your colors are listed from BRIGHTEST TO DARKEST. You can use as many or as few colors in a palette as you'd like.
-global.alienevo_111_10k_skincolor_palette_1 = ["fff899", "f8dd72","dac893", "c5b57f", "a79866", "978752"];
-global.alienevo_111_10k_skincolor_palette_2 = ["917526", "8c7035", "877741", "7a5e25", "5b4312"];
-global.alienevo_111_10k_skincolor_palette_3 = ["f192a2", "e48393", "e57386", "d27282", "bb5f6f"];
+global.alienevo_111_10k_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
+global.alienevo_111_10k_skincolor_palette_2 = ["559910","457e0c","335e08"];
+global.alienevo_111_10k_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
 
 global.alienevo_111_default_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
 global.alienevo_111_default_skincolor_palette_2 = ["559910","457e0c","335e08"];
@@ -53,6 +55,36 @@ global.alienevo_111_prototype_skincolor_palette_1 = ["b5eb20", "9dda13","82be11"
 global.alienevo_111_prototype_skincolor_palette_2 = ["559910","457e0c","335e08"];
 global.alienevo_111_prototype_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
 
-global.alienevo_111_10k_glowcolor_1 = ["ffffff", "dadedf"];
+global.alienevo_111_10k_glowcolor_1 = ["fdff49", "facd25"];
 global.alienevo_111_default_glowcolor_1 = ["b8ff00", "8ed721"];
 global.alienevo_111_prototype_glowcolor_1 = ["ffffff", "dadedf"];
+
+//  MURK
+global.alienevo_alien_112 = ['omni_extras:murk_gourmand']
+global.alienevo_randomization_112 = [false];
+
+global.alienevo_regen_112 = [10]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
+global.alienevo_scale_112 = [40]; // Scale of the alien preview render. 55 is default
+global.alienevo_textcolor_112 = [0xa8865a]; // Text color of the alien species name
+global.alienevo_background_112 = ['minecraft:textures/block/raw_gold_block.png']; // Tiled texture that appears behind the alien preview render
+
+global.alienevo_112_10k_uniforms = [true, true, true]; // Glow (enabled), Primary (enabled), Secondary (enabled)
+global.alienevo_112_default_uniforms = [true, false, false]; // Glow (enabled), Primary (disabled), Secondary (disabled)
+global.alienevo_112_prototype_uniforms = [true, true, true];
+
+// Make sure your colors are listed from BRIGHTEST TO DARKEST. You can use as many or as few colors in a palette as you'd like.
+global.alienevo_112_10k_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
+global.alienevo_112_10k_skincolor_palette_2 = ["559910","457e0c","335e08"];
+global.alienevo_112_10k_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
+
+global.alienevo_112_default_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
+global.alienevo_112_default_skincolor_palette_2 = ["559910","457e0c","335e08"];
+global.alienevo_112_default_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
+
+global.alienevo_112_prototype_skincolor_palette_1 = ["cecb78","c1be55","aaa73e","8d8b34","716f29"];
+global.alienevo_112_prototype_skincolor_palette_2 = ["707546","6c6f43","67673f","61603b","555134","534f32","453f2a","49422c","3c3525"];
+global.alienevo_112_prototype_skincolor_palette_3 = ["8f3e50","783436","61332a","4a2f20","332616"];
+
+global.alienevo_112_10k_glowcolor_1 = ["fdff49", "facd25"];
+global.alienevo_112_default_glowcolor_1 = ["b8ff00", "8ed721"];
+global.alienevo_112_prototype_glowcolor_1 = ["fdff49", "facd25"];
