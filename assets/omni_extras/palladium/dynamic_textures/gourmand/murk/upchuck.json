@@ -45,13 +45,13 @@
          {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_1",
-            "filter": "#f9f9f9",
+            "filter": "#fdff49",
             "ignore_blank": true
          },
          {
             "type": "palladium:color",
             "color": "##GLOW_PROTO_2",
-            "filter": "#dadedf",
+            "filter": "#facd25",
             "ignore_blank": true
          },
          {
