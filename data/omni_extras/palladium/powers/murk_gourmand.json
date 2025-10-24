@@ -913,7 +913,7 @@
     },
     "swallow_prompt": {
       "type": "palladium:animation_timer",
-      "icon": "#omni_extras:gourmand/perk/swallow",
+      "icon": "#omni_extras:gourmand/murk/swallow",
       "title": "Tongue Ingestion",
       "start_value": 1,
       "max_value": 3,
@@ -1209,7 +1209,7 @@
     },
     "bite_timer": {
       "type": "palladium:animation_timer",
-       "icon": "#omni_extras:gourmand/perk/bite",
+       "icon": "#omni_extras:gourmand/murk/bite",
       "title": "Chomp",
       "hidden": true,
       "hidden_in_bar": false,
@@ -1269,7 +1269,7 @@
     },    
      "bite_comm": {
       "type": "palladium:command",
-      "icon": "#omni_extras:gourmand/perk/bite",
+      "icon": "#omni_extras:gourmand/murk/bite",
       "title": "Chomp",
       "bar_color": "orange",
       "hidden": true,
@@ -1396,7 +1396,7 @@
     },
     "whip_timer": {
       "type": "palladium:repeating_animation_timer",
-      "icon": "#omni_extras:gourmand/perk/whip",
+      "icon": "#omni_extras:gourmand/murk/whip",
       "title": "Long Prehensile Tongues",
       "hidden": true,
       "hidden_in_bar": false,
@@ -1673,7 +1673,7 @@
     },
     "whip_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/whip",
+      "icon": "#omni_extras:gourmand/murk/whip",
       "title":"Long Prehensile Tongues",
       "uuid":"d529ecad-4c6f-41ed-b452-b6cc1da278f2",
       "hidden": false,
@@ -1801,7 +1801,7 @@
     },
     "chomp_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/bite",
+      "icon": "#omni_extras:gourmand/murk/bite",
       "title": "Chomp",
       "uuid": "aa916107-7859-4400-afe8-cb0be47d4625",
       "hidden": false,
@@ -1823,7 +1823,7 @@
     },
     "swallow_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/swallow",
+      "icon": "#omni_extras:gourmand/murk/swallow",
       "title": "Tongue Ingestion",
       "uuid": "8ca49b5d-f84c-4763-a2d7-28926e104a72",
       "hidden": false,
