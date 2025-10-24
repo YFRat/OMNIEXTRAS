@@ -3,43 +3,85 @@
         {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_1",
-            "filter": "#b5eb20",
+            "filter": "#cecb78",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_2",
-            "filter": "#9dda13", 
+            "filter": "#c1be55", 
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_3",
-            "filter": "#82be11", 
+            "filter": "#aaa73e", 
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_4",
-            "filter": "#659e0e",
+            "filter": "#8d8b34",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_5",
+            "filter": "#716f29",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_1",
-            "filter": "#559910",
+            "filter": "#707546",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_2",
-            "filter": "#457e0c",
+            "filter": "#6c6f43",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_3",
-            "filter": "#335e08",
+            "filter": "#67673f",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_4",
+            "filter": "#61603b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_6",
+            "filter": "#555134",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_6",
+            "filter": "#534f32",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_7",
+            "filter": "#453f2a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_8",
+            "filter": "#49422c",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_9",
+            "filter": "#3c3525",
             "ignore_blank": true
           },
          {
@@ -220,6 +262,10 @@
             "type": "palladium:string_property",
             "property": "murk_gourmand_prototype_skincolor_palette_1_color_4"
           },
+          "SKIN_PROTO_5": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_1_color_5"
+          },
           "SKIN_PROTO_P2_1": {
             "type": "palladium:string_property",
             "property": "murk_gourmand_prototype_skincolor_palette_2_color_1"
@@ -231,6 +277,26 @@
           "SKIN_PROTO_P2_3": {
             "type": "palladium:string_property",
             "property": "murk_gourmand_prototype_skincolor_palette_2_color_3"
+          },
+          "SKIN_PROTO_P2_4": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_2_color_4"
+          },
+          "SKIN_PROTO_P2_5": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_2_color_5"
+          },
+          "SKIN_PROTO_P2_6": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_2_color_6"
+          },
+          "SKIN_PROTO_P2_8": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_2_color_8"
+          },
+          "SKIN_PROTO_P2_9": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_prototype_skincolor_palette_2_color_9"
           },
           "SKIN_10K_1": {
             "type": "palladium:string_property",

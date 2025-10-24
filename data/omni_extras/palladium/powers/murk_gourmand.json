@@ -296,7 +296,7 @@
     "leap": {
       "type": "alienevo:motion",
       "title": "Leap",
-      "icon": "#omni_extras:gourmand/perk/leap",
+      "icon": "#omni_extras:gourmand/murk/leap",
       "uuid":"4832400d-b0b3-4e06-858e-76e6cf97daa0",
       "hidden": true,
       "hidden_in_bar": false,
@@ -1641,7 +1641,7 @@
     },
     "leap_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/leap",
+      "icon": "#omni_extras:gourmand/murk/leap",
       "title":"Leap",
       "uuid":"eff11c45-452f-41fd-ab8f-f77a4869b2c1",
       "hidden": false,
@@ -1705,7 +1705,7 @@
     },
      "mega_blast_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/mega_spit",
+      "icon": "#omni_extras:gourmand/murk/mega_spit",
       "title":"Mega Energy Regurgitation",
       "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
@@ -1769,7 +1769,7 @@
     },
     "blast_unlock": {
       "type": "palladium:dummy",
-      "icon": "#omni_extras:gourmand/perk/spit",
+      "icon": "#omni_extras:gourmand/murk/spit",
       "title": "Energy Regurgitation",
       "uuid": "4220971e-4b0c-4d52-b191-bf82e1e341eb",
       "hidden": false,

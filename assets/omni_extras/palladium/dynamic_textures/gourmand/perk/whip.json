@@ -59,6 +59,36 @@
             "color": "##SKIN_DEFAULT_P2_3",
             "filter": "#5e0707",
             "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#76ede6",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#56eae1",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_4",
+            "filter": "#1cbfb5",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_2",
+            "filter": "#3f5fc6",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_3",
+            "filter": "#2040a8",
+            "ignore_blank": true
           }
 
         ],
@@ -106,6 +136,26 @@
           "SKIN_DEFAULT_P2_3": {
             "type": "palladium:string_property",
             "property": "perk_gourmand_default_skincolor_palette_2_color_3"
+          },
+          "SKIN_10K_1": {
+            "type": "palladium:string_property",
+            "property": "perk_gourmand_10k_skincolor_palette_1_color_1"
+          },
+          "SKIN_10K_2": {
+            "type": "palladium:string_property",
+            "property": "perk_gourmand_10k_skincolor_palette_1_color_2"
+          },
+          "SKIN_10K_4": {
+            "type": "palladium:string_property",
+            "property": "perk_gourmand_10k_skincolor_palette_1_color_4"
+          },
+           "SKIN_10K_P2_2": {
+            "type": "palladium:string_property",
+            "property": "perk_gourmand_10k_skincolor_palette_2_color_2"
+          },
+          "SKIN_10K_P2_3": {
+            "type": "palladium:string_property",
+            "property": "perk_gourmand_10k_skincolor_palette_2_color_3"
           }
         },
   "base": "omni_extras:textures/gui/playlists/gourmand/perk/tongue_spin_#UNIFORM.png"
