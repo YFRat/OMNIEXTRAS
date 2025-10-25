@@ -3,12 +3,12 @@
         "Opticoid.XP",
         "Opticoid.Level",
         "Opticoid.SkillPoint",
-        "Gourmand.XP",
-        "Gourmand.Level",
-        "Gourmand.SkillPoint",
-        "GourmandMurk.XP",
-        "GourmandMurk.Level",
-        "GourmandMurk.SkillPoint",
+        "Perkourmand.XP",
+        "Perkgourmand.Level",
+        "Perkgourmand.SkillPoint",
+        "Murkgourmand.XP",
+        "Murkgourmand.Level",
+        "Murkgourmand.SkillPoint",
         "Gourmand.Swallow",
         "Gourmand.ObliterationPoint"
     ]

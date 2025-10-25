@@ -128,67 +128,67 @@
           },
           "SKIN_PROTO_1": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_1_color_1"
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_1"
           },
           "SKIN_PROTO_2": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_1_color_2"
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_2"
           },
           "SKIN_PROTO_4": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_1_color_4"
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_4"
           },
           "SKIN_PROTO_P3_1": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_3_color_1"
+            "property": "murkgourmand_prototype_skincolor_palette_3_color_1"
           },
           "SKIN_PROTO_P3_2": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_3_color_2"
+            "property": "murkgourmand_prototype_skincolor_palette_3_color_2"
           },
            "SKIN_PROTO_P3_3": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_3_color_3"
+            "property": "murkgourmand_prototype_skincolor_palette_3_color_3"
           },
            "SKIN_PROTO_P3_4": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_3_color_4"
+            "property": "murkgourmand_prototype_skincolor_palette_3_color_4"
           },
            "SKIN_PROTO_P3_5": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_3_color_5"
+            "property": "murkgourmand_prototype_skincolor_palette_3_color_5"
           },
            "SKIN_DEFAULT_1": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_1_color_1"
+            "property": "murkgourmand_default_skincolor_palette_1_color_1"
           },
           "SKIN_DEFAULT_2": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_1_color_2"
+            "property": "murkgourmand_default_skincolor_palette_1_color_2"
           },
           "SKIN_DEFAULT_4": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_1_color_4"
+            "property": "murkgourmand_default_skincolor_palette_1_color_4"
           },
           "SKIN_DEFAULT_P3_1": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_3_color_1"
+            "property": "murkgourmand_default_skincolor_palette_3_color_1"
           },
           "SKIN_DEFAULT_P3_2": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_3_color_2"
+            "property": "murkgourmand_default_skincolor_palette_3_color_2"
           },
            "SKIN_DEFAULT_P3_3": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_3_color_3"
+            "property": "murkgourmand_default_skincolor_palette_3_color_3"
           },
            "SKIN_DEFAULT_P3_4": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_3_color_4"
+            "property": "murkgourmand_default_skincolor_palette_3_color_4"
           },
            "SKIN_DEFAULT_P3_5": {
             "type": "palladium:string_property",
-            "property": "murk_gourmand_default_skincolor_palette_3_color_5"
+            "property": "murkgourmand_default_skincolor_palette_3_color_5"
           }
           
         },

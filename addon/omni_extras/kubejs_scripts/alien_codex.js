@@ -30,7 +30,7 @@ global.alienevo_110_default_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311"
 global.alienevo_110_prototype_glowcolor_1 = ["b3ff40", "8ed721", "82be11","589311", "628e0c",];
 
 // GOURMAND SECTION
-global.alienevo_alien_111 = ['omni_extras:perk_gourmand']
+global.alienevo_alien_111 = ['omni_extras:perkgourmand']
 global.alienevo_randomization_111 = [false];
 
 global.alienevo_regen_111 = [10]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
@@ -60,7 +60,7 @@ global.alienevo_111_default_glowcolor_1 = ["b8ff00", "8ed721"];
 global.alienevo_111_prototype_glowcolor_1 = ["ffffff", "dadedf"];
 
 //  MURK
-global.alienevo_alien_112 = ['omni_extras:murk_gourmand']
+global.alienevo_alien_112 = ['omni_extras:murkgourmand']
 global.alienevo_randomization_112 = [false];
 
 global.alienevo_regen_112 = [10]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.

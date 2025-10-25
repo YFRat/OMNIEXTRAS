@@ -1,6 +1,6 @@
 PalladiumEvents.registerAnimations((event) => {
     event.register("upc/gourmandalt", 10, (builder) => {
-        if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:murk_gourmand", "render_layer")) {
+        if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:murkgourmand", "render_layer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
                     .setX(12)
@@ -43,7 +43,7 @@ PalladiumEvents.registerAnimations((event) => {
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmandalt/tongue_whip_arms', 40, (builder) => {
         let spinwhip = animationUtil.getAnimationTimerAbilityValue(
-            builder.getPlayer(), 'omni_extras:murk_gourmand', 'whip_timer_arms', builder.getPartialTicks());
+            builder.getPlayer(), 'omni_extras:murkgourmand', 'whip_timer_arms', builder.getPartialTicks());
         if (spinwhip > 0 && !builder.isFirstPerson()) {
             builder.get('right_arm')
                 .rotateZDegrees(10)
@@ -74,7 +74,7 @@ PalladiumEvents.registerAnimations((event) => {
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmandalt/sick', 100, (builder) => {
         let sick = animationUtil.getAnimationTimerAbilityValue(
-            builder.getPlayer(), 'omni_extras:murk_gourmand', 'sickness_timer', builder.getPartialTicks(), 1, 13);
+            builder.getPlayer(), 'omni_extras:murkgourmand', 'sickness_timer', builder.getPartialTicks(), 1, 13);
         if (sick > 0 && !builder.isFirstPerson()) {
             builder.get('right_arm')
                 .setZRotDegrees(-14)
@@ -119,7 +119,7 @@ PalladiumEvents.registerAnimations((event) => {
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmandalt/swallow', 100, (builder) => {
         let fix = animationUtil.getAnimationTimerAbilityValue(
-            builder.getPlayer(), 'omni_extras:murk_gourmand', 'yummy_in_my_tummy', builder.getPartialTicks(), 1, 5);
+            builder.getPlayer(), 'omni_extras:murkgourmand', 'yummy_in_my_tummy', builder.getPartialTicks(), 1, 5);
         if (fix > 0 && !builder.isFirstPerson()) {
             builder.get('right_arm')
                 .setZRotDegrees(0)
@@ -141,7 +141,7 @@ PalladiumEvents.registerAnimations((event) => {
 PalladiumEvents.registerAnimations((event) => {
     event.register('gourmandalt/tongue_whip', 40, (builder) => {
         let spinwhip = animationUtil.getAnimationTimerAbilityValue(
-            builder.getPlayer(), 'omni_extras:murk_gourmand', 'whip_timer', builder.getPartialTicks());
+            builder.getPlayer(), 'omni_extras:murkgourmand', 'whip_timer', builder.getPartialTicks());
         if (spinwhip > 0 && !builder.isFirstPerson()) {
             builder.get('body').rotateYDegrees(-360 * 3).animate('easeInOutSine', spinwhip);
 
@@ -154,13 +154,13 @@ PalladiumEvents.registerAnimations((event) => {
 });
 ClientEvents.tick(event => {
     const player = event.player;
-    if (!abilityUtil.hasPower(player, "omni_extras:murk_gourmand")) return;
+    if (!abilityUtil.hasPower(player, "omni_extras:murkgourmand")) return;
 
     const cam = Client.options.getCameraType();
     const data = player.persistentData;
     const frontView = [
         ["omni_extras:not_aliens/destruction", "destruction_timer", "third_person_front"],
-        ["omni_extras:murk_gourmand", "whip_timer", "third_person_back"]
+        ["omni_extras:murkgourmand", "whip_timer", "third_person_back"]
     ];
     let active = false;
     let desiredMode = "first_person";

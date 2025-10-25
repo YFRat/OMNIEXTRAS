@@ -31,10 +31,8 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
         const roll = Math.floor(Math.random() * 2) + 1;
         if (roll === 1) {
-            player.tell(Text.red("§lPerk"));
             player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${player.name.string}`);
         } else {
-            player.tell(Text.red("§lMurk"));
             player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremovealt ${player.name.string}`);
         }
     } else if (hasPerk) {

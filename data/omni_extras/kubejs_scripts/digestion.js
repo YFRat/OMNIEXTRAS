@@ -47,9 +47,9 @@ ItemEvents.foodEaten(e => {
         player.tell(Text.yellow("Scrumptious!"));
         player.playSound('entity.player.burp');
         player.runCommandSilent(
-            `energybar value add ${player.name.string} omni_extras:perk_gourmand stomach 300`);
+            `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 300`);
         player.runCommandSilent(
-            `energybar value add ${player.name.string} omni_extras:murk_gourmand stomach 300`);
+            `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 300`);
     } else {
         player.runCommandSilent(`effect give ${player.name.string} minecraft:poison 5 1 true`);
         player.runCommandSilent(`effect give ${player.name.string} minecraft:hunger 9 150 true`);
@@ -68,7 +68,9 @@ ItemEvents.rightClicked(e =>{
             e.server.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 5 true`);
             e.server.runCommandSilent(
-                `energybar value add ${player.name.string} omni_extras:perk_gourmand stomach 1500`);
+                `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 1500`);
+                e.server.runCommandSilent(
+                `energybar value add ${player.name.string} omni_extras:murkkgourmand stomach 1500`);
             palladium.scoreboard.setScore(player, 'Gourmand.ObliterationPoint', 6);
         } else
             
@@ -86,7 +88,9 @@ ItemEvents.rightClicked(e =>{
             e.server.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 1 true`);
             e.server.runCommandSilent(
-                `energybar value add ${player.name.string} omni_extras:perk_gourmand stomach 300`);
+                `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 300`);
+                e.server.runCommandSilent(
+                `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 300`);
             palladium.scoreboard.addScore(player, 'Gourmand.ObliterationPoint', 1);
         } else
             
@@ -97,8 +101,8 @@ ItemEvents.rightClicked(e =>{
 
 function hasAnyGourmand(player) {
     const gourmandPowers = [
-        'omni_extras:perk_gourmand',
-        'omni_extras:murk_gourmand'
+        'omni_extras:perkgourmand',
+        'omni_extras:murkgourmand'
     ];
     return gourmandPowers.some(power => palladium.superpowers.hasSuperpower(player, power));
 }

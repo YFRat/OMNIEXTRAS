@@ -98,63 +98,63 @@
           },
           "SKIN_PROTO_P3_1": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_prototype_skincolor_palette_3_color_1"
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_1"
           },
            "SKIN_PROTO_P3_2": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_prototype_skincolor_palette_3_color_2"
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_2"
           },
            "SKIN_PROTO_P3_3": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_prototype_skincolor_palette_3_color_3"
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_3"
           },
            "SKIN_PROTO_P3_4": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_prototype_skincolor_palette_3_color_4"
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_4"
           },
            "SKIN_PROTO_P3_5": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_prototype_skincolor_palette_3_color_5"
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_5"
           },
            "SKIN_DEFAULT_P3_1": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_default_skincolor_palette_3_color_1"
+            "property": "perkgourmand_default_skincolor_palette_3_color_1"
           },
            "SKIN_DEFAULT_P3_2": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_default_skincolor_palette_3_color_2"
+            "property": "perkgourmand_default_skincolor_palette_3_color_2"
           },
            "SKIN_DEFAULT_P3_3": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_default_skincolor_palette_3_color_3"
+            "property": "perkgourmand_default_skincolor_palette_3_color_3"
           },
            "SKIN_DEFAULT_P3_4": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_default_skincolor_palette_3_color_4"
+            "property": "perkgourmand_default_skincolor_palette_3_color_4"
           },
            "SKIN_DEFAULT_P3_5": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_default_skincolor_palette_3_color_5"
+            "property": "perkgourmand_default_skincolor_palette_3_color_5"
           },
            "SKIN_10K_P3_1": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_10k_skincolor_palette_3_color_1"
+            "property": "perkgourmand_10k_skincolor_palette_3_color_1"
           },
            "SKIN_10K_P3_2": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_10k_skincolor_palette_3_color_2"
+            "property": "perkgourmand_10k_skincolor_palette_3_color_2"
           },
            "SKIN_10K_P3_3": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_10k_skincolor_palette_3_color_3"
+            "property": "perkgourmand_10k_skincolor_palette_3_color_3"
           },
            "SKIN_10K_P3_4": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_10k_skincolor_palette_3_color_4"
+            "property": "perkgourmand_10k_skincolor_palette_3_color_4"
           },
            "SKIN_10K_P3_5": {
             "type": "palladium:string_property",
-            "property": "perk_gourmand_10k_skincolor_palette_3_color_5"
+            "property": "perkgourmand_10k_skincolor_palette_3_color_5"
           }
         },
   "base": "omni_extras:textures/gui/playlists/gourmand/perk/swallow_#UNIFORM.png"
