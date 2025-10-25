@@ -96,46 +96,82 @@
             "filter": "#facd25",
             "ignore_blank": true
          },
-         {
+        {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_1",
-            "filter": "#fc2b2b",
+            "filter": "#dd8c8c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_2",
-            "filter": "#de3939", 
+            "filter": "#c15555",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_3",
-            "filter": "#b83535", 
+            "filter": "#bc4a4a",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_4",
-            "filter": "#8f2828",
+            "filter": "#983636",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_5",
+            "filter": "#712929",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_1",
-            "filter": "#c21818",
+            "filter": "#d12222",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_2",
-            "filter": "#800d0d",
+            "filter": "#b02222",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_DEFAULT_P2_3",
-            "filter": "#5e0707",
+            "filter": "#8c1e1e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_4",
+            "filter": "#771919",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_5",
+            "filter": "#5d2f2f",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_6",
+            "filter": "#5c2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_7",
+            "filter": "#441a1a",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_8",
+            "filter": "#380d0d",
             "ignore_blank": true
           },
           {
@@ -294,10 +330,6 @@
             "type": "palladium:string_property",
             "property": "murk_gourmand_prototype_skincolor_palette_2_color_8"
           },
-          "SKIN_PROTO_P2_9": {
-            "type": "palladium:string_property",
-            "property": "murk_gourmand_prototype_skincolor_palette_2_color_9"
-          },
           "SKIN_10K_1": {
             "type": "palladium:string_property",
             "property": "murk_gourmand_10k_skincolor_palette_1_color_1"
@@ -354,6 +386,10 @@
             "type": "palladium:string_property",
             "property": "murk_gourmand_default_skincolor_palette_1_color_4"
           },
+          "SKIN_DEFAULT_5": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_1_color_5"
+          },
           "SKIN_DEFAULT_P2_1": {
             "type": "palladium:string_property",
             "property": "murk_gourmand_default_skincolor_palette_2_color_1"
@@ -365,6 +401,26 @@
           "SKIN_DEFAULT_P2_3": {
             "type": "palladium:string_property",
             "property": "murk_gourmand_default_skincolor_palette_2_color_3"
+          },
+          "SKIN_DEFAULT_P2_4": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_2_color_4"
+          },
+          "SKIN_DEFAULT_P2_5": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_2_color_5"
+          },
+          "SKIN_DEFAULT_P2_6": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_2_color_6"
+          },
+          "SKIN_DEFAULT_P2_7": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_2_color_7"
+          },
+          "SKIN_DEFAULT_P2_8": {
+            "type": "palladium:string_property",
+            "property": "murk_gourmand_default_skincolor_palette_2_color_8"
           },
           "SECONDARY_1": {
             "type": "palladium:string_property",

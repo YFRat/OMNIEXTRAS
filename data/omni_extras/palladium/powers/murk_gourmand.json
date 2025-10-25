@@ -686,23 +686,23 @@
       }
     },
      "mega_blast": {
-      "type": "palladium:projectile",
+      "type": "alienevo:custom_projectile",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
        "energy_bar_usage": {
         "energy_bar": "stomach",
-        "amount": 250
+        "amount": 100
       },
       "list_index": 0,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {                                  
-        "Damage": 3,
+        "Damage": 13,
         "Gravity": 0,
-        "Size": 1.3,
-        "Lifetime": 100,
-        "ExplosionBlockInteraction": "destroy",
-        "ExplosionRadius": 8.5,
+        "Size": 2,
+        "Lifetime": 70,
+        "ExplosionBlockInteraction": "keep",
+        "ExplosionRadius": 5,
         "DieOnEntityHit": true,
         "DieOnBlockHit": true,
         "PreventShooterInteraction": true,
@@ -712,7 +712,7 @@
         "Appearances": [
           {
             "Type": "laser",
-            "Thickness": 3,
+            "Thickness": 1,
             "Color": "#36f174"
           },
           {
@@ -723,11 +723,12 @@
           }
         ]
       },
-      "inaccuracy": 3,
-      "velocity": 1,
+      "speed": 1.2,
+      "yaw_inaccuracy": 30,
+      "yaw_offset": 0,
+      "align_velocity_with_calculated_rotation": true,
+      "count": 5,
       "swinging_arm": "none",
-      "damage_from_player": false,
-      "ignore_player_movement": false,
       "conditions": {
         "enabling": [
           {
@@ -959,16 +960,16 @@
 			"list_index": -1,
 			"hide_particles": true,
       "first_tick_commands":[
-        "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:gourmand stomach 150",
-        "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:gourmand stomach 1000",
-        "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:gourmand stomach 850",
-        "execute as @s if entity @e[type=minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:gourmand stomach 900",
+        "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murk_gourmand stomach 150",
+        "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murk_gourmand stomach 1000",
+        "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murk_gourmand stomach 850",
+        "execute as @s if entity @e[type=minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murk_gourmand stomach 900",
         "execute as @s if entity @e[type=#omni_extras:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run effect give @s minecraft:levitation 10 1 true",
         "execute as @s if entity @e[type=#omni_extras:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run playsound omni_extras:gangsta master @s ~ ~ ~ 2",
         "execute as @s if entity @e[sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run scoreboard players set @s Gourmand.Swallow 1"
       ],
 			"commands": [
-        "execute as @s if score @s Gourmand.Swallow matches 1 run energybar value add @s omni_extras:gourmand stomach 4"
+        "execute as @s if score @s Gourmand.Swallow matches 1 run energybar value add @s omni_extras:murk_gourmand stomach 4"
       ],
       "conditions":{
         "enabling":[
@@ -1048,8 +1049,10 @@
       "conditions": {
         "enabling": [
               {
-                "type": "palladium:ability_enabled",
-                "ability": "yummy_in_my_tummy"
+                "type": "palladium:animation_timer_ability",
+                "ability": "yummy_in_my_tummy",
+                "min": 1,
+                "max": 10
 
               }
          ]
@@ -1078,7 +1081,7 @@
     "entity_vaccum": {
       "type": "alienevo:entity_vacuum",
       "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
-      "search_radius": 1.2,
+      "search_radius": 2,
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 100,
@@ -1706,7 +1709,7 @@
      "mega_blast_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/mega_spit",
-      "title":"Mega Energy Regurgitation",
+      "title": "Energy Regurgitation (Volley)",
       "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
       "list_index": -1,
@@ -1714,7 +1717,7 @@
         0.5,
         2.2
       ],
-      "description": "§9(Crouch + RightClick)§f Use a §4§lhuge§r§f chunk of your §a§lenergy§r§f to shoot out a §4§ldestructive§r§f blast",
+      "description": "§9(Crouch + RightClick)§f Use a small chunk of your §a§lenergy§r§f to shoot out §4§lblasts§r§f in a volley",
       "conditions": {
         "unlocking": [
           {
