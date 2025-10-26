@@ -84,7 +84,7 @@ ItemEvents.rightClicked(e =>{
         const player = e.player
         if (hasAnyGourmand(e.player)) {
             e.item.count--
-            player.tell(Text.yellow("That was delicious, but I think I need more!"))
+            player.tell(Text.yellow("That hits the spot.. Maybe just a bit more.."))
             e.server.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 1 true`);
             e.server.runCommandSilent(

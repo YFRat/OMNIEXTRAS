@@ -11,7 +11,7 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         const roll = Math.floor(Math.random() * 3) + 1;
         switch (roll) {
             case 1:
-                player.tell(Text.red("§lGet out."));
+                player.tell(Text.red("§lIs there something you need?"));
                 break;
             case 2:
                 player.tell(Text.red("§lWhat are you looking at?"));
