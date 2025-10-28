@@ -70,7 +70,7 @@ ItemEvents.rightClicked(e =>{
             e.server.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 1500`);
                 e.server.runCommandSilent(
-                `energybar value add ${player.name.string} omni_extras:murkkgourmand stomach 1500`);
+                `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 1500`);
             palladium.scoreboard.setScore(player, 'Gourmand.ObliterationPoint', 6);
         } else
             
@@ -88,7 +88,7 @@ ItemEvents.rightClicked(e =>{
             e.server.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 1 true`);
             e.server.runCommandSilent(
-                `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 300`);
+                `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 250`);
                 e.server.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 300`);
             palladium.scoreboard.addScore(player, 'Gourmand.ObliterationPoint', 1);

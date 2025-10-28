@@ -231,6 +231,35 @@
         ]
       }
     },
+    "unyoinked8": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:unyoink",
+        "superpower add aeo:omniverse_omnitrix @s",
+        "tag @s remove hasovtrixbeans"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:and",
+            "conditions":[
+              {
+                "type": "palladium:animation_timer_ability",
+                "power": "omni_extras:not_aliens/tempremove",
+                "ability": "temp_timer",
+                "min": 130,
+                "max": 130
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "hasovtrixbeans"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "temp_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:blaze_rod",

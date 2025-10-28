@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   event.smelting('omni_extras:opticoid_vial', 'omni_extras:filled_vial')
-   .xp(1.0)        // sets XP (float)
+   .xp(1.0)        
    .cookingTime(300); // sets smelting time in ticks (300 = 15s)
 });
 
@@ -35,6 +35,7 @@ function hasOmnitrix(player) {
     'evo_reds_alienpack_ult_noncustom:ult_omnitrix',
     'evo_reds_alienpack_ult:ult_omnitrix',
     'evo_reds_alienpack:recal_omnitrix',
-    'evo_reds_alienpack_completed:completed_omnitrix'
+    'evo_reds_alienpack_completed:completed_omnitrix',
+    'aeo:omniverse_omnitrix'
   ].some(p => palladium.superpowers.hasSuperpower(player, p));
 }

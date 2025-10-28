@@ -5,6 +5,7 @@ execute if entity @s[palladium.power=evo_reds_alienpack_ult:ult_omnitrix] run su
 execute if entity @s[palladium.power=evo_reds_alienpack_ult_noncustom:ult_omnitrix] run superpower remove evo_reds_alienpack_ult_noncustom:ult_omnitrix @s
 execute if entity @s[palladium.power=evo_reds_alienpack:recal_omnitrix] run superpower remove evo_reds_alienpack:recal_omnitrix @s
 execute if entity @s[palladium.power=evo_reds_alienpack_completed:completed_omnitrix] run superpower remove evo_reds_alienpack_completed:completed_omnitrix @s
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run superpower remove aeo:omniverse_omnitrix @s
 
 execute if entity @s[palladium.power=alienevo:prototype_omnitrix] run tag @s add hasproto
 execute if entity @s[palladium.power=evo_reds_alienpack_noncustom:recal_omnitrix] run tag @s add hasNCrecal
@@ -13,6 +14,7 @@ execute if entity @s[palladium.power=evo_reds_alienpack_ult:ult_omnitrix] run ta
 execute if entity @s[palladium.power=evo_reds_alienpack_ult_noncustom:ult_omnitrix] run tag @s add hasNCult
 execute if entity @s[palladium.power=evo_reds_alienpack:recal_omnitrix] run tag @s add hasrecal
 execute if entity @s[palladium.power=evo_reds_alienpack_completed:completed_omnitrix] run tag @s add hasovtrix
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run tag @s add hasovtrixbeans
 
 execute if entity @s[palladium.power=alienevo:prototype_omnitrix] run playsound alienevo:prototype_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack_noncustom:recal_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
@@ -21,5 +23,6 @@ execute if entity @s[palladium.power=evo_reds_alienpack_ult:ult_omnitrix] run pl
 execute if entity @s[palladium.power=evo_reds_alienpack_ult_noncustom:ult_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack:recal_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack_completed:completed_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run playsound alienevo:prototype_decouple master @s
 
 alienautoadd @s omni_extras:murkgourmand
