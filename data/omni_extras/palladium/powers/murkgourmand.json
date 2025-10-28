@@ -30,8 +30,8 @@
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add omni_extras.Flattable",
         "tag @s add Murk.Obtained",
-        "advancement grant @s only omni_extras:gourmandunlock",
-        "scale set pehkui:drops 2 @s",
+        "advancement grant @s only omni_extras:murkmandunlock",
+        "scale set pehkui:drops 1.5 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
         "scoreboard objectives add Gourmand.ObliterationPoint dummy",
         "scoreboard objectives add Murkgourmand.XP dummy",
@@ -46,13 +46,13 @@
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",
         "scoreboard players set @s Gourmand.ObliterationPoint 0",
-        "scale reset",
-        "scale easing reset"
+        "scale reset"
         
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
-        "effect clear @s alienevo:goo"
+        "effect clear @s alienevo:goo",
+        "scoreboard players set @s[scores={Gourmand.ObliterationPoint=7}] Gourmand.ObliterationPoint 6"
       ]
     },
     "hide_body": {

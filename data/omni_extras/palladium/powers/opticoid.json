@@ -44,8 +44,7 @@
         "tag @s add Opticoid.Unlocked"
       ],
       "last_tick_commands": [
-        "scale reset",
-        "scale easing reset"
+        "scale reset"
       ],
       "commands": [
       "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]

@@ -60,16 +60,25 @@ ItemEvents.foodEaten(e => {
 });
 
 ItemEvents.rightClicked(e =>{
-    if (e.item.id === 'minecraft:nether_star') {
+    if (e.item.hasTag('omni_extras:bigboost')) {
         const player = e.player
+        let maxScore = palladium.scoreboard.getScore(player, 'Gourmand.ObliterationPoint');
+        if (maxScore === 6) {
+            player.tell(Text.yellow("I don't think I can eat any more.."));
+            player.runCommandSilent(
+                `playsound minecraft:entity.villager.no player ${player.name.string} ~ ~ ~ 1000`);
+            return;
+        }
         if (hasAnyGourmand(e.player)) {
             e.item.count--
-            player.tell(Text.yellow("Yummy!"))
-            e.server.runCommandSilent(
+            player.tell(Text.of("§l§eThat filled me up!"))
+            player.runCommandSilent(
+                `playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`);
+            player.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 5 true`);
-            e.server.runCommandSilent(
+            player.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 1500`);
-                e.server.runCommandSilent(
+            player.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 1500`);
             palladium.scoreboard.setScore(player, 'Gourmand.ObliterationPoint', 6);
         } else
@@ -80,21 +89,29 @@ ItemEvents.rightClicked(e =>{
 });
 
 ItemEvents.rightClicked(e =>{
-    if (e.item.id === 'minecraft:end_crystal') {
+    if (e.item.hasTag('omni_extras:smallboost')) {
         const player = e.player
+        let maxScore = palladium.scoreboard.getScore(player, 'Gourmand.ObliterationPoint');
+        if (maxScore === 6) {
+            player.tell(Text.yellow("I don't think I can eat any more.."));
+            player.runCommandSilent(
+                `playsound minecraft:entity.villager.no player ${player.name.string} ~ ~ ~ 1000`);
+            return;
+        }
         if (hasAnyGourmand(e.player)) {
             e.item.count--
             player.tell(Text.yellow("That hits the spot.. Maybe just a bit more.."))
-            e.server.runCommandSilent(
+            player.runCommandSilent(
+                `playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`);
+            player.runCommandSilent(
                 `effect give ${player.name.string} minecraft:saturation 10 1 true`);
-            e.server.runCommandSilent(
+            player.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:perkgourmand stomach 250`);
-                e.server.runCommandSilent(
+            player.runCommandSilent(
                 `energybar value add ${player.name.string} omni_extras:murkgourmand stomach 300`);
             palladium.scoreboard.addScore(player, 'Gourmand.ObliterationPoint', 1);
-        } else
-            
-            {
+            }   
+        {   
         };
     }
 });
@@ -106,3 +123,25 @@ function hasAnyGourmand(player) {
     ];
     return gourmandPowers.some(power => palladium.superpowers.hasSuperpower(player, power));
 }
+
+PlayerEvents.tick(e => {
+    const player = e.player;
+    const heldItem = player.getMainHandItem();
+    const data = player.persistentData;
+
+    const isHoldingEdible = heldItem.hasTag('omni_extras:smallboost') || heldItem.hasTag('omni_extras:bigboost') ;
+    const wasHoldingEdible = data.getBoolean("gourmand_was_holding") || false;
+
+    if (hasAnyGourmand(player)) {
+        if (isHoldingEdible && !wasHoldingEdible) {
+            player.runCommandSilent(
+                `playsound minecraft:entity.experience_orb.pickup player ${player.name.string} ~ ~ ~ 1000`
+            );
+            player.server.runCommandSilent(
+                `title ${player.name.string} actionbar {"text":"This looks edible","color":"green","bold":true,"italic":true}`
+            );
+        }
+    }
+    data.putBoolean("gourmand_was_holding", isHoldingEdible);
+});
+
