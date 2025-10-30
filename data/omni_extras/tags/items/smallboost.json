@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:end_crystal",
-    "alexscaves:uranium_shard",
-    "alexscaves:unrefined_waste",
-    "alexscaves:toxic_paste"
+    "minecraft:end_crystal"
   ]
 }
