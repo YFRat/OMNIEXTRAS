@@ -22,7 +22,7 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         }
         return;
     }
-
+    
     const hasPerk = player.tags.contains('Perk.Obtained');
     const hasMurk = player.tags.contains('Murk.Obtained');
 
