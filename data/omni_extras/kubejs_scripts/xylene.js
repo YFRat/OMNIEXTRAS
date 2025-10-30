@@ -22,25 +22,26 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         }
         return;
     }
-    
+
     const hasPerk = player.tags.contains('Perk.Obtained');
     const hasMurk = player.tags.contains('Murk.Obtained');
 
     item.count--;
     if (!hasPerk && !hasMurk) {
         player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
-        const roll = Math.floor(Math.random() * 2) + 1;
+
+    const roll = Math.floor(Math.random() * 2) + 1;
         if (roll === 1) {
-            player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${player.name.string}`);
+        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
         } else {
-            player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremovealt ${player.name.string}`);
+        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
         }
     } else if (hasPerk) {
         player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
-        player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremovealt ${player.name.string}`);
+        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
     } else if (hasMurk) {
         player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
-        player.runCommandSilent(`superpower add omni_extras:not_aliens/tempremove ${player.name.string}`);
+        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
     }
 
     player.runCommandSilent(`playsound alienevo:prototype_master_control master ${player.name.string}`);
