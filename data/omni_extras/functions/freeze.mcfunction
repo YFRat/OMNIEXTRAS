@@ -1,2 +1,2 @@
-execute at @s as @e[distance=0..13,type=!minecraft:armor_stand] unless entity @s[palladium.power=omni_extras:opticoid] at @s run effect give @s alienevo:freeze_effect 4 5 false
-execute at @s as @e[distance=0..13,type=!minecraft:armor_stand,limit=2] unless entity @s[palladium.power=omni_extras:opticoid] at @s run effect give @s minecraft:slowness 5 7 false
+execute as @e[tag=!Opticoid,distance=..10] if entity @s[nbt=!{HurtTime:0s}] run effect give @s alienevo:freeze_effect 5 7 true
+execute as @e[tag=!Opticoid,distance=..10] if entity @s[nbt=!{HurtTime:0s}] run effect give @s minecraft:slowness 5 7 true

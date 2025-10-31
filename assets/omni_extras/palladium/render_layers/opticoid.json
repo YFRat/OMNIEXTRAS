@@ -23,7 +23,12 @@
             "arm_up": "arm_up",
             "arm_down": "arm_down"
           }
-        }        
+        },
+        {
+          "name": "blink",
+          "transition_tick_time": 0,
+          "animation": "eye_blink"
+        }      
       ],
       "third_person_conditions": true,
       "texture": {
@@ -677,7 +682,12 @@
             "arm_up": "arm_up",
             "arm_down": "arm_down"
           }
-        }        
+        },
+        {
+          "name": "blink",
+          "transition_tick_time": 0,
+          "animation": "eye_blink"
+        }             
       ],
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_110/opticoid_glow_#UNIFORM.png",
