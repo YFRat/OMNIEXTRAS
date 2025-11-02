@@ -358,7 +358,7 @@
 			"list_index": -1,
 			"hide_particles": true,
 			"description": "drain energy bar",
-			"commands": ["energybar value subtract @s omni_extras:murk_gourmand stomach 1"]
+			"commands": ["energybar value subtract @s omni_extras:murkgourmand stomach 1"]
 		},
     "boost": {
       "type": "alienevo:motion",
@@ -727,8 +727,7 @@
       "yaw_inaccuracy": 30,
       "yaw_offset": 0,
       "align_velocity_with_calculated_rotation": true,
-      "count": 5,
-      "swinging_arm": "none",
+      "count": 3,
       "conditions": {
         "enabling": [
           {

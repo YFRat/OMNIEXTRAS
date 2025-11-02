@@ -73,12 +73,12 @@ global.alienevo_112_default_uniforms = [true, false, false]; // Glow (enabled), 
 global.alienevo_112_prototype_uniforms = [true, true, true];
 
 // Make sure your colors are listed from BRIGHTEST TO DARKEST. You can use as many or as few colors in a palette as you'd like.
-global.alienevo_112_10k_skincolor_palette_1 = ["b5eb20", "9dda13","82be11","659e0e"];
-global.alienevo_112_10k_skincolor_palette_2 = ["559910","457e0c","335e08"];
-global.alienevo_112_10k_skincolor_palette_3 = ["13ba39", "11aa38","0f9336","0c7c33","0a662e","084f26","2d4508", "213109"];
+global.alienevo_112_10k_skincolor_palette_1 = ["cecb78","c1be55","aaa73e","8d8b34","716f29"];
+global.alienevo_112_10k_skincolor_palette_2 = ["707546","6c6f43","67673f","61603b","555134","534f32","453f2a","49422c","3c3525"]
+global.alienevo_112_10k_skincolor_palette_3 = ["8f3e50","783436","61332a","4a2f20","332616"];
 
 global.alienevo_112_default_skincolor_palette_1 = ["cecb78","c1be55","aaa73e","8d8b34","716f29"];
-global.alienevo_112_default_skincolor_palette_2 = ["707546","6c6f43","67673f","61603b","555134","534f32","453f2a","49422c","3c3525"]
+global.alienevo_112_default_skincolor_palette_2 = ["707546","6c6f43","67673f","61603b","555134","534f32","453f2a","49422c","3c3525"];
 global.alienevo_112_default_skincolor_palette_3 = ["8f3e50","783436","61332a","4a2f20","332616"];
 
 global.alienevo_112_prototype_skincolor_palette_1 = ["cecb78","c1be55","aaa73e","8d8b34","716f29"];

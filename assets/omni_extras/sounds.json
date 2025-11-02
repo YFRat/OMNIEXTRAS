@@ -34,5 +34,9 @@
     "gangsta": {
     "category": "player",
     "sounds": ["omni_extras:gangsta"]
+    },
+    "grumble": {
+    "category": "player",
+    "sounds": ["omni_extras:grumble"]
     }
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:nether_star"
+    "minecraft:nether_star",
+    "minecraft:beacon"
   ]
 }

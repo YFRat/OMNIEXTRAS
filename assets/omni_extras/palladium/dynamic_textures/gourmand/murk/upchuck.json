@@ -177,73 +177,97 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_1",
-            "filter": "#76ede6",
+            "filter": "#9fefdf",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_2",
-            "filter": "#56eae1",
+            "filter": "#80decb",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_3",
-            "filter": "#2dd3c9",
+            "filter": "#5adcc2",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_4",
-            "filter": "#1cbfb5",
+            "filter": "#4cbca6",
+            "ignore_blank": true
+          },
+                    {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_5",
+            "filter": "#358e7c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_1",
-            "filter": "#5771c5",
+            "filter": "#43c9d1",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_2",
-            "filter": "#3f5fc6",
+            "filter": "#39b4bb",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_3",
-            "filter": "#2040a8",
+            "filter": "#2c9ea4",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_4",
+            "filter": "#268b90",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_5",
+            "filter": "#216c70",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_6",
+            "filter": "#298c91",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_7",
+            "filter": "#176266",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_8",
+            "filter": "#124e51",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_1",
+            "filter": "#ffffff",
+            "ignore_blank": true
+          },
+                    {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_2",
+            "filter": "#dadedf",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##GLOW_10K_1",
             "filter": "#fdff49",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SECONDARY_1",
-            "filter": "#ffffff",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SECONDARY_2",
-            "filter": "#e0e4e5",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SECONDARY_4",
-            "filter": "#bdc7cf",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SECONDARY_5",
-            "filter": "#97a2b0",
             "ignore_blank": true
           },
           {
@@ -264,6 +288,7 @@
             "filter": "#171515",
             "ignore_blank": true
           },
+          
          {
             "type": "palladium:color",
             "color": "##GLOW_DEFAULT_1",
@@ -346,6 +371,10 @@
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_1_color_4"
           },
+          "SKIN_10K_5": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_5"
+          },
           "SKIN_10K_P2_1": {
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_2_color_1"
@@ -357,10 +386,34 @@
           "SKIN_10K_P2_3": {
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_2_color_3"
-          },  
+          },
+          "SKIN_10K_P2_4": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_2_color_4"
+          },
+          "SKIN_10K_P2_5": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_2_color_5"
+          },
+           "SKIN_10K_P2_6": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_2_color_6"
+          },
+           "SKIN_10K_P2_7": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_2_color_7"
+          },
+          "SKIN_10K_P2_8": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_2_color_8"
+          },
           "GLOW_10K_1": {
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_glowcolor_1_color_1"
+          },
+          "GLOW_10K_2": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_glowcolor_1_color_2"
           },
           "GLOW_PROTO_1": {
             "type": "palladium:string_property",
@@ -421,23 +474,7 @@
           "SKIN_DEFAULT_P2_8": {
             "type": "palladium:string_property",
             "property": "murkgourmand_default_skincolor_palette_2_color_8"
-          },
-          "SECONDARY_1": {
-            "type": "palladium:string_property",
-            "property": "uniform_secondary_color_1"
-          },
-          "SECONDARY_2": {
-            "type": "palladium:string_property",
-            "property": "uniform_secondary_color_2"
-          },
-          "SECONDARY_4": {
-            "type": "palladium:string_property",
-            "property": "uniform_secondary_color_4"
-          },
-          "SECONDARY_5": {
-            "type": "palladium:string_property",
-            "property": "uniform_secondary_color_5"
-          },
+          },  
           "PRIMARY_1": {
             "type": "palladium:string_property",
             "property": "uniform_primary_color_1"

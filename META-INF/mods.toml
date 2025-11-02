@@ -13,14 +13,14 @@ description='''
 an Addonpack that adds more transformations to the Omnitrix
 '''
 
-[[dependencies.alienevo_pack]]
+[[dependencies.omni_extras]]
 modId = "palladium"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[1.20.1-4.2.0,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.alienevo_pack]]
+[[dependencies.omni_extras]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1,)"

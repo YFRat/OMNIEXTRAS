@@ -58,11 +58,18 @@ ItemEvents.foodEaten(e => {
 const BoostItems = {
     big: [
         'omni_extras:bigboostvan',
-        'omni_extras:bigboostalex'
+        'omni_extras:bigboostalex',
+        'omni_extras:bigboostcrusty',
+        'omni_extras:bigboosttacz'
     ],
     small: [
         'omni_extras:smallboostvan',
-        'omni_extras:smallboostalex'
+        'omni_extras:smallboostalex',
+        'omni_extras:smallboostcrusty'
+    ],
+    medium: [
+        'omni_extras:mediumboostalex',
+        'omni_extras:mediumboostcrusty'
     ]
 };
 ItemEvents.rightClicked(e => {
@@ -72,7 +79,8 @@ ItemEvents.rightClicked(e => {
 
     const isBig = BoostItems.big.some(tag => item.hasTag(tag));
     const isSmall = BoostItems.small.some(tag => item.hasTag(tag));
-    if (!isBig && !isSmall) return;
+    const isMedium = BoostItems.medium.some(tag => item.hasTag(tag));
+    if (!isBig && !isSmall && !isMedium) return;
 
     let maxScore = palladium.scoreboard.getScore(player, 'Gourmand.ObliterationPoint');
     if (maxScore === 6) {
@@ -84,19 +92,32 @@ ItemEvents.rightClicked(e => {
     }
 
     item.count--;
-    player.tell(isBig ? "§l§eThat filled me up!" : "§eThat hits the spot.. Maybe just a bit more..");
-    player.runCommandSilent(
-        `playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`
-    );
+    let flavorText, stomachGain, obliterationGain;
+
+    if (isBig) {
+        flavorText = "§l§eThat filled me up!";
+        stomachGain = 1500;
+        obliterationGain = 6;
+    } else if (isMedium) {
+        flavorText = "§eOh yeah... More..";
+        stomachGain = 750;
+        obliterationGain = 3;
+    } else {
+        flavorText = "§eThat hits the spot.. Maybe just a bit more..";
+        stomachGain = 250;
+        obliterationGain = 1;
+    }
+
+    // feedback
+    player.tell(Text.yellow(flavorText));
+    player.runCommandSilent(`playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`);
     player.potionEffects.add('minecraft:saturation', 200, 1, false, false);
 
-    const stomachGain = isBig ? 1500 : 300;
-    const obliterationGain = isBig ? 6 : 1;
-
+    // apply gains to both powers
     ['omni_extras:perkgourmand', 'omni_extras:murkgourmand'].forEach(power =>
         player.runCommandSilent(`energybar value add ${player.name.string} ${power} stomach ${stomachGain}`)
     );
-
+    // scoreboard logic
     if (isBig)
         palladium.scoreboard.setScore(player, 'Gourmand.ObliterationPoint', obliterationGain);
     else
@@ -118,14 +139,15 @@ PlayerEvents.tick(e => {
 
     const isBig = BoostItems.big.some(tag => heldItem.hasTag(tag));
     const isSmall = BoostItems.small.some(tag => heldItem.hasTag(tag));
+    const isMedium = BoostItems.medium.some(tag => item.hasTag(tag));
 
-    const isHoldingEdible = isBig || isSmall
+    const isHoldingEdible = isBig || isSmall || isMedium
     const wasHoldingEdible = data.getBoolean("gourmand_was_holding") || false;
 
     if (hasAnyGourmand(player)) {
         if (isHoldingEdible && !wasHoldingEdible) {
             player.runCommandSilent(
-                `playsound minecraft:entity.experience_orb.pickup player ${player.name.string} ~ ~ ~ 1000`
+                `playsound omni_extras:grumble player ${player.name.string} ~ ~ ~ 1000`
             );
             player.server.runCommandSilent(
                 `title ${player.name.string} actionbar {"text":"This looks edible","color":"green","bold":true,"italic":true}`

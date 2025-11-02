@@ -164,91 +164,109 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_1",
-            "filter": "#76ede6",
+            "filter": "#9fefdf",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_2",
-            "filter": "#56eae1",
+            "filter": "#80decb",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_3",
-            "filter": "#2dd3c9",
+            "filter": "#5adcc2",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_4",
-            "filter": "#1cbfb5",
+            "filter": "#4cbca6",
+            "ignore_blank": true
+          },
+                    {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_5",
+            "filter": "#358e7c",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_1",
-            "filter": "#5771c5",
+            "filter": "#43c9d1",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_2",
-            "filter": "#3f5fc6",
+            "filter": "#39b4bb",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_3",
-            "filter": "#2040a8",
+            "filter": "#2c9ea4",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_4",
+            "filter": "#268b90",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_5",
+            "filter": "#216c70",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_6",
+            "filter": "#298c91",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_7",
+            "filter": "#176266",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_8",
+            "filter": "#124e51",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_1",
-            "filter": "#eb7de2",
+            "filter": "#ebb764",
             "ignore_blank": true
           },
            {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_2",
-            "filter": "#e863dd",
+            "filter": "#d39839",
             "ignore_blank": true
           },
            {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_3",
-            "filter": "#c14cb7",
+            "filter": "#c08424",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_4",
-            "filter": "#c733ba",
+            "filter": "#9f6f21",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_5",
-            "filter": "#95348c",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_10K_P3_6",
-            "filter": "#74246d",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_10K_P3_7",
-            "filter": "#450840",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_10K_P3_8",
-            "filter": "#270224",
+            "filter": "#68450c",
             "ignore_blank": true
           },
           {
@@ -458,6 +476,10 @@
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_1_color_4"
           },
+          "SKIN_10K_5": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_5"
+          },
           "SKIN_10K_P2_1": {
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_2_color_1"
@@ -509,18 +531,6 @@
            "SKIN_10K_P3_5": {
             "type": "palladium:string_property",
             "property": "murkgourmand_10k_skincolor_palette_3_color_5"
-          },
-          "SKIN_10K_P3_6": {
-            "type": "palladium:string_property",
-            "property": "murkgourmand_10k_skincolor_palette_3_color_6"
-          },
-          "SKIN_10K_P3_7": {
-            "type": "palladium:string_property",
-            "property": "murkgourmand_10k_skincolor_palette_3_color_7"
-          },
-          "SKIN_10K_P3_8": {
-            "type": "palladium:string_property",
-            "property": "murkgourmand_10k_skincolor_palette_3_color_8"
           },
           "SKIN_DEFAULT_1": {
             "type": "palladium:string_property",
