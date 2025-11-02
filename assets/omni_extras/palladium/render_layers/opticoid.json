@@ -183,18 +183,12 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_10K_P2_4",
-            "filter": "#398bc4",
-            "ignore_blank": true
-          },
-          {
-            "type": "palladium:color",
-            "color": "##SKIN_10K_P2_5",
             "filter": "#1978bc",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
-            "color": "##SKIN_10K_P2_6",
+            "color": "##SKIN_10K_P2_5",
             "filter": "#075d9a",
             "ignore_blank": true
           },
@@ -424,10 +418,6 @@
           "SKIN_10K_P2_5": {
             "type": "palladium:string_property",
             "property": "opticoid_10k_skincolor_palette_2_color_5"
-          },
-          "SKIN_10K_P2_6": {
-            "type": "palladium:string_property",
-            "property": "opticoid_10k_skincolor_palette_2_color_6"
           },
           "SKIN_10K_P3_1": {
             "type": "palladium:string_property",
@@ -749,13 +739,13 @@
           {
             "type": "palladium:color",
             "color": "##GLOW_DEFAULT_2",
-            "filter": "#35b2be",
+            "filter": "#46d2e0",
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##GLOW_DEFAULT_3",
-            "filter": "#33a9b4",
+            "filter": "#35b2be",
             "ignore_blank": true
           },
           {
@@ -832,6 +822,20 @@
           }
         }
       },
+      "animation_file": "omni_extras:animations/opticoid.animation.json",
+      "animation_controller": [
+        {
+          "name": "eye",
+          "transition_tick_time": 0,
+          "triggers": {
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
+          }
+        }
+        
+      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
         "transformers": [
@@ -888,6 +892,20 @@
           }
         }
       },
+      "animation_file": "omni_extras:animations/opticoid.animation.json",
+      "animation_controller": [
+        {
+          "name": "eye",
+          "transition_tick_time": 0,
+          "triggers": {
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
+          }
+        }
+        
+      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",
         "transformers": [

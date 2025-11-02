@@ -139,7 +139,7 @@ PlayerEvents.tick(e => {
 
     const isBig = BoostItems.big.some(tag => heldItem.hasTag(tag));
     const isSmall = BoostItems.small.some(tag => heldItem.hasTag(tag));
-    const isMedium = BoostItems.medium.some(tag => item.hasTag(tag));
+    const isMedium = BoostItems.medium.some(tag => heldItem.hasTag(tag));
 
     const isHoldingEdible = isBig || isSmall || isMedium
     const wasHoldingEdible = data.getBoolean("gourmand_was_holding") || false;

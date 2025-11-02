@@ -47,7 +47,24 @@
         "scale reset"
       ],
       "commands": [
-      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]
+      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+  ]
+    },
+    "effect_removal": {
+      "type":"palladium:command",
+      "hidden": true,
+      "commands": [
+      "effect clear @s alienevo:freeze_effect",
+      "effect clear @s minecraft:slowness"
+  ],
+  "conditions":{
+    "enabling":[
+      {
+        "type":"omni_extras:has_effect",
+        "effect": "alienevo:freeze_effect"
+      }
+    ]
+  }
     },
      "hearing_sense": {
       "type": "palladium:entity_glow",
