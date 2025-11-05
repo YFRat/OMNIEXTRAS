@@ -1,7 +1,7 @@
 [
   {
     "type": "palladium:lightning",
-    "body_part": "chest",
+    "body_part": "body",
     "segments": 4,
     "frequency": 1,
     "spread": 2,

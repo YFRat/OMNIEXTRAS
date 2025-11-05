@@ -1,1 +1,1 @@
-execute as @p if entity @s[tag=Perk.Obtained,tag=Murk.Obtained] run function omni_extras:removetag
+execute as @p if entity @p[tag=Perk.Obtained,tag=Murk.Obtained] run function omni_extras:removetag

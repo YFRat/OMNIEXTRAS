@@ -14,7 +14,8 @@
       "hidden": true,
       "commands": [
        "function omni_extras:yoink",
-       "tag @s add Perk.Obtained"
+       "tag @s add Perk.Obtained",
+       "execute as @p if entity @p[tag=Perk.Obtained,tag=Murk.Obtained] run function omni_extras:removetag"
       ],
       "conditions": {
         "enabling": [
@@ -22,8 +23,8 @@
             "type": "palladium:animation_timer_ability",
             "power": "omni_extras:not_aliens/tempremove",
             "ability": "temp_timer",
-            "min": 0,
-            "max": 129
+            "min": 1,
+            "max": 1
           }
         ]
       }
