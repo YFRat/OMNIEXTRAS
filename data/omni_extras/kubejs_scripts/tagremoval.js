@@ -6,6 +6,7 @@ ServerEvents.loaded(event => {
         Utils.server.runCommandSilent('scoreboard objectives remove Gourmand.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove Gourmand.SkillPoint');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.Level');
+        Utils.server.runCommandSilent('scoreboard objectives remove Perkourmand.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.SkillPoint');
         Utils.server.runCommandSilent('scoreboard objectives remove Murk_Gourmand.Level');
@@ -26,6 +27,7 @@ PlayerEvents.loggedIn(event => {
         Utils.server.runCommandSilent('scoreboard objectives remove Gourmand.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove Gourmand.SkillPoint');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.Level');
+        Utils.server.runCommandSilent('scoreboard objectives remove Perkourmand.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.XP');
         Utils.server.runCommandSilent('scoreboard objectives remove GourmandMurk.SkillPoint');
         Utils.server.runCommandSilent('scoreboard objectives remove Murk_Gourmand.Level');

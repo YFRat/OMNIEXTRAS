@@ -29,6 +29,26 @@
         ]
       }
     },
+    "locked": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [
+      ],
+      "last_tick_commands": [""],
+      "commands": [
+        "effect give @e[palladium.power=omni_extras:xylene] minecraft:slowness 3 7 true"
+      ],
+      "conditions":{
+        "enabling":
+         {
+          "type": "palladium:animation_timer_ability",
+          "power": "omni_extras:not_aliens/tempremovealt",
+          "ability": "temp_timer",
+          "min": 1,
+          "max": 130
+          }
+      }
+    },
     "unyoinked1": {
       "type": "palladium:command",
       "hidden": true,

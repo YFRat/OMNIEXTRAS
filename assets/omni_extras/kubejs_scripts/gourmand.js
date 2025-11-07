@@ -16,6 +16,7 @@ PalladiumEvents.registerAnimations((event) => {
                     .scaleZ(1.4);
             }
             else {
+            builder.get('head').rotateX((builder.getModel().head.xRot * -0.24))
                 if (builder.getPlayer().isCrouching()) {
                     builder.get("head")
                         .moveZ(-4)

@@ -150,7 +150,7 @@ PlayerEvents.tick(e => {
                 `playsound omni_extras:grumble player ${player.name.string} ~ ~ ~ 1000`
             );
             player.server.runCommandSilent(
-                `title ${player.name.string} actionbar {"text":"This looks edible","color":"green","bold":true,"italic":true}`
+                `title ${player.name.string} actionbar {"text":"*stomach growls..*","color":"green","bold":true,"italic":true}`
             );
         }
     }

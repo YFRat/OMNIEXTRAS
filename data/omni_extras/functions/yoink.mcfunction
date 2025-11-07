@@ -23,6 +23,6 @@ execute if entity @s[palladium.power=evo_reds_alienpack_ult:ult_omnitrix] run pl
 execute if entity @s[palladium.power=evo_reds_alienpack_ult_noncustom:ult_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack:recal_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
 execute if entity @s[palladium.power=evo_reds_alienpack_completed:completed_omnitrix] run playsound evo_reds_alienpack:recal_decouple master @s
-execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run playsound alienevo:prototype_decouple master @s
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run playsound alienevo:omniverse_master_control @s
 
 alienautoadd @s omni_extras:perkgourmand
