@@ -1,0 +1,32 @@
+{
+  "display": {
+    "title": {
+      "text": "Experiments from Long Ago",
+      "color": "green"
+    },
+    "description": {
+      "text": "Find the Abandoned Galvan Lab"
+    },
+    "icon": {
+      "item": "alienevo:machined_metal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "omni_extras:findtower",
+  "criteria": {
+    "find": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "location": {
+            "structure": "omni_extras:abandoned_lab"
+          }
+        }
+      }
+    }
+  }
+}

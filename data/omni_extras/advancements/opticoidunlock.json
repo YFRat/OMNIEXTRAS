@@ -8,12 +8,12 @@
       "text": "Transform into an Opticoid for the very first time"
     },
     "icon": {
-      "item": "minecraft:air"
+      "item": "omni_extras:opticoid_icon"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "parent": "omni_extras:vialobtain",
   "criteria": {

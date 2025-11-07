@@ -2,7 +2,7 @@
     "display": {
         "title": {
             "text": "Omni Extras",
-            "color": "light_purple",
+            "color": "green",
             "bold": false,
             "obfuscated": false,
             "strikethrough": false,
@@ -12,7 +12,7 @@
             "text": "Who knows what awaits.. (by the OmniExtras team)"
         },
         "icon": {
-            "item": "omni_extras:opticoid_vial"
+            "item": "omni_extras:opticoid_slime"
         },
         "frame": "challenge",
         "show_toast": false,

@@ -1,0 +1,568 @@
+
+{
+  "transformers": [
+          { 
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_1",
+            "filter": "#ffe5a0",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_2",
+            "filter": "#ecc578",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_3",
+            "filter": "#3a99a1",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_4",
+            "filter": "#daa755",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_5",
+            "filter": "#be8649",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_1",
+            "filter": "#a67f02",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_2",
+            "filter": "#855f02",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_3",
+            "filter": "#573823",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_5",
+            "filter": "#552d01",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P2_4",
+            "filter": "#552d01",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_1",
+            "filter": "#ea969b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_2",
+            "filter": "#e57386",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_3",
+            "filter": "#c15e7a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_4",
+            "filter": "#9c4c69",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_5",
+            "filter": "#6b3450",
+            "ignore_blank": true
+          },
+          
+           { 
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#f79797",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#e56767",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_3",
+            "filter": "#c45454",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_1",
+            "filter": "#f73737",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_2",
+            "filter": "#e03a3a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_3",
+            "filter": "#c62a2a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_4",
+            "filter": "#b42020",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P2_5",
+            "filter": "#a01d1e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_1",
+            "filter": "#63d95d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_2",
+            "filter": "#4ed747",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_3",
+            "filter": "#57bb52",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_4",
+            "filter": "#2ec826",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_5",
+            "filter": "#188413",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#61dcea",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#5bbcc8",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_3",
+            "filter": "#33868d",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_1",
+            "filter": "#3395da",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_2",
+            "filter": "#1978bc",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P2_3",
+            "filter": "#075d9a",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_1",
+            "filter": "#ca86d4",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_2",
+            "filter": "#d667e6",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_3",
+            "filter": "#c56ad2",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_4",
+            "filter": "#bb4ccb",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_5",
+            "filter": "#90339e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_1",
+            "filter": "#b3ff40",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_2",
+            "filter": "#8ed721",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_1",
+            "filter": "#7deef9",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_DEFAULT_2",
+            "filter": "#46d2e0",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_2",
+            "filter": "#fcd720",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_3",
+            "filter": "#edb508",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_1",
+            "filter": "#ffffff",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_2",
+            "filter": "#edf4f4",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_3",
+            "filter": "#d6dfe1",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_4",
+            "filter": "#bdc7cf",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SECONDARY_5",
+            "filter": "#97a2b0",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_1",
+            "filter": "#3a3333",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_2",
+            "filter": "#2c2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_3",
+            "filter": "#232020",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_4",
+            "filter": "#171515",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##PRIMARY_5",
+            "filter": "#000000",
+            "ignore_blank": true
+          }
+
+        ],
+        "variables": {
+          "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "GLOW_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_1"
+          },
+          "GLOW_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_2"
+          },
+          "GLOW_10K_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_2"
+          },
+          "GLOW_10K_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_3"
+          },
+          "GLOW_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_glowcolor_1_color_1"
+          },
+          "GLOW_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_glowcolor_1_color_2"
+          },
+          "SKIN_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_1_color_1"
+          },
+          "SKIN_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_1_color_2"
+          },
+          "SKIN_PROTO_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_1_color_3"
+          },
+          "SKIN_PROTO_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_1_color_4"
+          },
+          "SKIN_PROTO_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_1_color_5"
+          },
+          "SKIN_PROTO_P2_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_2_color_1"
+          },
+          "SKIN_PROTO_P2_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_2_color_2"
+          },
+          "SKIN_PROTO_P2_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_2_color_3"
+          },
+          "SKIN_PROTO_P2_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_2_color_4"
+          },
+          "SKIN_PROTO_P2_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_2_color_5"
+          },
+          "SKIN_PROTO_P3_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_3_color_1"
+          },
+          "SKIN_PROTO_P3_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_3_color_2"
+          },
+          "SKIN_PROTO_P3_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_3_color_3"
+          },
+          "SKIN_PROTO_P3_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_3_color_4"
+          },
+          "SKIN_PROTO_P3_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_skincolor_palette_3_color_5"
+          },
+
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_1_color_2"
+          },
+          "SKIN_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_1_color_3"
+          },
+          
+          "SKIN_DEFAULT_P2_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_2_color_1"
+          },
+          "SKIN_DEFAULT_P2_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_2_color_2"
+          },
+          "SKIN_DEFAULT_P2_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_2_color_3"
+          },
+           "SKIN_DEFAULT_P2_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_2_color_4"
+          },
+           "SKIN_DEFAULT_P2_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_2_color_5"
+          },
+          "SKIN_DEFAULT_P3_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_1"
+          },
+          "SKIN_DEFAULT_P3_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_2"
+          },
+          "SKIN_DEFAULT_P3_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_3"
+          },
+          "SKIN_DEFAULT_P3_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_4"
+          },
+          "SKIN_DEFAULT_P3_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_default_skincolor_palette_3_color_5"
+          },
+
+          "SKIN_10K_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_1_color_1"
+          },
+          "SKIN_10K_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_1_color_2"
+          },
+          "SKIN_10K_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_1_color_3"
+          },
+          "SKIN_10K_P2_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_2_color_1"
+          },
+          "SKIN_10K_P2_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_2_color_2"
+          },
+          "SKIN_10K_P2_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_2_color_3"
+          },
+          "SKIN_10K_P3_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_3_color_1"
+          },
+          "SKIN_10K_P3_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_3_color_2"
+          },
+          "SKIN_10K_P3_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_3_color_3"
+          },
+          "SKIN_10K_P3_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_3_color_4"
+          },
+          "SKIN_10K_P3_5": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_skincolor_palette_3_color_5"
+          },
+           "SECONDARY_1": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_1"
+          },
+          "SECONDARY_2": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_2"
+          },
+          "SECONDARY_3": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_3"
+          },
+          "SECONDARY_4": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_4"
+          },
+          "SECONDARY_5": {
+            "type": "palladium:string_property",
+            "property": "uniform_secondary_color_5"
+          },
+          "PRIMARY_1": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_1"
+          },
+          "PRIMARY_2": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_2"
+          },
+          "PRIMARY_3": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_3"
+          },
+          "PRIMARY_4": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_4"
+          },
+          "PRIMARY_5": {
+            "type": "palladium:string_property",
+            "property": "uniform_primary_color_5"
+          }
+          
+        },
+  "base": "omni_extras:textures/icon/alien_110_#UNIFORM.png"
+}

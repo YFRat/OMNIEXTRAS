@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "crusty_chunks:fission_bomb",
+    "crusty_chunks:fusion_bomb",
+    "crusty_chunks:raw_uranium_block"
+  ]
+}

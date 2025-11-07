@@ -1,0 +1,101 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.evo3",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "armorHead",
+					"pivot": [-5.35074, 32.75442, 0.28372],
+					"rotation": [2.5, 0, 0]
+				},
+				{
+					"name": "BaseHead",
+					"parent": "armorHead",
+					"pivot": [13.76347, 33.57001, 7.63659]
+				},
+				{
+					"name": "Jaw",
+					"parent": "armorHead",
+					"pivot": [-5.35074, 44.28556, -2.49974]
+				},
+				{
+					"name": "armorBody",
+					"pivot": [0, 11.68, -0.232]
+				},
+				{
+					"name": "TAIL_BASE",
+					"parent": "armorBody",
+					"pivot": [-5.35074, 6.50284, 9.11299]
+				},
+				{
+					"name": "TAIL_LOWMID",
+					"parent": "TAIL_BASE",
+					"pivot": [-5.35074, 6.50284, 12.0091]
+				},
+				{
+					"name": "TAIL_HIGHMID",
+					"parent": "TAIL_LOWMID",
+					"pivot": [-5.35074, 6.50284, 17.80127]
+				},
+				{
+					"name": "TORSO",
+					"parent": "armorBody",
+					"pivot": [0, 15.17816, -0.30148],
+					"cubes": [
+						{
+							"origin": [-1.60822, 9.25133, -5.31112],
+							"size": [3.01762, 3.01762, 1.57518],
+							"inflate": 0.15,
+							"pivot": [-0.51651, 13.01273, -7.58575],
+							"rotation": [-8.41408, 0.91397, -0.08169],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [8, 8]},
+								"east": {"uv": [12, 0], "uv_size": [1, 2]},
+								"south": {"uv": [13, 0], "uv_size": [2, 2]},
+								"west": {"uv": [11, 0], "uv_size": [1, 2]},
+								"up": {"uv": [9, 0], "uv_size": [2, 1]},
+								"down": {"uv": [11, 2], "uv_size": [-2, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "armorLeftArm",
+					"pivot": [10.81834, 23.04306, -1.00971]
+				},
+				{
+					"name": "leftarm_rot",
+					"parent": "armorLeftArm",
+					"pivot": [5.94746, 22.87359, 2.74158],
+					"rotation": [0, 0, -30]
+				},
+				{
+					"name": "armorRightArm",
+					"pivot": [-16.64552, 24.7368, 0.85913]
+				},
+				{
+					"name": "rightarm_rot",
+					"parent": "armorRightArm",
+					"pivot": [-15.92697, 24.45322, 1.29354],
+					"rotation": [0, 0, 27.5]
+				},
+				{
+					"name": "armorLeftLeg",
+					"pivot": [1.88949, 8.81972, -0.73372]
+				},
+				{
+					"name": "armorRightLeg",
+					"pivot": [-12.66338, 5.3444, 1.00393]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "type": "palladium:lightning",
+    "body_part": "head",
+    "segments": 6,
+    "frequency": 1,
+    "spread": 10,
+    "glow_opacity": 1,
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
+    "core_color": "#FFFFFF",
+    "core_opacity": 0.3,
+    "rotation": 120,
+    "normal_transparency": false,
+    "bloom": 10,
+    "size": [600, 600],
+    "rotation_speed": 3,
+    "offset": [0, -5, 15]
+  }
+]

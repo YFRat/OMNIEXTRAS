@@ -1,0 +1,131 @@
+{
+  "transformers": [
+        {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_1",
+            "filter": "#b5eb20",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_2",
+            "filter": "#9dda13",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_3",
+            "filter": "#82be11",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_4",
+            "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#9fefdf",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#80decb",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_3",
+            "filter": "#5adcc2",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_4",
+            "filter": "#4cbca6",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_3",
+            "filter": "#b83535",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+            "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "SKIN_10K_1": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_1"
+          },
+          "SKIN_10K_2": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_2"
+          },
+          "SKIN_10K_3": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_3"
+          },
+          "SKIN_10K_4": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_10k_skincolor_palette_1_color_4"
+          },
+          "SKIN_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_1"
+          },
+          "SKIN_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_2"
+          },
+           "SKIN_PROTO_3": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_3"
+          },
+          "SKIN_PROTO_4": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_prototype_skincolor_palette_1_color_4"
+          },
+          "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_default_skincolor_palette_1_color_2"
+          },
+           "SKIN_DEFAULT_3": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_default_skincolor_palette_1_color_3"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "murkgourmand_default_skincolor_palette_1_color_4"
+          }
+        },
+  "base": "omni_extras:textures/gui/playlists/gourmand/murk/mega_spit_#UNIFORM.png"
+}

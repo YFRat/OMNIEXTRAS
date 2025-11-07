@@ -1,6 +1,6 @@
 {
   "name": "Opticoid",
-  "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+  "icon": "#omni_extras:opticoid/opticoid",
 
     "energy_bars": {
     "energy_meter": {
@@ -28,7 +28,7 @@
         0
       ],
       "description": "Dude, watch the puns! Pretty soon, you use up all the eye-conic ones, and they just get cornea and cornea...",
-      "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+      "icon": "#omni_extras:opticoid/opticoid",
       "first_tick_commands": [
         "scale easing set palladium:ability pehkui:exponential_out",
         "scale set pehkui:eye_height 1",
@@ -36,6 +36,7 @@
         "scale set pehkui:entity_reach 0.70",
         "scale set pehkui:block_reach 1.5",
         "scale set pehkui:jump_height 1.3",
+        "scale set pehkui:drops 0.5",
         "scale set pehkui:falling 1.2",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.Level dummy",
@@ -43,11 +44,27 @@
         "tag @s add Opticoid.Unlocked"
       ],
       "last_tick_commands": [
-        "scale reset",
-        "scale easing reset"
+        "scale reset"
       ],
       "commands": [
-      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"]
+      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+  ]
+    },
+    "effect_removal": {
+      "type":"palladium:command",
+      "hidden": true,
+      "commands": [
+      "effect clear @s alienevo:freeze_effect",
+      "effect clear @s minecraft:slowness"
+  ],
+  "conditions":{
+    "enabling":[
+      {
+        "type":"omni_extras:has_effect",
+        "effect": "alienevo:freeze_effect"
+      }
+    ]
+  }
     },
      "hearing_sense": {
       "type": "palladium:entity_glow",
@@ -55,7 +72,7 @@
       "hidden": true,
       "list_index": -1,
       "mode": "others",
-      "color": "null",
+      "color": "#7fba18",
       "distance": 50,
       "conditions": {
         "enabling":[
@@ -287,7 +304,7 @@
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 3,
-      "motion": 1.7,
+      "motion": 1.5,
       "conditions": {
         "enabling": [
           {
@@ -379,7 +396,7 @@
 
     "eye_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:stalk",
+      "sound":"omni_extras:stalk",
       "hidden": true,
       "list_index": -1,
       "looping": false,
@@ -396,7 +413,7 @@
     },
     "beam_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:eyebeam",
+      "sound":"omni_extras:eyebeam",
       "hidden": true,
       "list_index": -1,
       "looping": true,
@@ -413,7 +430,7 @@
     },
     "otherbeam_sound": {
       "type":"palladium:play_sound",
-      "sound":"alienevo:otherbeam",
+      "sound":"omni_extras:otherbeam",
       "hidden": true,
       "list_index": -1,
       "looping": true,
@@ -444,14 +461,16 @@
     },
     "beam_laser": {
       "type": "palladium:energy_beam",
-      "energy_beam": "omni_extras:eye_beam",
-      "damage": 25,
+      "energy_beam": "omni_extras:opticoid/eye_beam",
+      "damage_type": "alienevo:energy_beam",
+      "damage": 17.5,
       "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
       "max_distance": 50,
       "commands_on_entity_hit": [
         "function omni_extras:grantxp1" ],
       "commands_on_block_hit": [
-        "function omni_extras:detection" ],
+        "function omni_extras:detection"
+         ],
       "hidden": true,
       "conditions": {
         "enabling": [
@@ -990,6 +1009,7 @@
     "freeze_laser": {
       "type": "palladium:energy_beam",
       "icon": "minecraft:snowball",
+      "damage_type": "alienevo:energy_beam",
       "title": "Freeze-Beam",
       "bar_color": "green",
       "hidden": true,
@@ -997,7 +1017,7 @@
       "list_index": 2,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "omni_extras:freeze_beam",
+      "energy_beam": "omni_extras:opticoid/freeze_beam",
       "damage": 2,
       "max_distance": 10,
       "set_on_fire_seconds": 0,
@@ -1067,7 +1087,7 @@
         "enabling": [
           {
             "type": "palladium:held",
-            "cooldown": 25,
+            "cooldown": 50,
             "needs_empty_hand": false,
             "key_type": "key_bind"
           }
@@ -1144,8 +1164,9 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "omni_extras:fire_beam",
-      "damage": 2,
+      "energy_beam": "omni_extras:opticoid/fire_beam",
+      "damage_type": "alienevo:energy_beam",
+      "damage": 5,
       "max_distance": 14,
       "set_on_fire_seconds": 6,
       "cause_fire": true,
@@ -1196,11 +1217,12 @@
       "list_index": 0,
       "gui_position": "null",
       "description": "null",
-      "energy_beam": "omni_extras:hand_beams",
-      "damage": 8,
+      "energy_beam": "omni_extras:opticoid/hand_beams",
+      "damage_type": "alienevo:energy_beam",
+      "damage": 6.5,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 12
+        "amount": 10
       },
       "max_distance": 20,
       "cause_fire": false,

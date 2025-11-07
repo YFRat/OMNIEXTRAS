@@ -9,11 +9,10 @@
     "minecraft:dripstone_caves",
     "minecraft:forest",
     "minecraft:flower_forest",
-    "minecraft:jungle",
-    "minecraft:beach"
+    "minecraft:jungle"
   ],
   "step": "underground_structures",
-  "terrain_adaptation": "encapsulate",
+  "terrain_adaptation": "bury",
   "spawn_overrides": {},
   "start_pool": "omni_extras:abandoned_lab",
   "size": 1,
