@@ -959,7 +959,7 @@
 			"list_index": -1,
 			"hide_particles": true,
       "first_tick_commands":[
-        "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murk_gourmand stomach 150",
+        "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murkgourmand stomach 150",
         "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murkgourmand stomach 1000",
         "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murkgourmand stomach 850",
         "execute as @s if entity @e[type=minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:murkgourmand stomach 900",
