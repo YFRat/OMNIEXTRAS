@@ -925,6 +925,7 @@
         "enabling": [
           {
             "type": "palladium:held",
+            "cooldown": 60,
             "key_type": "key_bind",
             "needs_empty_hand": false
           }
