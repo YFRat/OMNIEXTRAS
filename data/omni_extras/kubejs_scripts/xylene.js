@@ -43,8 +43,10 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
         palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
     }
-
-    player.runCommandSilent(`playsound alienevo:prototype_master_control master ${player.name.string}`);
+    if (!palladium.superpowers.hasSuperpower(player, "aeo:omniverse_omnitrix"))
+        player.runCommandSilent(`playsound alienevo:prototype_master_control master ${player.name.string}`);
+    else 
+        player.runCommandSilent(`playsound alienevo:omniverse_master_control master ${player.name.string}`);
 });
 
 function hasOmnitrix(player) {

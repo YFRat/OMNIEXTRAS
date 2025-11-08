@@ -6,7 +6,7 @@ license="All rights reserved"
 [[mods]]
 modId="omni_extras"
 displayName="OmniExtras"
-version="1.0.5"
+version="1.0.5.1"
 logoFile = "logo.png"
 logoBlur = false
 description='''
