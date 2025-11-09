@@ -5,7 +5,7 @@
       "type": "geckolib:default",
       "render_type":"cutout",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
+        "base": "omni_extras:geo/aliens/alien_192/orishan_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -13,14 +13,16 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
+      "animation_file": "omni_extras:animations/orishan.animation.json",
       "animation_controller": [
         {
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
           }
         },
         { 
@@ -31,7 +33,7 @@
       ],
       "third_person_conditions": true,
       "texture": {
-        "base": "omni_extras:textures/models/aliens/alien_110/opticoid_skin_#UNIFORM.png",
+        "base": "omni_extras:textures/models/aliens/alien_192/orishan_skin_#UNIFORM.png",
         "bones": {
         "head": "armorHead",
         "body": "armorBody",
@@ -518,10 +520,12 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
           }
-        }
+        }        
       ],
       "third_person_conditions": true,
       "texture": {
@@ -664,8 +668,10 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
           }
         },
         {
@@ -823,8 +829,10 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
           }
         }
         
@@ -891,8 +899,10 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "eye_in": "eye_in",
+            "eye_out": "eye_out",
+            "arm_up": "arm_up",
+            "arm_down": "arm_down"
           }
         }
         

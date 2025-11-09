@@ -1,4 +1,3 @@
-const ForgeRegistries = Java.loadClass('net.minecraftforge.registries.ForgeRegistries');
 StartupEvents.registry('palladium:condition_serializer', (event) => {
     event.create('omni_extras:has_effect')
         .addProperty('effect', 'string', 'minecraft:speed', 'The ID of the potion effect to check for.')
@@ -9,7 +8,7 @@ StartupEvents.registry('palladium:condition_serializer', (event) => {
             }
             try {
                 let effectId = props.get("effect");
-                let effect = ForgeRegistries.MOB_EFFECTS.getValue(effectId);
+                let effect = effectId;
                 if (!effect) {
                     return false;
                 }

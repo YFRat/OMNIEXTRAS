@@ -467,7 +467,9 @@
       "uuid":"3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
       "max_distance": 50,
       "commands_on_entity_hit": [
-        "function omni_extras:grantxp1" ],
+        "function omni_extras:grantxp1",
+        "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 30"
+    ],
       "commands_on_block_hit": [
         "function omni_extras:detection"
          ],
@@ -539,7 +541,7 @@
       "hidden_in_bar": true,
       "render_layer": "omni_extras:opticoid",
       "controller": "eye",
-      "animation_trigger": "arm_up",
+      "animation_trigger": "beam_normal",
       "conditions": {
         "enabling": [
           {
@@ -556,7 +558,7 @@
       "hidden_in_bar": true,
       "render_layer": "omni_extras:opticoid",
       "controller": "eye",
-      "animation_trigger": "arm_down",
+      "animation_trigger": "beam_normal_down",
       "conditions": {
         "enabling": [
           {
@@ -1024,7 +1026,8 @@
       "cause_fire": false,
       "smelt_blocks": false,
       "commands_on_entity_hit": [
-        "function omni_extras:freeze" ],
+        "function omni_extras:freeze",
+        "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 10" ],
         "commands_on_block_hit": [
         "function omni_extras:freeze_block" ],
     "conditions": {
@@ -1171,8 +1174,9 @@
       "set_on_fire_seconds": 6,
       "cause_fire": true,
       "smelt_blocks": false,
+      "commands_on_entity_hit":["scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 12"],
       "commands_on_block_hit": [
-        "setblock ~ ~ ~ minecraft:fire keep" ],
+        "setblock ~ ~ ~ minecraft:fire keep"],
     "conditions": {
       "enabling": [
         {
@@ -1228,7 +1232,8 @@
       "cause_fire": false,
       "smelt_blocks": false,
       "commands_on_entity_hit": [
-        "function omni_extras:grantxp2" ],
+        "function omni_extras:grantxp2",
+        "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 8" ],
     "conditions": {
       "enabling": [
         {

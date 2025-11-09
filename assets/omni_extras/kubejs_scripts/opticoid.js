@@ -34,3 +34,26 @@ PalladiumEvents.registerAnimations((event) => {
         }
     });
 });
+
+PalladiumEvents.registerAnimations((event) => {
+    event.register('eyeguy/normalbeam', 100, (builder) => {
+        let normalbeam = animationUtil.getAnimationTimerAbilityValue(
+            builder.getPlayer(), 'omni_extras:opticoid', 'Eye-Beam', builder.getPartialTicks());
+        if (normalbeam > 0 && !builder.isFirstPerson()) {
+            builder.get("right_arm")
+                    .setZRotDegrees(0)
+                    .setXRotDegrees(0)
+                    .setYRotDegrees(0)
+                    .animate('easeOutBack', normalbeam)
+            builder.get("left_arm")
+                    .setZRotDegrees(0)
+                    .setXRotDegrees(0)
+                    .setYRotDegrees(0)
+                    .animate('easeOutBack', normalbeam)
+        }
+        if (normalbeam > 0.0 && builder.isFirstPerson()) {
+
+
+        }
+    });
+});
