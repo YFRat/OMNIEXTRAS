@@ -1,6 +1,6 @@
 {
   "name": "Orishan",
-  "icon": "#omni_extras:orishan/orishan",
+  "icon": "minecraft:blaze_rod",
 
     "energy_bars": {
     "energy_meter": {
@@ -19,7 +19,7 @@
   "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
   "hidden": false,
   "abilities": {
-    "Orishan_loop": {
+    "orishan_loop": {
       "type": "palladium:command",
       "hidden": false,
       "title": "Orishan",
@@ -102,6 +102,36 @@
                     "tag": "alienevo.nickname"
                   }
                 ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "base_form": {
+      "type": "alienevo:omnitrix_detransform",
+      "icon": "#alienevo:detransform",
+      "title": {"translate":"ability.alienevo.omnitrix.base_form"},
+      "hidden": true,
+      "list_index": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.BaseForm"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.MasterControl"
               }
             ]
           }
@@ -210,7 +240,7 @@
         "enabling":[
           {
             "type":"palladium:ability_unlocked",
-            "ability":"opticoid_loop"
+            "ability":"orishan_loop"
           }
         ]
       }
