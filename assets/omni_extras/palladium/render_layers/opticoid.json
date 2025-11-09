@@ -19,10 +19,8 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
+            "beam_normal":"NewBeam",
+            "beam_normal_down":"NewBeamDown"
           }
         },
         { 
@@ -520,12 +518,10 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
+            "beam_normal":"NewBeam",
+            "beam_normal_down":"NewBeamDown"
           }
-        }        
+        }
       ],
       "third_person_conditions": true,
       "texture": {
@@ -668,10 +664,8 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
+            "beam_normal":"NewBeam",
+            "beam_normal_down":"NewBeamDown"
           }
         },
         {
