@@ -510,16 +510,20 @@
       "conditions": {
         "enabling": [
               {
+                "type":"palladium:or",
+                "conditions":[
+                  {
                 "type": "palladium:animation_timer_ability",
                 "ability": "energy_blast_timer",
-                "min": 0,
-                "max":0
+                "min": 1,
+                "max":1
               },
               {
                 "type": "palladium:ability_enabled",
                 "ability": "carry_remove"
               }
-
+                ]
+              }
             ]
           }
     },
@@ -1466,7 +1470,7 @@
     "whip_tongue_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
-      "render_layer": "omni_extras:perkgourmand",
+      "render_layer": "omni_extras:perk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "whip",
       "conditions": {
