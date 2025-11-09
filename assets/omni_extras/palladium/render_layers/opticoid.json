@@ -3,6 +3,7 @@
   "layers": [
     {
       "type": "geckolib:default",
+      "render_type":"cutout",
       "model": {
         "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
         "variables": {
@@ -24,7 +25,7 @@
             "arm_down": "arm_down"
           }
         },
-        {
+        { 
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
