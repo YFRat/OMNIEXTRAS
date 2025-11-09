@@ -1269,6 +1269,7 @@
 			}
 		},
 		"shoot": {
+			"loop": "hold_on_last_frame",
 			"animation_length": 0.4167,
 			"bones": {
 				"BaseHead": {
@@ -1929,9 +1930,6 @@
 					}
 				}
 			}
-		},
-		"new": {
-			"loop": true
 		},
 		"tummyache": {
 			"loop": "hold_on_last_frame",
