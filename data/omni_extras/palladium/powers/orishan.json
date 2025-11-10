@@ -184,7 +184,7 @@
     "renderLayer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "omni_extras:opticoid"
+      "render_layer": "omni_extras:orishan"
     },
     "sizeChange": {
       "type": "palladium:size",
