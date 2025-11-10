@@ -91,7 +91,7 @@ global.alienevo_112_prototype_glowcolor_1 = ["fdff49", "facd25"];
 
 // WATERHAZARD SECTION
 global.alienevo_alien_192 = ['omni_extras:orishan']
-global.alienevo_randomization_192 = [true];
+global.alienevo_randomization_192 = [false];
 
 global.alienevo_regen_192 = [0]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
 global.alienevo_scale_192 = [70]; // Scale of the alien preview render. 55 is default
