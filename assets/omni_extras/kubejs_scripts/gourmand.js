@@ -1,5 +1,5 @@
 PalladiumEvents.registerAnimations((event) => {
-    event.register("upc/gourmand", 10, (builder) => {
+    event.register("oe/gourmand", 10, (builder) => {
         if (abilityUtil.isEnabled(builder.getPlayer(), "omni_extras:perkgourmand", "render_layer")) {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")

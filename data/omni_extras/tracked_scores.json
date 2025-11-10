@@ -10,6 +10,9 @@
         "Murkgourmand.Level",
         "Murkgourmand.SkillPoint",
         "Gourmand.Swallow",
-        "Gourmand.ObliterationPoint"
+        "Gourmand.ObliterationPoint",
+        "Orishan.XP",
+        "Orishan.Level",
+        "Orishan.SkillPoint"
     ]
 }

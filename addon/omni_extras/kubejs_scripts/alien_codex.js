@@ -99,7 +99,7 @@ global.alienevo_textcolor_192 = [0xa8865a]; // Text color of the alien species n
 global.alienevo_background_192 = ['minecraft:textures/block/end_stone.png']; // Tiled texture that appears behind the alien preview render
 
 global.alienevo_192_10k_uniforms = [true, true, true]; // Glow (enabled), Primary (enabled), Secondary (enabled)
-global.alienevo_192_default_uniforms = [true, true, true]; // Glow (enabled), Primary (disabled), Secondary (disabled)
+global.alienevo_192_default_uniforms = [true, false, false]; // Glow (enabled), Primary (disabled), Secondary (disabled)
 global.alienevo_192_prototype_uniforms = [true, true, true];
 
 // Make sure your colors are listed from BRIGHTEST TO DARKEST. You can use as many or as few colors in a palette as you'd like.

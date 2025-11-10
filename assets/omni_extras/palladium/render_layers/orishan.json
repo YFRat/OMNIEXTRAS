@@ -3,7 +3,6 @@
   "layers": [
     {
       "type": "geckolib:default",
-      "render_type":"cutout",
       "model": {
         "base": "omni_extras:geo/aliens/alien_192/orishan_#UNIFORM.geo.json",
         "variables": {
@@ -13,24 +12,6 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        },
-        { 
-          "name": "blink",
-          "transition_tick_time": 0,
-          "animation": "eye_blink"
-        }      
-      ],
       "third_person_conditions": true,
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_192/orishan_skin_#UNIFORM.png",
@@ -476,7 +457,7 @@
      {
       "type": "geckolib:default",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
+        "base": "omni_extras:geo/aliens/alien_192/orishan_#UNIFORM.geo.json",
         "variables": {
           "UNIFORM": {
             "type": "palladium:string_property",
@@ -484,19 +465,6 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        }        
-      ],
       "third_person_conditions": true,
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_192/orishan_uniform_#UNIFORM.png",
@@ -632,24 +600,6 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        },
-        {
-          "name": "blink",
-          "transition_tick_time": 0,
-          "animation": "eye_blink"
-        }             
-      ],
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_192/orishan_glow_#UNIFORM.png",
         "transformers": [
@@ -785,7 +735,7 @@
     {
       "type": "geckolib:default",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/badge_#BADGE.geo.json",
+        "base": "omni_extras:geo/aliens/alien_192/badge_#BADGE.geo.json",
         "variables": {
           "BADGE": {
             "type": "palladium:string_property",
@@ -793,20 +743,6 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        }
-        
-      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
         "transformers": [
@@ -855,7 +791,7 @@
       "type": "geckolib:default",
       "render_type": "glow",
       "model": {
-        "base": "omni_extras:geo/aliens/alien_110/badge_#BADGE.geo.json",
+        "base": "omni_extras:geo/aliens/alien_192/badge_#BADGE.geo.json",
         "variables": {
           "BADGE": {
             "type": "palladium:string_property",
@@ -863,20 +799,6 @@
           }
         }
       },
-      "animation_file": "omni_extras:animations/opticoid.animation.json",
-      "animation_controller": [
-        {
-          "name": "eye",
-          "transition_tick_time": 0,
-          "triggers": {
-            "eye_in": "eye_in",
-            "eye_out": "eye_out",
-            "arm_up": "arm_up",
-            "arm_down": "arm_down"
-          }
-        }
-        
-      ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",
         "transformers": [
