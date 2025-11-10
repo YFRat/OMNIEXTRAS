@@ -251,13 +251,15 @@
       "hidden_in_bar": false,
       "list_index": 0,
       "commands":[
-        "say WATER BUCKET RELEASE"
+        "say WATER BUCKET RELEASE",
+        "playsound omni_extras:release master @s ~ ~ ~ 10 "
       ],
       "conditions":{
         "enabling":[
           {
-            "type": "palladium:held",
+            "type": "palladium:action",
             "needs_empty_hand": false,
+            "cooldown": 40,
             "key_type": "key_bind"
           }
         ]

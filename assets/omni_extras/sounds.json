@@ -38,5 +38,9 @@
     "grumble": {
     "category": "player",
     "sounds": ["omni_extras:grumble"]
+    },
+    "release": {
+    "category": "player",
+    "sounds": ["omni_extras:release"]
     }
 }

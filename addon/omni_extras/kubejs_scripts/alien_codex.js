@@ -94,7 +94,7 @@ global.alienevo_alien_192 = ['omni_extras:orishan']
 global.alienevo_randomization_192 = [false];
 
 global.alienevo_regen_192 = [0]; // A faux regen value to represent your alien's healing capability. Values 0 thru 10. Does not effect gameplay.
-global.alienevo_scale_192 = [70]; // Scale of the alien preview render. 55 is default
+global.alienevo_scale_192 = [60]; // Scale of the alien preview render. 55 is default
 global.alienevo_textcolor_192 = [0xa8865a]; // Text color of the alien species name
 global.alienevo_background_192 = ['minecraft:textures/block/end_stone.png']; // Tiled texture that appears behind the alien preview render
 

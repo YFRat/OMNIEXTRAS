@@ -8,5 +8,6 @@ StartupEvents.registry('sound_event', event => {
     event.create('omni_extras:chomp');
     event.create('omni_extras:whip');
     event.create('omni_extras:gangsta');
-    event.create('omni_extras:grumble')
+    event.create('omni_extras:grumble');
+    event.create('omni_extras:release')
 })
