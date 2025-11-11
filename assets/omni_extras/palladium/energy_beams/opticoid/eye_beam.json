@@ -2,7 +2,7 @@
   {
     "type": "palladium:lightning",
     "body_part": "chest",
-    "segments": 4,
+    "segments": 10,
     "frequency": 1,
     "spread": 2,
     "rainbow": false,
@@ -16,6 +16,6 @@
     "rotation_speed": 20,
     "offset": { 
       "first_person": [0, -5, 0],
-      "third_person": [0, -4, -6]}
+      "third_person": [0, 3, -8]}
     }
   ]

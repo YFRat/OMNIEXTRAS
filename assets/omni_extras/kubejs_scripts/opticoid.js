@@ -4,10 +4,10 @@ PalladiumEvents.registerAnimations((event) => {
             if (builder.isFirstPerson()) {
                 builder.get("right_arm")
                     .setX(-2)
-                    .setZ(4)
+                    .setZ(2)
                     builder.get("left_arm")
                     .setX(2)
-                    .setZ(4);
+                    .setZ(2);
             }
             else {
                 if (builder.getPlayer().isCrouching()) {

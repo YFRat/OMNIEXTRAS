@@ -1,12 +1,9 @@
+
 {
   "type": "palladium:lightning",
   "lifetime": 7,
-  "glow_color": "#d7972a",
-  "core_color": "#f9d6be",
-  "glow_color": {
-      "type": "palladium:string_property",
-      "property": "galvanic_mechamorph_beam_color"
-    },
+  "core_color": "#FFFFFF",
+  "glow_color": "#d7ed11",
   "core_opacity": 0.5,
   "size": [4.5, 4.5],
   "bloom": 3,
