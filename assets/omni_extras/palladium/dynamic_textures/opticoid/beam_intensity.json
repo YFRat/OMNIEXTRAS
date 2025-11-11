@@ -1,0 +1,10 @@
+{
+    "variables": {
+      "X": {
+        "type": "palladium:objective_score",
+        "objective": "Opticoid.BeamIntensity"
+      }
+    },
+    "base": "omni_extras:textures/hud/opticoid_level_#X.png"
+    
+  }
