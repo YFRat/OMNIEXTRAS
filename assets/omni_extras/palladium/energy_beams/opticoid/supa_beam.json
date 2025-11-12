@@ -2,8 +2,8 @@
   {
     "type": "palladium:lightning",
     "body_part": "chest",
-    "segments": 10,
-    "frequency": 1,
+    "segments": 12,
+    "frequency": 3,
     "spread": 2,
     "rainbow": false,
     "glow_color": {
@@ -12,10 +12,10 @@
     },
     "core_color": "#FFFFFF",
     "bloom": 6,
-    "size": [2, 2],
-    "rotation_speed": 20,
+    "size": [15, 15],
+    "rotation_speed": 33,
     "offset": { 
       "first_person": [0, -5, 0],
-      "third_person": [0, -3.5, -2]}
+      "third_person": [0, -3.5, -12]}
     }
   ]

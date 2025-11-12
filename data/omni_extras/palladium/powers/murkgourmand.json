@@ -563,15 +563,8 @@
         "DieOnBlockHit": true,
         "Appearances": [
           {
-            "Type": "laser",
-            "Thickness": 2.4,
-            "Color": "#36f174"
-          },
-          {
-            "Type": "particles",
-            "ParticleType": "minecraft:explosion",
-            "Spread": 3,
-            "Amount": 1
+          "Type": "trail",
+            "Trail": "omni_extras:gourmand/spit"
           }
         ]
       },
@@ -715,15 +708,8 @@
         ],
         "Appearances": [
           {
-            "Type": "laser",
-            "Thickness": 1,
-            "Color": "#36f174"
-          },
-          {
-            "Type": "particles",
-            "ParticleType": "minecraft:explosion",
-            "Spread": 3,
-            "Amount": 1
+          "Type": "trail",
+            "Trail": "omni_extras:gourmand/spit"
           }
         ]
       },

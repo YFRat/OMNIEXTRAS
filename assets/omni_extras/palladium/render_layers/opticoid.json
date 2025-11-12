@@ -20,7 +20,9 @@
           "transition_tick_time": 0,
           "triggers": {
             "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "beam_normal_down":"NewBeamDown",
+            "super_beam": "Supabeam",
+            "super_beam_down": "SupabeamDown"
           }
         },
         { 
@@ -519,7 +521,9 @@
           "transition_tick_time": 0,
           "triggers": {
             "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "beam_normal_down":"NewBeamDown",
+            "super_beam": "Supabeam",
+            "super_beam_down": "SupabeamDown"
           }
         }
       ],
@@ -665,14 +669,16 @@
           "transition_tick_time": 0,
           "triggers": {
             "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "beam_normal_down":"NewBeamDown",
+            "super_beam": "Supabeam",
+            "super_beam_down": "SupabeamDown"
           }
         },
-        {
+        { 
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
-        }             
+        }      
       ],
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_110/opticoid_glow_#UNIFORM.png",
@@ -824,10 +830,16 @@
           "transition_tick_time": 0,
           "triggers": {
             "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "beam_normal_down":"NewBeamDown",
+            "super_beam": "Supabeam",
+            "super_beam_down": "SupabeamDown"
           }
-        }
-        
+        },
+        { 
+          "name": "blink",
+          "transition_tick_time": 0,
+          "animation": "eye_blink"
+        }      
       ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
@@ -892,10 +904,16 @@
           "transition_tick_time": 0,
           "triggers": {
             "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown"
+            "beam_normal_down":"NewBeamDown",
+            "super_beam": "Supabeam",
+            "super_beam_down": "SupabeamDown"
           }
-        }
-        
+        },
+        { 
+          "name": "blink",
+          "transition_tick_time": 0,
+          "animation": "eye_blink"
+        }      
       ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",

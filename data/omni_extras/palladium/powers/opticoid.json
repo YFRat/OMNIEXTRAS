@@ -4,8 +4,8 @@
 
     "energy_bars": {
     "energy_meter": {
-      "max": 600,
-      "auto_increase_per_tick": 3,
+      "max": 800,
+      "auto_increase_per_tick": 8,
       "color": "#4AFF00"
     
     }
@@ -34,9 +34,7 @@
         "scale set pehkui:eye_height 1",
         "scale set pehkui:hitbox_height 1",
         "scale set pehkui:entity_reach 0.70",
-        "scale set pehkui:block_reach 1.5",
-        "scale set pehkui:jump_height 1.3",
-        "scale set pehkui:drops 0.5",
+        "scale divide pehkui:drops 2",
         "scale set pehkui:falling 1.2",
         "scoreboard objectives add Opticoid.XP dummy",
         "scoreboard objectives add Opticoid.BeamIntensity dummy",
@@ -290,6 +288,37 @@
       "hidden": true,
       "amount": 15
     },
+    "jump_height": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:jump_power",
+      "uuid": "ed74bb2c-839a-4862-8187-54cbc724028a",
+      "hidden": true,
+      "amount": 0.3
+    },
+    "jump_height_beam": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:jump_power",
+      "uuid": "04d20296-5542-446b-badd-5990cc76ecf7",
+      "hidden": true,
+      "amount": -5,
+      "conditions": {
+        "enabling":[
+          {
+            "type":"palladium:or",
+            "conditions":[
+              {
+              "type": "palladium:ability_enabled",
+              "ability": "normal_beam_timer"
+              },
+              {
+              "type": "palladium:ability_enabled",
+              "ability": "super_beam_timer"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "Strength": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.attack_damage",
@@ -313,7 +342,7 @@
         "enabling":[
           {
             "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
+            "ability":"normal_beam_timer"
           }
         ]
       }
@@ -434,7 +463,7 @@
         ]
       }
     },
-    "Eye-Beam": {
+    "normal_beam_timer": {
       "type": "palladium:animation_timer",
       "title": "Eye-Beam",
       "icon": "#omni_extras:opticoid/eye_beam",
@@ -443,7 +472,7 @@
       "hidden_in_bar": true,
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 14
+        "amount": 20
       },
       "start_value": 0,
       "max_value": 20,
@@ -529,7 +558,6 @@
       ]
       }
     },
-
     "eye_sound": {
       "type":"palladium:play_sound",
       "sound":"omni_extras:stalk",
@@ -542,7 +570,7 @@
         "enabling":[
           {
             "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
+            "ability":"normal_beam_timer"
           }
         ]
       }
@@ -559,7 +587,7 @@
         "enabling":[
           {
             "type":"palladium:ability_enabled",
-            "ability":"Eye-Beam"
+            "ability":"normal_beam_timer"
           }
         ]
       }
@@ -615,18 +643,213 @@
         "enabling": [
         {
           "type": "palladium:ability_enabled",
-          "ability": "Eye-Beam"
+          "ability": "normal_beam_timer"
         },
         {
             "type": "palladium:animation_timer_ability",
-            "ability": "Eye-Beam",
+            "ability": "normal_beam_timer",
             "min": 3,
             "max": 20
           }
       ]
     }
   },
- 
+ "super_beam_timer": {
+      "type": "palladium:animation_timer",
+      "title": "Super Beam",
+      "icon": "#omni_extras:opticoid/eye_beam",
+      "bar_color": "orange",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 40,
+      "list_index": -1,
+      "gui_position":[
+        0,
+        1
+      ],
+      "conditions": {
+        "enabling": [
+         {
+          "type": "palladium:held",
+          "needs_empty_hand": true,
+          "key_type": "right_click"
+        },
+        {
+            "type": "palladium:objective_score",
+            "objective": "Opticoid.BeamIntensity",
+            "min_score": 2,
+            "max_score": 2
+        },
+        {
+            "type": "palladium:energy_bar",
+            "energy_bar": "energy_meter",
+            "min": 80
+        },
+        {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type":"palladium:or",
+                "conditions":[
+                {
+                  "type": "palladium:objective_score",
+                  "objective": "Opticoid.BeamIntensity",
+                  "min_score": 0,
+                  "max_score": 0
+                },
+                {
+                  "type": "palladium:objective_score",
+                  "objective": "Opticoid.BeamIntensity",
+                  "min_score": 1,
+                  "max_score": 1
+                  }
+                ]
+              }
+            ]
+          }
+      ],
+      "unlocking":[
+           {
+            "type": "palladium:objective_score",
+            "objective": "Opticoid.BeamIntensity",
+            "min_score": 2,
+            "max_score": 2
+          },
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type":"palladium:or",
+                "conditions":[
+                {
+                  "type": "palladium:objective_score",
+                  "objective": "Opticoid.BeamIntensity",
+                  "min_score": 0,
+                  "max_score": 0
+                },
+                {
+                  "type": "palladium:objective_score",
+                  "objective": "Opticoid.BeamIntensity",
+                  "min_score": 1,
+                  "max_score": 1
+                  }
+                ]
+              }
+            ]
+          }
+      ]
+      }
+    },
+    "big_arms_out": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "omni_extras:opticoid",
+      "controller": "eye",
+      "animation_trigger": "super_beam",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "super_beam_timer"
+          }
+        ]
+      }
+    },
+    "big_arms_down": {
+      "type": "geckolib:render_layer_animation",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "omni_extras:opticoid",
+      "controller": "eye",
+      "animation_trigger": "super_beam_down",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                    "type": "palladium:ability_enabled",
+                    "power": "null",
+                    "ability": "super_beam_timer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "super_beam_laser": {
+      "type": "palladium:energy_beam",
+      "energy_beam": "omni_extras:opticoid/supa_beam",
+      "damage_type": "alienevo:energy_beam",
+      "damage": 42,
+      "speed": 0.25,
+      "energy_bar_usage": {
+        "energy_bar": "energy_meter",
+        "amount": 18
+      },
+      "max_distance": 80,
+      "commands_on_entity_hit": [
+        "function omni_extras:grantxp1",
+        "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 70"
+    ],
+      "commands_on_block_hit": [
+        "fill ~ ~ ~ ^3 ^ ^3 air destroy"
+         ],
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "super_beam_timer"
+        },
+        {
+            "type": "palladium:animation_timer_ability",
+            "ability": "super_beam_timer",
+            "min": 18,
+            "max": 40
+        }
+      ]
+    }
+  },
+  "super_eye_sound": {
+      "type":"palladium:play_sound",
+      "sound":"omni_extras:stalk",
+      "hidden": true,
+      "list_index": -1,
+      "looping": false,
+      "volume": 3,
+      "play_self": false,
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "super_beam_timer",
+            "min": 15,
+            "max": 40
+          }
+        ]
+      }
+    },
+    "super_beam_sound": {
+      "type":"palladium:play_sound",
+      "sound":"omni_extras:eyebeam",
+      "hidden": true,
+      "list_index": -1,
+      "looping": true,
+      "volume": 0.3,
+      "play_self": false,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:ability_enabled",
+            "ability":"super_beam_laser"
+          }
+        ]
+      }
+    },
   "hover": {
       "type": "palladium:attribute_modifier",
       "attribute": "forge:entity_gravity",
@@ -637,7 +860,7 @@
         "enabling": [
           {
             "type": "palladium:ability_enabled",
-            "ability": "Eye-Beam"
+            "ability": "normal_beam_timer"
           },
           {
             "type": "palladium:has_tag",
@@ -664,13 +887,13 @@
         "enabling": [
           {
             "type": "palladium:ability_enabled",
-            "ability": "Eye-Beam"
+            "ability": "normal_beam_timer"
           }
         ]
       }
     },
     
-      "arm_up": {
+    "arm_up": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "hidden_in_bar": true,
@@ -682,7 +905,7 @@
           {
             "type": "palladium:ability_enabled",
             "power": "null",
-            "ability": "Eye-Beam"
+            "ability": "normal_beam_timer"
           }
         ]
       }
@@ -700,9 +923,9 @@
             "type": "palladium:not",
             "conditions": [
               {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "Eye-Beam"
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "normal_beam_timer"
               }
             ]
           }
@@ -718,10 +941,18 @@
       "conditions": {
         "enabling": [
           {
+            "type":"palladium:or",
+            "conditions":[
+              {
               "type": "palladium:ability_enabled",
-              "ability": "Eye-Beam"
-            }
-          
+              "ability": "normal_beam_timer"
+              },
+              {
+              "type": "palladium:ability_enabled",
+              "ability": "super_beam_timer"
+              }
+            ]
+          }
         ]
       }
     },
@@ -944,7 +1175,7 @@
           "conditions":[
             {
               "type":"palladium:ability_enabled",
-              "ability":"Eye-Beam"
+              "ability":"normal_beam_timer"
             },
             {
               "type":"palladium:ability_enabled",
@@ -1194,12 +1425,17 @@
           {
            "type":"palladium:ability_enabled",
             "power":"null",
-            "ability":"Eye-Beam"
+            "ability":"normal_beam_timer"
           },
           {
            "type":"palladium:ability_enabled",
             "power":"null",
             "ability":"hand_beams"
+          },
+          {
+           "type":"palladium:ability_enabled",
+            "power":"null",
+            "ability":"super_beam_timer"
           }
           ]
         }
@@ -1249,7 +1485,7 @@
           "conditions":[
             {
               "type":"palladium:ability_enabled",
-              "ability":"Eye-Beam"
+              "ability":"normal_beam_timer"
           
             },
             {
@@ -1327,7 +1563,7 @@
       "arm": "both",
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 8
+        "amount": 12
       },
       "time": 3,
       "icon": "#omni_extras:opticoid/shoulder_beams",
@@ -1453,7 +1689,7 @@
       },
     "count": 1,
     "pitch_offset": 15,
-    "yaw_inaccuracy": 15,
+    "yaw_inaccuracy": 25,
     "align_velocity_with_calculated_rotation": false,
     "speed": 1.4,
     "conditions": {
