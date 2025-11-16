@@ -108,12 +108,12 @@ ItemEvents.rightClicked(e => {
         obliterationGain = 1;
     }
 
-    // feedback
+    // ts gives u saturation
     player.tell(Text.yellow(flavorText));
     player.runCommandSilent(`playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`);
     player.potionEffects.add('minecraft:saturation', 200, 1, false, false);
 
-    // apply gains to both powers
+    // will apply shit to both upchucks!!
     ['omni_extras:perkgourmand', 'omni_extras:murkgourmand'].forEach(power =>
         player.runCommandSilent(`energybar value add ${player.name.string} ${power} stomach ${stomachGain}`)
     );

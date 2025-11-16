@@ -45,7 +45,8 @@
       ],
       "last_tick_commands": [
         "scale reset",
-        "scoreboard players set @s Opticoid.BeamIntensity 0"
+        "scoreboard players set @s Opticoid.BeamIntensity 0",
+        "tag @s remove Opticoid.Overcharge"
       ],
       "commands": [
       "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
@@ -68,6 +69,48 @@
       }
     ]
   }
+    },
+    "lock_beam_intensity2": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "scoreboard players set @s[scores={Opticoid.BeamIntensity=1}] Opticoid.BeamIntensity 0"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "eye_beam_unlock"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "lock_beam_intensity3": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "scoreboard players set @s[scores={Opticoid.BeamIntensity=2}] Opticoid.BeamIntensity 1"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "super_beam_unlock"
+              }
+            ]
+          }
+        ]
+      }
     },
     "intensity_level": {
       "type": "palladium:gui_overlay",
@@ -395,6 +438,80 @@
         ]
       }
      },
+     "overcharge_command": {
+      "type": "palladium:command",
+      "icon": "minecraft:redstone",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 3,
+      "commands": [
+        "tag @s add Opticoid.Overcharge",
+        "superpower add alienevo:transform_bubble",
+        "playsound alienevo:prototype_failsafe master @s ~ ~ ~ 10"
+      ],
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:action",
+            "cooldown": 700,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+     },
+     "overcharge_energy": {
+      "type": "palladium:command",
+      "icon": "minecraft:redstone",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 3,
+      "commands": [
+        "energybar value set @s omni_extras:opticoid energy_meter 1200"
+      ],
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:has_tag",
+            "tag": "Opticoid.Overcharge"
+          }
+        ]
+      }
+     },
+     "overcharge_remove": {
+      "type": "palladium:command",
+      "icon": "minecraft:redstone",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "tag @s remove Opticoid.Overcharge"
+      ],
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:animation_timer_ability",
+            "ability":"overcharge_timer",
+            "min": 240,
+            "max": 240
+          }
+        ]
+      }
+     },
+     "overcharge_timer": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:redstone",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 240,
+      "conditions":{
+        "enabling":[
+          {
+            "type":"palladium:has_tag",
+            "tag": "Opticoid.Overcharge"
+          }
+        ]
+      }
+     },
      "energy_upgrade": {
       "type": "palladium:command",
       "hidden": true,
@@ -465,7 +582,7 @@
     },
     "normal_beam_timer": {
       "type": "palladium:animation_timer",
-      "title": "Eye-Beam",
+      "title": "Eye Beam",
       "icon": "#omni_extras:opticoid/eye_beam",
       "bar_color": "orange",
       "hidden": true,
@@ -793,6 +910,7 @@
       "max_distance": 80,
       "commands_on_entity_hit": [
         "function omni_extras:grantxp1",
+        "execute as @e[distance=..4.8,nbt=!{HurtTime:0s}] run effect give @s minecraft:slowness 2 3 false",
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 70"
     ],
       "commands_on_block_hit": [
@@ -854,13 +972,38 @@
       "type": "palladium:attribute_modifier",
       "attribute": "forge:entity_gravity",
       "hidden": true,
-      "amount": -0.15,
+      "amount": -0.13,
       "uuid": "f6c6a0eb-6c13-474f-ba07-a03a33bdfd27",
       "conditions": {
         "enabling": [
           {
             "type": "palladium:ability_enabled",
             "ability": "normal_beam_timer"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Boost"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": {
+              "type": "palladium:on_ground"
+            }
+          }
+        ]
+      }
+    },
+    "hover2": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "forge:entity_gravity",
+      "hidden": true,
+      "amount": -0.25,
+      "uuid": "bae9bd4b-5049-47c6-a62d-98401e2098b1",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "super_beam_laser"
           },
           {
             "type": "palladium:has_tag",
@@ -886,8 +1029,17 @@
       "conditions": {
         "enabling": [
           {
+            "type":"palladium:or",
+            "conditions":[
+              {
             "type": "palladium:ability_enabled",
             "ability": "normal_beam_timer"
+            },
+            {
+            "type": "palladium:ability_enabled",
+            "ability": "super_beam_laser"
+            }
+            ]
           }
         ]
       }
@@ -1067,10 +1219,10 @@
     "eye_beam_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:opticoid/eye_beam",
-      "title": "§aEye-Beam",
+      "title": "§aEye Beam",
       "uuid": "30ac4f24-1e6a-4851-9558-f456f2d9b6cd",
       "hidden": false,
-      "description": "Shoot out a high-damaging §aLaser§r from your §aChest-Eye",
+      "description": "Shoot out a highly damaging §aLaser§r from your §aChest Eye",
       "list_index": -1,
       "gui_position": [
         0,
@@ -1081,7 +1233,7 @@
           {
             "type": "palladium:scoreboard_score_buyable",
             "objective": "Opticoid.SkillPoint",
-            "score": 3,
+            "score": 1,
             "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
             "description": {
               "translate": "§eOpticoid Skill Point"
@@ -1091,6 +1243,37 @@
             "type": "palladium:ability_unlocked",
             "power":"null",
             "ability":"eyeguy_sense_unlock"
+          }
+        ]
+      }
+    },
+    "super_beam_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:opticoid/eye_beam",
+      "title": "§aSuper Eye Beam",
+      "uuid": "af952ae7-0ba9-4644-806f-3cbf9332decf",
+      "hidden": false,
+      "description": "Shoot out a very §4§lDESTRUCTIVE §r§aLaser§f from your §aChest Eye",
+      "list_index": -1,
+      "gui_position": [
+        0,
+        3.1
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Opticoid.SkillPoint",
+            "score": 2,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+            "description": {
+              "translate": "§eOpticoid Skill Point"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "power":"null",
+            "ability":"eye_beam_unlock"
           }
         ]
       }
