@@ -1,16 +1,13 @@
 {
   "name": "Orishan",
   "icon": "minecraft:water_bucket",
-
-    "energy_bars": {
+  "energy_bars": {
     "energy_meter": {
       "max": 600,
       "auto_increase_per_tick": 3,
       "color": "#93eef5"
-    
     }
   },
-
   "persistent_data": true,
   "background": "alienevo:textures/gui/power_screen/power_screen.png",
   "primary_color": "#8ed721",
@@ -45,8 +42,8 @@
         "scale reset"
       ],
       "commands": [
-      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
-  ]
+        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+      ]
     },
     "hideBody": {
       "type": "palladium:hide_body_part",
@@ -109,7 +106,9 @@
     "base_form": {
       "type": "alienevo:omnitrix_detransform",
       "icon": "#alienevo:detransform",
-      "title": {"translate":"ability.alienevo.omnitrix.base_form"},
+      "title": {
+        "translate": "ability.alienevo.omnitrix.base_form"
+      },
       "hidden": true,
       "list_index": 4,
       "conditions": {
@@ -228,17 +227,17 @@
       "hidden": true,
       "amount": 30
     },
-      "Speed": {
+    "Speed": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.movement_speed",
       "uuid": "a9a48154-df71-4786-8072-634ed74849cd",
-      "hidden":true,
+      "hidden": true,
       "amount": -0.0025,
       "conditions": {
-        "enabling":[
+        "enabling": [
           {
-            "type":"palladium:ability_unlocked",
-            "ability":"orishan_loop"
+            "type": "palladium:ability_unlocked",
+            "ability": "orishan_loop"
           }
         ]
       }
@@ -250,12 +249,12 @@
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 0,
-      "commands":[
+      "commands": [
         "say WATER BUCKET RELEASE",
         "playsound omni_extras:release master @s ~ ~ ~ 10 "
       ],
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
             "type": "palladium:action",
             "needs_empty_hand": false,

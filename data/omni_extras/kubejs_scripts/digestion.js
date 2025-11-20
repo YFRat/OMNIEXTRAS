@@ -92,18 +92,18 @@ ItemEvents.rightClicked(e => {
     }
 
     item.count--;
-    let flavorText, stomachGain, obliterationGain;
+    let text, stomachGain, obliterationGain;
 
     if (isBig) {
-        flavorText = "§l§eThat filled me up!";
+        text = "§l§eThat filled me up!";
         stomachGain = 1500;
         obliterationGain = 6;
     } else if (isMedium) {
-        flavorText = "§eOh yeah... More..";
+        text = "§eOh yeah... More..";
         stomachGain = 750;
         obliterationGain = 3;
     } else {
-        flavorText = "§eThat hits the spot.. Maybe just a bit more..";
+        text = "§eThat hits the spot.. Maybe just a bit more..";
         stomachGain = 250;
         obliterationGain = 1;
     }
@@ -146,9 +146,7 @@ PlayerEvents.tick(e => {
 
     if (hasAnyGourmand(player)) {
         if (isHoldingEdible && !wasHoldingEdible) {
-            player.runCommandSilent(
-                `playsound omni_extras:grumble player ${player.name.string} ~ ~ ~ 1000`
-            );
+            player.level.playSound(null, player.x, player.y, player.z, "omni_extras:grumble", "players", 10, 1)
             player.server.runCommandSilent(
                 `title ${player.name.string} actionbar {"text":"*stomach growls..*","color":"green","bold":true,"italic":true}`
             );

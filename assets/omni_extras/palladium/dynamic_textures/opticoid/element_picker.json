@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+      "type": "palladium:objective_score",
+      "objective": "Opticoid.ElementSelect"
+    }
+  },
+  "base": "omni_extras:textures/hud/element_#X.png"
+}

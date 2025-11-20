@@ -4,6 +4,7 @@
         "Opticoid.Level",
         "Opticoid.SkillPoint",
         "Opticoid.BeamIntensity",
+        "Opticoid.ElementSelect",
         "Perkgourmand.XP",
         "Perkgourmand.Level",
         "Perkgourmand.SkillPoint",

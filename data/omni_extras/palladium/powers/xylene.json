@@ -1,24 +1,24 @@
 {
-    "name": {
-        "text": "Xylene"
+  "name": {
+    "text": "Xylene"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "alienevo:textures/gui/playlists/playlist_2/head_0.png"
+  },
+  "persistent_data": true,
+  "hidden": false,
+  "background": "alienevo:textures/gui/power_screen/power_screen.png",
+  "primary_color": "#86d698",
+  "secondary_color": "#332e27",
+  "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
+  "abilities": {
+    "xylene_render": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "omni_extras:xylene_layer"
     },
-    "icon": {
-        "type": "palladium:texture",
-        "texture": "alienevo:textures/gui/playlists/playlist_2/head_0.png"
-    },
-    "persistent_data": true,
-    "hidden": false,
-    "background": "alienevo:textures/gui/power_screen/power_screen.png",
-    "primary_color": "#86d698",
-    "secondary_color": "#332e27",
-    "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
-    "abilities": {
-        "xylene_render": {
-            "type": "palladium:render_layer",
-            "hidden": true,
-            "render_layer": "omni_extras:xylene_layer"
-        },
-        "astrobot_loop": {
+    "astrobot_loop": {
       "type": "palladium:command",
       "hidden": true,
       "first_tick_commands": [
@@ -28,7 +28,9 @@
         "scale set pehkui:hitbox_height 1.1",
         "scale set pehkui:eye_height 1.15"
       ],
-      "last_tick_commands": [""],
+      "last_tick_commands": [
+        ""
+      ],
       "commands": []
     },
     "hide_body": {
@@ -52,5 +54,5 @@
       ],
       "affects_first_person": true
     }
-    }
+  }
 }

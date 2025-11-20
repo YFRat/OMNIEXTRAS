@@ -49,3 +49,9 @@ StartupEvents.registry('item', event => {
         .displayName('Wrapper')
         .rarity('common')
 });
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('omni_extras:overcharged')
+    .color(Color.GREEN)
+    .beneficial()
+    });

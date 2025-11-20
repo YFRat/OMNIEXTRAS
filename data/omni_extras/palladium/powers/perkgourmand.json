@@ -20,7 +20,9 @@
     "gourmand_loop": {
       "type": "palladium:command",
       "hidden": false,
-      "title": {"translate":"species.alienevo_aliens.111"},
+      "title": {
+        "translate": "species.alienevo_aliens.111"
+      },
       "icon": "#omni_extras:gourmand/perk/upchuck",
       "gui_position": [
         0,
@@ -48,7 +50,6 @@
         "scoreboard players set @s Gourmand.Swallow 0",
         "scoreboard players set @s Gourmand.ObliterationPoint 0",
         "scale reset"
-        
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
@@ -78,36 +79,36 @@
       "affects_first_person": true
     },
     "immunity": {
-    "type": "palladium:damage_immunity",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "damage_sources": [
+      "type": "palladium:damage_immunity",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "damage_sources": [
         "minecraft:is_explosion",
         "minecraft:is_fall",
         "minecraft:is_projectile"
       ]
     },
-    "hunger":{
+    "hunger": {
       "icon": "minecraft:cake",
       "title": "Glutton",
       "description": "as a §aGourmand§f, your §estomach §fdemands to §4§lconstantly be fed",
       "type": "alienevo:slower_hunger",
       "hidden": false,
-      "gui_position":[
+      "gui_position": [
         0,
         -0.7
       ],
       "hidden_in_bar": true,
       "reduction_factor": 11,
       "conditions": {
-        "unlocking":[
+        "unlocking": [
           {
-            "type":"palladium:ability_unlocked",
+            "type": "palladium:ability_unlocked",
             "ability": "gourmand_loop"
           }
         ]
@@ -124,7 +125,7 @@
       "hidden": true,
       "scale": 0.63
     },
-     "Health": {
+    "Health": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.max_health",
       "uuid": "40a31fa3-4eef-47bf-82bd-4063a176d0c1",
@@ -151,11 +152,11 @@
       "uuid": "bf8a4b36-c65d-4d04-8b84-f58bacc55f84",
       "hidden": true,
       "amount": 3,
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
-            "type":"palladium:ability_unlocked",
-            "ability":"defense_increase_unlock"
+            "type": "palladium:ability_unlocked",
+            "ability": "defense_increase_unlock"
           }
         ]
       }
@@ -177,7 +178,9 @@
     "base_form": {
       "type": "alienevo:omnitrix_detransform",
       "icon": "#alienevo:detransform",
-      "title": {"translate":"ability.alienevo.omnitrix.base_form"},
+      "title": {
+        "translate": "ability.alienevo.omnitrix.base_form"
+      },
       "hidden": true,
       "list_index": 4,
       "conditions": {
@@ -221,16 +224,16 @@
         ]
       }
     },
-    "sickness_timer":{
-      "type":"palladium:animation_timer",
+    "sickness_timer": {
+      "type": "palladium:animation_timer",
       "title": "sickness",
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
       "start_value": 1,
       "max_value": 30,
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
             "type": "palladium:has_tag",
             "tag": "Tummy.Ache"
@@ -254,51 +257,51 @@
         ]
       }
     },
-    "tummyache":{
+    "tummyache": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "render_layer": "omni_extras:perk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "hurt",
       "conditions": {
-        "enabling":[
+        "enabling": [
           {
             "type": "palladium:has_tag",
             "tag": "Tummy.Ache"
           }
-        ] 
+        ]
       }
     },
-    "untummyache":{
+    "untummyache": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "render_layer": "omni_extras:perk_gourmand",
       "controller": "gourmand",
       "animation_trigger": "unhurt",
       "conditions": {
-        "enabling":[
+        "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
-                "type":"palladium:not",
-                "conditions":[
-                {
-                "type": "palladium:has_tag",
-                "tag": "Tummy.Ache"
-                }
-            ]
-           }
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "Tummy.Ache"
+                  }
+                ]
+              }
             ]
           }
-        ] 
+        ]
       }
     },
     "leap": {
       "type": "alienevo:motion",
       "title": "Leap",
       "icon": "#omni_extras:gourmand/perk/leap",
-      "uuid":"4832400d-b0b3-4e06-858e-76e6cf97daa0",
+      "uuid": "4832400d-b0b3-4e06-858e-76e6cf97daa0",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 3,
@@ -313,20 +316,19 @@
         ],
         "unlocking": [
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
-                "type":"palladium:crouching"
+                "type": "palladium:crouching"
               }
             ]
           },
           {
-            "type":"palladium:ability_unlocked",
+            "type": "palladium:ability_unlocked",
             "ability": "leap_unlock"
           },
           {
-            "type":"palladium:on_ground"
-            
+            "type": "palladium:on_ground"
           }
         ]
       }
@@ -336,7 +338,7 @@
       "hidden": true,
       "list_index": -1,
       "sound": "minecraft:entity.ender_dragon.shoot",
-      "uuid":"6345e4e9-c638-4e18-b24e-ab931c28960a",
+      "uuid": "6345e4e9-c638-4e18-b24e-ab931c28960a",
       "volume": 0.5,
       "pitch": 2,
       "looping": false,
@@ -351,56 +353,58 @@
       }
     },
     "energy_drain": {
-			"type": "palladium:command",
-			"title": "drainbar",
-			"bar_color": "blue",
-			"hidden": true,
-			"hidden_in_bar": true,
-			"list_index": -1,
-			"hide_particles": true,
-			"description": "drain energy bar",
-			"commands": ["energybar value subtract @s omni_extras:perkgourmand stomach 1"]
-		},
+      "type": "palladium:command",
+      "title": "drainbar",
+      "bar_color": "blue",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "hide_particles": true,
+      "description": "drain energy bar",
+      "commands": [
+        "energybar value subtract @s omni_extras:perkgourmand stomach 1"
+      ]
+    },
     "boost": {
       "type": "alienevo:motion",
       "uuid": "13f7f673-6a39-478d-99aa-4b9e3c3de2d1",
       "hidden": true,
       "hidden_in_bar": true,
       "motion": -1,
-      "conditions":{
-        "enabling":[
-         {
-          "type":"palladium:and",
-          "conditions":[
-            {
-              "type":"palladium:or",
-              "conditions":[
-                {
-                  "type":"palladium:ability_last_tick",
-                  "ability":"energy_blast_timer"
-                },
-                {
-                 "type":"palladium:ability_last_tick",
-                  "ability":"mega_blast_timer"
-                }
-              ]
-            },
-            {
-              "type":"palladium:not",
-              "conditions":[
-                {
-                  "type":"palladium:on_ground"
-                }
-              ]
-            }
-          ]
-         }
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_last_tick",
+                    "ability": "energy_blast_timer"
+                  },
+                  {
+                    "type": "palladium:ability_last_tick",
+                    "ability": "mega_blast_timer"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:on_ground"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       }
     },
     "energy_blast_timer": {
-      "type":"palladium:animation_timer",
-      "uuid":"74527a86-b771-4793-be18-d1532c31ced0",
+      "type": "palladium:animation_timer",
+      "uuid": "74527a86-b771-4793-be18-d1532c31ced0",
       "icon": "minecraft:snowball",
       "title": "Burp",
       "hidden": true,
@@ -424,8 +428,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"blast_unlock"
+            "power": "null",
+            "ability": "blast_unlock"
           },
           {
             "type": "palladium:and",
@@ -436,10 +440,10 @@
                 "min": 15
               },
               {
-                "type":"palladium:not",
-                "conditions":[
+                "type": "palladium:not",
+                "conditions": [
                   {
-                    "type":"palladium:crouching"
+                    "type": "palladium:crouching"
                   },
                   {
                     "type": "palladium:ability_enabled",
@@ -450,16 +454,15 @@
               }
             ]
           }
-    
         ]
       }
     },
-    "blast_sound":{
+    "blast_sound": {
       "type": "palladium:play_sound",
       "hidden": true,
       "list_index": -1,
       "sound": "omni_extras:blast",
-      "uuid":"22183f74-b012-484f-b295-af890b79cb1a",
+      "uuid": "22183f74-b012-484f-b295-af890b79cb1a",
       "volume": 1,
       "pitch": 1,
       "looping": false,
@@ -467,11 +470,11 @@
       "conditions": {
         "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
-            "type": "palladium:ability_enabled",
-            "ability": "energy_blast_timer"
+                "type": "palladium:ability_enabled",
+                "ability": "energy_blast_timer"
               },
               {
                 "type": "palladium:ability_enabled",
@@ -482,12 +485,12 @@
         ]
       }
     },
-    "mega_blast_sound":{
+    "mega_blast_sound": {
       "type": "palladium:play_sound",
       "hidden": true,
       "list_index": -1,
       "sound": "omni_extras:blast",
-      "uuid":"c9ce125b-4322-4a42-9fd3-672c10d0c18e",
+      "uuid": "c9ce125b-4322-4a42-9fd3-672c10d0c18e",
       "volume": 1,
       "pitch": 0.8,
       "looping": false,
@@ -509,23 +512,23 @@
       "animation_trigger": "shoot",
       "conditions": {
         "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
               {
-                "type":"palladium:or",
-                "conditions":[
-                  {
                 "type": "palladium:animation_timer_ability",
                 "ability": "energy_blast_timer",
                 "min": 1,
-                "max":1
+                "max": 1
               },
               {
                 "type": "palladium:ability_enabled",
                 "ability": "carry_remove"
               }
-                ]
-              }
             ]
           }
+        ]
+      }
     },
     "mega_blast_anim": {
       "type": "geckolib:render_layer_animation",
@@ -535,16 +538,16 @@
       "animation_trigger": "shoot",
       "conditions": {
         "enabling": [
-              {
-                "type": "palladium:animation_timer_ability",
-                "ability": "mega_blast_timer",
-                "min": 0,
-                "max":0
-              }
-         ]
-       }
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "mega_blast_timer",
+            "min": 0,
+            "max": 0
+          }
+        ]
+      }
     },
-     "energy_blast_pro":{
+    "energy_blast_pro": {
       "type": "palladium:projectile",
       "icon": "minecraft:textures/block/green_stained_glass.png",
       "title": "Burp",
@@ -564,7 +567,7 @@
         "DieOnBlockHit": true,
         "Appearances": [
           {
-          "Type": "trail",
+            "Type": "trail",
             "Trail": "omni_extras:gourmand/spit"
           }
         ]
@@ -578,7 +581,7 @@
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "ability":"energy_blast_timer",
+            "ability": "energy_blast_timer",
             "min": 1,
             "max": 10
           }
@@ -588,7 +591,7 @@
     "mega_blast_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:fire_charge",
-      "uuid":"ba859121-ed8c-4a35-936a-653dcb18507b",
+      "uuid": "ba859121-ed8c-4a35-936a-653dcb18507b",
       "title": "Super Burp",
       "hidden": true,
       "hidden_in_bar": true,
@@ -606,24 +609,24 @@
         ],
         "unlocking": [
           {
-            "type":"palladium:and",
-            "conditions":[
+            "type": "palladium:and",
+            "conditions": [
               {
-            "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"mega_blast_unlock"
-          },
-          {
-           "type": "palladium:energy_bar",
-            "energy_bar": "stomach",
-            "min": 500
-          },
-          {
-            "type":"palladium:crouching"
-          },
-           {
-                "type":"palladium:not",
-                "conditions":[
+                "type": "palladium:ability_unlocked",
+                "power": "null",
+                "ability": "mega_blast_unlock"
+              },
+              {
+                "type": "palladium:energy_bar",
+                "energy_bar": "stomach",
+                "min": 500
+              },
+              {
+                "type": "palladium:crouching"
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
                   {
                     "type": "palladium:ability_enabled",
                     "power": "null",
@@ -655,7 +658,7 @@
     "shake": {
       "type": "palladium:command",
       "hidden": true,
-      "last_tick_commands":[],
+      "last_tick_commands": [],
       "commands": [],
       "first_tick_commands": [
         "tag @s add AlienEvo.ScreenShake"
@@ -663,38 +666,37 @@
       "conditions": {
         "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
                 "type": "palladium:ability_integer_property",
-                "property":"value",
-                "power":"omni_extras:perkgourmand",
+                "property": "value",
+                "power": "omni_extras:perkgourmand",
                 "ability": "mega_blast_timer",
                 "min": 1,
                 "max": 1
               },
               {
-                "type":"palladium:ability_enabled",
+                "type": "palladium:ability_enabled",
                 "ability": "carry_remove"
               }
             ]
           }
-          
         ]
       }
     },
-     "mega_blast": {
+    "mega_blast": {
       "type": "palladium:projectile",
       "bar_color": "green",
       "hidden": true,
       "hidden_in_bar": false,
-       "energy_bar_usage": {
+      "energy_bar_usage": {
         "energy_bar": "stomach",
         "amount": 250
       },
       "list_index": 0,
       "entity_type": "palladium:custom_projectile",
-      "entity_data": {                                  
+      "entity_data": {
         "Damage": 3,
         "Gravity": 0,
         "Size": 1.3,
@@ -709,7 +711,7 @@
         ],
         "Appearances": [
           {
-          "Type": "trail",
+            "Type": "trail",
             "Trail": "omni_extras:gourmand/mega_spit"
           }
         ]
@@ -767,7 +769,7 @@
         ]
       },
       "energy_bar_usage": {
-        "energy_bar": "stomach" ,
+        "energy_bar": "stomach",
         "amount": 50
       },
       "conditions": {
@@ -784,7 +786,7 @@
             "min": 100
           }
         ],
-        "unlocking":[
+        "unlocking": [
           {
             "type": "palladium:energy_bar",
             "energy_bar": "stomach",
@@ -792,26 +794,26 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"vomit_unlock"
+            "power": "null",
+            "ability": "vomit_unlock"
           },
           {
-                "type":"palladium:crouching"
+            "type": "palladium:crouching"
           },
-           {
-                "type":"palladium:not",
-                "conditions":[
-                  {
-                    "type": "palladium:ability_enabled",
-                    "power": "null",
-                    "ability": "swallow_prompt"
-                  }
-                ]
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "swallow_prompt"
               }
+            ]
+          }
         ]
       }
     },
-    "vomit_sound":{
+    "vomit_sound": {
       "type": "palladium:play_sound",
       "icon": "minecraft:blaze_rod",
       "hidden": true,
@@ -823,16 +825,16 @@
       "looping": false,
       "play_self": true,
       "play_others": true,
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
-            "type":"palladium:ability_enabled",
-            "ability":"slime_shot"
+            "type": "palladium:ability_enabled",
+            "ability": "slime_shot"
           }
         ]
       }
     },
-     "cooldown_entity_swallow": {
+    "cooldown_entity_swallow": {
       "type": "palladium:command",
       "hidden": true,
       "last_tick_commands": [
@@ -864,16 +866,16 @@
       "conditions": {
         "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
-               "type": "palladium:has_tag",
+                "type": "palladium:has_tag",
                 "tag": "AlienEvo.CooldownSwallow"
               },
               {
                 "type": "palladium:has_tag",
                 "tag": "Missed"
-                }
+              }
             ]
           }
         ]
@@ -920,22 +922,22 @@
             "needs_empty_hand": false
           }
         ],
-        "unlocking":[
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"swallow_unlock"
+            "power": "null",
+            "ability": "swallow_unlock"
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
-                "type":"palladium:has_tag",
-                "tag":"AlienEvo.CooldownSwallow"
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.CooldownSwallow"
               },
               {
-                "type":"palladium:ability_enabled",
-                "ability":"whip_timer"
+                "type": "palladium:ability_enabled",
+                "ability": "whip_timer"
               }
             ]
           }
@@ -943,14 +945,14 @@
       }
     },
     "digestion": {
-			"type": "palladium:command",
-			"title": "digest",
-			"bar_color": "blue",
-			"hidden": true,
-			"hidden_in_bar": true,
-			"list_index": -1,
-			"hide_particles": true,
-      "first_tick_commands":[
+      "type": "palladium:command",
+      "title": "digest",
+      "bar_color": "blue",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "hide_particles": true,
+      "first_tick_commands": [
         "execute as @s if entity @e[type=!minecraft:ender_dragon,type=!minecraft:warden,type=!minecraft:wither,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:perkgourmand stomach 150",
         "execute as @s if entity @e[type=minecraft:ender_dragon,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:perkgourmand stomach 1000",
         "execute as @s if entity @e[type=minecraft:warden,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run energybar value add @s omni_extras:perkgourmand stomach 850",
@@ -959,29 +961,26 @@
         "execute as @s if entity @e[type=#omni_extras:float,sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run playsound omni_extras:gangsta master @s ~ ~ ~ 2",
         "execute as @s if entity @e[sort=nearest,distance=0..3,tag=AlienEvo.CarriedEntity] run scoreboard players set @s Gourmand.Swallow 1"
       ],
-			"commands": [
+      "commands": [
         "execute as @s if score @s Gourmand.Swallow matches 1 run energybar value add @s omni_extras:perkgourmand stomach 4"
       ],
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
             "type": "palladium:and",
-            "conditions":[
+            "conditions": [
               {
-            "type":"palladium:animation_timer_ability",
-            "ability":"yummy_in_my_tummy",
-            "min": 11,
-            "max": 11
-             }
-             
+                "type": "palladium:animation_timer_ability",
+                "ability": "yummy_in_my_tummy",
+                "min": 11,
+                "max": 11
+              }
             ]
           }
-        
-        
         ]
       }
-		},
-     "yummy_in_my_tummy": {
+    },
+    "yummy_in_my_tummy": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:cooked_beef",
       "hidden": true,
@@ -995,15 +994,13 @@
             "power": "null",
             "ability": "swallow_prompt"
           }
-          
         ]
       }
     },
     "swallow_comm": {
       "type": "palladium:command",
       "hidden": true,
-      "commands":[
-      ],
+      "commands": [],
       "first_tick_commands": [
         "playsound omni_extras:chomp master @s ~ ~ ~ 3 1"
       ],
@@ -1018,8 +1015,8 @@
             "max": 2
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
                 "type": "palladium:animation_timer_ability",
                 "min": 1,
@@ -1031,7 +1028,7 @@
         ]
       }
     },
-      "swallow_anim": {
+    "swallow_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
       "render_layer": "omni_extras:perk_gourmand",
@@ -1039,13 +1036,12 @@
       "animation_trigger": "swallow",
       "conditions": {
         "enabling": [
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "yummy_in_my_tummy"
-
-              }
-         ]
-       }
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "yummy_in_my_tummy"
+          }
+        ]
+      }
     },
     "carry": {
       "type": "palladium:command",
@@ -1057,45 +1053,45 @@
       ],
       "conditions": {
         "enabling": [
-           {
+          {
             "type": "palladium:animation_timer_ability",
             "power": "null",
             "ability": "yummy_in_my_tummy",
             "min": 10,
             "max": 10
           }
-        ] 
+        ]
       }
     },
     "entity_vaccum": {
       "type": "alienevo:entity_vacuum",
-      "uuid":"94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
+      "uuid": "94b4e97b-0142-4fd1-b17f-3e6d70f725fb",
       "search_radius": 1.7,
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 100,
       "conditions": {
         "enabling": [
-              {
+          {
             "type": "palladium:has_tag",
             "tag": "AlienEvo.BallCarry"
-              },
-             {
-            "type":"palladium:not",
-            "conditions":[
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
               {
-              "type":"palladium:ability_unlocked",
-              "ability":"eating_limit_unlock"
+                "type": "palladium:ability_unlocked",
+                "ability": "eating_limit_unlock"
               }
-              ]
-            }
+            ]
+          }
         ]
       }
     },
     "entity_vaccum2": {
       "type": "alienevo:entity_vacuum",
       "search_radius": 1.2,
-      "uuid":"cc88f9e8-45f0-4011-ac4c-aa7292602a32",
+      "uuid": "cc88f9e8-45f0-4011-ac4c-aa7292602a32",
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 1000,
@@ -1103,15 +1099,15 @@
         "enabling": [
           {
             "type": "palladium:and",
-            "conditions":[
+            "conditions": [
               {
-            "type": "palladium:has_tag",
-            "tag": "AlienEvo.BallCarry"
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.BallCarry"
               },
               {
-                "type":"palladium:ability_unlocked",
-                "ability":"eating_limit_unlock"
-              } 
+                "type": "palladium:ability_unlocked",
+                "ability": "eating_limit_unlock"
+              }
             ]
           }
         ]
@@ -1128,7 +1124,7 @@
       ],
       "conditions": {
         "enabling": [
-           {
+          {
             "type": "palladium:animation_timer_ability",
             "power": "null",
             "ability": "yummy_in_my_tummy",
@@ -1167,8 +1163,8 @@
       "conditions": {
         "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
                 "type": "palladium:ability_enabled",
                 "power": "null",
@@ -1192,16 +1188,16 @@
       "hidden": true,
       "conditions": {
         "enabling": [
-              {
+          {
             "type": "palladium:ability_last_tick",
             "ability": "carry_remove"
-              }
+          }
         ]
       }
     },
     "bite_timer": {
       "type": "palladium:animation_timer",
-       "icon": "#omni_extras:gourmand/perk/bite",
+      "icon": "#omni_extras:gourmand/perk/bite",
       "title": "Chomp",
       "hidden": true,
       "hidden_in_bar": false,
@@ -1216,33 +1212,32 @@
             "key_type": "key_bind"
           }
         ],
-        "unlocking":[
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"chomp_unlock"
+            "power": "null",
+            "ability": "chomp_unlock"
           },
           {
-            "type":"palladium:energy_bar",
-            "energy_bar":"stomach",
+            "type": "palladium:energy_bar",
+            "energy_bar": "stomach",
             "max": 1300
           },
           {
-                "type":"palladium:not",
-                "conditions":[
-                  {
-                    "type": "palladium:ability_enabled",
-                    "power": "null",
-                    "ability": "swallow_prompt"
-                  }
-                ]
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "swallow_prompt"
               }
+            ]
+          }
         ]
-        
       }
     },
     "bite_aoe": {
-    "type": "afomni:aoe_damage",
+      "type": "afomni:aoe_damage",
       "hidden": true,
       "hidden_in_bar": true,
       "radius": 3,
@@ -1258,8 +1253,8 @@
           }
         ]
       }
-    },    
-     "bite_comm": {
+    },
+    "bite_comm": {
       "type": "palladium:command",
       "icon": "#omni_extras:gourmand/perk/bite",
       "title": "Chomp",
@@ -1268,26 +1263,25 @@
       "commands": [
         "function omni_extras:mining_mod/exe",
         "playsound omni_extras:swallow master @s ~ ~ ~ 3 1"
-        
       ],
       "hidden_in_bar": true,
       "list_index": -1,
       "conditions": {
         "enabling": [
           {
-            "type":"palladium:or",
-            "conditions":[
+            "type": "palladium:or",
+            "conditions": [
               {
-            "type": "palladium:animation_timer_ability",
-            "min": 1,
-            "max": 5,
-            "ability": "bite_timer"
-          }
+                "type": "palladium:animation_timer_ability",
+                "min": 1,
+                "max": 5,
+                "ability": "bite_timer"
+              }
             ]
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
                 "type": "palladium:animation_timer_ability",
                 "min": 1,
@@ -1297,10 +1291,9 @@
             ]
           }
         ]
-        
       }
     },
-    "bite_pro":{
+    "bite_pro": {
       "type": "palladium:projectile",
       "icon": "minecraft:cooked_porkchop",
       "title": "Chomp",
@@ -1310,7 +1303,7 @@
       "list_index": -1,
       "entity_type": "palladium:custom_projectile",
       "entity_data": {
-        "Tags":[
+        "Tags": [
           "bite_pro"
         ],
         "Damage": 7,
@@ -1329,16 +1322,16 @@
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "ability":"bite_timer",
+            "ability": "bite_timer",
             "min": 1,
             "max": 3
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
                 "type": "palladium:animation_timer_ability",
-                "ability":"bite_timer",
+                "ability": "bite_timer",
                 "min": 1,
                 "max": 1
               }
@@ -1359,7 +1352,7 @@
             "type": "palladium:animation_timer_ability",
             "ability": "bite_timer",
             "min": 2,
-            "max":2
+            "max": 2
           }
         ]
       }
@@ -1380,7 +1373,7 @@
             "power": "omni_extras:perkgourmand",
             "ability": "whip_timer",
             "property": "value",
-            "min":  2,
+            "min": 2,
             "max": 15
           }
         ]
@@ -1404,38 +1397,38 @@
             "key_type": "key_bind"
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
                 "type": "palladium:ability_enabled",
-                "ability":"swallow_prompt"
+                "ability": "swallow_prompt"
               }
             ]
           }
         ],
-        "unlocking":[
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"whip_unlock"
+            "power": "null",
+            "ability": "whip_unlock"
           },
           {
-            "type":"palladium:crouching"
+            "type": "palladium:crouching"
           },
           {
-            "type":"palladium:not",
-            "conditions":[
+            "type": "palladium:not",
+            "conditions": [
               {
                 "type": "palladium:ability_enabled",
-                "ability":"swallow_prompt"
+                "ability": "swallow_prompt"
               }
             ]
           }
         ]
       }
     },
-    "whip_sound":{
-      "type":"palladium:play_sound",
+    "whip_sound": {
+      "type": "palladium:play_sound",
       "hidden": true,
       "hidden_in_bar": true,
       "sound": "omni_extras:whip",
@@ -1444,10 +1437,10 @@
       "looping": false,
       "play_self": false,
       "play_others": false,
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
-            "type":"palladium:ability_enabled",
+            "type": "palladium:ability_enabled",
             "ability": "whip_timer"
           }
         ]
@@ -1461,15 +1454,14 @@
       "animation_trigger": "whip",
       "conditions": {
         "enabling": [
-              {
-                "type": "palladium:animation_timer_ability",
-                "ability": "whip_timer",
-                "min": 1,
-                "max": 13
-              }
-
-            ]
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "whip_timer",
+            "min": 1,
+            "max": 13
           }
+        ]
+      }
     },
     "whip_timer_arms": {
       "type": "palladium:animation_timer",
@@ -1507,29 +1499,28 @@
       "description": "null",
       "start_value": 1,
       "max_value": 70,
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
             "type": "palladium:action",
             "cooldown": 140,
             "key_type": "key_bind"
           }
         ],
-        "unlocking":[
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"obliteration_unlock"
+            "power": "null",
+            "ability": "obliteration_unlock"
           },
           {
-           "type": "palladium:objective_score",
-           "objective": "Gourmand.ObliterationPoint",
-           "min_score": 6
+            "type": "palladium:objective_score",
+            "objective": "Gourmand.ObliterationPoint",
+            "min_score": 6
           }
         ]
       }
     },
-    
     "kaboom_anim": {
       "type": "geckolib:render_layer_animation",
       "hidden": true,
@@ -1538,15 +1529,14 @@
       "animation_trigger": "boom",
       "conditions": {
         "enabling": [
-              {
-              "type": "palladium:animation_timer_ability",
-              "ability":"destruction_timer",
-              "min": 1,
-              "max": 1
-              }
-              
-         ]
-       }
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "destruction_timer",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      }
     },
     "idle": {
       "type": "geckolib:render_layer_animation",
@@ -1556,38 +1546,37 @@
       "animation_trigger": "idle",
       "conditions": {
         "enabling": [
-            {
-              "type":"palladium:not",
-              "conditions":[
-                {
-              "type": "palladium:animation_timer_ability",
-              "ability":"destruction_timer",
-              "min": 2,
-              "max": 69
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:animation_timer_ability",
+                "ability": "destruction_timer",
+                "min": 2,
+                "max": 69
               }
-              ]
-            }
-              
-         ]
-       }
+            ]
+          }
+        ]
+      }
     },
-    "obliterate":{
-      "type":"palladium:command",
+    "obliterate": {
+      "type": "palladium:command",
       "hidden": true,
       "hidden_in_bar": true,
-      "first_tick_commands":[
+      "first_tick_commands": [
         "superpower add omni_extras:not_aliens/destruction @s",
         "scoreboard players set @s Gourmand.ObliterationPoint 0",
         "effect give @s minecraft:slowness 5 10 true"
       ],
-      "commands":[
+      "commands": [
         ""
       ],
-      "conditions":{
-        "enabling":[
+      "conditions": {
+        "enabling": [
           {
-            "type":"palladium:ability_enabled",
-            "ability":"destruction_timer"
+            "type": "palladium:ability_enabled",
+            "ability": "destruction_timer"
           }
         ]
       }
@@ -1634,8 +1623,8 @@
     "leap_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/perk/leap",
-      "title":"Leap",
-      "uuid":"eff11c45-452f-41fd-ab8f-f77a4869b2c1",
+      "title": "Leap",
+      "uuid": "eff11c45-452f-41fd-ab8f-f77a4869b2c1",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1647,8 +1636,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"blast_unlock"
+            "power": "null",
+            "ability": "blast_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1659,15 +1648,14 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
     "whip_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/perk/whip",
-      "title":"Long Prehensile Tongues",
-      "uuid":"d529ecad-4c6f-41ed-b452-b6cc1da278f2",
+      "title": "Long Prehensile Tongues",
+      "uuid": "d529ecad-4c6f-41ed-b452-b6cc1da278f2",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1679,8 +1667,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"leap_unlock"
+            "power": "null",
+            "ability": "leap_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1691,15 +1679,14 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
-     "mega_blast_unlock": {
+    "mega_blast_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/perk/mega_spit",
-      "title":"Mega Energy Regurgitation",
-      "uuid":"b4d76acc-4c9c-4468-a334-55ac837e543d",
+      "title": "Mega Energy Regurgitation",
+      "uuid": "b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1711,8 +1698,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"whip_unlock"
+            "power": "null",
+            "ability": "whip_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1723,15 +1710,14 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
     "obliteration_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:tnt",
-      "title":"Sub-Energy Destruction",
-      "uuid":"206f656c-9249-4ccf-b202-9285d42cacd8",
+      "title": "Sub-Energy Destruction",
+      "uuid": "206f656c-9249-4ccf-b202-9285d42cacd8",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1743,8 +1729,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"vomit_unlock"
+            "power": "null",
+            "ability": "vomit_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1755,7 +1741,6 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
@@ -1775,8 +1760,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"gourmand_loop"
+            "power": "null",
+            "ability": "gourmand_loop"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1787,7 +1772,6 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
@@ -1807,8 +1791,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"gourmand_loop"
+            "power": "null",
+            "ability": "gourmand_loop"
           }
         ]
       }
@@ -1829,8 +1813,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"chomp_unlock"
+            "power": "null",
+            "ability": "chomp_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1841,11 +1825,10 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
-     "defense_increase_unlock": {
+    "defense_increase_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:textures/mob_effect/resistance.png",
       "title": "Defense §a+2",
@@ -1860,8 +1843,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"swallow_unlock"
+            "power": "null",
+            "ability": "swallow_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1872,7 +1855,6 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
@@ -1892,8 +1874,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"defense_increase_unlock"
+            "power": "null",
+            "ability": "defense_increase_unlock"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1904,7 +1886,6 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
@@ -1924,8 +1905,8 @@
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "power":"null",
-            "ability":"gourmand_loop"
+            "power": "null",
+            "ability": "gourmand_loop"
           },
           {
             "type": "palladium:scoreboard_score_buyable",
@@ -1936,11 +1917,9 @@
               "translate": "§eGourmand Skill Point"
             }
           }
-          
         ]
       }
     },
-    
     "nickname": {
       "type": "palladium:name_change",
       "icon": "minecraft:blaze_rod",
