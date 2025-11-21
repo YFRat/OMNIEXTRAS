@@ -315,7 +315,7 @@
     "mode_lightning": {
       "type": "palladium:command",
       "icon": "#omni_extras:opticoid/eye_beam",
-      "title": "Mode: §eLightning",
+      "title": "Mode: §eElectric",
       "hidden": true,
       "list_index": -1,
       "hidden_in_bar": true,
@@ -743,6 +743,7 @@
       "hidden_in_bar": false,
       "list_index": 1,
       "commands": [
+        "playsound minecraft:entity.lightning_bolt.thunder master @s ~ ~ ~ 10 2",
         "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Opticoid.Unlocked, tag=!Electrocuted, distance=..6]"
       ],
       "conditions": {
@@ -1037,7 +1038,8 @@
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 30"
       ],
       "commands_on_block_hit": [
-        "function omni_extras:detection"
+        "function omni_extras:detection",
+        "particle minecraft:explosion ~ ~ ~ 0.2 0.3 0.2 0.3 2"
       ],
       "hidden": true,
       "conditions": {
@@ -2021,6 +2023,7 @@
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 12"
       ],
       "commands_on_block_hit": [
+        "particle alienevo:flame ~ ~ ~ 0.1 0.2 0.1 0.1 7",
         "execute if block ~ ~ ~ air run setblock ~ ~ ~ minecraft:fire keep"
       ],
       "conditions": {

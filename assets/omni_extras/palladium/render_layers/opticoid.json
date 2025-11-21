@@ -3,7 +3,7 @@
   "layers": [
     {
       "type": "geckolib:default",
-      "render_type":"cutout",
+      "render_type": "cutout",
       "model": {
         "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
         "variables": {
@@ -19,28 +19,28 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown",
+            "beam_normal": "NewBeam",
+            "beam_normal_down": "NewBeamDown",
             "super_beam": "Supabeam",
             "super_beam_down": "SupabeamDown"
           }
         },
-        { 
+        {
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
-        }      
+        }
       ],
       "third_person_conditions": true,
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_110/opticoid_skin_#UNIFORM.png",
         "bones": {
-        "head": "armorHead",
-        "body": "armorBody",
-        "right_arm": "armorRightArm",
-        "left_arm": "armorLeftArm",
-        "right_leg": "armorRightLeg",
-        "left_leg": "armorLeftLeg"
+          "head": "armorHead",
+          "body": "armorBody",
+          "right_arm": "armorRightArm",
+          "left_arm": "armorLeftArm",
+          "right_leg": "armorRightLeg",
+          "left_leg": "armorLeftLeg"
         },
         "transformers": [
           {
@@ -91,7 +91,7 @@
             "filter": "#b48900",
             "ignore_blank": true
           },
-           {
+          {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_4",
             "filter": "#a67f02",
@@ -199,13 +199,13 @@
             "filter": "#ca86d4",
             "ignore_blank": true
           },
-           {
+          {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_2",
             "filter": "#c56ad2",
             "ignore_blank": true
           },
-           {
+          {
             "type": "palladium:color",
             "color": "##SKIN_10K_P3_3",
             "filter": "#d667e6",
@@ -313,7 +313,6 @@
             "filter": "#188413",
             "ignore_blank": true
           }
-          
         ],
         "variables": {
           "UNIFORM": {
@@ -356,7 +355,7 @@
             "type": "palladium:string_property",
             "property": "opticoid_prototype_skincolor_palette_2_color_4"
           },
-           "SKIN_PROTO_P2_5": {
+          "SKIN_PROTO_P2_5": {
             "type": "palladium:string_property",
             "property": "opticoid_prototype_skincolor_palette_2_color_5"
           },
@@ -432,11 +431,11 @@
             "type": "palladium:string_property",
             "property": "opticoid_10k_skincolor_palette_3_color_3"
           },
-           "SKIN_10K_P3_4": {
+          "SKIN_10K_P3_4": {
             "type": "palladium:string_property",
             "property": "opticoid_10k_skincolor_palette_3_color_4"
           },
-           "SKIN_10K_P3_5": {
+          "SKIN_10K_P3_5": {
             "type": "palladium:string_property",
             "property": "opticoid_10k_skincolor_palette_3_color_5"
           },
@@ -503,7 +502,7 @@
         }
       }
     },
-     {
+    {
       "type": "geckolib:default",
       "model": {
         "base": "omni_extras:geo/aliens/alien_110/opticoid_#UNIFORM.geo.json",
@@ -520,8 +519,8 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown",
+            "beam_normal": "NewBeam",
+            "beam_normal_down": "NewBeamDown",
             "super_beam": "Supabeam",
             "super_beam_down": "SupabeamDown"
           }
@@ -531,12 +530,12 @@
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_110/opticoid_uniform_#UNIFORM.png",
         "bones": {
-        "head": "armorHead",
-        "body": "armorBody",
-        "right_arm": "armorRightArm",
-        "left_arm": "armorLeftArm",
-        "right_leg": "armorRightLeg",
-        "left_leg": "armorLeftLeg"
+          "head": "armorHead",
+          "body": "armorBody",
+          "right_arm": "armorRightArm",
+          "left_arm": "armorLeftArm",
+          "right_leg": "armorRightLeg",
+          "left_leg": "armorLeftLeg"
         },
         "transformers": [
           {
@@ -599,7 +598,6 @@
             "filter": "#000000",
             "ignore_blank": true
           }
-      
         ],
         "variables": {
           "UNIFORM": {
@@ -646,11 +644,10 @@
             "type": "palladium:string_property",
             "property": "uniform_primary_color_5"
           }
-
         }
       }
     },
-     {
+    {
       "type": "geckolib:default",
       "render_type": "glow",
       "model": {
@@ -668,17 +665,17 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown",
+            "beam_normal": "NewBeam",
+            "beam_normal_down": "NewBeamDown",
             "super_beam": "Supabeam",
             "super_beam_down": "SupabeamDown"
           }
         },
-        { 
+        {
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
-        }      
+        }
       ],
       "texture": {
         "base": "omni_extras:textures/models/aliens/alien_110/opticoid_glow_#UNIFORM.png",
@@ -789,7 +786,7 @@
             "type": "palladium:string_property",
             "property": "opticoid_10k_glowcolor_1_color_3"
           },
-           "GLOW_10K_4": {
+          "GLOW_10K_4": {
             "type": "palladium:string_property",
             "property": "opticoid_10k_glowcolor_1_color_4"
           },
@@ -797,15 +794,15 @@
             "type": "palladium:string_property",
             "property": "opticoid_default_glowcolor_1_color_1"
           },
-           "GLOW_DEFAULT_2": {
+          "GLOW_DEFAULT_2": {
             "type": "palladium:string_property",
             "property": "opticoid_default_glowcolor_1_color_2"
           },
-           "GLOW_DEFAULT_3": {
+          "GLOW_DEFAULT_3": {
             "type": "palladium:string_property",
             "property": "opticoid_default_glowcolor_1_color_3"
           },
-           "GLOW_DEFAULT_4": {
+          "GLOW_DEFAULT_4": {
             "type": "palladium:string_property",
             "property": "opticoid_default_glowcolor_1_color_4"
           }
@@ -829,17 +826,17 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown",
+            "beam_normal": "NewBeam",
+            "beam_normal_down": "NewBeamDown",
             "super_beam": "Supabeam",
             "super_beam_down": "SupabeamDown"
           }
         },
-        { 
+        {
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
-        }      
+        }
       ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_#BADGE.png",
@@ -903,17 +900,17 @@
           "name": "eye",
           "transition_tick_time": 0,
           "triggers": {
-            "beam_normal":"NewBeam",
-            "beam_normal_down":"NewBeamDown",
+            "beam_normal": "NewBeam",
+            "beam_normal_down": "NewBeamDown",
             "super_beam": "Supabeam",
             "super_beam_down": "SupabeamDown"
           }
         },
-        { 
+        {
           "name": "blink",
           "transition_tick_time": 0,
           "animation": "eye_blink"
-        }      
+        }
       ],
       "texture": {
         "base": "alienevo:textures/models/badge/badge_glow_#WATCHSTATE_#BADGE.png",

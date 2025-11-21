@@ -11,6 +11,13 @@
   "primary_color": "#E72D2D",
   "secondary_color": "#1a1a1a",
   "abilities": {
+    "render_layer": {
+      "type": "palladium:render_layer",
+      "icon": "minecraft:lightning_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "omni_extras:electrocuted"
+    },
     "electrocuted_effects": {
       "type": "palladium:command",
       "gui_position": [
@@ -27,7 +34,7 @@
       "commands": [
         "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Electrocuted, tag=!Opticoid.Unlocked, distance=..3] ",
         "damage @s 3 minecraft:generic",
-        "effect give @s minecraft:slowness 1 10 true"
+        "effect give @s minecraft:slowness 2 10 true"
       ],
       "conditions": {
         "enabling": [
@@ -49,7 +56,7 @@
       "hidden": false,
       "first_tick_commands": [
         "tag @s add Electrocuted",
-        "effect give @s omni_extras:electrocuted 12 1 false"
+        "effect give @s omni_extras:electrocuted 12 1 true"
       ],
       "last_tick_commands": [
         ""
