@@ -54,4 +54,10 @@ StartupEvents.registry('mob_effect', event => {
   event.create('omni_extras:overcharged')
     .color(Color.GREEN)
     .beneficial()
-    });
+});
+    
+StartupEvents.registry('mob_effect', event => {
+  event.create('omni_extras:electrocuted')
+    .color(Color.YELLOW)
+    .harmful()
+});

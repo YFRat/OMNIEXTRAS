@@ -707,6 +707,90 @@
         ]
       }
     },
+    "aoe_freeze": {
+      "type": "palladium:command",
+      "title": "Surround Freeze",
+      "icon": "minecraft:ice",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "commands": [
+        "function omni_extras:aoe/aoe_freeze"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 500,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "Opticoid.ElementSelect",
+            "min_score": 2,
+            "max_score": 2
+          }
+        ]
+      }
+    },
+    "aoe_electro": {
+      "type": "palladium:command",
+      "title": "Surround Zap",
+      "icon": "minecraft:lightning_rod",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "commands": [
+        "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Opticoid.Unlocked, tag=!Electrocuted, distance=..6]"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 500,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "Opticoid.ElementSelect",
+            "min_score": 0,
+            "max_score": 0
+          }
+        ]
+      }
+    },
+    "aoe_fire": {
+      "type": "palladium:command",
+      "title": "Surround Ignite",
+      "icon": "minecraft:flint_and_steel",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "commands": [
+        "function omni_extras:aoe/aoe_fire"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 500,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "Opticoid.ElementSelect",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
     "energy_upgrade": {
       "type": "palladium:command",
       "hidden": true,
@@ -1781,6 +1865,7 @@
       ],
       "commands_on_block_hit": [
         "function omni_extras:freeze_block",
+        "particle minecraft:snowflake ~ ~ ~ 0.2 0.3 0.2 0 10",
         "execute if block ~ ~ ~ minecraft:fire run setblock ~ ~ ~ minecraft:air replace"
       ],
       "conditions": {
@@ -1953,7 +2038,7 @@
       "arm": "both",
       "energy_bar_usage": {
         "energy_bar": "energy_meter",
-        "amount": 10
+        "amount": 12
       },
       "time": 3,
       "icon": "#omni_extras:opticoid/shoulder_beams",

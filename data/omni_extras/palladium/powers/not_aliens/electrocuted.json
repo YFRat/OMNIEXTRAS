@@ -1,0 +1,106 @@
+{
+  "name": {
+    "text": "Electrocute"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "minecraft:rotten_flesh"
+  },
+  "persistent_data": false,
+  "hidden": true,
+  "primary_color": "#E72D2D",
+  "secondary_color": "#1a1a1a",
+  "abilities": {
+    "electrocuted_effects": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": false,
+      "first_tick_commands": [
+        ""
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Electrocuted, tag=!Opticoid.Unlocked, distance=..3] ",
+        "damage @s 3 minecraft:generic",
+        "effect give @s minecraft:slowness 1 10 true"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "damage_timer",
+            "min": 40,
+            "max": 40
+          }
+        ]
+      }
+    },
+    "electrocuted_startup": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": false,
+      "first_tick_commands": [
+        "tag @s add Electrocuted",
+        "effect give @s omni_extras:electrocuted 12 1 false"
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        ""
+      ]
+    },
+    "damage_timer": {
+      "type": "palladium:repeating_animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 40
+    },
+    "end_timer": {
+      "type": "palladium:repeating_animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 240
+    },
+    "remove": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": false,
+      "first_tick_commands": [
+        ""
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        "tag @s remove Electrocuted",
+        "superpower remove omni_extras:not_aliens/electrocuted @s"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "end_timer",
+            "min": 240,
+            "max": 240
+          }
+        ]
+      }
+    }
+  }
+}
