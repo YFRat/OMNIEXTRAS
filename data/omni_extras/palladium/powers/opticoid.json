@@ -53,7 +53,8 @@
         "scoreboard players set @s[scores={Opticoid.BeamIntensity=3}] Opticoid.BeamIntensity 2",
         "scoreboard players set @s[scores={Opticoid.BeamIntensity=-1}] Opticoid.BeamIntensity 0",
         "scoreboard players set @s[scores={Opticoid.ElementSelect=3}] Opticoid.ElementSelect 1",
-        "scoreboard players set @s[scores={Opticoid.ElementSelect=-1}] Opticoid.ElementSelect 2"
+        "scoreboard players set @s[scores={Opticoid.ElementSelect=-1}] Opticoid.ElementSelect 2",
+        "execute if entity @s[palladium.power=omni_extras:not_aliens/electrocuted] run superpower remove omni_extras:not_aliens/electrocuted"
       ]
     },
     "effect_removal": {
@@ -708,15 +709,17 @@
       }
     },
     "aoe_freeze": {
-      "type": "palladium:command",
+      "type": "omni_extras:freeze_nearby_entities",
       "title": "Surround Freeze",
       "icon": "minecraft:ice",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
-      "commands": [
-        "function omni_extras:aoe/aoe_freeze"
-      ],
+      "search_radius": 10,
+      "freeze_seconds": 6,
+      "slow_seconds": 6,
+      "freeze_amp": 6,
+      "slow_amp": 3,
       "conditions": {
         "enabling": [
           {
@@ -736,16 +739,13 @@
       }
     },
     "aoe_electro": {
-      "type": "palladium:command",
+      "type": "omni_extras:zap_nearby_entities",
       "title": "Surround Zap",
       "icon": "minecraft:lightning_rod",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
-      "commands": [
-        "playsound minecraft:entity.lightning_bolt.thunder master @s ~ ~ ~ 10 2",
-        "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Opticoid.Unlocked, tag=!Electrocuted, distance=..6]"
-      ],
+      "search_radius": 8,
       "conditions": {
         "enabling": [
           {
@@ -765,15 +765,14 @@
       }
     },
     "aoe_fire": {
-      "type": "palladium:command",
+      "type": "omni_extras:ignite_nearby_entities",
       "title": "Surround Ignite",
       "icon": "minecraft:flint_and_steel",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
-      "commands": [
-        "function omni_extras:aoe/aoe_fire"
-      ],
+      "search_radius": 8,
+      "fire_seconds": 8,
       "conditions": {
         "enabling": [
           {

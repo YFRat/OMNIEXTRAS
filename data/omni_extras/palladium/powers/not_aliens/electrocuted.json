@@ -32,9 +32,9 @@
         ""
       ],
       "commands": [
-        "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Electrocuted, tag=!Opticoid.Unlocked, distance=..3] ",
-        "damage @s 3 minecraft:generic",
-        "effect give @s minecraft:slowness 2 10 true"
+        "superpower add omni_extras:not_aliens/electrocuted @e[tag=!Electrocuted, distance=..3] ",
+        "damage @s 3 minecraft:lightning_bolt",
+        "effect give @s minecraft:slowness 1 10 true"
       ],
       "conditions": {
         "enabling": [
@@ -53,7 +53,7 @@
         0,
         0
       ],
-      "hidden": false,
+      "hidden": true,
       "first_tick_commands": [
         "tag @s add Electrocuted",
         "effect give @s omni_extras:electrocuted 12 1 true"
@@ -87,7 +87,7 @@
         0,
         0
       ],
-      "hidden": false,
+      "hidden": true,
       "first_tick_commands": [
         ""
       ],
