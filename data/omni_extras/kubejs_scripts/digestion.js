@@ -117,7 +117,6 @@ ItemEvents.rightClicked(e => {
     ['omni_extras:perkgourmand', 'omni_extras:murkgourmand'].forEach(power =>
         player.runCommandSilent(`energybar value add ${player.name.string} ${power} stomach ${stomachGain}`)
     );
-    // scoreboard logic
     if (isBig)
         palladium.scoreboard.setScore(player, 'Gourmand.ObliterationPoint', obliterationGain);
     else

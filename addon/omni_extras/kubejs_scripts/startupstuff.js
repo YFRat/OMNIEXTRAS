@@ -61,3 +61,13 @@ StartupEvents.registry('mob_effect', event => {
     .color(Color.YELLOW)
     .harmful()
 });
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('omni_extras:burning')
+    .color(Color.RED)
+    .harmful()
+    .effectTick((entity, lvl) => { 
+      if (entity.age % 20 != 0) return
+      entity.setSecondsOnFire(3)
+    })
+});

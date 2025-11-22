@@ -15,6 +15,10 @@
         "Gourmand.ObliterationPoint",
         "Orishan.XP",
         "Orishan.Level",
-        "Orishan.SkillPoint"
+        "Orishan.SkillPoint",
+        "Talpaedan.XP",
+        "Talpaedan.Level",
+        "Talpaedan.SkillPoint",
+        "Talpaedan.DigMeter"
     ]
 }
