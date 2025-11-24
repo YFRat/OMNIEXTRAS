@@ -46,7 +46,8 @@
         "scale reset",
         "scoreboard players set @s Opticoid.BeamIntensity 0",
         "scoreboard players set @s Opticoid.ElementSelect 0",
-        "tag @s remove Opticoid.Overcharge"
+        "tag @s remove Opticoid.Overcharge",
+        "tag @s remove Opticoid.Discharged"
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
@@ -140,6 +141,15 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "intensity_adjust"
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -169,6 +179,15 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "intensity_adjust"
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -222,6 +241,10 @@
                 "conditions": [
                   {
                     "type": "palladium:crouching"
+                  },
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "Opticoid.Discharged"
                   }
                 ]
               },
@@ -281,6 +304,15 @@
                 "objective": "Opticoid.ElementSelect",
                 "min_score": 2,
                 "max_score": 2
+              }
+            ]
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
@@ -639,7 +671,7 @@
         "enabling": [
           {
             "type": "palladium:action",
-            "cooldown": 700,
+            "cooldown": 850,
             "key_type": "key_bind"
           }
         ],
@@ -649,8 +681,34 @@
             "conditions": [
               {
                 "type": "palladium:crouching"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
+          }
+        ]
+      }
+    },
+    "discharged_slowness":{
+      "type": "palladium:command",
+      "commands": "",
+      "first_tick_commands":[
+        "tag @s add Opticoid.Discharged",
+        "effect give @s minecraft:slowness 15 4 true"
+      ],
+      "last_tick_commands":[
+        "tag @s remove Opticoid.Discharged",
+        "effect clear @s"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "overcharge_timer",
+            "min": 241,
+            "max": 340
           }
         ]
       }
@@ -667,8 +725,10 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:has_tag",
-            "tag": "Opticoid.Overcharge"
+            "type": "palladium:animation_timer_ability",
+            "ability": "overcharge_timer",
+            "min": 1,
+            "max": 240
           }
         ]
       }
@@ -686,8 +746,8 @@
           {
             "type": "palladium:animation_timer_ability",
             "ability": "overcharge_timer",
-            "min": 240,
-            "max": 240
+            "min": 340,
+            "max": 340
           }
         ]
       }
@@ -698,7 +758,7 @@
       "hidden": true,
       "hidden_in_bar": true,
       "start_value": 0,
-      "max_value": 240,
+      "max_value": 340,
       "conditions": {
         "enabling": [
           {
@@ -734,6 +794,15 @@
             "objective": "Opticoid.ElementSelect",
             "min_score": 2,
             "max_score": 2
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -760,6 +829,15 @@
             "objective": "Opticoid.ElementSelect",
             "min_score": 0,
             "max_score": 0
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -787,6 +865,15 @@
             "objective": "Opticoid.ElementSelect",
             "min_score": 1,
             "max_score": 1
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -837,6 +924,15 @@
           },
           {
             "type": "palladium:on_ground"
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
           }
         ]
       }
@@ -950,6 +1046,10 @@
                     "max_score": 2
                   }
                 ]
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
@@ -1143,6 +1243,10 @@
                     "max_score": 1
                   }
                 ]
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
@@ -1424,6 +1528,15 @@
             "ability": "climb_unlock"
           },
           {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
+              }
+            ]
+          },
+          {
             "type": "palladium:or",
             "conditions": [
               {
@@ -1657,6 +1770,10 @@
               {
                 "type": "palladium:has_tag",
                 "tag": "Opticoid.IceCooldown"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           },
@@ -1966,6 +2083,10 @@
               {
                 "type": "palladium:ability_enabled",
                 "ability": "hand_beams"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
@@ -2121,6 +2242,10 @@
                     "max_score": 2
                   }
                 ]
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
@@ -2211,6 +2336,15 @@
               {
                 "type": "palladium:has_tag",
                 "tag": "AlienEvo.MasterControl"
+              }
+            ]
+          },
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_tag",
+                "tag": "Opticoid.Discharged"
               }
             ]
           }
