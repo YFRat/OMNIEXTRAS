@@ -1033,7 +1033,7 @@
       "uuid": "3259f4f7-3b63-46ad-939a-57ada0cfe0f6",
       "max_distance": 50,
       "commands_on_entity_hit": [
-        "function omni_extras:grantxp1",
+        "execute as @s run scoreboard players add @s[scores={Opticoid.Level=..5}] Opticoid.XP 15",
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 30"
       ],
       "commands_on_block_hit": [
@@ -1200,7 +1200,7 @@
       },
       "max_distance": 80,
       "commands_on_entity_hit": [
-        "function omni_extras:grantxp1",
+        "execute as @s run scoreboard players add @s[scores={Opticoid.Level=..5}] Opticoid.XP 15",
         "execute as @e[distance=..4.8,nbt=!{HurtTime:0s}] run effect give @s minecraft:slowness 2 3 false",
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 70"
       ],

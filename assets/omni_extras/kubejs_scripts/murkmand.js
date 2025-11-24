@@ -66,8 +66,6 @@ PalladiumEvents.registerAnimations((event) => {
                 .animate('easeOutBack', spinwhip);
         }
         if (spinwhip > 0.0 && builder.isFirstPerson()) {
-
-
         }
     });
 });

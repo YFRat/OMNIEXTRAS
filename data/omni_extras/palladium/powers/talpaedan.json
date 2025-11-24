@@ -36,7 +36,6 @@
         "scale set pehkui:hitbox_width 1.9 @s",
         "scale set pehkui:eye_height 1.1 @s",
         "scale set pehkui:hitbox_height 1 @s",
-        "scale set pehkui:entity_reach 1 @s",
         "scoreboard objectives add Talpaedan.XP dummy",
         "scoreboard objectives add Talpaedan.Level dummy",
         "scoreboard objectives add Talpaedan.SkillPoint dummy",
@@ -45,7 +44,7 @@
       "last_tick_commands": [
         "scale reset",
         "scale easing reset",
-        "scoreboard objectives remove Talpaedan.DigMeter"
+        "scoreboard players set @s Talpaedan.DigMeter 0"
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
@@ -332,27 +331,25 @@
       "hidden": true,
       "amount": 30
     },
-    "burrow_rumble": {
-      "type": "palladium:animation_timer",
+    "rumble_tag": {
+      "type": "palladium:command",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
-      "max_value": 25,
-      "list_index": 2,
       "title": {
         "translate": "ability.talpaedan.burrow_rumble"
       },
       "hidden": true,
       "hidden_in_bar": false,
+      "list_index": 2,
+      "commands": [
+        "tag @s add Rumble.Active"
+      ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:activation",
-            "ticks": 30,
-            "cooldown": 10,
+            "type": "palladium:action",
+            "cooldown": 40,
             "needs_empty_hand": false,
             "key_type": "key_bind"
-          },
-          {
-            "type": "palladium:on_ground"
           },
           {
             "type": "palladium:crouching",
@@ -360,6 +357,9 @@
           }
         ],
         "unlocking": [
+          {
+            "type": "palladium:on_ground"
+          },
           {
             "type": "palladium:and",
             "conditions": [
@@ -382,6 +382,45 @@
         ]
       }
     },
+    "burrow_rumble": {
+      "type": "palladium:animation_timer",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "max_value": 25,
+      "list_index": -1,
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Rumble.Active"
+          }
+        ]
+      }
+    },
+    "rumble_tag_removal": {
+      "type": "palladium:command",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "commands": [
+        "tag @s remove Rumble.Active"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "burrow_rumble",
+            "min": 15,
+            "max": 15
+          }
+        ]
+      }
+    },
     "test_wave": {
       "type": "palladium:animation_timer",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
@@ -398,9 +437,6 @@
             "cooldown": 10,
             "needs_empty_hand": false,
             "key_type": "key_bind"
-          },
-          {
-            "type": "palladium:on_ground"
           },
           {
             "type": "palladium:not",
@@ -426,26 +462,39 @@
                 ]
               }
             ]
+          },
+          {
+            "type": "palladium:on_ground"
           }
         ]
       }
     },
     "block_wave": {
       "type": "alienevo:block_wave",
-      "radius": 10,
+      "radius": 8,
       "hidden": true,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:ability_integer_property",
+            "type": "palladium:animation_timer_ability",
             "ability": "burrow_rumble",
-            "property": "value",
-            "min": 14,
-            "max": 15
-          },
+            "min": 12,
+            "max": 24
+          }
+        ]
+      }
+    },
+    "dig_particles": {
+      "type": "omni_extras:dig_particles",
+      "hidden": true,
+      "radius": 3,
+      "conditions": {
+        "enabling": [
           {
-            "type": "palladium:ability_enabled",
-            "ability": "burrow_rumble"
+            "type": "palladium:animation_timer_ability",
+            "ability": "burrow_rumble",
+            "min": 1,
+            "max": 12
           }
         ]
       }
@@ -493,7 +542,7 @@
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.movement_speed",
       "hidden": true,
-      "amount": -0.060,
+      "amount": -0.020,
       "uuid": "3f9dba01-3f45-45bc-a1b5-8f4cdff1d6ae"
     },
     "Gravity": {
