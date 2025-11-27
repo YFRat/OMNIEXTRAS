@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "I'm a MegaWatt!?",
+            "color": "green",
+            "bold": false,
+            "italic": true
+        },
+        "description": {
+            "text": "Obtain the Nosedeenian dna sample."
+        },
+        "icon": {
+            "item": "omni_extras:buzz"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+     "parent": "omni_extras:buzzshock_root",
+  "criteria": {
+    "obtainment": {
+      "trigger": "minecraft:impossible"
+    }
+    },
+    "rewards": {
+        "experience": 1500
+    }
+}

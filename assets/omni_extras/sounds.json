@@ -42,5 +42,17 @@
     "release": {
     "category": "player",
     "sounds": ["omni_extras:release"]
+    },
+    "laugh": {
+      "category": "player",
+      "sounds": [
+        "omni_extras:laugh"
+      ]
+    },
+    "sonic_laugh": {
+      "category": "player",
+      "sounds": [
+        "omni_extras:sonic_laugh"
+      ]
     }
 }

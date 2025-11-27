@@ -1,0 +1,33 @@
+{
+    "display": {
+        "title": {
+            "text": "Nosedeenian Addon",
+            "color": "green",
+            "bold": false,
+            "obfuscated": false,
+            "strikethrough": false,
+            "underlined": false
+        },
+        "description": {
+            "text": "Made by Vakiu"
+        },
+        "icon": {
+            "item": "omni_extras:buzz"
+        },
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "background": "alienevo:textures/gui/power_screen/power_screen.png"
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "tick"
+        ]
+    ]
+}

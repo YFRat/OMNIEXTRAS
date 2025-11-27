@@ -14,5 +14,13 @@
     "species.alienevo_aliens.192": "Orishan",
     "alienevo.alien_desc.192": "WATER BUCKET RELEASE.",
     "species.alienevo_aliens.190": "Talpaedan",
-    "alienevo.alien_desc.190": "<Talpaedans> are a species from the galaxy Andromeda"
+    "alienevo.alien_desc.190": "<Talpaedans> are a species from the galaxy Andromeda",
+    "species.alienevo_aliens.299": "Nosedeenian",
+    "alienevo.alien_desc.299": "<Nosedeenians:> Are a tiny alien species resembling small batteries and are known for their chaotic and dangerous sense of humor.",
+    "item.nosedeenian.nosedeenian_conduction": "Nosedeenian Conduction Part",
+    "unlock.alienevo_aliens.299.skillpoint": "§aNosedeenian Skill Point",
+    "unlock.alienevo_aliens.1.health_1": "Health §a+10",
+    "unlock.alienevo_aliens.1.attack_1": "Attack §a+6",
+    "desc.alienevo.omnitrix.function.buzzshock_go_overcharge": "When your overcharge bar is full allows you to go Overcharge! §c(crouch + ability 3.)",
+    "desc.alienevo.omnitrix.function.buzzshock_explosion": "Allows you to release excess energy, dealing high damage but leaving you vulnerable. §c(crouch + ability 1 when overcharge bar is 100%-50% full.)"
 }

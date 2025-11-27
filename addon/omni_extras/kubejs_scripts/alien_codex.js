@@ -146,3 +146,32 @@ global.alienevo_190_prototype_skincolor_palette_2 = ["7e8691", "747b88", "6e788c
 global.alienevo_190_10k_glowcolor_1 = ["ffffff"];
 global.alienevo_190_default_glowcolor_1 = ["ffffff"];
 global.alienevo_190_prototype_glowcolor_1 = ["ffffff"];
+
+// BUZZSHOCK SECTION
+global.alienevo_alien_299 = ['omni_extras:nosedeenian']; 
+
+global.alienevo_regen_299 = [0]; 
+global.alienevo_scale_299 = [55];
+global.alienevo_textcolor_299 = [0x23c235]; 
+global.alienevo_background_299 = ['alienevo:textures/block/machined_metal.png']; 
+
+
+
+
+global.alienevo_299_10k_uniforms = [true, false, false];
+global.alienevo_299_default_uniforms = [true, false, false]; 
+global.alienevo_299_prototype_uniforms = [true, false, false];
+
+
+global.alienevo_299_10k_skincolor_palette_1 = ["ffffff", "edf4f4", "d6dfe1"];
+global.alienevo_299_10k_skincolor_palette_2 = ["3a3333", "2c2828", "232020", "000000"];
+
+global.alienevo_299_default_skincolor_palette_1 = ["ffffff", "edf4f4", "d6dfe1"];
+global.alienevo_299_default_skincolor_palette_2 = ["3a3333", "2c2828", "232020", "000000"];
+
+global.alienevo_299_prototype_skincolor_palette_1 = ["ffffff", "edf4f4", "d6dfe1"];
+global.alienevo_299_prototype_skincolor_palette_2 = ["3a3333", "2c2828", "232020", "000000"];
+
+global.alienevo_299_prototype_glowcolor_1 = ["b3ff40", "a7f72e", "8ed721", "77b81a", "639d11"];
+global.alienevo_299_10k_glowcolor_1 = ["b3ff40", "a7f72e", "8ed721", "77b81a", "639d11"];
+global.alienevo_299_default_glowcolor_1 = ["b3ff40", "a7f72e", "8ed721", "77b81a", "639d11"];

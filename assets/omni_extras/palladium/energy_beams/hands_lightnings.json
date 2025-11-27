@@ -1,0 +1,28 @@
+[
+  {
+    "type": "palladium:lightning",
+    "body_part": "right_arm",
+    "segments": 10,
+    "spread": 9,
+    "frequency": 5,
+    "rotation_speed": 10,
+    "offset": [-2, -5, 3],
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    }
+  },
+  {
+    "type": "palladium:lightning",
+    "body_part": "left_arm",
+    "segments": 10,
+    "spread": 9,
+    "frequency": 5,
+    "rotation_speed": 10,
+    "offset": [2, -5, 3],
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    }
+  }
+]

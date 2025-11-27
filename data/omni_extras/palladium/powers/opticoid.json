@@ -693,6 +693,8 @@
     },
     "discharged_slowness":{
       "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
       "commands": "",
       "first_tick_commands":[
         "tag @s add Opticoid.Discharged",
@@ -878,6 +880,38 @@
         ]
       }
     },
+    "test":{
+    "type": "alienevo:particle_ring",
+    "icon": "minecraft:nether_star",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "particle_id": "minecraft:flame",
+    "mode": "spread",
+    "particle_count": 128,
+    "spawn_delay": 0,
+    "ring_distance": 3,
+    "ring_height": 1,
+    "layer_count": 3,
+    "layer_height": 0.5,
+    "distance_decrease": 0.5,
+    "particle_speed": 4,
+    "rotation_speed": 2,
+    "particle_spread": 0.1,
+    "vertical_spread": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "aoe_fire"
+        }
+      ]
+    }
+},
     "energy_upgrade": {
       "type": "palladium:command",
       "hidden": true,

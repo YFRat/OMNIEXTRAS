@@ -1,0 +1,1601 @@
+{
+  "name": {
+    "text": "nosedeenian"
+  },
+  "icon": "#omni_extras:aliens/alien_299/buzz",
+  "energy_bars": {
+    "energy_charge2": {
+      "max": 1750,
+      "auto_increase_per_tick": 1,
+      "color": "#f3b661",
+      "synced_value": {
+        "type": "score",
+        "objective": "Nosedeenian.Release",
+        "fallback": 0
+      }
+    },
+    "energy_charge": {
+      "max": 500,
+      "auto_increase_per_tick": 1,
+      "auto_increase_interval": 1,
+      "synced_value": {
+        "type": "score",
+        "objective": "Nosedeenian.energycharge",
+        "fallback": 0
+      },
+      "color": [
+        55, 196, 58
+      ]
+    }
+  },
+  
+  
+  "persistent_data": true,
+  "hidden": false,
+  "background": "alienevo:textures/gui/power_screen/power_screen.png",
+  "primary_color": "#8ed721",
+  "secondary_color": "#332e27",
+  "allow_bar_shrinking": false,
+  "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
+  "abilities": {
+    "nosedeenian_loop": {
+      "type": "palladium:command",
+      "hidden": false,
+      "title": {"translate":"species.alienevo_aliens.299"},
+      "icon": "#omni_extras:aliens/alien_299/buzz",
+      "gui_position": [
+        0.75,
+        0
+      ],
+      "first_tick_commands": [
+        "advancement grant @s only nosedeenian:buzzshock_obt",
+        "scoreboard objectives add Nosedeenian.XP dummy",
+        "attribute @s minecraft:generic.max_health base set 15",
+        "scoreboard objectives add Nosedeenian.KilledEntity dummy",
+        "scoreboard objectives add Nosedeenian.Level dummy",
+        "scoreboard objectives add Nosedeenian.SkillPoint dummy",
+        "scoreboard objectives add Nosedeenian.energycharge dummy",
+        "scale set pehkui:jump_height 1.5 @s",
+        "scale set pehkui:step_height 2.5 @s",
+        "attribute @s minecraft:generic.attack_damage base set 4",
+        "energybar value set @s nosedeenian_aliens:nosedeenian energy_charge 500",
+        "scale set pehkui:visibility 1",
+        "scoreboard objectives add Nosedeenian.Release dummy",
+        "scoreboard players set @s Nosedeenian.energycharge 500",
+        "scoreboard players set @s Nosedeenian.KilledEntity 0",
+        "scoreboard players set @s Nosedeenian.Release 0"
+        
+      ],
+      "last_tick_commands": [
+        "scale set pehkui:jump_height 1 @s",
+        "attribute @s minecraft:generic.max_health base set 20",
+        "attribute @s minecraft:generic.attack_damage base set 1",
+        "scale set pehkui:step_height 1 @s",
+        "scale set pehkui:visibility 1",
+        "scoreboard players set @s Nosedeenian.Release 0",
+        "scoreboard players set @s Nosedeenian.KilledEntity 0",
+        "effect clear @s",
+        "tag @s remove Nosedeenian.Recharged",
+        "tag @s remove Nosedeenian.Tired",
+        "tag @s remove Nosedeenian.OverchargeLoad"
+      ],
+      
+      "commands": [
+        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+        
+        
+      ]
+    },
+        "fall_dmg":{
+          "type": "palladium:damage_immunity",
+          "hidden": true,
+          "hidden_in_bar": true,
+          "damage_sources": [
+          "minecraft:is_fall"
+        ]
+        },
+        "flight": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:flight_speed",
+      "title": "Flight",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 0,
+      "amount": 1.5,
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+          } 
+        ]
+      }
+    },
+    
+    "flight_flexibility": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:flight_flexibility",
+      "title": "Flight",
+      "list_index": 0,
+      "hidden": true,
+      "hidden_in_bar": true,
+      "amount": 2,
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+          }
+        ]
+      }
+    },
+     "speed": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.movement_speed",
+      "hidden": true,
+      "amount": 0.2
+     },
+    
+      "sonic_laugh": {
+      "type": "palladium:projectile",
+      "icon": "#omni_extras:aliens/alien_299/sonic_scream",
+      "entity_type": "palladium:custom_projectile",
+      "title": "Sonic Laugh",
+      "hidden": true,
+      "list_index": 3,
+      "hidden_in_bar": false,
+      "swinging_arm": "none",
+      "velocity": 1,
+      "entity_data": {
+        "Tags": [
+          "lightningstrike"
+         ],
+        "Damage": 3,
+        "Gravity": 0,
+        "KnockbackStrength": 1,
+        "Size": 6,
+        "Lifetime": 10,
+        "CommandOnEntityHit": "",
+        "CommandOnBlockHit": "",
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": false,
+        "Appearances": [
+          {
+            "Type": "particles",
+            "ParticleType": "afomni:sonic_scream",
+            "Spread": 10,
+            "Amount": 1
+          }
+        ]
+      },
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:action",
+            "cooldown": 60,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+
+    "command_overcharge_load":{
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": "tag @s add Nosedeenian.OverchargeLoad",
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:objective_score",
+            "objective": "Nosedeenian.Release",
+            "min_score": 0,
+            "max_score": 0
+          }
+        ]
+      }
+    },
+    "command_overcharge_load2":{
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": "tag @s remove Nosedeenian.OverchargeLoad",
+      "conditions":{
+        "enabling":[
+         {
+            "type": "palladium:objective_score",
+            "objective": "Nosedeenian.Release",
+            "min_score": 1750,
+            "max_score": 1750
+        }
+        ]
+      }
+    },
+    "electro_syntesis_particles":{
+    "type": "alienevo:particle_ring",
+    "icon": "minecraft:nether_star",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "particle_id": "minecraft:heart",
+    "mode": "static",
+    "particle_count": 2,
+    "spawn_delay": 1,
+    "ring_distance": 1,
+    "ring_height": 0,
+    "layer_count": 1,
+    "layer_height": 0.5,
+    "distance_decrease": 0.5,
+    "particle_speed": 1,
+    "rotation_speed": 10,
+    "particle_spread": 0.1,
+    "vertical_spread": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "electro_syntesis"
+        }
+      ]
+    }
+},
+
+     "electro_syntesis_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:aliens/alien_299/electro_syntesis",
+      "title": "Electro Syntesis",
+      "description": "Allows you to heal at the cost of your energy.",
+      "list_index": -1,
+      "gui_position": [
+        0,
+        0.5
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "nosedeenian_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+     "lightning_throw": {
+      "type": "palladium:projectile",
+      "icon": "omni_extras:textures/gui/aliens/alien_299/lightning_throw.png",
+      "list_index": -1,
+      "entity_type": "palladium:custom_projectile",
+      "title": "Lightning Throw",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "velocity": 3.5,
+      "entity_data": {
+        "Tags": [
+          "lightningstrike"
+         ],
+        "Gravity": 0,
+        "Damage": 7,
+        "Size": 0.5,
+        "Lifetime": 10,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [
+          {
+            "Type": "trail",
+            "Trail": "omni_extras:red_lightning2"
+          }
+        ]
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+          "cooldown": 15,
+          "needs_empty_hand": true,
+          "key_type": "right_click"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+          }
+        ]
+      }
+    },
+    "lightning_throw_exp": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scoreboard players add @s Nosedeenian.XP 20"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "lightning_throw"
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 0,
+            "disabled_ticks": 10
+          }
+        ]
+      }
+    },
+    "both": {
+      "type": "palladium:aim",
+      "icon": "#omni_extras:aliens/alien_299/electric_beams",
+      "list_index": 1,
+      "title": "Electric Beams",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "arm": "both",
+      "time": 5,
+      "conditions": {
+        "enabling": [
+          {
+          "type": "palladium:held",
+          "key_type": "key_bind"
+        },
+        {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+        }
+      ],
+        
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:crouching"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "electric_beams_unlock"
+          }
+        ]
+      }
+    },
+    "electric_beams_exp": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scoreboard players add @s Nosedeenian.XP 10"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "both"
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 0,
+            "disabled_ticks": 80
+          }
+        ]
+      }
+    },
+    "electric_beams_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:aliens/alien_299/electric_beams",
+      "title": "Electric Beams",
+      "description": "Fires two electric beams that deal high damage but consume a lot of energy.",
+      "list_index": -1,
+      "gui_position": [
+        1.5,
+        0.5
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "nosedeenian_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+    "electric_beams": {
+      "type": "palladium:energy_beam",
+      "title": "Electric Beams",
+      "list_index": 1,
+      "hidden": true,
+      "hidden_in_bar": true,
+      "damage": 12,
+      "energy_beam": "omni_extras:hands_lightnings",
+      "damage_type": "alienevo:energy_beam",
+      "commands_on_entity_hit": [
+        "execute as @e[distance=..2] if entity @s[nbt=!{HurtTime:0s}] run effect give @s minecraft:poison 1 100 true",
+        "scoreboard players add @p[limit=1,tag=ChromastoneLight] afomni.ChromaEnergy 50"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+          "type": "palladium:ability_enabled",
+          "ability": "both"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+          },
+          {
+          "type": "palladium:objective_score",
+          "objective": "Nosedeenian.energycharge",
+          "min_score": 10,
+          "max_score": 600
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:crouching"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "both_hands": {
+  "name": "Show Both Arms",
+  "type": "palladium:show_both_arms",
+  "conditions": {
+    "enabling":[
+      {
+        "type":"palladium:ability_enabled",
+        "ability": "both"
+      },
+      {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+      }
+    ],
+    "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:crouching"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+  }
+    },
+    "energy_depleted": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "first_tick_commands": [],
+       "commands": [ 
+        "tag @s add Nosedeenian.Tired",
+        "tag @s remove Nosedeenian.Recharged",
+        "effect give @s minecraft:slowness infinite 5 true",
+        "effect give @s minecraft:darkness infinite 5 true",
+        "effect give @s minecraft:weakness infinite 5 true"
+      ],
+      "conditions":{
+        "enabling": [
+        {
+          "type": "palladium:objective_score",
+          "objective": "Nosedeenian.energycharge",
+          "min_score": 10,
+          "max_score": 10
+        }
+        ]
+      }
+    },
+    "energy_recharged": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "first_tick_commands": [ 
+        "effect clear @s minecraft:slowness infinite 5 true",
+        "effect clear @s minecraft:darkness infinite 5 true",
+        "effect clear @s minecraft:weakness infinite 5 true"
+      ],
+       "commands": [
+        "tag @s add Nosedeenian.Recharged",
+        "tag @s remove Nosedeenian.Tired"
+        
+      ],
+      "conditions":{
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "Nosedeenian.energycharge",
+            "min_score": 175,
+            "max_score": 500
+          }
+        ]
+      }
+    },
+    "energy_recharged_clear": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "first_tick_commands": [],
+       "commands": [
+        "effect clear @s minecraft:slowness",
+        "effect clear @s minecraft:darkness",
+        "effect clear @s minecraft:weakness"
+        
+      ],
+      "conditions":{
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged"
+          }
+        ]
+      }
+    },
+
+     "after_image_flying": {
+      "type": "palladium:trail",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 3,
+      "title": "After Image",
+      "trail": "omni_extras:green_lightning_trail",
+      "conditions": {
+        "enabling":[
+          {
+            "type": "palladium:is_hovering_or_flying"
+          }
+         
+        ]
+      }
+      },
+      "after_image_barrage": {
+      "type": "palladium:trail",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 3,
+      "title": "After Image",
+      "trail": "omni_extras:green_lightning_trail",
+      "conditions": {
+        "enabling":[
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "electric_blitz"
+          }
+        ]
+      }
+      },
+     "electric_blitz": {
+      "type": "alienevo:motion_to_entity",
+      "debug_mode": false,
+      "motion_strength": 20,
+      "cooldown_time": 6,
+      "list_index": 0,
+      "icon": "#omni_extras:aliens/alien_299/electric_blitz",
+      "max_value": 4,
+      "vertical_motion": true,
+      "search_radius": 50,
+      "title": {
+        "translate": "Electric Blitz"
+      },
+      "bar_color": "red",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "conditions": {
+        "enabling": [
+
+          {
+            "type": "palladium:held",
+            "cooldown": 50,
+            "needs_empty_hand": false,
+            "key_type": "key_bind"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Recharged" 
+          },
+          {
+          "type": "palladium:objective_score",
+          "objective": "Nosedeenian.energycharge",
+          "min_score": 10,
+          "max_score": 600
+          }
+         
+          ],
+          "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:crouching"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "electric_blitz_unlock"
+          }
+        ]
+        }
+      },
+      "electric_blitz_exp": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scoreboard players add @s Nosedeenian.XP 10"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "electric_blitz"
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 0,
+            "disabled_ticks": 50
+          }
+        ]
+      }
+    },
+      "step_assist_1": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "forge:step_height_addition",
+      "uuid": "be5ce85e-3d6a-4d22-9586-e6af1adeaad6",
+      "hidden": true,
+      "amount": 0.6,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "electric_blitz"
+          }
+        ]
+      }
+      },
+      "electric_blitz_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:aliens/alien_299/electric_blitz",
+      "title": "Electric Blitz",
+      "description": "Blitzes from enemy to enemy, dealing damage.",
+      "list_index": -1,
+      "gui_position": [
+        1.5,
+        1.5
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "electric_beams_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 2,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+      "motion_damage": {
+      "type": "afomni:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "radius": 1,
+      "damage": 15,
+      "fire_seconds": 0,
+      "tag_ex": "AlienEvo.CarriedEntity",
+      "damage_type": "minecraft:player_attack",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "electric_blitz"
+          }
+        ]
+      }
+    },
+   
+    "invis": {
+      "type": "palladium:invisibility",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 0,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "alienevo_targeting"
+          }
+        ]
+      }
+    },
+      "shadow_strike_invulnerable": {
+      "type": "alienevo:invulnerable",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "alienevo_targeting"
+          }
+        ]
+      }
+    },
+     "overcharge_energy_explosion": {
+    "type": "alienevo:explosion",
+    "icon": "#omni_extras:aliens/alien_299/overcharge_explosion",
+    "title": "Overcharge: Discharge",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": 0,
+    "gui_position": "null",
+    "description": "null",
+    "strength": 10,
+    "causes_fire": false,
+    "energy_bar_usage": {
+        "energy_bar": "energy_charge",
+        "amount": 100
+      },
+    "random_x_range": 0,
+    "random_y_range": 0,
+    "random_z_range": 0,
+    "conditions": {
+      "enabling": [
+        {
+          "type": "palladium:action",
+          "key_type": "key_bind"
+        }
+      ],
+      "unlocking": [
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        },
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "energy_charge2",
+            "min": 1125
+          },
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+    }
+  },
+  "explosion_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:aliens/alien_299/overcharge_explosion",
+      "title": "Overcharge: Discharge",
+      "description": {
+        "translate": "desc.alienevo.omnitrix.function.buzzshock_explosion"
+      },
+      "list_index": -1,
+      "gui_position": [
+        0.75,
+        2.5
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "health_upgrade_1"
+          },
+                    {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "attack_upgrade_1"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 2,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+    "dmg_immunity": {
+    "type": "palladium:damage_immunity",
+    "icon": "minecraft:potion",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "damage_sources": [
+        "minecraft:is_explosion",
+        "minecraft:is_fire",
+        "minecraft:is_fall"
+    ],
+        "conditions":{
+        "enabling":[
+         {
+            "type": "palladium:has_tag",
+            "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+  "overcharge_explosion_discharge":{
+    "type": "nosedeenian:explosion",
+    "icon": "#omni_extras:aliens/alien_299/overcharge_explosion",
+    "title": "Overcharge Explosion",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score": "Nosedeenian.Release",
+    "adjustment_type": "set",
+    "adjustment_amount": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "overcharge_energy_explosion"
+        }
+      ]
+    }
+  },
+  "overcharge_explosion_discharge2":{
+    "type": "nosedeenian:explosion",
+    "icon": "omni_extras:textures/gui/aliens/alien_299/overcharge_explosion.png",
+    "title": "Overcharge Explosion",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "set",
+    "adjustment_amount": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "overcharge_energy_explosion"
+        }
+      ]
+    }
+  },          
+
+  "electric_blitz_decrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "subtract",
+    "adjustment_amount": 7,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+        
+          "type": "palladium:ability_enabled",
+          "ability": "electric_blitz"
+          
+        }
+      ]
+    }
+  },
+  "lightning_throw_decrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "subtract",
+    "adjustment_amount": 35,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+        
+          "type": "palladium:ability_enabled",
+          "ability": "lightning_throw"
+          
+        }
+      ]
+    }
+  },
+  "energybarincrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "add",
+    "adjustment_amount": 2.5,
+    "max_score": 600,
+    "min_score": 0
+  },
+  "energybarincrease_overcharge":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "add",
+    "adjustment_amount": 100,
+    "max_score": 600,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+  "lightning_hands_decrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "subtract",
+    "adjustment_amount": 7,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+        
+          "type": "palladium:ability_enabled",
+          "ability": "electric_beams"
+          
+        }
+      ]
+    }
+  },
+  "electro_syntesis_decrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "subtract",
+    "adjustment_amount": 10,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+        
+          "type": "palladium:ability_enabled",
+          "ability": "electro_syntesis"
+          
+        }
+      ]
+    }
+  },
+   "energybarincrease_byhand":{
+    "type": "nosedeenian:energy_bar_increase",
+    "icon": "#omni_extras:aliens/alien_299/energy_charge",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": 1,
+    "score": "Nosedeenian.energycharge",
+    "adjustment_type": "add",
+    "adjustment_amount": 15,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions": {
+      "enabling": [
+        {
+          "type": "palladium:held",
+          "cooldown": 25,
+          "key_type": "key_bind"
+        },
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Recharged"
+        }
+      ],
+      "unlocking": [
+        {
+          "type": "palladium:crouching"
+        },
+        {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "energybarincrease_byhand_unlock"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:is_hovering_or_flying"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+    }
+  },
+  "energy_bar_increase_particles":{
+    "type": "alienevo:particle_ring",
+    "icon": "minecraft:nether_star",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "particle_id": "minecraft:totem_of_undying",
+    "mode": "static",
+    "particle_count": 6,
+    "spawn_delay": 0,
+    "ring_distance": 1.5,
+    "ring_height": 0,
+    "layer_count": 3,
+    "layer_height": 0.5,
+    "distance_decrease": 0.5,
+    "particle_speed": 1,
+    "rotation_speed": 2,
+    "particle_spread": 0.1,
+    "vertical_spread": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "energybarincrease_byhand"
+        }
+      ]
+    }
+},
+  "energybarincrease_byhand_unlock": {
+      "type": "palladium:dummy",
+      "icon": "#omni_extras:aliens/alien_299/energy_charge",
+      "title": "Energy Charge",
+      "description": "Allows you to manually charge your energy.",
+      "list_index": -1,
+      "gui_position": [
+        0,
+        1.5
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "electro_syntesis_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 2,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+  "overcharge_charged": {
+    "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "commands":[
+      "effect give @s minecraft:strength infinite 3 true",
+      "effect give @s minecraft:speed infinite 4 true",
+      "effect give @s minecraft:resistance infinite 0 true"
+    ],
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+
+  "overcharge_lightning_strike": {
+    "type": "palladium:command",
+    "hidden": true,
+      "hidden_in_bar": true,
+    "first_tick_commands": [
+      "summon minecraft:lightning_bolt ~ ~4 ~"
+    ],
+    "commands": [""],
+    "last_tick_commands": [""],
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+
+  "overcharge_depleted": {
+    "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "commands":[
+      "effect clear @s minecraft:strength",
+      "effect clear @s minecraft:speed",
+      "effect clear @s minecraft:resistance"
+    ],
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+  "sonic_laugh_sound": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": "omni_extras:laugh",
+      "volume": 1500,
+      "pitch": 1,
+      "looping": false,
+      "play_self": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "sonic_laugh"
+          }
+        ]
+      }
+    },
+    "sonic_laugh_sound2": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": "omni_extras:laugh",
+      "volume": 1000,
+      "pitch": 1,
+      "looping": false,
+      "play_self": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "energy_charge2",
+            "min": 1750
+          }
+        ]
+      }
+    },
+    "command2":{
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands":[
+        "function omni_extras:yes2"
+      ],
+      "commands": "",
+        "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "energy_charge2",
+            "min": 1750
+          }
+        ]
+      }
+    },
+    "aoe_laugh_sound": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": "omni_extras:sonic_laugh",
+      "volume": 1000,
+      "pitch": 1,
+      "looping": false,
+      "play_self": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "laugh_aoe"
+          }
+        ]
+      }
+    },
+    "health_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.max_health",
+      "title": {"translate":"unlock.alienevo_aliens.1.health_1"},
+      "uuid": "1695b174-e694-497e-b37f-334466dafd6f",
+      "list_index": -1,
+      "hidden": false,
+      "amount": 5,
+      "gui_position": [
+        -1,
+        1.5
+      ],
+      "description": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "energybarincrease_byhand_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+    "attack_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.attack_damage",
+      "title": {"translate":"unlock.alienevo_aliens.1.attack_1"},
+      "uuid": "1695b174-e694-497e-b37f-334466dafd6f",
+      "list_index": -1,
+      "hidden": false,
+      "amount": 6,
+      "gui_position": [
+        2.5,
+        1.5
+      ],
+      "description": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "electric_blitz_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Nosedeenian.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_299.png",
+            "description": {"translate":"unlock.alienevo_aliens.299.skillpoint"}
+          }
+        ]
+      }
+    },
+    "go_overcharge":{
+    "type": "palladium:command",
+    "icon": "#omni_extras:aliens/alien_299/go_overcharge",
+    "description": "When your overcharge bar is full release the excess energy going Overcharge (shift + ability 3)",
+    "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 2,
+    "commands":["tag @s add Nosedeenian.Overcharge"],
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:action",
+          "key_type": "key_bind"
+        }
+      ],
+      "unlocking":[
+        {
+          "type": "palladium:objective_score",
+          "objective": "Nosedeenian.Release",
+          "min_score": 1750,
+          "max_score": 1750
+        },
+        {
+
+              "type": "palladium:crouching"
+          
+        }
+        ]
+      }
+    },
+    "go_overcharge_dummy":{
+      "type": "palladium:dummy",
+      "title": "Go Overcharge!",
+      "icon": "#omni_extras:aliens/alien_299/go_overcharge",
+    "description": {
+      "translate": "desc.alienevo.omnitrix.function.buzzshock_go_overcharge"
+    },
+    "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 2,
+      "gui_position":[
+        1.5,
+        0
+      ]
+    },
+    "energybar0":{
+    "type": "palladium:command",
+    "hidden": true,
+      "hidden_in_bar": true,
+    "commands":["tag @s remove Nosedeenian.Overcharge"],
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:objective_score",
+          "objective": "Nosedeenian.Release",
+          "min_score": 0,
+          "max_score": 0
+        }
+        ]
+      }
+    },
+    "overcharge_decrease":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.Release",
+    "adjustment_type": "subtract",
+    "adjustment_amount": 5,
+    "max_score": 500,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.Overcharge"
+        }
+      ]
+    }
+  },
+  "increase_overcharge":{
+    "type": "nosedeenian:energy_bar_increase",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "score": "Nosedeenian.Release",
+    "adjustment_type": "add",
+    "adjustment_amount": 1,
+    "max_score": 1300,
+    "min_score": 0,
+    "conditions":{
+      "enabling":[
+        {
+          "type": "palladium:has_tag",
+          "tag": "Nosedeenian.OverchargeLoad"
+        }
+      ]
+    }
+  },
+    "hide_body": {
+      "type": "palladium:hide_body_part",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "body_parts": [
+        "right_arm",
+        "left_arm",
+        "chest",
+        "chest_overlay",
+        "right_arm_overlay",
+        "left_arm_overlay",
+        "right_leg",
+        "left_leg",
+        "cape",
+        "right_leg_overlay",
+        "left_leg_overlay",
+        "head",
+        "head_overlay"
+      ],
+      "affects_first_person": true
+    },
+    "render_layer": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "omni_extras:aliens/alien_299/nosedeenian",
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:is_fast_flying"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "size_change": {
+      "type": "palladium:size",
+      "title": "Size Change",
+      "hidden": true,
+      "scale": 0.49
+    
+    },
+    "base_form": {
+      "type": "alienevo:omnitrix_detransform",
+      "icon": "#alienevo:detransform",
+      "title": {"translate":"ability.alienevo.omnitrix.base_form"},
+      "hidden": true,
+      "list_index": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.BaseForm"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.MasterControl"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "timeout_function": {
+      "type": "alienevo:omnitrix_timer",
+      "hidden": true
+    },
+    "name_change": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": {
+        "translate": "species.alienevo_aliens.299"
+      },
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "alienevo:current_alien_nickname",
+                "value": "species.alienevo_aliens.299"
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nickname": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": [
+        {
+          "nbt": "KubeJSPersistentData.alienevo_299",
+          "entity": "@s"
+        }
+      ],
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "alienevo:current_alien_nickname",
+                    "value": "species.alienevo_aliens.299"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "slot_restriction": {
+      "type": "palladium:restrict_slots",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "slots": [
+        "head",
+        "chest",
+        "legs",
+        "feet",
+        "trinkets:head/hat",
+        "trinkets:head/face",
+        "trinkets:chest/back",
+        "trinkets:chest/necklace",
+        "trinkets:chest/cape",
+        "trinkets:hand/ring",
+        "trinkets:hand/glove",
+        "trinkets:offhand/glove",
+        "trinkets:offhand/ring",
+        "curios:hands"
+      ]
+    }
+  }
+}
