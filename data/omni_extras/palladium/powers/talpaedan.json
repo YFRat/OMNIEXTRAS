@@ -331,7 +331,7 @@
       "hidden": true,
       "amount": 30
     },
-    "rumble_tag": {
+    "earthquake_tag": {
       "type": "palladium:command",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
       "title": {
@@ -341,13 +341,13 @@
       "hidden_in_bar": false,
       "list_index": 2,
       "commands": [
-        "tag @s add Rumble.Active"
+        "tag @s add EarthQuake.Active"
       ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "cooldown": 40,
+            "type": "palladium:held",
+            "cooldown": 130,
             "needs_empty_hand": false,
             "key_type": "key_bind"
           },
@@ -382,8 +382,8 @@
         ]
       }
     },
-    "burrow_rumble": {
-      "type": "palladium:animation_timer",
+    "quake_generation": {
+      "type": "palladium:repeating_animation_timer",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
       "max_value": 25,
       "list_index": -1,
@@ -393,12 +393,12 @@
         "enabling": [
           {
             "type": "palladium:has_tag",
-            "tag": "Rumble.Active"
+            "tag": "EarthQuake.Active"
           }
         ]
       }
     },
-    "rumble_tag_removal": {
+    "earthquake_tag_removal": {
       "type": "palladium:command",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
       "title": {
@@ -408,49 +408,51 @@
       "hidden_in_bar": true,
       "list_index": -1,
       "commands": [
-        "tag @s remove Rumble.Active"
+        "tag @s remove EarthQuake.Active"
       ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:animation_timer_ability",
-            "ability": "burrow_rumble",
-            "min": 15,
-            "max": 15
+            "type": "palladium:ability_last_tick",
+            "ability": "earthquake_tag"
           }
         ]
       }
     },
-    "test_wave": {
-      "type": "palladium:animation_timer",
+    "line_quake_tag": {
+      "type": "palladium:command",
       "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
-      "max_value": 25,
-      "list_index": 3,
-      "title": "test_wave",
+      "title": "Line Quake",
       "hidden": true,
       "hidden_in_bar": false,
+      "list_index": 3,
+      "commands": [
+        "tag @s add LineQuake.Active"
+      ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:activation",
-            "ticks": 30,
-            "cooldown": 10,
+            "type": "palladium:held",
+            "cooldown": 130,
             "needs_empty_hand": false,
             "key_type": "key_bind"
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:crouching"
-              }
-            ]
+            "type": "palladium:crouching",
+            "value": true
           }
         ],
         "unlocking": [
           {
+            "type": "palladium:on_ground"
+          },
+          {
             "type": "palladium:and",
             "conditions": [
+              {
+                "type": "palladium:crouching",
+                "value": true
+              },
               {
                 "type": "palladium:not",
                 "conditions": [
@@ -462,22 +464,81 @@
                 ]
               }
             ]
-          },
-          {
-            "type": "palladium:on_ground"
           }
         ]
       }
     },
-    "block_wave": {
+    "line_quake_generation": {
+      "type": "palladium:repeating_animation_timer",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "max_value": 10,
+      "list_index": -1,
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "LineQuake.Active"
+          }
+        ]
+      }
+    },
+    "line_quake_tag_removal": {
+      "type": "palladium:command",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "commands": [
+        "tag @s remove LineQuake.Active"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_last_tick",
+            "ability": "line_quake_tag"
+          }
+        ]
+      }
+    },
+    "line_quake_visuals": {
+      "type": "alienevo:line_block_wave",
+      "title": "im quaking it",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "maxRange": 8,
+      "waveDelay": 2,
+      "enableVisuals": true,
+      "isDestructionEnabled": true,
+      "lineWidth": 6,
+      "damageAmount": 15,
+      "knockbackStrength": 0.1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "line_quake_generation",
+            "min": 3,
+            "max": 3
+          }
+        ]
+      }
+    },
+    "earthquake_visuals": {
       "type": "alienevo:block_wave",
-      "radius": 8,
+      "radius": 9,
       "hidden": true,
       "conditions": {
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "ability": "burrow_rumble",
+            "ability": "quake_generation",
             "min": 12,
             "max": 24
           }
@@ -492,7 +553,7 @@
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
-            "ability": "burrow_rumble",
+            "ability": "quake_generation",
             "min": 1,
             "max": 12
           }
@@ -509,7 +570,7 @@
         "enabling": [
           {
             "type": "palladium:ability_enabled",
-            "ability": "burrow_rumble"
+            "ability": "quake_generation"
           }
         ]
       }
@@ -526,14 +587,14 @@
         "enabling": [
           {
             "type": "palladium:ability_integer_property",
-            "ability": "burrow_rumble",
+            "ability": "quake_generation",
             "property": "value",
             "min": 15,
             "max": 15
           },
           {
             "type": "palladium:ability_enabled",
-            "ability": "burrow_rumble"
+            "ability": "quake_generation"
           }
         ]
       }

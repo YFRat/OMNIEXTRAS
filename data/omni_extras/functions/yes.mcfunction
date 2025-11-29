@@ -1,1 +1,0 @@
-superpower add omni_extras:power_obtainment

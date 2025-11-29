@@ -39,3 +39,32 @@ PalladiumEvents.registerAnimations((event) => {
     });
 });
 
+ClientEvents.tick(event => {
+    const player = event.player;
+    if (!abilityUtil.hasPower(player, "omni_extras:talpaedan")) return;
+
+    const cam = Client.options.getCameraType();
+    const data = player.persistentData;
+    const frontView = [
+        ["omni_extras:talpaedan", "earthquake_tag", "third_person_back"]
+    ];
+    let active = false;
+    let desiredMode = "first_person";
+
+    for (const [power, ability, cameraMode] of frontView) {
+        if (abilityUtil.isEnabled(player, power, ability)) {
+            active = true;
+            desiredMode = cameraMode;
+            break;
+        }
+    }
+    if (active) {
+        if (cam !== desiredMode) {
+            data.camera_reset = 1;
+            Client.options.setCameraType(desiredMode);
+        }
+    } else if (data.camera_reset === 1) {
+        data.camera_reset = 0;
+        Client.options.setCameraType("first_person");
+    }
+});

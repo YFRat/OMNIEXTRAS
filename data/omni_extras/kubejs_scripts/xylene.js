@@ -23,11 +23,17 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         return;
     }
 
-    const hasPerk = player.tags.contains('Perk.Obtained');
-    const hasMurk = player.tags.contains('Murk.Obtained');
+    const hasPerk = hasAlien(player, 111);
+    const hasMurk = hasAlien(player, 112);
+    const AnyGourmands = hasPerk || hasMurk
 
-    item.count--;
-    if (!hasPerk && !hasMurk) {
+    if (hasPerk && hasMurk) {
+        player.tell(Text.red("§lI've given you all that I could give"));
+        player.level.playSound(null, player.x, player.y, player.z, "minecraft:entity.villager.no", "master", 10, 1.5)
+        return;
+    }
+
+    if (!AnyGourmands) {
         player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
 
     const roll = Math.floor(Math.random() * 2) + 1;
@@ -43,6 +49,7 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
         player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
         palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
     }
+    item.count--;
     if (!palladium.superpowers.hasSuperpower(player, "aeo:omniverse_omnitrix"))
         player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_master_control", "master", 10, 1)
     else 
@@ -50,18 +57,31 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
 });
 
 function hasOmnitrix(player) {
-  return [
-    'alienevo:prototype_omnitrix',
-    'evo_reds_alienpack_noncustom:recal_omnitrix',
-    'evo_reds_alienpack_bug:prototype_omnitrix',
-    'evo_reds_alienpack_ult_noncustom:ult_omnitrix',
-    'evo_reds_alienpack_ult:ult_omnitrix',
-    'evo_reds_alienpack:recal_omnitrix',
-    'evo_reds_alienpack_completed:completed_omnitrix',
-    'aeo:omniverse_omnitrix'
-  ].some(p => palladium.superpowers.hasSuperpower(player, p));
+  let currentPowers = palladium.powers.getPowerIds(player);
+  if (currentPowers && currentPowers.length > 0) {
+    for (let powerId of currentPowers) {
+      let powerIdStr = String(powerId).toLowerCase();
+      if (powerIdStr.includes('omnitrix')) {
+        return true;
+      }
+    }
+  }
+  
+  return false; //made by the goat beans
 }
 
+function hasAlien(player, alienId) {
+  for (let playlist = 1; playlist <= 10; playlist++) {
+    for (let slot = 1; slot <= 10; slot++) {
+      let alienKey = `alienevo.alien_${playlist}_${slot}`;
+      let storedAlienId = player.persistentData.getInt(alienKey);
+      if (storedAlienId === alienId) {
+        return true;
+      }
+    }
+  }
+  return false; //made by the goat beans
+}
 EntityEvents.hurt(event => {
     let entity = event.entity;
     if (

@@ -20,22 +20,39 @@ ItemEvents.rightClicked(e =>{
     const item = e.item;
     const player = e.player;
     if (item.id === 'omni_extras:opticoid_vial') {
-        if (hasOmnitrix(player)) {
+        if (hasOmnitrix(player) && !hasAlien(player, 110)) {
             item.count--;
             player.runCommandSilent('function omni_extras:vialgrant');
-        }
+      }
+        else {
+          player.tell(Text.red("§lNothing happened"));
+          player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.note_block.bass", "master", 10, 0.1)
+      }
     }
 });
 
 function hasOmnitrix(player) {
-  return [
-    'alienevo:prototype_omnitrix',
-    'evo_reds_alienpack_noncustom:recal_omnitrix',
-    'evo_reds_alienpack_bug:prototype_omnitrix',
-    'evo_reds_alienpack_ult_noncustom:ult_omnitrix',
-    'evo_reds_alienpack_ult:ult_omnitrix',
-    'evo_reds_alienpack:recal_omnitrix',
-    'evo_reds_alienpack_completed:completed_omnitrix',
-    'aeo:omniverse_omnitrix'
-  ].some(p => palladium.superpowers.hasSuperpower(player, p));
+  let currentPowers = palladium.powers.getPowerIds(player);
+  if (currentPowers && currentPowers.length > 0) {
+    for (let powerId of currentPowers) {
+      let powerIdStr = String(powerId).toLowerCase();
+      if (powerIdStr.includes('omnitrix')) {
+        return true;
+      }
+    }
+  } 
+  return false; //made by the goat beans
+}
+
+function hasAlien(player, alienId) {
+  for (let playlist = 1; playlist <= 10; playlist++) {
+    for (let slot = 1; slot <= 10; slot++) {
+      let alienKey = `alienevo.alien_${playlist}_${slot}`;
+      let storedAlienId = player.persistentData.getInt(alienKey);
+      if (storedAlienId === alienId) {
+        return true;
+      }
+    }
+  }
+  return false; //made by the goat beans
 }
