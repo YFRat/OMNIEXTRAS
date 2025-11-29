@@ -251,7 +251,8 @@
       "list_index": 0,
       "commands": [
         "say WATER BUCKET RELEASE",
-        "playsound omni_extras:release master @s ~ ~ ~ 10 "
+        "playsound omni_extras:release master @s ~ ~ ~ 10 ",
+        "setblock ~ ~ ~ minecraft:water replace"
       ],
       "conditions": {
         "enabling": [

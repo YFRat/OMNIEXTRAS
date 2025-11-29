@@ -39,12 +39,13 @@
         "scoreboard objectives add Talpaedan.XP dummy",
         "scoreboard objectives add Talpaedan.Level dummy",
         "scoreboard objectives add Talpaedan.SkillPoint dummy",
-        "scoreboard objectives add Talpaedan.DigMeter dummy"
+        "scoreboard objectives add Talpaedan.DigMeter dummy",
+        "scoreboard players set @s Talpaedan.DigMeter 1"
       ],
       "last_tick_commands": [
         "scale reset",
         "scale easing reset",
-        "scoreboard players set @s Talpaedan.DigMeter 0"
+        "scoreboard players set @s Talpaedan.DigMeter 1"
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
