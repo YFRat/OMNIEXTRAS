@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:nether_star",
-    "minecraft:beacon"
+    "minecraft:beacon",
+    "alienevo:prototype_core"
   ]
 }

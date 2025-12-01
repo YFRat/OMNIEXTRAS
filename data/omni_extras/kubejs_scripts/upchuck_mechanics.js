@@ -91,7 +91,6 @@ ItemEvents.rightClicked(e => {
         return;
     }
 
-    item.count--;
     let text, stomachGain, obliterationGain;
 
     if (isBig) {
@@ -108,9 +107,10 @@ ItemEvents.rightClicked(e => {
         obliterationGain = 1;
     }
 
-    player.tell(Text.yellow(flavorText));
+    player.tell(Text.yellow(text));
     player.runCommandSilent(`playsound minecraft:entity.player.burp player ${player.name.string} ~ ~ ~ 1000`);
     player.potionEffects.add('minecraft:saturation', 200, 1, false, false);
+    item.count--;
 
     ['omni_extras:perkgourmand', 'omni_extras:murkgourmand'].forEach(power =>
         player.runCommandSilent(`energybar value add ${player.name.string} ${power} stomach ${stomachGain}`)
