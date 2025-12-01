@@ -1262,6 +1262,7 @@
       "hidden": true,
       "commands": [
         "function omni_extras:mining_mod/exe",
+        "function omni_extras:projectile_swallow/projectile_detect",
         "playsound omni_extras:swallow master @s ~ ~ ~ 3 1"
       ],
       "hidden_in_bar": true,

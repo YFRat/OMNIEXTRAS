@@ -1139,7 +1139,7 @@
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 30"
       ],
       "commands_on_block_hit": [
-        "function omni_extras:detection",
+        "function omni_extras:opticoid_beamchanics/detection",
         "particle minecraft:explosion ~ ~ ~ 0.2 0.3 0.2 0.3 2"
       ],
       "hidden": true,
@@ -1311,7 +1311,7 @@
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 70"
       ],
       "commands_on_block_hit": [
-        "function omni_extras:superbeam"
+        "function omni_extras:opticoid_beamchanics/superbeam"
       ],
       "hidden": true,
       "conditions": {
@@ -1421,7 +1421,7 @@
       "first_tick_commands": [],
       "last_tick_commands": [],
       "commands": [
-        "function omni_extras:boost"
+        "function omni_extras:opticoid_beamchanics/boost"
       ],
       "conditions": {
         "enabling": [
@@ -1980,11 +1980,11 @@
       "cause_fire": false,
       "smelt_blocks": false,
       "commands_on_entity_hit": [
-        "function omni_extras:freeze",
+        "function omni_extras:opticoid_beamchanics/freeze",
         "scoreboard players add @p[distance=..1,tag=ChromastoneLight] afomni.ChromaEnergy 10"
       ],
       "commands_on_block_hit": [
-        "function omni_extras:freeze_block",
+        "function omni_extras:opticoid_beamchanics/freeze_block",
         "particle minecraft:snowflake ~ ~ ~ 0.2 0.3 0.2 0 10",
         "execute if block ~ ~ ~ minecraft:fire run setblock ~ ~ ~ minecraft:air replace"
       ],
@@ -2282,7 +2282,7 @@
         "Damage": 6.5,
         "Gravity": 0,
         "Size": 0.2,
-        "CommandsOnEntityHit": "function omni_extras:hand_blasts",
+        "CommandsOnEntityHit": "function omni_extras:opticoid_beamchanics/hand_blasts",
         "Lifetime": 40,
         "ExplosionBlockInteraction": "keep",
         "ExplosionRadius": 1,
