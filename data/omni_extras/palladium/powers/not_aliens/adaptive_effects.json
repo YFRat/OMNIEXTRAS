@@ -1,0 +1,161 @@
+{
+  "name": {
+    "text": "Eye got you!"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "minecraft:rotten_flesh"
+  },
+  "persistent_data": false,
+  "hidden": true,
+  "primary_color": "#E72D2D",
+  "secondary_color": "#1a1a1a",
+  "abilities": {
+    "frozen_effects": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": true,
+      "first_tick_commands": [
+        "particle minecraft:snowflake ~ ~1 ~ 0.3 0.2 0.1 0.2 20"
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.FrozenTarget"
+          }
+        ]
+      }
+    },
+    "end_timer_frozen": {
+      "type": "palladium:repeating_animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 15,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.FrozenTarget"
+          }
+        ]
+      }
+    },
+    "remove_frozen": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": true,
+      "first_tick_commands": [
+        ""
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        "tag @s remove Opticoid.FrozenTarget",
+        "superpower remove omni_extras:not_aliens/adaptive_effects @s"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "end_timer_frozen",
+            "min": 15,
+            "max": 15
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.FrozenTarget"
+          }
+        ]
+      }
+    },
+    "fire_effects": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": true,
+      "first_tick_commands": [
+        "particle alienevo:flame ~ ~2 ~ 0.3 0.2 0.1 0.1 20"
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.BurningTarget"
+          }
+        ]
+      }
+    },
+    "end_timer_heat": {
+      "type": "palladium:repeating_animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 15,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.BurningTarget"
+          }
+        ]
+      }
+    },
+    "remove_heat": {
+      "type": "palladium:command",
+      "gui_position": [
+        0,
+        0
+      ],
+      "hidden": true,
+      "first_tick_commands": [
+        ""
+      ],
+      "last_tick_commands": [
+        ""
+      ],
+      "commands": [
+        "tag @s remove Opticoid.BurningTarget",
+        "superpower remove omni_extras:not_aliens/adaptive_effects @s"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "end_timer_heat",
+            "min": 15,
+            "max": 15
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.BurningTarget"
+          }
+        ]
+      }
+    }
+  }
+}

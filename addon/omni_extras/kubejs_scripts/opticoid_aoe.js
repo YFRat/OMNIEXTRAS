@@ -22,7 +22,8 @@ StartupEvents.registry('palladium:abilities', (event) => {
                                 !nearby.isAlive()
                                 ) return;
                             if (!(nearby instanceof LivingEntity)) return;
-                            
+                            nearby.addTag('Opticoid.BurningTarget');
+                            palladium.superpowers.addSuperpower(nearby, "omni_extras:not_aliens/adaptive_effects");
                             nearby.setSecondsOnFire(fireSeconds)
                         });
 
@@ -62,9 +63,12 @@ StartupEvents.registry('palladium:abilities', (event) => {
                                 nearby === entity || 
                                 !nearby.isAlive()
                                 ) return;
-                            if (!(nearby instanceof LivingEntity)) return;      
+                            if (!(nearby instanceof LivingEntity)) return;
                                 nearby.potionEffects.add("alienevo:freeze_effect", freezeTicks, freezeAmp, false, false);
                                 nearby.potionEffects.add("minecraft:slowness", slowTicks, slowAmp, false, false);
+                                nearby.addTag('Opticoid.FrozenTarget');
+                                palladium.superpowers.addSuperpower(nearby, "omni_extras:not_aliens/adaptive_effects");
+
                         });
                 } catch (e) {    
                 }

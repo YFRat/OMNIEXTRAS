@@ -56,6 +56,7 @@
       "hidden": true,
       "first_tick_commands": [
         "tag @s add Electrocuted",
+        "particle minecraft:crit ~ ~2 ~ 0.3 0.2 0.1 1 30",
         "effect give @s omni_extras:electrocuted 12 1 true"
       ],
       "last_tick_commands": [
