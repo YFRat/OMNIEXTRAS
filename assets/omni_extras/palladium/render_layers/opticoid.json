@@ -957,6 +957,77 @@
           }
         }
       }
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_110/badge_hell_xelu.geo.json"
+      },
+      "texture": {
+        "base": "hellforged:textures/models/xelu_badge/badge_xelu.png"
+      },
+      "conditions":[
+      {
+        "type": "palladium:ability_unlocked",
+        "power": "hellforged:do_not_remove",
+        "ability": "dummy_for_badge"
+      }
+    ]
+    },
+    {
+      "type": "geckolib:default",
+      "render_type": "glow",
+      "model": {
+        "base": "omni_extras:geo/aliens/alien_110/badge_hell_xelu.geo.json"
+      },
+      "texture": {
+        "base": "hellforged:textures/models/xelu_badge/badge_glow_default_xelu_#BD.png",
+      "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_1",   
+            "filter": "#ff0000",   
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_2",
+            "filter": "#ec0404",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_3",
+            "filter": "#c80808",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "BD": {
+            "type": "palladium:objective_score",
+            "objective": "HellForged.BadgeState"
+          },
+          "GLOW_1": {
+            "type": "palladium:string_property",
+            "property": "xelu_glow_color_1"
+          },
+          "GLOW_2": {
+            "type": "palladium:string_property",
+            "property": "xelu_glow_color_2"
+          },
+          "GLOW_3": {
+            "type": "palladium:string_property",
+            "property": "xelu_glow_color_3"
+          }
+        }
+      },
+      "conditions":[
+        {
+          "type": "palladium:ability_unlocked",
+          "power": "hellforged:do_not_remove",
+          "ability": "dummy_for_badge"
+        }
+      ]
     }
   ]
 }
