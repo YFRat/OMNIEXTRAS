@@ -255,6 +255,10 @@
                 "max_score": 0
               }
             ]
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "eye_beam_unlock"
           }
         ]
       }
@@ -292,7 +296,6 @@
             "ability": "elemental_mode_unlock"
           },
           {
-            
             "type": "palladium:or",
             "conditions": [
               {
@@ -402,16 +405,16 @@
         ]
       }
     },
-    "elemental_mode_unlock":{
+    "elemental_mode_unlock": {
       "type": "palladium:dummy",
       "title": "Element Select",
       "description": "Allows you to select eyeguy beam element or smth idk bleeeeeeeeeh",
-      "gui_position":[
+      "gui_position": [
         1,
         1.7
       ],
-      "conditions":{
-        "unlocking":[
+      "conditions": {
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "ability": "energy_bar_unlock"
@@ -724,17 +727,17 @@
         ]
       }
     },
-    "overcharge_unlock":{
+    "overcharge_unlock": {
       "type": "palladium:dummy",
       "icon": "minecraft:redstone",
       "title": "Overcharge",
       "description": "Duck You",
-      "gui_position":[
+      "gui_position": [
         -1,
         1.7
       ],
-      "conditions":{
-        "unlocking":[
+      "conditions": {
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "ability": "aoe_unlock"
@@ -749,7 +752,7 @@
         ]
       }
     },
-    "discharged_slowness":{
+    "discharged_slowness": {
       "type": "palladium:command",
       "hidden": true,
       "hidden_in_bar": true,
@@ -950,17 +953,17 @@
         ]
       }
     },
-    "aoe_unlock":{
+    "aoe_unlock": {
       "type": "palladium:dummy",
       "title": "Eye See You",
       "icon": "minecraft:lightning_rod",
       "description": "Aoe unlock motherfather",
-      "gui_position":[
+      "gui_position": [
         -1,
         1
       ],
-      "conditions":{
-        "unlocking":[
+      "conditions": {
+        "unlocking": [
           {
             "type": "palladium:ability_unlocked",
             "ability": "eyeguy_sense_unlock"
