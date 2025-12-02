@@ -3,7 +3,7 @@
     "id": "omni_extras",
     "description": "an addonpack being developed by the OmniExtras team that adds new transformations to the Omnitrix",
     "pack_format": 15,
-    "version": "1.0.5.2"
+    "version": "1.0.6"
   },
   "dependencies": {
     "common": {

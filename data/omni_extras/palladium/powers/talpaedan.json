@@ -4,6 +4,7 @@
   "energy_bars": {
     "Talpaedan.DigMeter": {
       "max": 300,
+      "auto_increase_per_tick": 1,
       "color": "#FFBF00",
       "synced_value": {
         "type": "score",
@@ -36,19 +37,23 @@
         "scale set pehkui:hitbox_width 1.9 @s",
         "scale set pehkui:eye_height 1.1 @s",
         "scale set pehkui:hitbox_height 1 @s",
+        "scale set pehkui:attack_speed 0.23",
         "scoreboard objectives add Talpaedan.XP dummy",
         "scoreboard objectives add Talpaedan.Level dummy",
         "scoreboard objectives add Talpaedan.SkillPoint dummy",
         "scoreboard objectives add Talpaedan.DigMeter dummy",
-        "scoreboard players set @s Talpaedan.DigMeter 1"
+        "scoreboard players set @s Talpaedan.DigMeter 300"
       ],
       "last_tick_commands": [
         "scale reset",
         "scale easing reset",
-        "scoreboard players set @s Talpaedan.DigMeter 1"
+        "scale set pehkui:attack_speed 1",
+        "scoreboard players set @s Talpaedan.DigMeter 0"
       ],
       "commands": [
-        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+        "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
+        "effect clear @s minecraft:poison",
+        "effect give @s minecraft:resistance 1 1 true"
       ]
     },
     "hideBody": {
@@ -167,41 +172,60 @@
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.max_health",
       "hidden": true,
-      "amount": 10
+      "amount": 40
     },
     "base_strength": {
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.attack_damage",
       "uuid": "03b40a11-e45e-4314-96ed-fe58da8ec9eb",
       "hidden": true,
-      "amount": 4,
+      "amount": 25
+    },
+    "base_knockback": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.attack_knockback",
+      "uuid": "03b40a11-e45e-4314-96ed-fe58da8ec9eb",
+      "hidden": true,
+      "amount": 7
+    },
+    "drill_hand_aim": {
+      "type": "palladium:aim",
+      "title": "Drilling",
+      "arm": "main_arm",
+      "time": 10,
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:ability_enabled",
-                "power": "null",
-                "ability": "drill_mode"
-              }
-            ]
+            "type": "palladium:held",
+            "needs_empty_hand": true,
+            "key_type": "right_click"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "drill_mode"
           }
         ]
       }
     },
-    "drill_mode_dmg": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "minecraft:generic.attack_damage",
-      "uuid": "ebf4bce2-83f6-47b7-bfb1-542c06c3fbe7",
+    "drill_damage": {
+      "type": "palladium:command",
       "hidden": true,
-      "amount": 13,
+      "commands": [
+        "execute as @e[distance=1..5, limit=1, sort=nearest] at @s run damage @s 5 omni_extras:armodrillo_drill"
+      ],
       "conditions": {
         "enabling": [
           {
+            "type": "palladium:interval",
+            "active_ticks": 1,
+            "disabled_ticks": 1
+          },
+          {
             "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "drill_mode"
+            "ability": "drill_hand_aim"
           }
         ]
       }
@@ -244,12 +268,6 @@
           }
         ]
       }
-    },
-    "reach_distance": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "forge:reach_distance",
-      "hidden": true,
-      "amount": 4
     },
     "destroy_speed_upgrade1": {
       "type": "palladium:attribute_modifier",
@@ -304,7 +322,7 @@
       "attribute": "minecraft:generic.armor",
       "uuid": "bee30623-4e5a-4e3f-a8b3-f9a1fbdc2c1c",
       "hidden": true,
-      "amount": 35
+      "amount": 23
     },
     "explosion_immune": {
       "type": "palladium:damage_immunity",
@@ -330,7 +348,7 @@
       "type": "palladium:attribute_modifier",
       "attribute": "minecraft:generic.armor_toughness",
       "hidden": true,
-      "amount": 30
+      "amount": 15
     },
     "earthquake_tag": {
       "type": "palladium:command",
@@ -513,20 +531,20 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "maxRange": 8,
+      "maxRange": 10,
       "waveDelay": 2,
       "enableVisuals": true,
       "isDestructionEnabled": true,
-      "lineWidth": 6,
-      "damageAmount": 15,
-      "knockbackStrength": 0.1,
+      "lineWidth": 8,
+      "damageAmount": 10,
+      "knockbackStrength": 0.09,
       "conditions": {
         "enabling": [
           {
             "type": "palladium:animation_timer_ability",
             "ability": "line_quake_generation",
             "min": 3,
-            "max": 3
+            "max": 10
           }
         ]
       }
@@ -916,6 +934,1686 @@
             "type": "palladium:toggle",
             "cooldown": 0,
             "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "dig_motion": {
+      "type": "alienevo:motion",
+      "bar_color": "orange",
+      "title": {
+        "translate": "ability.alienevo_aliens.2.bite"
+      },
+      "icon": "alienevo:textures/gui/aliens/alien_2/bite.png",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 5,
+      "motion": 0.4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "key_type": "key_bind"
+          },
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~-1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~ ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~ ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~ ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~ ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~1 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~1 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~1 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~1 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~2 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~2 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~2 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~2 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~3 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~3 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~3 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~3 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-3 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-2 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~-1 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~0 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~1 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~2 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~4 ~ #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~4 ~1 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~4 ~2 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              },
+              {
+                "type": "palladium:command_result",
+                "command": "execute if block ~3 ~4 ~3 #omni_extras:burrowing",
+                "comparison": "==",
+                "compare_to": 1,
+                "log": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dig_destruction": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:burrowing_destruction"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "dig_motion"
+          }
+        ]
+      }
+    },
+    "dig_destruction_down": {
+      "type": "palladium:command",
+      "hidden": false,
+      "bar_color": "orange",
+      "title": {
+        "translate": "ability.alienevo_aliens.2.bite"
+      },
+      "icon": "alienevo:textures/gui/aliens/alien_2/bite.png",
+      "hidden_in_bar": false,
+      "list_index": 5,
+      "commands": [
+        "function omni_extras:burrowing"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:crouching"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "dig_destruction"
+              }
+            ]
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
+    "flipping_him": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scale set pehkui:hitbox_height 0.5"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "dig_motion"
+          }
+        ]
+      }
+    },
+    "thing_for_animation": {
+      "type": "palladium:command",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "commands": [
+        "scale set pehkui:hitbox_height 1",
+        "scale set pehkui:step_height 1"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_last_tick",
+            "ability": "flipping_him"
           }
         ]
       }

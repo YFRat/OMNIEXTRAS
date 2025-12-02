@@ -30,8 +30,7 @@
       ],
       "first_tick_commands": [
         "scale set pehkui:hitbox_width 1.1 @s",
-        "tag @s add omni_extras.Flattable",
-        "tag @s add Perk.Obtained",
+        "tag @s add Upchuck.Flattable",
         "advancement grant @s only omni_extras:gourmandunlock",
         "scale set pehkui:drops 1.5 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
@@ -39,12 +38,12 @@
         "scoreboard objectives add Perkgourmand.XP dummy",
         "scoreboard objectives add Perkgourmand.Level dummy",
         "scoreboard objectives add Perkgourmand.SkillPoint dummy",
-        "tag @s add omni_extras",
+        "tag @s add Perk",
         "scoreboard players set @s Gourmand.Swallow 0"
       ],
       "last_tick_commands": [
-        "tag @s remove omni_extras.Flattable",
-        "tag @s remove omni_extras",
+        "tag @s remove Upchuck.Flattable",
+        "tag @s remove Murk",
         "superpower remove omni_extras:not_aliens/foodpoisoned @s",
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",
@@ -88,8 +87,7 @@
       "gui_position": "null",
       "description": "null",
       "damage_sources": [
-        "minecraft:is_explosion",
-        "minecraft:is_fall"
+        "minecraft:is_explosion"
       ]
     },
     "hunger": {

@@ -16,18 +16,17 @@ BlockEvents.rightClicked(event => {
     }
 });
 
-ItemEvents.rightClicked(e =>{
+ItemEvents.rightClicked('omni_extras:opticoid_vial', e =>{
     const item = e.item;
     const player = e.player;
-    if (item.id === 'omni_extras:opticoid_vial') {
-        if (hasOmnitrix(player) && !hasAlien(player, 110)) {
-            item.count--;
-            player.runCommandSilent('function omni_extras:vialgrant');
+  
+    if (hasOmnitrix(player) && !hasAlien(player, 110)) {
+        item.count--;
+        player.runCommandSilent('function omni_extras:vialgrant');
       }
-        else {
-          player.tell(Text.red("§lNothing happened"));
-          player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.note_block.bass", "master", 10, 0.1)
-      }
+    else if (hasOmnitrix(player) && hasAlien(player, 110)) {
+        player.tell(Text.red("§lNothing happened"));
+        player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.note_block.bass", "master", 10, 0.1)
     }
 });
 

@@ -53,8 +53,8 @@
             "ability": "flatten_timer"
           },
           {
-                    "type": "palladium:has_tag",
-                    "tag": "Upchuck.Flattable"
+            "type": "palladium:has_tag",
+            "tag": "Upchuck.Flattable"
           },
           {
             "type": "palladium:animation_timer_ability",
@@ -93,7 +93,6 @@
         ""
       ],
       "commands": [
-        "effect give @s minecraft:slowness 1 3 true",
         "effect give @s minecraft:weakness 1 3 true"
       ],
       "conditions": {
@@ -212,7 +211,7 @@
         "scale divide pehkui:hitbox_width 1.5",
         "tag @s remove AlienEvo.Flatten",
         "effect clear @s alienevo:flatten",
-        "superpower remove upchuck:flatten_modified @s"
+        "superpower remove omni_extras:not_aliens/flatten_modified @s"
       ],
       "conditions": {
         "enabling": [
@@ -220,14 +219,14 @@
             "type": "palladium:ability_enabled",
             "ability": "flatten_timer"
           },
-           {
-                    "type": "palladium:has_tag",
-                    "tag": "Upchuck.Flattable"
+          {
+            "type": "palladium:has_tag",
+            "tag": "Upchuck.Flattable"
           },
           {
-                    "type": "palladium:has_tag",
-                    "tag": "AlienEvo.Flatten"
-                  },
+            "type": "palladium:has_tag",
+            "tag": "AlienEvo.Flatten"
+          },
           {
             "type": "palladium:animation_timer_ability",
             "ability": "flatten_timer",
