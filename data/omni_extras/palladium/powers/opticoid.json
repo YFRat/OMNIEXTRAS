@@ -288,6 +288,11 @@
         ],
         "unlocking": [
           {
+            "type": "palladium:ability_unlocked",
+            "ability": "elemental_mode_unlock"
+          },
+          {
+            
             "type": "palladium:or",
             "conditions": [
               {
@@ -393,6 +398,30 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "element_select"
+          }
+        ]
+      }
+    },
+    "elemental_mode_unlock":{
+      "type": "palladium:dummy",
+      "title": "Element Select",
+      "description": "Allows you to select eyeguy beam element or smth idk bleeeeeeeeeh",
+      "gui_position":[
+        1,
+        1.7
+      ],
+      "conditions":{
+        "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "energy_bar_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Opticoid.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+            "description": "§eOpticoid Skill Point"
           }
         ]
       }
@@ -677,6 +706,10 @@
         ],
         "unlocking": [
           {
+            "type": "palladium:ability_unlocked",
+            "ability": "overcharge_unlock"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -691,7 +724,32 @@
         ]
       }
     },
-    "discharged_slowness": {
+    "overcharge_unlock":{
+      "type": "palladium:dummy",
+      "icon": "minecraft:redstone",
+      "title": "Overcharge",
+      "description": "Duck You",
+      "gui_position":[
+        -1,
+        1.7
+      ],
+      "conditions":{
+        "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "aoe_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Opticoid.SkillPoint",
+            "score": 2,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+            "description": "§eOpticoid Skill Point"
+          }
+        ]
+      }
+    },
+    "discharged_slowness":{
       "type": "palladium:command",
       "hidden": true,
       "hidden_in_bar": true,
@@ -798,6 +856,10 @@
             "max_score": 2
           },
           {
+            "type": "palladium:ability_unlocked",
+            "ability": "aoe_unlock"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -831,6 +893,10 @@
             "objective": "Opticoid.ElementSelect",
             "min_score": 0,
             "max_score": 0
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "aoe_unlock"
           },
           {
             "type": "palladium:not",
@@ -869,6 +935,10 @@
             "max_score": 1
           },
           {
+            "type": "palladium:ability_unlocked",
+            "ability": "aoe_unlock"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -876,6 +946,31 @@
                 "tag": "Opticoid.Discharged"
               }
             ]
+          }
+        ]
+      }
+    },
+    "aoe_unlock":{
+      "type": "palladium:dummy",
+      "title": "Eye See You",
+      "icon": "minecraft:lightning_rod",
+      "description": "Aoe unlock motherfather",
+      "gui_position":[
+        -1,
+        1
+      ],
+      "conditions":{
+        "unlocking":[
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "eyeguy_sense_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Opticoid.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
+            "description": "§eOpticoid Skill Point"
           }
         ]
       }
@@ -1013,10 +1108,6 @@
           }
         ],
         "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "eye_beam_unlock"
-          },
           {
             "type": "palladium:objective_score",
             "objective": "Opticoid.ElementSelect",
@@ -1504,90 +1595,6 @@
         ]
       }
     },
-    "surface_climbing_new": {
-      "type": "alienevo:wall_climb",
-      "climb_speed": 0.1,
-      "data_name": "climb",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 1,
-      "icon": "alienevo:textures/gui/misc/climb.png",
-      "title": "Climb",
-      "bar_color": "orange",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-            "needs_empty_hand": false,
-            "key_type": "key_bind"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "climb_unlock"
-          },
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_tag",
-                "tag": "Opticoid.Discharged"
-              }
-            ]
-          },
-          {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:crouching"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "power": "null",
-                "ability": "surface_climbing_new"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "climb_unlock": {
-      "type": "palladium:dummy",
-      "icon": "alienevo:textures/gui/misc/climb.png",
-      "title": {
-        "translate": "ability.alienevo_aliens.2.climb"
-      },
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        -1,
-        2
-      ],
-      "description": {
-        "translate": "desc.alienevo_aliens.2.climb"
-      },
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "defense1_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": {
-              "translate": "§eOpticoid Skill Point"
-            }
-          }
-        ]
-      }
-    },
     "leap_unlock": {
       "type": "palladium:dummy",
       "icon": "alienevo:textures/gui/aliens/alien_2/leap.png",
@@ -1629,7 +1636,7 @@
       "list_index": -1,
       "gui_position": [
         0,
-        2.4
+        1.7
       ],
       "conditions": {
         "unlocking": [
@@ -1645,7 +1652,7 @@
           {
             "type": "palladium:ability_unlocked",
             "power": "null",
-            "ability": "eyeguy_sense_unlock"
+            "ability": "shoulder_beams_unlock"
           }
         ]
       }
@@ -1660,7 +1667,7 @@
       "list_index": -1,
       "gui_position": [
         0,
-        3.1
+        2.5
       ],
       "conditions": {
         "unlocking": [
@@ -1696,35 +1703,6 @@
         ]
       }
     },
-    "defense1_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:iron_chestplate",
-      "title": "Defense §a+2",
-      "uuid": "698bcba6-7092-4386-b544-66d71134b882",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        -1,
-        1
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "fire_beam_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
     "ice_beam": {
       "type": "palladium:aim",
       "title": "Freeze Beam",
@@ -1747,11 +1725,6 @@
           }
         ],
         "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "freeze_beam_unlock"
-          },
           {
             "type": "palladium:objective_score",
             "objective": "Opticoid.ElementSelect",
@@ -1850,36 +1823,6 @@
         ]
       }
     },
-    "freeze_beam_unlock": {
-      "type": "palladium:dummy",
-      "icon": "#omni_extras:opticoid/ice_beam",
-      "title": "Freeze-Beam",
-      "uuid": "97fcdc16-dd51-4c04-bdbd-d4c530e1aed1",
-      "description": "Shoot out a §bfreezing§r §aLaser§r §ffrom your §aHand-Eyes",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        1,
-        2
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "energy_bar_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
-          }
-        ]
-      }
-    },
     "energy_bar_unlock": {
       "type": "palladium:dummy",
       "icon": "#omni_extras:opticoid/energy",
@@ -1942,8 +1885,8 @@
       "hidden": false,
       "list_index": -1,
       "gui_position": [
-        0,
-        1.7
+        -0.5,
+        0.5
       ],
       "conditions": {
         "unlocking": [
@@ -2066,11 +2009,6 @@
             "max_score": 1
           },
           {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "fire_beam_unlock"
-          },
-          {
             "type": "palladium:energy_bar",
             "energy_bar": "energy_meter",
             "min": 300
@@ -2091,35 +2029,6 @@
                 "tag": "Opticoid.Discharged"
               }
             ]
-          }
-        ]
-      }
-    },
-    "fire_beam_unlock": {
-      "type": "palladium:dummy",
-      "icon": "#omni_extras:opticoid/fire_beam",
-      "title": "Fire-Beam",
-      "description": "Shoot out a §4burning§r §aLaser§r §ffrom your §aHand-Eyes",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        -0.5,
-        0.5
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "opticoid_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Opticoid.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_110.png",
-            "description": "§eOpticoid Skill Point"
           }
         ]
       }
