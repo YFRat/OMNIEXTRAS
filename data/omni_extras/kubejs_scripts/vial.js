@@ -55,3 +55,18 @@ function hasAlien(player, alienId) {
   }
   return false; //made by the goat beans
 }
+
+/*ItemEvents.rightClicked('omni_extras:opticoid_slime', e =>{
+    const item = e.item;
+    const player = e.player;
+  
+    let omnitrixId = getOmnitrixId(player);
+  
+    if (hasOmnitrix(player)) {
+      item.count--;
+      palladium.setProperty(player, `omnitrix_cycle`, 110);
+      player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_transform", "players", 10, 1)
+      player.runCommandSilent(`superpower replace ${omnitrixId} omni_extras:opticoid @s`);
+      player.runCommandSilent('superpower add alienevo:transform_bubble @s');
+  }
+}); */

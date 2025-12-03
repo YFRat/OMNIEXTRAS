@@ -42,13 +42,15 @@
         "scoreboard objectives add Talpaedan.Level dummy",
         "scoreboard objectives add Talpaedan.SkillPoint dummy",
         "scoreboard objectives add Talpaedan.DigMeter dummy",
-        "scoreboard players set @s Talpaedan.DigMeter 300"
+        "scoreboard players set @s Talpaedan.DigMeter 300",
+        "tag @s add Talpaedan"
       ],
       "last_tick_commands": [
         "scale reset",
         "scale easing reset",
         "scale set pehkui:attack_speed 1",
-        "scoreboard players set @s Talpaedan.DigMeter 0"
+        "scoreboard players set @s Talpaedan.DigMeter 0",
+        "tag @s remove Talpaedan"
       ],
       "commands": [
         "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1",
@@ -214,7 +216,7 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-        "execute as @e[distance=1..5, limit=1, sort=nearest] at @s run damage @s 5 omni_extras:armodrillo_drill"
+        "execute as @e[distance=1..5, limit=1, sort=nearest] at @s run damage @s 6 omni_extras:armodrillo_drill"
       ],
       "conditions": {
         "enabling": [
@@ -2585,13 +2587,23 @@
       "type": "palladium:command",
       "hidden": true,
       "commands": [
-        "scale set pehkui:hitbox_height 0.5"
+        "scale set pehkui:hitbox_height 0.3",
+        "scale set pehkui:hitbox_width 0.5"
       ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:ability_enabled",
-            "ability": "dig_motion"
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "dig_motion"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "drill_js_test"
+              }
+            ]
           }
         ]
       }
@@ -2607,13 +2619,23 @@
       "list_index": -1,
       "commands": [
         "scale set pehkui:hitbox_height 1",
-        "scale set pehkui:step_height 1"
+        "scale set pehkui:step_height 1",
+        "scale set pehkui:hitbox_width 1.9"
       ],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:ability_last_tick",
-            "ability": "flipping_him"
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:ability_last_tick",
+                "ability": "flipping_him"
+              },
+              {
+                "type": "palladium:ability_last_tick",
+                "ability": "drill_js_test"
+              }
+            ]
           }
         ]
       }
@@ -2683,6 +2705,59 @@
         "enabling": [
           {
             "type": "palladium:in_water"
+          }
+        ]
+      }
+    },
+    "drill_js_test": {
+      "type": "omni_extras:burrow_destroy",
+      "icon": "minecraft:iron_shovel",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 6,
+      "distance": 6,
+      "debug": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ]
+      }
+    },
+    "burrow_dmg": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "execute as @e[distance=..4, tag=!Talpaedan, sort=nearest] at @s run damage @s 5 minecraft:fly_into_wall"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "drill_js_test"
+          }
+        ]
+      }
+    },
+    "drill_js_motion": {
+      "type": "alienevo:motion",
+      "bar_color": "orange",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "motion": 0.4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "drill_js_test"
           }
         ]
       }

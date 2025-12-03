@@ -1,0 +1,10 @@
+{
+	"exhaustion": 0,
+ 	"message_id": "drilled",
+ 	"effects": "hurt",
+	"scaling": "never",
+	"bypasses_shield": true,
+	"bypasses_cooldown": true, 
+	"bypasses_armor":true
+	
+}

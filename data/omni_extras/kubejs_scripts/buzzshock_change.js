@@ -40,29 +40,19 @@ function hasAlien(player, alienId) {
   return false; //made by the goat beans
 }
 
-function getWatchPrefix(entity){
-  var raw = palladium.getProperty(entity, 'watch');
-  var s = toJsString(raw);
-  if(!s) return 'xelu';
-  s = s.trim().toLowerCase().replace(/[^a-z0-9_]/g, '');
-  return s || 'xelu';
-}
-
 EntityEvents.hurt(event => {
-    let player = event.entity
+  let player = event.entity
+  let watchId = palladium.getProperty(player, 'watch');
     
-    if (hasOmnitrix(player), hasAlien(player, 299)) return;
     if (hasOmnitrix(player), !hasAlien(player, 299), event.source == 'DamageSource (lightningBolt)' && player.isPlayer() && hasOmnitrix(player)) {
         let omnitrixId = getOmnitrixId(player);
 
         palladium.setProperty(player, 'omnitrix_cycle', 299)
-        player.level.playSound(null, player.x, player.y, player.z, `alienevo:prototype_transform`, "players", 10, 1)
-        player.extinguish()
+        player.level.playSound(null, player.x, player.y, player.z, `alienevo:${watchId}_transform`, "players", 10, 1)
         player.level.playSound(null, player.x, player.y, player.z, "omni_extras:laugh", "players", 10, 1)
-        player.runCommandSilent(`alienautoadd ${player.name.string} omni_extras:nosedeenian`)
+        player.runCommandSilent(`function omni_extras:nosedeenian_obtain`)
         player.runCommandSilent(`superpower replace ${omnitrixId} omni_extras:nosedeenian ${player.name.string}`);
-        player.runCommandSilent(`effect give ${player.name.string} minecraft:fire_resistance 15 1 true`);
-        player.runCommandSilent(`superpower add alienevo:transform_bubble ${player.name.string}`);
+        player.extinguish()
     }   
 
 })
