@@ -9,19 +9,19 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_2",
-            "filter": "#c1be55", 
+            "filter": "#b2ad68", 
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_3",
-            "filter": "#aaa73e", 
+            "filter": "#918954", 
             "ignore_blank": true
           },
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_4",
-            "filter": "#8d8b34",
+            "filter": "#7a6f45",
             "ignore_blank": true
           },
           {
@@ -81,7 +81,7 @@
           {
             "type": "palladium:color",
             "color": "##SKIN_PROTO_P2_9",
-            "filter": "#3c3525",
+            "filter": "#3e3625",
             "ignore_blank": true
           },
          {
