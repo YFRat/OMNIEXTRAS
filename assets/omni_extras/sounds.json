@@ -80,7 +80,13 @@
   "scanning": {
     "category": "player",
     "sounds": [
-      "omni_extras:scan_sound"
+      "omni_extras:proto_scan"
+    ]
+  },
+  "recal_scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:recal_scan"
     ]
   }
 }

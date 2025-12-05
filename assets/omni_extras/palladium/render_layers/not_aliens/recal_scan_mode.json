@@ -1,0 +1,18 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "geckolib:default",
+      "model": "alienevo:geo/recal_omnitrix.geo.json",
+      "texture": "alienevo:textures/models/recal_omnitrix/recal.png"
+    },
+    {
+      "type": "geckolib:default",
+      "model": "alienevo:geo/recal_omnitrix.geo.json",
+      "texture": {
+        "base": "omni_extras:textures/models/glow/watch/glow_scan.png"
+      },
+      "render_type": "glow"
+    }
+  ]
+}

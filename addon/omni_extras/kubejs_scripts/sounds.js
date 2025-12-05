@@ -13,4 +13,5 @@ StartupEvents.registry('sound_event', event => {
     event.create("omni_extras:sonic_laugh");
     event.create("omni_extras:laugh");
     event.create("omni_extras:scanning");
+    event.create("omni_extras:recal_scanning");
 })
