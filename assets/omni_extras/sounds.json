@@ -1,58 +1,86 @@
 {
-    "eyebeam": {
+  "eyebeam": {
     "category": "player",
-    "sounds": ["omni_extras:eyebeam"]
+    "sounds": [
+      "omni_extras:eyebeam"
+    ]
   },
-    "stalk": {
+  "stalk": {
     "category": "player",
-    "sounds": ["omni_extras:stalk"]
+    "sounds": [
+      "omni_extras:stalk"
+    ]
   },
   "openeye": {
     "category": "player",
-    "sounds": ["omni_extras:openeye"]
+    "sounds": [
+      "omni_extras:openeye"
+    ]
   },
-   "otherbeam": {
+  "otherbeam": {
     "category": "player",
-    "sounds": ["omni_extras:otherbeam"]
+    "sounds": [
+      "omni_extras:otherbeam"
+    ]
   },
   "swallow": {
     "category": "player",
-    "sounds": ["omni_extras:swallow"]
-    },
-    "blast": {
+    "sounds": [
+      "omni_extras:swallow"
+    ]
+  },
+  "blast": {
     "category": "player",
-    "sounds": ["omni_extras:blast"]
-    },
-    "chomp": {
+    "sounds": [
+      "omni_extras:blast"
+    ]
+  },
+  "chomp": {
     "category": "player",
-    "sounds": ["omni_extras:chomp"]
-    },
-    "whip": {
+    "sounds": [
+      "omni_extras:chomp"
+    ]
+  },
+  "whip": {
     "category": "player",
-    "sounds": ["omni_extras:whip"]
-    },
-    "gangsta": {
+    "sounds": [
+      "omni_extras:whip"
+    ]
+  },
+  "gangsta": {
     "category": "player",
-    "sounds": ["omni_extras:gangsta"]
-    },
-    "grumble": {
+    "sounds": [
+      "omni_extras:gangsta"
+    ]
+  },
+  "grumble": {
     "category": "player",
-    "sounds": ["omni_extras:grumble"]
-    },
-    "release": {
+    "sounds": [
+      "omni_extras:grumble"
+    ]
+  },
+  "release": {
     "category": "player",
-    "sounds": ["omni_extras:release"]
-    },
-    "laugh": {
-      "category": "player",
-      "sounds": [
-        "omni_extras:laugh"
-      ]
-    },
-    "sonic_laugh": {
-      "category": "player",
-      "sounds": [
-        "omni_extras:sonic_laugh"
-      ]
-    }
+    "sounds": [
+      "omni_extras:release"
+    ]
+  },
+  "laugh": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:laugh"
+    ]
+  },
+  "sonic_laugh": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:sonic_laugh"
+    ]
+  },
+  "scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:scan_sound"
+    ]
+  }
 }

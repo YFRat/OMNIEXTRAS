@@ -1443,7 +1443,7 @@
     "render_layer": {
       "type": "palladium:render_layer",
       "hidden": true,
-      "render_layer": "omni_extras:aliens/alien_299/nosedeenian",
+      "render_layer": "omni_extras:nosedeenian",
       "conditions":{
         "enabling":[
           {

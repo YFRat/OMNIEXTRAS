@@ -36,11 +36,11 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
     if (!AnyGourmands) {
         player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
 
-    const roll = Math.floor(Math.random() * 2) + 1;
+        const roll = Math.floor(Math.random() * 2) + 1;
         if (roll === 1) {
-        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
         } else {
-        palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
         }
     } else if (hasPerk) {
         player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
@@ -52,35 +52,35 @@ ItemEvents.entityInteracted('omni_extras:mysterious_tablet', e => {
     item.count--;
     if (!palladium.superpowers.hasSuperpower(player, "aeo:omniverse_omnitrix"))
         player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_master_control", "master", 10, 1)
-    else 
+    else
         player.level.playSound(null, player.x, player.y, player.z, "alienevo:omniverse_master_control", "master", 10, 1)
 });
 
 function hasOmnitrix(player) {
-  let currentPowers = palladium.powers.getPowerIds(player);
-  if (currentPowers && currentPowers.length > 0) {
-    for (let powerId of currentPowers) {
-      let powerIdStr = String(powerId).toLowerCase();
-      if (powerIdStr.includes('omnitrix')) {
-        return true;
-      }
+    let currentPowers = palladium.powers.getPowerIds(player);
+    if (currentPowers && currentPowers.length > 0) {
+        for (let powerId of currentPowers) {
+            let powerIdStr = String(powerId).toLowerCase();
+            if (powerIdStr.includes('omnitrix')) {
+                return true;
+            }
+        }
     }
-  }
-  
-  return false; //made by the goat beans
+
+    return false; //made by the goat beans
 }
 
 function hasAlien(player, alienId) {
-  for (let playlist = 1; playlist <= 10; playlist++) {
-    for (let slot = 1; slot <= 10; slot++) {
-      let alienKey = `alienevo.alien_${playlist}_${slot}`;
-      let storedAlienId = player.persistentData.getInt(alienKey);
-      if (storedAlienId === alienId) {
-        return true;
-      }
+    for (let playlist = 1; playlist <= 10; playlist++) {
+        for (let slot = 1; slot <= 10; slot++) {
+            let alienKey = `alienevo.alien_${playlist}_${slot}`;
+            let storedAlienId = player.persistentData.getInt(alienKey);
+            if (storedAlienId === alienId) {
+                return true;
+            }
+        }
     }
-  }
-  return false; //made by the goat beans
+    return false; //made by the goat beans
 }
 EntityEvents.hurt(event => {
     let entity = event.entity;
@@ -93,10 +93,10 @@ EntityEvents.hurt(event => {
                 entity.level.playSound(null, entity.x, entity.y, entity.z, "minecraft:entity.witch.hurt", "master", 1, 1.3)
             }
             event.server.scheduleInTicks(1, () => {
-            if (entity.health === 0) {
-                entity.level.playSound(null, entity.x, entity.y, entity.z, "minecraft:entity.witch.death", "master", 1, 1.7)
-            }
-        });
+                if (entity.health === 0) {
+                    entity.level.playSound(null, entity.x, entity.y, entity.z, "minecraft:entity.witch.death", "master", 1, 1.7)
+                }
+            });
         });
     }
 });

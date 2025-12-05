@@ -19,6 +19,7 @@
         "Talpaedan.XP",
         "Talpaedan.Level",
         "Talpaedan.SkillPoint",
-        "Talpaedan.DigMeter"
+        "Talpaedan.DigMeter",
+        "OmniExtras.ScanMode"
     ]
 }

@@ -21,12 +21,16 @@ ItemEvents.rightClicked('omni_extras:opticoid_vial', e =>{
     const player = e.player;
   
     if (hasOmnitrix(player) && !hasAlien(player, 110)) {
-        item.count--;
-        player.runCommandSilent('function omni_extras:vialgrant');
+      item.count--;
+      palladium.superpowers.removeSuperpower(player, "alienevo:prototype_omnitrix");
+      palladium.superpowers.addSuperpower(player, "omni_extras:not_aliens/scan_mode");
+      player.addTag('Opticoid.Grant');
+      player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.glass.break", "players", 6, 1.2);
+      player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_core_place", "players", 6, 1);
       }
     else if (hasOmnitrix(player) && hasAlien(player, 110)) {
         player.tell(Text.red("§lNothing happened"));
-        player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.note_block.bass", "master", 10, 0.1)
+        player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.note_block.bass", "players", 6, 0.1)
     }
 });
 
