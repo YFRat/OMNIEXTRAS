@@ -58,6 +58,7 @@ StartupEvents.registry('palladium:abilities', event => {
 
                 let id = block.getId();
                 if (id === 'minecraft:air') continue;
+                if (block.hasTag("alienevo:unminable")) return;
 
                 entity.level.destroyBlock(bp, true);
             }

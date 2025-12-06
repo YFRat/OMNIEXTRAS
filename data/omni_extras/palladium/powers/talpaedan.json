@@ -213,20 +213,20 @@
       }
     },
     "drill_damage": {
-    "type": "palladium:energy_beam",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "energy_beam": "omni_extras:doesnt_exist",
-    "damage_type": "omni_extras:armodrillo_drill",
-    "damage": 8,
-    "max_distance": 8,
-    "speed": 0.5,
-    "set_on_fire_seconds": 0,
-    "cause_fire": false,
-    "smelt_blocks": false,
-    "commands_on_block_hit": [],
-    "commands_on_entity_hit": [],
+      "type": "palladium:energy_beam",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "energy_beam": "omni_extras:doesnt_exist",
+      "damage_type": "omni_extras:armodrillo_drill",
+      "damage": 8,
+      "max_distance": 8,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [],
+      "commands_on_entity_hit": [],
       "conditions": {
         "enabling": [
           {
@@ -949,22 +949,200 @@
         ]
       }
     },
-    "dig_motion": {
-      "type": "alienevo:motion",
+    "dig_destruction": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "function omni_extras:burrowing_destruction"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "dig_motion"
+          }
+        ]
+      }
+    },
+    "dig_destruction_down": {
+      "type": "palladium:command",
+      "hidden": false,
       "bar_color": "orange",
       "title": {
         "translate": "ability.alienevo_aliens.2.bite"
       },
       "icon": "alienevo:textures/gui/aliens/alien_2/bite.png",
-      "hidden": true,
       "hidden_in_bar": false,
       "list_index": 5,
-      "motion": 0.4,
+      "commands": [
+        "function omni_extras:burrowing"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:crouching"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "dig_destruction"
+              }
+            ]
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
+    "flipping_him": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "scale set pehkui:hitbox_height 0.3",
+        "scale set pehkui:hitbox_width 0.5"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "dig_motion"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "drill_js_test"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "thing_for_animation": {
+      "type": "palladium:command",
+      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "commands": [
+        "scale set pehkui:hitbox_height 1",
+        "scale set pehkui:step_height 1",
+        "scale set pehkui:hitbox_width 1.9"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:ability_last_tick",
+                "ability": "flipping_him"
+              },
+              {
+                "type": "palladium:ability_last_tick",
+                "ability": "drill_js_test"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "drill_mode_speed1_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:diamond_pickaxe",
+      "title": "Mining Speed §a+1",
+      "hidden_in_bar": true,
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0,
+        2
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "talpaedan_loop"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Talpaedan.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_190.png",
+            "description": "§eTalpaedan Skill Point"
+          }
+        ]
+      }
+    },
+    "drill_mode_speed2_unlock": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:diamond_pickaxe",
+      "title": "Mining Speed §a+1",
+      "hidden_in_bar": true,
+      "hidden": false,
+      "list_index": -1,
+      "gui_position": [
+        0,
+        3
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "drill_mode_speed1_unlock"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "Talpaedan.SkillPoint",
+            "score": 1,
+            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_190.png",
+            "description": "§eTalpaedan Skill Point"
+          }
+        ]
+      }
+    },
+    "Gravity_water": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "forge:swim_speed",
+      "amount": -0.8,
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:in_water"
+          }
+        ]
+      }
+    },
+    "drill_js_test": {
+      "type": "omni_extras:burrow_destroy",
+      "icon": "minecraft:iron_shovel",
+      "title": {
+        "translate": "ability.talpaedan.burrow_rumble"
+      },
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 6,
+      "distance": 6,
+      "debug": true,
       "conditions": {
         "enabling": [
           {
             "type": "palladium:held",
-            "key_type": "key_bind"
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
           },
           {
             "type": "palladium:or",
@@ -2538,204 +2716,6 @@
                 "log": false
               }
             ]
-          }
-        ]
-      }
-    },
-    "dig_destruction": {
-      "type": "palladium:command",
-      "hidden": true,
-      "commands": [
-        "function omni_extras:burrowing_destruction"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "dig_motion"
-          }
-        ]
-      }
-    },
-    "dig_destruction_down": {
-      "type": "palladium:command",
-      "hidden": false,
-      "bar_color": "orange",
-      "title": {
-        "translate": "ability.alienevo_aliens.2.bite"
-      },
-      "icon": "alienevo:textures/gui/aliens/alien_2/bite.png",
-      "hidden_in_bar": false,
-      "list_index": 5,
-      "commands": [
-        "function omni_extras:burrowing"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:and",
-            "conditions": [
-              {
-                "type": "palladium:crouching"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "dig_destruction"
-              }
-            ]
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:crouching"
-          }
-        ]
-      }
-    },
-    "flipping_him": {
-      "type": "palladium:command",
-      "hidden": true,
-      "commands": [
-        "scale set pehkui:hitbox_height 0.3",
-        "scale set pehkui:hitbox_width 0.5"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "dig_motion"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "drill_js_test"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "thing_for_animation": {
-      "type": "palladium:command",
-      "icon": "omni_extras:textures/gui/aliens/alien_190/rumble.png",
-      "title": {
-        "translate": "ability.talpaedan.burrow_rumble"
-      },
-      "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "commands": [
-        "scale set pehkui:hitbox_height 1",
-        "scale set pehkui:step_height 1",
-        "scale set pehkui:hitbox_width 1.9"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:ability_last_tick",
-                "ability": "flipping_him"
-              },
-              {
-                "type": "palladium:ability_last_tick",
-                "ability": "drill_js_test"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "drill_mode_speed1_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:diamond_pickaxe",
-      "title": "Mining Speed §a+1",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0,
-        2
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "talpaedan_loop"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Talpaedan.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_190.png",
-            "description": "§eTalpaedan Skill Point"
-          }
-        ]
-      }
-    },
-    "drill_mode_speed2_unlock": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:diamond_pickaxe",
-      "title": "Mining Speed §a+1",
-      "hidden_in_bar": true,
-      "hidden": false,
-      "list_index": -1,
-      "gui_position": [
-        0,
-        3
-      ],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "power": "null",
-            "ability": "drill_mode_speed1_unlock"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "Talpaedan.SkillPoint",
-            "score": 1,
-            "icon": "alienevo:textures/gui/playlists/playlist_1/alien_190.png",
-            "description": "§eTalpaedan Skill Point"
-          }
-        ]
-      }
-    },
-    "Gravity_water": {
-      "type": "palladium:attribute_modifier",
-      "attribute": "forge:swim_speed",
-      "amount": -0.8,
-      "hidden": true,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:in_water"
-          }
-        ]
-      }
-    },
-    "drill_js_test": {
-      "type": "omni_extras:burrow_destroy",
-      "icon": "minecraft:iron_shovel",
-      "title": {
-        "translate": "ability.talpaedan.burrow_rumble"
-      },
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 6,
-      "distance": 6,
-      "debug": true,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:held",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": false
           }
         ]
       }
