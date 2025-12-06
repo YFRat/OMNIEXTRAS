@@ -69,12 +69,121 @@
       "list_index": -1,
       "first_tick_commands": [
         "tag @s add Scan.Looking",
+        "scoreboard objectives add OmniExtras.ScanMode dummy",
+        "scoreboard players set @s OmniExtras.ScanMode 1",
         "playsound omni_extras:recal_scanning player @s ~ ~ ~ 5 "
       ],
       "last_tick_commands": [],
       "commands": [
         ""
-      ]
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Grant"
+          }
+        ]
+      }
+    },
+    "tag_gourmand": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "tag @s add Scan.Looking",
+        "scoreboard objectives add OmniExtras.ScanMode dummy",
+        "scoreboard players set @s OmniExtras.ScanMode 2",
+        "playsound omni_extras:recal_scanning player @s ~ ~ ~ 5 "
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          }
+        ]
+      }
+    },
+    "gourmand_grant_murk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "alienautoadd @s omni_extras:murkgourmand"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Murk"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 2,
+            "max_score": 2
+          }
+        ]
+      }
+    },
+    "gourmand_grant_perk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "alienautoadd @s omni_extras:perkgourmand"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Perk"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 2,
+            "max_score": 2
+          }
+        ]
+      }
     },
     "opticoid_grant": {
       "type": "palladium:command",
@@ -99,6 +208,12 @@
             "max": 1
           },
           {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          },
+          {
             "type": "palladium:has_tag",
             "tag": "Opticoid.Grant"
           }
@@ -118,6 +233,11 @@
         "superpower replace omni_extras:not_aliens/recal_scan_mode alienevo:recal_omnitrix",
         "playsound alienevo:recal_activation player @s ~ ~ ~ 6",
         "tag @s remove Opticoid.Grant",
+        "tag @s remove Gourmand.Grant",
+        "tag @s remove First.Time",
+        "tag @s remove Variant.Perk",
+        "tag @s remove Variant.Murk",
+        "scoreboard players set @s OmniExtras.ScanMode 0",
         "tellraw @s {\"text\":\"The Omnitrix seems.. different than before\",\"bold\":true,\"italic\":true,\"color\":\"yellow\"}"
       ],
       "conditions": {
