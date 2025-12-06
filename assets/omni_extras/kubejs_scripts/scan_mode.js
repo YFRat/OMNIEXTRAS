@@ -4,6 +4,7 @@ function easeOutElastic(t, bounciness) {
     return 1 - elasticIn;
 }
 
+
 PalladiumEvents.registerAnimations((event) => {
     event.registerForPower('proto_scan_mode/look', 'omni_extras:not_aliens/proto_scan_mode', 200, (builder) => {
         let activation = animationUtil.getAnimationTimerAbilityValue(

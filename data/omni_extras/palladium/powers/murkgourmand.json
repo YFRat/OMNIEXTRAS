@@ -32,6 +32,7 @@
         "scale set pehkui:hitbox_width 1.1 @s",
         "tag @s add omni_extras.Flattable",
         "tag @s add Murk.Obtained",
+        "tag @s add Murk",
         "advancement grant @s only omni_extras:murkmandunlock",
         "scale set pehkui:drops 1.5 @s",
         "scoreboard objectives add Gourmand.Swallow dummy",
@@ -44,6 +45,7 @@
       "last_tick_commands": [
         "tag @s remove omni_extras.Flattable",
         "tag @s remove omni_extras",
+        "tag @s remove Murk",
         "superpower remove omni_extras:not_aliens/foodpoisoned @s",
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",

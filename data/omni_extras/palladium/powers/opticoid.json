@@ -1152,6 +1152,62 @@
         ]
       }
     },
+    "normal_air_timer": {
+      "type": "palladium:animation_timer",
+      "bar_color": "orange",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 10,
+      "gui_position": [
+        0,
+        1
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability":"normal_beam_timer"
+          },
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+            "type": "palladium:on_ground"
+          }
+            ]
+          }
+        ]
+      }
+    },
+    "super_air_timer": {
+      "type": "palladium:animation_timer",
+      "bar_color": "orange",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "start_value": 0,
+      "max_value": 10,
+      "gui_position": [
+        0,
+        1
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability":"super_beam_timer"
+          },
+          {
+            "type":"palladium:not",
+            "conditions":[
+              {
+            "type": "palladium:on_ground"
+          }
+            ]
+          }
+        ]
+      }
+    },
     "eye_sound": {
       "type": "palladium:play_sound",
       "sound": "omni_extras:stalk",

@@ -30,6 +30,12 @@
                 "type": "then_play_and_hold",
                 "animation": "animation.prototype.scan3"
               }
+            ],
+            "cheat_trigger": [
+              {
+                "type": "then_play_and_hold",
+                "animation": "animation.prototype.cheatcode"
+              }
             ]
           }
         }
@@ -180,6 +186,12 @@
       },
       "conditions": [
         {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 1,
+          "max_score": 1
+        },
+        {
           "type": "palladium:not",
           "conditions": [
             {
@@ -236,6 +248,12 @@
       },
       "conditions": [
         {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 1,
+          "max_score": 1
+        },
+        {
           "type": "palladium:not",
           "conditions": [
             {
@@ -250,6 +268,169 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "normal": "alienevo:geo/prototype_omnitrix.geo.json",
+        "slim": "alienevo:geo/prototype_omnitrix_slim.geo.json"
+      },
+      "render_type": "glow",
+      "animation_file": "omni_extras:animations/proto_scan.animation.json",
+      "animation_controller": [
+        {
+          "name": "spin",
+          "transition_tick_time": 0,
+          "triggers": {
+            "cheat_trigger": [
+              {
+                "type": "then_play_and_hold",
+                "animation": "animation.prototype.cheatcode"
+              }
+            ]
+          }
+        }
+      ],
+      "texture": {
+        "base": "alienevo:textures/models/prototype_omnitrix/prototype_glow_default.png",
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_1",
+            "filter": "#b3ff40",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_2",
+            "filter": "#a7f72e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_3",
+            "filter": "#8ed721",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "GLOW_1": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_1"
+          },
+          "GLOW_2": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_2"
+          },
+          "GLOW_3": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_3"
+          }
+        }
+      },
+      "conditions": [
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 2,
+          "max_score": 2
+        },
+        {
+          "type": "palladium:not",
+          "conditions": [
+            {
+              "type": "palladium:or",
+              "conditions": [
+                {
+                  "type": "palladium:objective_score",
+                  "objective": "AlienEvo.10kPhase",
+                  "min_score": 1,
+                  "max_score": 1
+                },
+                {
+                  "type": "palladium:ability_unlocked",
+                  "power": "alienevo:prototype_omnitrix",
+                  "ability": "removed_core"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "normal": "alienevo:geo/10k/10k_omnitrix.geo.json",
+        "slim": "alienevo:geo/10k/10k_omnitrix_slim.geo.json"
+      },
+      "render_type": "glow",
+      "animation_file": "omni_extras:animations/proto_scan.animation.json",
+      "animation_controller": [
+        {
+          "name": "spin",
+          "transition_tick_time": 0,
+          "triggers": {
+            "cheat_trigger": [
+              {
+                "type": "then_play_and_hold",
+                "animation": "animation.prototype.cheatcode"
+              }
+            ]
+          }
+        }
+      ],
+      "texture": {
+        "base": "alienevo:textures/models/prototype_omnitrix/prototype_glow_default.png",
+        "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_1",
+            "filter": "#b3ff40",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_2",
+            "filter": "#a7f72e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_3",
+            "filter": "#8ed721",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+          "GLOW_1": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_1"
+          },
+          "GLOW_2": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_2"
+          },
+          "GLOW_3": {
+            "type": "palladium:string_property",
+            "property": "prototype_glow_color_3"
+          }
+        }
+      },
+      "conditions": [
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 2,
+          "max_score": 2
+        },
+        {
+          "type": "palladium:objective_score",
+          "objective": "AlienEvo.10kPhase",
+          "min_score": 1,
+          "max_score": 1
         }
       ]
     },
@@ -281,6 +462,12 @@
               {
                 "type": "then_play_and_hold",
                 "animation": "animation.prototype.scan3"
+              }
+            ],
+            "cheat_trigger": [
+              {
+                "type": "then_play_and_hold",
+                "animation": "animation.prototype.cheatcode"
               }
             ]
           }
@@ -434,6 +621,12 @@
           "objective": "AlienEvo.10kPhase",
           "min_score": 1,
           "max_score": 1
+        },
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 1,
+          "max_score": 1
         }
       ]
     },
@@ -478,6 +671,12 @@
         {
           "type": "palladium:objective_score",
           "objective": "AlienEvo.10kPhase",
+          "min_score": 1,
+          "max_score": 1
+        },
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
           "min_score": 1,
           "max_score": 1
         }

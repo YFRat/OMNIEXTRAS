@@ -43,7 +43,7 @@
       ],
       "last_tick_commands": [
         "tag @s remove Upchuck.Flattable",
-        "tag @s remove Murk",
+        "tag @s remove Perk",
         "superpower remove omni_extras:not_aliens/foodpoisoned @s",
         "effect clear @s",
         "scoreboard players set @s Gourmand.Swallow 0",
