@@ -1069,6 +1069,7 @@
       "type": "omni_extras:modified_vacuum",
       "search_radius": 1.7,
       "range": 3,
+      "motion": 3,
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 100,
@@ -1094,6 +1095,7 @@
       "type": "omni_extras:modified_vacuum",
       "search_radius": 2,
       "range": 3,
+      "motion": 3,
       "hidden": true,
       "debug_mode": false,
       "max_hearts": 1000,
@@ -1178,21 +1180,6 @@
                 "ability": "mega_blast_timer"
               }
             ]
-          }
-        ]
-      }
-    },
-    "spit_out": {
-      "type": "alienevo:sonic_clap",
-      "knockback": 3,
-      "damage": 4,
-      "radius": 0.5,
-      "hidden": true,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_last_tick",
-            "ability": "carry_remove"
           }
         ]
       }

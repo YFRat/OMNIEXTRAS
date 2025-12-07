@@ -314,6 +314,15 @@
             "objective": "OmniExtras.ScanMode",
             "min_score": 2,
             "max_score": 2
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "Variant.Murk"
+              }
+            ]
           }
         ]
       }

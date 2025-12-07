@@ -1,6 +1,6 @@
 let LivingEntity = Java.loadClass('net.minecraft.world.entity.LivingEntity');
 const SCALE_TYPES = Java.loadClass("virtuoel.pehkui.api.ScaleTypes");
-
+let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 
 let vacuumedEntities = [];
 let totalHealthHeld = 0;
@@ -14,6 +14,7 @@ StartupEvents.registry('palladium:abilities', (event) => {
         .addProperty("search_radius", "float", 5.0, "Radius to search for entities")
         .addProperty("debug_mode", "boolean", true, "Enable debug messages")
         .addProperty("max_hearts", "float", 20.0, "Maximum hearts worth of entities to hold")
+        .addProperty("motion", "float", 1, "Motion")
         .firstTick((entity, entry, holder, enabled) => {
     if (!enabled || !entity.isPlayer()) return;
 
@@ -149,6 +150,8 @@ StartupEvents.registry('palladium:abilities', (event) => {
             if (entity.isPlayer() && vacuumedEntities.length > 0) {
                 let debugMode = entry.getPropertyByName("debug_mode");
                 let restoredCount = 0;
+                let motion = entry.getPropertyByName("motion");
+                let angle = entity.getLookAngle().scale(motion);
                 
                 vacuumedEntities.forEach(vacuumedEntity => {
                     try {
@@ -159,12 +162,16 @@ StartupEvents.registry('palladium:abilities', (event) => {
 
                             if (!vacuumedEntity.isPlayer()) {
                                 vacuumedEntity.setNoAi(false);
+                                vacuumedEntity.setDeltaMovement(angle);
                             }
-
+                            
                             vacuumedEntity.removeTag("AlienEvo.CarriedEntity");
                             vacuumedEntity.setSilent(false);
                             vacuumedEntity.noPhysics = false;
                             palladium.superpowers.removeSuperpower(vacuumedEntity, 'alienevo:blind');
+                            
+                            vacuumedEntity.connection.send(new ClientboundSetEntityMotionPacket(vacuumedEntity));
+                            vacuumedEntity.setDeltaMovement(angle);
                             
                             restoredCount++;
                             

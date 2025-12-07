@@ -89,6 +89,12 @@
       "omni_extras:recal_scan"
     ]
   },
+  "ult_scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:ult_scan"
+    ]
+  },
   "cheat_code": {
     "category": "player",
     "sounds": [

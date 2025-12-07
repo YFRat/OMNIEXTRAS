@@ -12,7 +12,6 @@ BlockEvents.rightClicked(event => {
     event.item.count--;
     event.player.give('omni_extras:filled_vial');
     event.cancel();
-
   }
 });
 
@@ -21,11 +20,11 @@ ItemEvents.rightClicked('omni_extras:opticoid_vial', e => {
   const player = e.player;
 
   if (hasOmnitrix(player) && !hasAlien(player, 110)) {
+    player.addTag('Opticoid.Grant');
     if (getOmnitrixId(player) == "alienevo:prototype_omnitrix") {
       item.count--;
       palladium.superpowers.removeSuperpower(player, "alienevo:prototype_omnitrix");
       palladium.superpowers.addSuperpower(player, "omni_extras:not_aliens/proto_scan_mode");
-      player.addTag('Opticoid.Grant');
       player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.glass.break", "players", 6, 1.2);
       player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_core_place", "players", 6, 1);
     }
@@ -33,7 +32,13 @@ ItemEvents.rightClicked('omni_extras:opticoid_vial', e => {
       item.count--;
       palladium.superpowers.removeSuperpower(player, "alienevo:recal_omnitrix");
       palladium.superpowers.addSuperpower(player, "omni_extras:not_aliens/recal_scan_mode");
-      player.addTag('Opticoid.Grant');
+      player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.glass.break", "players", 6, 1.2);
+      player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_core_place", "players", 6, 1);
+    }
+    else if (getOmnitrixId(player) == "alienevo:ult_omnitrix") {
+      item.count--;
+      palladium.superpowers.removeSuperpower(player, "alienevo:ult_omnitrix");
+      palladium.superpowers.addSuperpower(player, "omni_extras:not_aliens/ultimatrix_scan_mode");
       player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.glass.break", "players", 6, 1.2);
       player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_core_place", "players", 6, 1);
     }

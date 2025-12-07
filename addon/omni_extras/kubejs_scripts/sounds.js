@@ -15,4 +15,5 @@ StartupEvents.registry('sound_event', event => {
     event.create("omni_extras:scanning");
     event.create("omni_extras:recal_scanning");
     event.create("omni_extras:cheat_code");
+    event.create("omni_extras:ult_scanning");
 })

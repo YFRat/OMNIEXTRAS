@@ -1,7 +1,6 @@
 ItemEvents.entityInteracted("minecraft:air", e => {
     const player = e.player;
     const target = e.target;
-    const item = e.item;
 
     if (!target || !target.isLiving()) return;
 
@@ -26,7 +25,8 @@ ItemEvents.entityInteracted("minecraft:air", e => {
 
     const hasPerk = hasAlien(player, 111);
     const hasMurk = hasAlien(player, 112);
-    const anyGourmands = hasPerk || hasMurk
+    const anyGourmands = hasPerk || hasMurk;
+    const omni = getOmnitrixId(player)
 
     if (hasPerk && hasMurk) {
         player.tell(Text.red("§lI've given you all that I could give"));
@@ -34,81 +34,79 @@ ItemEvents.entityInteracted("minecraft:air", e => {
         return;
     }
 
-    const omni = getOmnitrixId(player);
+    if (hasPerk && !hasMurk) {
+        player.addTag('Gourmand.Grant')
+        player.addTag('Variant.Murk')
+        if (omni === "alienevo:prototype_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
+        } else if (omni === "alienevo:recal_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
+        } else if (omni === "alienevo:ult_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
+        } else {
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
+        }
+        return
+    }
 
+    if (hasMurk && !hasPerk) {
+        player.addTag('Gourmand.Grant')
+        player.addTag('Variant.Perk')
+        if (omni === "alienevo:prototype_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
+        } else if (omni === "alienevo:recal_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
+        }
+        else if (omni === "alienevo:ult_omnitrix") {
+            palladium.superpowers.removeSuperpower(player, omni);
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
+        } else {
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
+        }
+        return
+    }
     if (!anyGourmands) {
         player.addTag('Gourmand.Grant')
         player.addTag('First.Time')
 
         const roll = Math.floor(Math.random() * 2) + 1;
-
         if (roll === 1) {
             player.addTag('Variant.Perk')
-
             if (omni === "alienevo:prototype_omnitrix") {
                 palladium.superpowers.removeSuperpower(player, omni);
                 palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-            }
-            else if (omni === "alienevo:recal_omnitrix") {
+            } else if (omni === "alienevo:recal_omnitrix") {
                 palladium.superpowers.removeSuperpower(player, omni);
                 palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-            }
-            else {
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
-            }
-
-        } else {
-            player.addTag('Variant.Murk')
-
-            if (omni === "alienevo:prototype_omnitrix") {
+            } else if (omni === "alienevo:ult_omnitrix") {
                 palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-            }
-            else if (omni === "alienevo:recal_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-            }
-            else {
+                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
+            } else {
                 palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
             }
+            return
+        } else if (roll === 2) {
+            player.addTag('Variant.Murk')
+            if (omni === "alienevo:prototype_omnitrix") {
+                palladium.superpowers.removeSuperpower(player, omni);
+                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
+            } else if (omni === "alienevo:recal_omnitrix") {
+                palladium.superpowers.removeSuperpower(player, omni);
+                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
+            } else if (omni === "alienevo:ult_omnitrix") {
+                palladium.superpowers.removeSuperpower(player, omni);
+                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
+            } else {
+                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
+            }
+            return
         }
     }
-
-    if (hasPerk) {
-        player.addTag('Gourmand.Grant')
-        player.addTag('Variant.Murk')
-
-        if (omni === "alienevo:prototype_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-        }
-        else if (omni === "alienevo:recal_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-        }
-        else {
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
-        }
-    }
-
-    if (hasMurk) {
-        player.addTag('Gourmand.Grant')
-        player.addTag('Variant.Perk')
-
-        if (omni === "alienevo:prototype_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-        }
-        else if (omni === "alienevo:recal_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-        }
-        else {
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
-        }
-    }
-    // if (!palladium.superpowers.hasSuperpower(player, "aeo:omniverse_omnitrix") || !palladium.superpowers.hasSuperpower(player, "alienevo:prototype_omnitrix"))
-    // player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_master_control", "master", 10, 1)
 });
 
 PlayerEvents.tick(event => {
@@ -123,7 +121,6 @@ PlayerEvents.tick(event => {
         player.removeTag("CheatCode.Murk")
     }
 });
-
 
 function hasOmnitrix(player) {
     let currentPowers = palladium.powers.getPowerIds(player);

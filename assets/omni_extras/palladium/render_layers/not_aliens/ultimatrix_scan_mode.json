@@ -1,0 +1,78 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "geckolib:default",
+      "model": {
+        "normal": "evo_reds_alienpack:geo/ult_omnitrix.geo.json",
+        "slim": "evo_reds_alienpack:geo/ult_omnitrix_slim.geo.json"
+      },
+      "texture": "omni_extras:textures/models/ult_omnitrix/ult.png"
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "normal": "evo_reds_alienpack:geo/ult_omnitrix.geo.json",
+        "slim": "evo_reds_alienpack:geo/ult_omnitrix_slim.geo.json"
+      },
+      "texture": "omni_extras:textures/models/glow/watch/glow_scan.png",
+      "render_type": "glow",
+      "conditions": [
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 1,
+          "max_score": 1
+        },
+        {
+          "type": "palladium:not",
+          "conditions": [
+            {
+              "type": "palladium:or",
+              "conditions": [
+                {
+                  "type": "palladium:ability_unlocked",
+                  "power": "alienevo:ult_omnitrix",
+                  "ability": "removed_core"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "geckolib:default",
+      "model": {
+        "normal": "evo_reds_alienpack:geo/ult_omnitrix.geo.json",
+        "slim": "evo_reds_alienpack:geo/ult_omnitrix_slim.geo.json"
+      },
+      "texture": {
+        "base": "alienevo:textures/models/recal_omnitrix/recal_glow.png",
+        "variables": {
+          "X": {
+            "type": "palladium:string_property",
+            "property": "AlienEvo.Color"
+          },
+          "J": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.NoCore"
+          },
+          "H": {
+            "type": "palladium:objective_score",
+            "objective": "AlienEvo.Invert"
+          }
+        }
+      },
+      "conditions": [
+        {
+          "type": "palladium:objective_score",
+          "objective": "OmniExtras.ScanMode",
+          "min_score": 2,
+          "max_score": 2
+        }
+      ],
+      "render_type": "glow"
+    }
+  ]
+}
