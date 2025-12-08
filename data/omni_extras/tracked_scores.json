@@ -1,0 +1,25 @@
+{
+    "objectives": [
+        "Opticoid.XP",
+        "Opticoid.Level",
+        "Opticoid.SkillPoint",
+        "Opticoid.BeamIntensity",
+        "Opticoid.ElementSelect",
+        "Perkgourmand.XP",
+        "Perkgourmand.Level",
+        "Perkgourmand.SkillPoint",
+        "Murkgourmand.XP",
+        "Murkgourmand.Level",
+        "Murkgourmand.SkillPoint",
+        "Gourmand.Swallow",
+        "Gourmand.ObliterationPoint",
+        "Orishan.XP",
+        "Orishan.Level",
+        "Orishan.SkillPoint",
+        "Talpaedan.XP",
+        "Talpaedan.Level",
+        "Talpaedan.SkillPoint",
+        "Talpaedan.DigMeter",
+        "OmniExtras.ScanMode"
+    ]
+}

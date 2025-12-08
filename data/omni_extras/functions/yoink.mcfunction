@@ -1,0 +1,14 @@
+execute if entity @s[palladium.power=evo_reds_alienpack_bug:prototype_omnitrix] run superpower remove evo_reds_alienpack_bug:prototype_omnitrix @s
+execute if entity @s[palladium.power=alienevo:completed_omnitrix] run superpower remove evo_reds_alienpack_completed:completed_omnitrix @s
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run superpower remove aeo:omniverse_omnitrix @s
+
+execute if entity @s[palladium.power=evo_reds_alienpack_bug:prototype_omnitrix] run tag @s add hasbuggy
+execute if entity @s[palladium.power=alienevo:completed_omnitrix] run tag @s add hasovtrix
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run tag @s add hasovtrixbeans
+
+execute if entity @s[palladium.power=evo_reds_alienpack_bug:prototype_omnitrix] run playsound alienevo:prototype_decouple master @s
+execute if entity @s[palladium.power=alienevo:completed_omnitrix] run playsound alienevo:prototype_decouple master @s
+execute if entity @s[palladium.power=aeo:omniverse_omnitrix] run playsound alienevo:prototype_decouple master @s
+
+
+alienautoadd @s omni_extras:perkgourmand

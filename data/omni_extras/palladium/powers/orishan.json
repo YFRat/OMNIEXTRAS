@@ -1,0 +1,269 @@
+{
+  "name": "Orishan",
+  "icon": "minecraft:water_bucket",
+
+    "energy_bars": {
+    "energy_meter": {
+      "max": 600,
+      "auto_increase_per_tick": 3,
+      "color": "#93eef5"
+    
+    }
+  },
+
+  "persistent_data": true,
+  "background": "alienevo:textures/gui/power_screen/power_screen.png",
+  "primary_color": "#8ed721",
+  "allow_bar_shrinking": false,
+  "secondary_color": "#332e27",
+  "ability_bar_texture": "alienevo:textures/gui/ability_bar/interface.png",
+  "hidden": false,
+  "abilities": {
+    "orishan_loop": {
+      "type": "palladium:command",
+      "hidden": false,
+      "title": "Orishan",
+      "gui_position": [
+        0,
+        0
+      ],
+      "description": "WATER BUCKET RELEASE!",
+      "icon": "minecraft:water_bucket",
+      "first_tick_commands": [
+        "scale easing set palladium:ability pehkui:exponential_out",
+        "scale set pehkui:eye_height 1.23",
+        "scale set pehkui:hitbox_height 1.2",
+        "scale set pehkui:hitbox_width 1.15",
+        "scale set pehkui:jump_height 1.2",
+        "scale set pehkui:drops 0.5",
+        "scoreboard objectives add Orishan.XP dummy",
+        "scoreboard objectives add Orishan.Level dummy",
+        "scoreboard objectives add Orishan.SkillPoint dummy",
+        "tag @s add Orishan.Unlocked"
+      ],
+      "last_tick_commands": [
+        "scale reset"
+      ],
+      "commands": [
+      "scoreboard players add @s[palladium.power=selfdestruct:prototype_omnitrix_sdm] AlienEvo.SelfDestruct 1"
+  ]
+    },
+    "hideBody": {
+      "type": "palladium:hide_body_part",
+      "icon": "alienevo:textures/gui/ability_bar/interface.png",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "affects_first_person": true,
+      "body_parts": [
+        "right_arm",
+        "left_arm",
+        "chest",
+        "chest_overlay",
+        "right_arm_overlay",
+        "left_arm_overlay",
+        "right_leg",
+        "left_leg",
+        "cape",
+        "right_leg_overlay",
+        "left_leg_overlay",
+        "head",
+        "head_overlay"
+      ]
+    },
+    "name_change": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": {
+        "translate": "species.alienevo_aliens.192"
+      },
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "alienevo:current_alien_nickname",
+                "value": "species.alienevo_aliens.192"
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "base_form": {
+      "type": "alienevo:omnitrix_detransform",
+      "icon": "#alienevo:detransform",
+      "title": {"translate":"ability.alienevo.omnitrix.base_form"},
+      "hidden": true,
+      "list_index": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.BaseForm"
+              },
+              {
+                "type": "palladium:has_tag",
+                "tag": "AlienEvo.MasterControl"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "nickname": {
+      "type": "palladium:name_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "name": [
+        {
+          "nbt": "KubeJSPersistentData.alienevo_192",
+          "entity": "@s"
+        }
+      ],
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:and",
+            "conditions": [
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "alienevo:current_alien_nickname",
+                    "value": "species.alienevo_aliens.192"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:has_tag",
+                    "tag": "alienevo.nickname"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "renderLayer": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "omni_extras:orishan"
+    },
+    "sizeChange": {
+      "type": "palladium:size",
+      "title": "Size Change",
+      "hidden": true,
+      "scale": 1,
+      "pehkui:width": 1
+    },
+    "Health": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.max_health",
+      "hidden": true,
+      "amount": 20
+    },
+    "Strength": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.attack_damage",
+      "hidden": true,
+      "amount": 10
+    },
+    "fall_resistance": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:fall_resistance",
+      "hidden": true,
+      "uuid": "20b779e7-a3e4-4f74-967b-12b3bd19b748",
+      "amount": 10
+    },
+    "knockbackResistance": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.knockback_resistance",
+      "hidden": true,
+      "amount": 3
+    },
+    "Armor": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor",
+      "hidden": true,
+      "amount": 25
+    },
+    "armorToughness": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.armor_toughness",
+      "hidden": true,
+      "amount": 30
+    },
+      "Speed": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "minecraft:generic.movement_speed",
+      "uuid": "a9a48154-df71-4786-8072-634ed74849cd",
+      "hidden":true,
+      "amount": -0.0025,
+      "conditions": {
+        "enabling":[
+          {
+            "type":"palladium:ability_unlocked",
+            "ability":"orishan_loop"
+          }
+        ]
+      }
+    },
+    "Release": {
+      "type": "palladium:command",
+      "icon": "minecraft:water_bucket",
+      "title": "WATER BUCKET RELEASE!!",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "commands":[
+        "say WATER BUCKET RELEASE",
+        "playsound omni_extras:release master @s ~ ~ ~ 10 "
+      ],
+      "conditions":{
+        "enabling":[
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": false,
+            "cooldown": 40,
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    }
+  }
+}

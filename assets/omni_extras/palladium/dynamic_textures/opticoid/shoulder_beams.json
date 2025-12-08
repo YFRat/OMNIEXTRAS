@@ -1,0 +1,93 @@
+
+{
+  "transformers": [
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_1",
+            "filter": "#d0ec55",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_2",
+            "filter": "#b0df1e",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_3",
+            "filter": "#98cd1b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_PROTO_4",
+            "filter": "#628e0c",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_1",
+            "filter": "#fef364",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_2",
+            "filter": "#fcd720",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_3",
+            "filter": "#edb508",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##GLOW_10K_4",
+            "filter": "#a48d1a",
+            "ignore_blank": true
+          }
+          
+        ],
+        "variables": {
+           "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "GLOW_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_1"
+          },
+          "GLOW_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_2"
+          },
+          "GLOW_PROTO_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_3"
+          },
+          "GLOW_PROTO_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_prototype_glowcolor_1_color_4"
+          },
+           "GLOW_10K_1": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_1"
+          },
+          "GLOW_10K_2": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_2"
+          },
+          "GLOW_10K_3": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_3"
+          },
+          "GLOW_10K_4": {
+            "type": "palladium:string_property",
+            "property": "opticoid_10k_glowcolor_1_color_3"
+          }
+        },
+  "base": "omni_extras:textures/gui/playlists/opticoid/shoulder_beam_#UNIFORM.png"
+}

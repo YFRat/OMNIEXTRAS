@@ -1,0 +1,687 @@
+{
+  "name": {
+    "text": "Scanning Mode"
+  },
+  "icon": {
+    "type": "palladium:texture",
+    "texture": "habb:textures/gui/flash/flash_icon.png"
+  },
+  "persistent_data": false,
+  "hidden": true,
+  "background": "minecraft:textures/block/red_concrete.png",
+  "primary_color": "#E72D2D",
+  "secondary_color": "#1a1a1a",
+  "abilities": {
+    "scan_timer_opticoid": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 3,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 146,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Scan.Looking"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Grant"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "dummy": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 3,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 10,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_opticoid",
+                    "min": 1,
+                    "max": 134
+                  },
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_opticoid"
+                  },
+                  {
+                    "type": "palladium:objective_score",
+                    "objective": "OmniExtras.ScanMode",
+                    "min_score": 1,
+                    "max_score": 1
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_perk",
+                    "min": 1,
+                    "max": 80
+                  },
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_perk"
+                  },
+                  {
+                    "type": "palladium:objective_score",
+                    "objective": "OmniExtras.ScanMode",
+                    "min_score": 2,
+                    "max_score": 2
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_murk",
+                    "min": 1,
+                    "max": 80
+                  },
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_murk"
+                  },
+                  {
+                    "type": "palladium:objective_score",
+                    "objective": "OmniExtras.ScanMode",
+                    "min_score": 2,
+                    "max_score": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "scan_anim": {
+      "type": "geckolib:render_layer_animation",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "omni_extras:not_aliens/proto_scan_mode",
+      "controller": "spin",
+      "animation_trigger": "scan3_trigger",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_opticoid",
+            "min": 3,
+            "max": 3
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "scan_timer_opticoid"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "tag": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "tag @s add Scan.Looking",
+        "scoreboard objectives add OmniExtras.ScanMode dummy",
+        "scoreboard players set @s OmniExtras.ScanMode 1",
+        "playsound omni_extras:scanning player @s ~ ~ ~ 5 "
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Grant"
+          }
+        ]
+      }
+    },
+    "opticoid_grant": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "alienautoadd @s omni_extras:opticoid"
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_opticoid",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Opticoid.Grant"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "tag_remove": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "tag @s remove Scan.Looking",
+        "superpower replace omni_extras:not_aliens/proto_scan_mode alienevo:prototype_omnitrix",
+        "scoreboard players set @s OmniExtras.ScanMode 0",
+        "tag @s remove Opticoid.Grant",
+        "tellraw @s {\"text\":\"The Omnitrix seems.. different than before\",\"bold\":true,\"italic\":true,\"color\":\"yellow\"}"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_opticoid",
+            "min": 146,
+            "max": 146
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "arm_show": {
+      "type": "palladium:show_both_arms",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "scan_timer_opticoid"
+          },
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_opticoid",
+            "min": 1,
+            "max": 146
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "scan_timer_gourmand_perk": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 3,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 80,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Scan.Looking"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Perk"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 2,
+            "max_score": 2
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "Variant.Murk"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "scan_timer_gourmand_murk": {
+      "type": "palladium:animation_timer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 3,
+      "gui_position": "null",
+      "description": "null",
+      "start_value": 0,
+      "max_value": 80,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Scan.Looking"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Murk"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "OmniExtras.ScanMode",
+            "min_score": 2,
+            "max_score": 2
+          }
+        ]
+      }
+    },
+    "scan_anim_gourmand": {
+      "type": "geckolib:render_layer_animation",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "omni_extras:not_aliens/proto_scan_mode",
+      "controller": "spin",
+      "animation_trigger": "cheat_trigger",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_perk",
+                    "min": 3,
+                    "max": 3
+                  },
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_perk"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_murk",
+                    "min": 3,
+                    "max": 3
+                  },
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_murk"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tag_gourmand": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "tag @s add Scan.Looking",
+        "scoreboard objectives add OmniExtras.ScanMode dummy",
+        "scoreboard players set @s OmniExtras.ScanMode 2",
+        "playsound omni_extras:cheat_code player @s ~ ~ ~ 5 "
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          }
+        ]
+      }
+    },
+    "tag_gourmand_first": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "tellraw @s {\"text\":\"You wield the Omnitrix? You seem worthy enough.. Let me just..\",\"bold\":true,\"italic\":true,\"color\":\"green\"}"
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "First.Time"
+          }
+        ]
+      }
+    },
+    "tag_gourmand_second": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [
+        "tellraw @s {\"text\":\"Huh.. you already have that one? Let me just..\",\"bold\":true,\"italic\":true,\"color\":\"green\"}"
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        ""
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Gourmand.Grant"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "First.Time"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "gourmand_grant_perk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "alienautoadd @s omni_extras:perkgourmand"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_gourmand_perk",
+            "min": 50,
+            "max": 50
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Perk"
+          }
+        ]
+      }
+    },
+    "gourmand_grant_murk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "alienautoadd @s omni_extras:murkgourmand"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_gourmand_murk",
+            "min": 50,
+            "max": 50
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Murk"
+          }
+        ]
+      }
+    },
+    "tag_remove_gourmand_perk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "tellraw @s {\"text\":\"§a§lThere!\"}",
+        "tag @s add CheatCode.Perk",
+        "superpower add alienevo:transform_bubble @s",
+        "superpower replace omni_extras:not_aliens/proto_scan_mode omni_extras:perkgourmand @s",
+        "tag @s remove Scan.Looking",
+        "tag @s remove First.Time",
+        "tag @s remove Variant.Perk",
+        "tag @s remove Variant.Murk",
+        "scoreboard players set @s OmniExtras.ScanMode 0",
+        "tag @s remove Gourmand.Grant"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_gourmand_perk",
+            "min": 76,
+            "max": 76
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "scan_timer_gourmand_perk"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Perk"
+          }
+        ]
+      }
+    },
+    "tag_remove_gourmand_murk": {
+      "type": "palladium:command",
+      "icon": "minecraft:blaze_rod",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "tellraw @s {\"text\":\"§a§lThere!\"}",
+        "tag @s add CheatCode.Murk",
+        "superpower add alienevo:transform_bubble @s",
+        "superpower replace omni_extras:not_aliens/proto_scan_mode omni_extras:murkgourmand @s",
+        "tag @s remove Scan.Looking",
+        "tag @s remove Variant.Murk",
+        "tag @s remove Variant.Perk",
+        "tag @s remove First.Time",
+        "scoreboard players set @s OmniExtras.ScanMode 0",
+        "tag @s remove Gourmand.Grant"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "power": "null",
+            "ability": "scan_timer_gourmand_murk",
+            "min": 76,
+            "max": 76
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "scan_timer_gourmand_murk"
+          },
+          {
+            "type": "palladium:has_tag",
+            "tag": "Variant.Murk"
+          }
+        ]
+      }
+    },
+    "arm_show_gourmand": {
+      "type": "palladium:show_both_arms",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_perk"
+                  },
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_perk",
+                    "min": 1,
+                    "max": 80
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "scan_timer_gourmand_murk"
+                  },
+                  {
+                    "type": "palladium:animation_timer_ability",
+                    "power": "null",
+                    "ability": "scan_timer_gourmand_murk",
+                    "min": 1,
+                    "max": 80
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "render_layer": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "omni_extras:not_aliens/proto_scan_mode"
+    }
+  }
+}

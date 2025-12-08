@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XYX",
+    "YXY",
+    "A  "
+  ],
+  "key": {
+    "A": {
+      "item": "omni_extras:wrapper"
+    },
+    "X": {
+      "tag": "minecraft:dirt"
+    },
+    "Y": {
+      "tag": "forge:stone"
+    }
+  },
+  "result": {
+    "item": "omni_extras:granoall_bar",
+    "count": 1
+  }
+}

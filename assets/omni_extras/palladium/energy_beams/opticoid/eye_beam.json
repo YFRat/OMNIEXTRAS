@@ -1,0 +1,21 @@
+[
+  {
+    "type": "palladium:lightning",
+    "body_part": "chest",
+    "segments": 4,
+    "frequency": 1,
+    "spread": 2,
+    "rainbow": false,
+    "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    },
+    "core_color": "#FFFFFF",
+    "bloom": 6,
+    "size": [2, 2],
+    "rotation_speed": 20,
+    "offset": { 
+      "first_person": [0, -5, 0],
+      "third_person": [0, -4, -6]}
+    }
+  ]

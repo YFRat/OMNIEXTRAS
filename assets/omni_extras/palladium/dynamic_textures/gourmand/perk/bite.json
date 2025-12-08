@@ -1,0 +1,311 @@
+{
+  "transformers": [
+        {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_1",
+            "filter": "#b5eb20",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_2",
+            "filter": "#9dda13",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_4",
+            "filter": "#659e0e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_1",
+            "filter": "#13ba39",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_2",
+            "filter": "#11aa38",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_3",
+            "filter": "#0f9336",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_4",
+            "filter": "#0c7c33",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_5",
+            "filter": "#0a662e",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_6",
+            "filter": "#084f26",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_PROTO_P3_7",
+            "filter": "#2d4508",
+            "ignore_blank": true 
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_1",
+            "filter": "#fc2b2b",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_2",
+            "filter": "#de3939",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_4",
+            "filter": "#8f2828",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_1",
+            "filter": "#c90224",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_2",
+            "filter": "#a80722",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_3",
+            "filter": "#930f25",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_4",
+            "filter": "#8d1111",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_5",
+            "filter": "#740d0d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_6",
+            "filter": "#3e0909",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_DEFAULT_P3_7",
+            "filter": "#441010",
+            "ignore_blank": true 
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_1",
+            "filter": "#76ede6",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_2",
+            "filter": "#56eae1",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_4",
+            "filter": "#1cbfb5",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_1",
+            "filter": "#eb7de2",
+            "ignore_blank": true
+          },
+           {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_2",
+            "filter": "#e863dd",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_3",
+            "filter": "#c14cb7",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_4",
+            "filter": "#c733ba",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_5",
+            "filter": "#95348c",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_6",
+            "filter": "#74246d",
+            "ignore_blank": true
+          },
+          {
+            "type": "palladium:color",
+            "color": "##SKIN_10K_P3_7",
+            "filter": "#450840",
+            "ignore_blank": true
+          }
+        ],
+        "variables": {
+            "UNIFORM": {
+            "type": "palladium:string_property",
+            "property": "uniform"
+          },
+          "SKIN_PROTO_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_1_color_1"
+          },
+          "SKIN_PROTO_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_1_color_2"
+          },
+          "SKIN_PROTO_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_1_color_4"
+          },
+          "SKIN_PROTO_P3_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_1"
+          },
+          "SKIN_PROTO_P3_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_2"
+          },
+           "SKIN_PROTO_P3_3": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_3"
+          },
+           "SKIN_PROTO_P3_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_4"
+          },
+           "SKIN_PROTO_P3_5": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_5"
+          },
+           "SKIN_PROTO_P3_6": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_6"
+          },
+          "SKIN_PROTO_P3_7": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_prototype_skincolor_palette_3_color_7"
+          },
+           "SKIN_DEFAULT_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_1_color_1"
+          },
+          "SKIN_DEFAULT_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_1_color_2"
+          },
+          "SKIN_DEFAULT_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_1_color_4"
+          },
+          "SKIN_DEFAULT_P3_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_1"
+          },
+          "SKIN_DEFAULT_P3_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_2"
+          },
+           "SKIN_DEFAULT_P3_3": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_3"
+          },
+           "SKIN_DEFAULT_P3_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_4"
+          },
+           "SKIN_DEFAULT_P3_5": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_5"
+          },
+           "SKIN_DEFAULT_P3_6": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_6"
+          },
+          "SKIN_DEFAULT_P3_7": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_default_skincolor_palette_3_color_7"
+          },
+          "SKIN_10K_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_1_color_1"
+          },
+          "SKIN_10K_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_1_color_2"
+          },
+          "SKIN_10K_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_1_color_4"
+          },
+          "SKIN_10K_P3_1": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_1"
+          },
+          "SKIN_10K_P3_2": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_2"
+          },
+           "SKIN_10K_P3_3": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_3"
+          },
+           "SKIN_10K_P3_4": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_4"
+          },
+           "SKIN_10K_P3_5": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_5"
+          },
+           "SKIN_10K_P3_6": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_6"
+          },
+          "SKIN_10K_P3_7": {
+            "type": "palladium:string_property",
+            "property": "perkgourmand_10k_skincolor_palette_3_color_7"
+          }
+        },
+  "base": "omni_extras:textures/gui/playlists/gourmand/perk/bite_#UNIFORM.png"
+}

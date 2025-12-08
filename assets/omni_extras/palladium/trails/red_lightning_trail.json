@@ -1,0 +1,12 @@
+{
+  "type": "palladium:lightning",
+  "spacing": 5,
+  "lifetime": 10,
+  "amount": 1,
+  "spread_x": 0,
+  "spread_y": 4,
+  "glow_color": {
+      "type": "palladium:string_property",
+      "property": "galvanic_mechamorph_beam_color"
+    }
+}

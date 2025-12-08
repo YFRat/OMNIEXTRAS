@@ -1,0 +1,14 @@
+
+{
+  "type": "palladium:lightning",
+  "lifetime": 8,
+  "core_color": "#FFFFFF",
+  "glow_color": "#d7ed11",
+  "core_opacity": 0.5,
+  "size": [6, 6],
+  "bloom": 3,
+  "normal_transparency": false,
+  "amount": 1,
+  "spread_x": 0,
+  "spread_y": 0
+}

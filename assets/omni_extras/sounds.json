@@ -1,0 +1,104 @@
+{
+  "eyebeam": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:eyebeam"
+    ]
+  },
+  "stalk": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:stalk"
+    ]
+  },
+  "openeye": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:openeye"
+    ]
+  },
+  "otherbeam": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:otherbeam"
+    ]
+  },
+  "swallow": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:swallow"
+    ]
+  },
+  "blast": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:blast"
+    ]
+  },
+  "chomp": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:chomp"
+    ]
+  },
+  "whip": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:whip"
+    ]
+  },
+  "gangsta": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:gangsta"
+    ]
+  },
+  "grumble": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:grumble"
+    ]
+  },
+  "release": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:release"
+    ]
+  },
+  "laugh": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:laugh"
+    ]
+  },
+  "sonic_laugh": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:sonic_laugh"
+    ]
+  },
+  "scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:proto_scan"
+    ]
+  },
+  "recal_scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:recal_scan"
+    ]
+  },
+  "ult_scanning": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:ult_scan"
+    ]
+  },
+  "cheat_code": {
+    "category": "player",
+    "sounds": [
+      "omni_extras:cheat_code"
+    ]
+  }
+}
