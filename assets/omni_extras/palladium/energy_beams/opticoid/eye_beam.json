@@ -1,7 +1,11 @@
 [
   {
     "type": "palladium:lightning",
+<<<<<<< Updated upstream
     "body_part": "body",
+=======
+    "body_part": "chest",
+>>>>>>> Stashed changes
     "segments": 4,
     "frequency": 1,
     "spread": 2,

@@ -6,7 +6,11 @@ license="All rights reserved"
 [[mods]]
 modId="omni_extras"
 displayName="OmniExtras"
+<<<<<<< Updated upstream
 version="1.0.5.1"
+=======
+version="1.0.5.3"
+>>>>>>> Stashed changes
 logoFile = "logo.png"
 logoBlur = false
 description='''
