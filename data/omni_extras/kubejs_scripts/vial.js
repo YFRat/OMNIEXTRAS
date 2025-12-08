@@ -44,7 +44,7 @@ ItemEvents.rightClicked('omni_extras:opticoid_vial', e => {
     }
     else {
       item.count--;
-      player.runCommandSilent('function omni_extras:vialgrant')
+      player.server.runCommandSilent('function omni_extras:vialgrant')
       player.level.playSound(null, player.x, player.y, player.z, "minecraft:block.glass.break", "players", 6, 1.2);
       player.level.playSound(null, player.x, player.y, player.z, "alienevo:prototype_core_place", "players", 6, 1);
     }
