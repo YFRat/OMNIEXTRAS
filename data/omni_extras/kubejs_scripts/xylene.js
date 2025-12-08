@@ -28,10 +28,12 @@ ItemEvents.entityInteracted("minecraft:air", e => {
     const anyGourmands = hasPerk || hasMurk;
     const omni = getOmnitrixId(player)
 
-    if (hasPerk && hasMurk) {
+    if (hasPerk && hasMurk || target.tags.contains('Used')) {
         player.tell(Text.red("§lI've given you all that I could give"));
         player.level.playSound(null, player.x, player.y, player.z, "minecraft:entity.villager.no", "master", 10, 1.5)
+        e.cancel();
         return;
+
     }
 
     if (hasPerk && !hasMurk) {
@@ -68,11 +70,13 @@ ItemEvents.entityInteracted("minecraft:air", e => {
         } else {
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
         }
+        e.cancel();
         return
     }
     if (!anyGourmands) {
         player.addTag('Gourmand.Grant')
         player.addTag('First.Time')
+        target.addTag('Used')
 
         const roll = Math.floor(Math.random() * 2) + 1;
         if (roll === 1) {
@@ -104,6 +108,7 @@ ItemEvents.entityInteracted("minecraft:air", e => {
             } else {
                 palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
             }
+            e.cancel();
             return
         }
     }

@@ -1,7 +1,23 @@
 const FoodEffects = {
     'omni_extras:mysterious_tablet': {
         gourmand: p => {
-            p.tell(Text.yellow("Yummy!"));
+            if (Math.random() < 1 / 20) {
+                p.tell(Text.yellow("§lWhat is this feeling.."));
+                p.server.scheduleInTicks(40, () => {
+                    if (hasAlien(p, 111)) {
+                        p.level.playSound(null, p.x, p.y, p.z, "alienevo:prototype_detransform", "players", 6, 1);
+                        palladium.superpowers.addSuperpower(p, "alienevo:transform_bubble")
+                        p.server.runCommandSilent(`alienautoadd ${p.name.string} omni_extras:murkgourmand`);
+                    }
+                    else if (hasAlien(p, 112)) {
+                        p.level.playSound(null, p.x, p.y, p.z, "alienevo:prototype_detransform", "players", 6, 1);
+                        palladium.superpowers.addSuperpower(p, "alienevo:transform_bubble")
+                        p.server.runCommandSilent(`alienautoadd ${p.name.string} omni_extras:perkgourmand`);
+                    }
+                });
+            } else {
+                p.tell(Text.yellow("Yummy!"));
+            }
             p.playSound('entity.player.burp');
         },
         normal: p => {
@@ -14,7 +30,7 @@ const FoodEffects = {
             p.tell(Text.yellow("Scrumptious!"));
             p.playSound('entity.player.burp');
             ['omni_extras:perkgourmand', 'omni_extras:murkgourmand'].forEach(power =>
-                p.runCommandSilent(`energybar value add ${p.name.string} ${power} stomach 300`)
+                p.server.runCommandSilent(`energybar value add ${p.name.string} ${power} stomach 300`)
             );
             p.give('omni_extras:wrapper');
         },
@@ -86,8 +102,8 @@ ItemEvents.rightClicked(e => {
     if (maxScore === 6) {
         player.tell(Text.yellow("I don't think I can eat any more.."));
         player.runCommandSilent(
-        `playsound minecraft:entity.villager.no player ${player.name.string} ~ ~ ~ 1000`
-    );
+            `playsound minecraft:entity.villager.no player ${player.name.string} ~ ~ ~ 1000`
+        );
         return;
     }
 
@@ -152,3 +168,15 @@ PlayerEvents.tick(e => {
     data.putBoolean("gourmand_was_holding", isHoldingEdible);
 });
 
+function hasAlien(player, alienId) {
+    for (let playlist = 1; playlist <= 10; playlist++) {
+        for (let slot = 1; slot <= 10; slot++) {
+            let alienKey = `alienevo.alien_${playlist}_${slot}`;
+            let storedAlienId = player.persistentData.getInt(alienKey);
+            if (storedAlienId === alienId) {
+                return true;
+            }
+        }
+    }
+    return false; //made by the goat beans
+}
