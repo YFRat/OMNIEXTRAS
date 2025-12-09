@@ -220,7 +220,7 @@
     "intensity_adjust": {
       "type": "palladium:dummy",
       "title": "Intensity Level",
-      "icon": "minecraft:ender_eye",
+      "icon": "#omni_extras:opticoid/intensity_icon",
       "hidden": true,
       "list_index": 0,
       "bar_color": "orange",
@@ -265,7 +265,7 @@
     },
     "element_select": {
       "type": "palladium:ability_wheel",
-      "icon": "minecraft:blaze_rod",
+      "icon": "#omni_extras:opticoid/element_switch",
       "title": "Element Select",
       "bar_color": "light_gray",
       "hidden": true,
@@ -436,11 +436,11 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "texture_width": 167,
-      "texture_height": 84,
+      "texture_width": 64,
+      "texture_height": 64,
       "translate": [
-        0,
-        -70,
+        415,
+        -53,
         0
       ]
     },
@@ -571,8 +571,7 @@
       "type": "palladium:size",
       "title": "Size Change",
       "hidden": true,
-      "scale": 1.8,
-      "pehkui:width": 5
+      "scale": 1.65
     },
     "Health": {
       "type": "palladium:attribute_modifier",
