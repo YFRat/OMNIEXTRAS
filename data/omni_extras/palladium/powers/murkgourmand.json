@@ -926,7 +926,6 @@
         "enabling": [
           {
             "type": "palladium:held",
-            "cooldown": 160,
             "key_type": "key_bind",
             "needs_empty_hand": false
           }
@@ -936,6 +935,11 @@
             "type": "palladium:ability_unlocked",
             "power": "null",
             "ability": "swallow_unlock"
+          },
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "stomach",
+            "max": 1300
           },
           {
             "type": "palladium:not",
@@ -1077,7 +1081,7 @@
     "entity_vaccum": {
       "type": "omni_extras:modified_vacuum",
       "search_radius": 1.7,
-      "range": 3,
+      "range": 4.5,
       "motion": 3,
       "hidden": true,
       "debug_mode": false,
@@ -1103,7 +1107,7 @@
     "entity_vaccum2": {
       "type": "omni_extras:modified_vacuum",
       "search_radius": 2,
-      "range": 3,
+      "range": 4.5,
       "motion": 3,
       "hidden": true,
       "debug_mode": false,

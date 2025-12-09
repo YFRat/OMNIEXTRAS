@@ -438,63 +438,6 @@
         ]
       }
     },
-    "tag_gourmand_first": {
-      "type": "palladium:command",
-      "icon": "minecraft:blaze_rod",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "first_tick_commands": [
-        "tellraw @s {\"text\":\"You wield the Omnitrix? You seem worthy enough.. Let me just..\",\"bold\":true,\"italic\":true,\"color\":\"green\"}"
-      ],
-      "last_tick_commands": [],
-      "commands": [
-        ""
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:has_tag",
-            "tag": "Gourmand.Grant"
-          },
-          {
-            "type": "palladium:has_tag",
-            "tag": "First.Time"
-          }
-        ]
-      }
-    },
-    "tag_gourmand_second": {
-      "type": "palladium:command",
-      "icon": "minecraft:blaze_rod",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "list_index": -1,
-      "first_tick_commands": [
-        "tellraw @s {\"text\":\"Huh.. you already have that one? Let me just..\",\"bold\":true,\"italic\":true,\"color\":\"green\"}"
-      ],
-      "last_tick_commands": [],
-      "commands": [
-        ""
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:has_tag",
-            "tag": "Gourmand.Grant"
-          },
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_tag",
-                "tag": "First.Time"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "gourmand_grant_perk": {
       "type": "palladium:command",
       "icon": "minecraft:blaze_rod",
