@@ -2,6 +2,10 @@ ItemEvents.entityInteracted("minecraft:air", e => {
     const player = e.player;
     const target = e.target;
 
+    if (!player || player.level.isClientSide()) return;
+
+    if (e.hand && e.hand.toString() !== 'MAIN_HAND') return;
+
     if (!target || !target.isLiving()) return;
 
     if (target.type !== 'minecraft:zombified_piglin' || !palladium.superpowers.hasSuperpower(target, 'omni_extras:xylene'))
@@ -26,19 +30,49 @@ ItemEvents.entityInteracted("minecraft:air", e => {
     const hasPerk = hasAlien(player, 111);
     const hasMurk = hasAlien(player, 112);
     const anyGourmands = hasPerk || hasMurk;
+    const bothGourmands = hasPerk && hasMurk;
     const omni = getOmnitrixId(player)
 
-    if (hasPerk && hasMurk || target.tags.contains('Used')) {
+    const uuid = player.uuid.toString();
+    const usedBefore = target.persistentData.getString("used_uuid") || null;
+
+    const blocked = usedBefore === uuid;
+    let granted = false;
+
+    if (bothGourmands || blocked) {
         player.tell(Text.red("§lI've given you all that I could give"));
-        player.level.playSound(null, player.x, player.y, player.z, "minecraft:entity.villager.no", "master", 10, 1.5)
+        player.level.playSound(null, player.x, player.y, player.z,
+            "minecraft:entity.villager.no", "master", 10, 1.5
+        );
         e.cancel();
         return;
-
     }
 
     if (hasPerk && !hasMurk) {
-        player.addTag('Gourmand.Grant')
-        player.addTag('Variant.Murk')
+        player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
+        player.addTag('Gourmand.Grant');
+        player.addTag('Variant.Murk');
+        granted = true;
+    }
+
+    if (hasMurk && !hasPerk) {
+        player.tell(Text.green("§lHuh.. you already have that one? Let me just.."));
+        player.addTag('Gourmand.Grant');
+        player.addTag('Variant.Perk');
+        granted = true;
+    }
+
+    if (!anyGourmands) {
+        player.tell(Text.green("§lYou wield the Omnitrix? You seem worthy enough.. Let me just.."));
+        player.addTag('Gourmand.Grant');
+        player.addTag('First.Time');
+        const roll = Math.floor(Math.random() * 2) + 1;
+        player.addTag(roll === 1 ? 'Variant.Perk' : 'Variant.Murk');
+        granted = true;
+    }
+
+    if (granted) {
+        target.persistentData.putString("used_uuid", uuid);
         if (omni === "alienevo:prototype_omnitrix") {
             palladium.superpowers.removeSuperpower(player, omni);
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
@@ -50,66 +84,6 @@ ItemEvents.entityInteracted("minecraft:air", e => {
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
         } else {
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
-        }
-        return
-    }
-
-    if (hasMurk && !hasPerk) {
-        player.addTag('Gourmand.Grant')
-        player.addTag('Variant.Perk')
-        if (omni === "alienevo:prototype_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-        } else if (omni === "alienevo:recal_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-        }
-        else if (omni === "alienevo:ult_omnitrix") {
-            palladium.superpowers.removeSuperpower(player, omni);
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
-        } else {
-            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
-        }
-        e.cancel();
-        return
-    }
-    if (!anyGourmands) {
-        player.addTag('Gourmand.Grant')
-        player.addTag('First.Time')
-        target.addTag('Used')
-
-        const roll = Math.floor(Math.random() * 2) + 1;
-        if (roll === 1) {
-            player.addTag('Variant.Perk')
-            if (omni === "alienevo:prototype_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-            } else if (omni === "alienevo:recal_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-            } else if (omni === "alienevo:ult_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
-            } else {
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
-            }
-            return
-        } else if (roll === 2) {
-            player.addTag('Variant.Murk')
-            if (omni === "alienevo:prototype_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/proto_scan_mode');
-            } else if (omni === "alienevo:recal_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/recal_scan_mode');
-            } else if (omni === "alienevo:ult_omnitrix") {
-                palladium.superpowers.removeSuperpower(player, omni);
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
-            } else {
-                palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
-            }
-            e.cancel();
-            return
         }
     }
 });

@@ -203,6 +203,15 @@
                 "tag": "AlienEvo.MasterControl"
               }
             ]
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "swallow_prompt"
+              }
+            ]
           }
         ]
       }
