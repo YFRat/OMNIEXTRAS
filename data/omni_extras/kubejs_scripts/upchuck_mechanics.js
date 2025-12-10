@@ -101,9 +101,7 @@ ItemEvents.rightClicked(e => {
     let maxScore = palladium.scoreboard.getScore(player, 'Gourmand.ObliterationPoint');
     if (maxScore === 6) {
         player.tell(Text.yellow("I don't think I can eat any more.."));
-        player.runCommandSilent(
-            `playsound minecraft:entity.villager.no player ${player.name.string} ~ ~ ~ 1000`
-        );
+        player.level.playSound(null, player.x, player.y, player.z, "minecraft:entity.villager.no", "players", 6, 1);
         return;
     }
 

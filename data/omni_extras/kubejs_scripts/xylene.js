@@ -82,8 +82,11 @@ ItemEvents.entityInteracted("minecraft:air", e => {
         } else if (omni === "alienevo:ult_omnitrix") {
             palladium.superpowers.removeSuperpower(player, omni);
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/ultimatrix_scan_mode');
-        } else {
+        } else if (player.tags.contains('Variant.Murk')) {
             palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremovealt');
+        }
+        else if (player.tags.contains('Variant.Perk')) {
+            palladium.superpowers.addSuperpower(player, 'omni_extras:not_aliens/tempremove');
         }
     }
 });
