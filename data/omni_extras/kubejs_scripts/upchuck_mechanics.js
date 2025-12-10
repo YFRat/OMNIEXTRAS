@@ -47,7 +47,7 @@ const FoodEffects = {
 ItemEvents.foodEaten(e => {
     const { player, item } = e;
     const id = item.id;
-    if (item.hasTag('omni_extras:uneatable') && hasAnyGourmand(player)) {
+    if (item.hasTag('omni_extras:uneatable') && isAnyGourmand(player)) {
         const msg = [
             "§2That doesn't taste right...",
             "§2Ugh, I feel sick...",
@@ -65,7 +65,7 @@ ItemEvents.foodEaten(e => {
     const food = FoodEffects[id];
     if (!food) return;
 
-    if (hasAnyGourmand(player))
+    if (isAnyGourmand(player))
         food.gourmand(player);
     else
         food.normal(player);
@@ -91,7 +91,7 @@ const BoostItems = {
 ItemEvents.rightClicked(e => {
     const player = e.player;
     const item = e.item;
-    if (!hasAnyGourmand(player)) return;
+    if (!isAnyGourmand(player)) return;
 
     const isBig = BoostItems.big.some(tag => item.hasTag(tag));
     const isSmall = BoostItems.small.some(tag => item.hasTag(tag));
@@ -135,7 +135,7 @@ ItemEvents.rightClicked(e => {
         palladium.scoreboard.addScore(player, 'Gourmand.ObliterationPoint', obliterationGain);
 });
 
-function hasAnyGourmand(player) {
+function isAnyGourmand(player) {
     const gourmandPowers = [
         'omni_extras:perkgourmand',
         'omni_extras:murkgourmand'
@@ -155,7 +155,7 @@ PlayerEvents.tick(e => {
     const isHoldingEdible = isBig || isSmall || isMedium
     const wasHoldingEdible = data.getBoolean("gourmand_was_holding") || false;
 
-    if (hasAnyGourmand(player)) {
+    if (isAnyGourmand(player)) {
         if (isHoldingEdible && !wasHoldingEdible) {
             player.level.playSound(null, player.x, player.y, player.z, "omni_extras:grumble", "players", 10, 1)
             player.server.runCommandSilent(
@@ -178,3 +178,4 @@ function hasAlien(player, alienId) {
     }
     return false; //made by the goat beans
 }
+
