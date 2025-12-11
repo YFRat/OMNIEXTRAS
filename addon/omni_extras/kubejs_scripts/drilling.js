@@ -29,12 +29,14 @@ StartupEvents.registry('palladium:abilities', event => {
     event.create('omni_extras:burrow_destroy')
         .icon(palladium.createItemIcon('minecraft:iron_shovel'))
         .addProperty("distance", "float", 5, "Ray distance")
+        .addProperty("add_meter", "integer", 8, "How much it gives the points")
         .tick((entity, entry, holder, enabled) => {
 
             if (!enabled || !entity.isPlayer()) return;
             if (entity.level.isClientSide()) return;
 
             let maxDist = entry.getPropertyByName("distance");
+            let points = entry.getPropertyByName("add_meter");
 
             let hit = entity.rayTrace(maxDist, false);
             if (!hit || !hit.block) return;
@@ -61,6 +63,8 @@ StartupEvents.registry('palladium:abilities', event => {
                 if (block.hasTag("alienevo:unminable")) return;
 
                 entity.level.destroyBlock(bp, true);
+                if (palladium.scoreboard.getScore(entity, "Talpaedan.DigMeter") >= 3200) return
+                palladium.scoreboard.addScore(entity, "Talpaedan.DigMeter", points)
             }
         });
 });
