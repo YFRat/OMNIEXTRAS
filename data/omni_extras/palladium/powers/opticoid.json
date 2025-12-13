@@ -834,7 +834,7 @@
     "aoe_freeze": {
       "type": "omni_extras:opticoid_aoe",
       "title": "Surround Freeze",
-      "icon": "minecraft:ice",
+      "icon": "omni_extras:textures/gui/playlists/opticoid/ice_aoe.png",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
@@ -878,7 +878,7 @@
     "aoe_electro": {
       "type": "omni_extras:opticoid_aoe",
       "title": "Surround Zap",
-      "icon": "minecraft:lightning_rod",
+      "icon": "omni_extras:textures/gui/playlists/opticoid/lightning_aoe.png",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
@@ -918,7 +918,7 @@
     "aoe_fire": {
       "type": "omni_extras:opticoid_aoe",
       "title": "Surround Ignite",
-      "icon": "minecraft:flint_and_steel",
+      "icon": "omni_extras:textures/gui/playlists/opticoid/fire_aoe.png",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 1,
