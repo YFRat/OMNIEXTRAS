@@ -5,11 +5,11 @@ PalladiumEvents.registerAnimations((event) => {
                 builder.get("right_arm")
                     .setX(-2)
                     .setZ(2)
-                    builder.get("left_arm")
+                builder.get("left_arm")
                     .setX(2)
                     .setZ(2);
             }
-            else if (!builder.getPlayer().isCrouching()) { 
+            else if (!builder.getPlayer().isCrouching()) {
                 builder.get('head').rotateX((builder.getModel().head.xRot * -0.3))
             }
             else {

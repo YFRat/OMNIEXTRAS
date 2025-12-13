@@ -4,7 +4,7 @@ BlockEvents.broken(event => {
     const limit = palladium.scoreboard.getScore(player, 'Talpaedan.DigMeter')
 
     if (isDrillo && event.block.hasTag('minecraft:mineable/pickaxe')) {
-        if (limit === 3200) return
-            palladium.scoreboard.addScore(player, 'Talpaedan.DigMeter', 10);
+        if (limit === 2400) return
+            palladium.scoreboard.addScore(player, 'Talpaedan.DigMeter', 12);
         } 
 });

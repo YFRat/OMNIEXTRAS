@@ -310,7 +310,6 @@
       "type": "alienevo:motion",
       "title": "Leap",
       "icon": "#omni_extras:gourmand/murk/leap",
-      "uuid": "4832400d-b0b3-4e06-858e-76e6cf97daa0",
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": 3,
@@ -347,7 +346,6 @@
       "hidden": true,
       "list_index": -1,
       "sound": "minecraft:entity.ender_dragon.shoot",
-      "uuid": "6345e4e9-c638-4e18-b24e-ab931c28960a",
       "volume": 0.5,
       "pitch": 2,
       "looping": false,
@@ -368,7 +366,6 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "hide_particles": true,
       "description": "drain energy bar",
       "commands": [
         "energybar value subtract @s omni_extras:murkgourmand stomach 1"
@@ -376,7 +373,6 @@
     },
     "boost": {
       "type": "alienevo:motion",
-      "uuid": "13f7f673-6a39-478d-99aa-4b9e3c3de2d1",
       "hidden": true,
       "hidden_in_bar": true,
       "motion": -1,
@@ -413,7 +409,6 @@
     },
     "energy_blast_timer": {
       "type": "palladium:animation_timer",
-      "uuid": "74527a86-b771-4793-be18-d1532c31ced0",
       "icon": "minecraft:snowball",
       "title": "Burp",
       "hidden": true,
@@ -471,7 +466,6 @@
       "hidden": true,
       "list_index": -1,
       "sound": "omni_extras:blast",
-      "uuid": "22183f74-b012-484f-b295-af890b79cb1a",
       "volume": 1,
       "pitch": 1,
       "looping": false,
@@ -499,7 +493,6 @@
       "hidden": true,
       "list_index": -1,
       "sound": "omni_extras:blast",
-      "uuid": "c9ce125b-4322-4a42-9fd3-672c10d0c18e",
       "volume": 1,
       "pitch": 0.8,
       "looping": false,
@@ -600,7 +593,6 @@
     "mega_blast_timer": {
       "type": "palladium:animation_timer",
       "icon": "minecraft:fire_charge",
-      "uuid": "ba859121-ed8c-4a35-936a-653dcb18507b",
       "title": "Super Burp",
       "hidden": true,
       "hidden_in_bar": true,
@@ -1627,7 +1619,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/leap",
       "title": "Leap",
-      "uuid": "eff11c45-452f-41fd-ab8f-f77a4869b2c1",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1658,7 +1649,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/whip",
       "title": "Long Prehensile Tongues",
-      "uuid": "d529ecad-4c6f-41ed-b452-b6cc1da278f2",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1689,7 +1679,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/mega_spit",
       "title": "Energy Regurgitation (Volley)",
-      "uuid": "b4d76acc-4c9c-4468-a334-55ac837e543d",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1720,7 +1709,6 @@
       "type": "palladium:dummy",
       "icon": "minecraft:tnt",
       "title": "Sub-Energy Destruction",
-      "uuid": "206f656c-9249-4ccf-b202-9285d42cacd8",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1751,7 +1739,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/spit",
       "title": "Energy Regurgitation",
-      "uuid": "4220971e-4b0c-4d52-b191-bf82e1e341eb",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1782,7 +1769,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/bite",
       "title": "Chomp",
-      "uuid": "aa916107-7859-4400-afe8-cb0be47d4625",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1804,7 +1790,6 @@
       "type": "palladium:dummy",
       "icon": "#omni_extras:gourmand/murk/swallow",
       "title": "Tongue Ingestion",
-      "uuid": "8ca49b5d-f84c-4763-a2d7-28926e104a72",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1835,7 +1820,6 @@
       "type": "palladium:dummy",
       "icon": "minecraft:textures/mob_effect/resistance.png",
       "title": "Defense §a+2",
-      "uuid": "3137a532-370f-437a-8784-ed877393f38a",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1866,7 +1850,6 @@
       "icon": "minecraft:textures/mob_effect/regeneration.png",
       "title": "Enhanced Ingestion",
       "description": "Enhances §eswallowing capacity§f, allowing ingestion of §4§llarger§r §fand §4§lbeefier§f§r targets.",
-      "uuid": "069bb9c7-7917-4cf5-9817-649b41bd72a7",
       "hidden": false,
       "list_index": -1,
       "gui_position": [
@@ -1896,7 +1879,6 @@
       "type": "palladium:dummy",
       "icon": "alienevo:textures/gui/aliens/alien_7/slimebomb.png",
       "title": "Stick Spit",
-      "uuid": "97c7f0be-ffcb-4c53-b99b-cf66633979f8",
       "description": "§9(Crouch) §fUse your §a§lvomit§r§f to trap §4§lenemies§r§f in place.",
       "hidden": false,
       "list_index": -1,

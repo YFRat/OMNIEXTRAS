@@ -1,12 +1,10 @@
 let LivingEntity = Java.loadClass('net.minecraft.world.entity.LivingEntity');
-let BlockPos = Java.loadClass('net.minecraft.core.BlockPos');
 
 function isCircle(x, y, z, r) {
-    return (x * x + y * y + z * z) <= r * r;
+    return (x * x + z * z) <= r * r;
 }
 
-
-let OFFSETS = [
+let caveIn = [
     [0, 0, 0],
 
     [-1, 0, 0], [1, 0, 0], [0, 0, -1], [0, 0, 1],
@@ -24,19 +22,45 @@ let OFFSETS = [
     [-1, 2, -1], [-1, 2, 1], [1, 2, -1], [1, 2, 1],
 ];
 
+let threeXthree = [
+    [-1, 0, -1], [0, 0, -1], [1, 0, -1],
+    [-1, 0, 0], [0, 0, 0], [1, 0, 0],
+    [-1, 0, 1], [0, 0, 1], [1, 0, 1],
+];
+function drillBlocks(entity, centerX, centerY, centerZ, offsets, radius) {
+    let BlockPos = Java.loadClass('net.minecraft.core.BlockPos');
+
+    offsets.forEach(off => {
+        let ox = off[0];
+        let oy = off[1];
+        let oz = off[2];
+
+        if (radius != null && !isCircle(ox, oy, oz, radius)) return;
+
+        let bp = new BlockPos(centerX + ox, centerY + oy, centerZ + oz);
+        let block = entity.level.getBlock(bp);
+
+        if (!block) return;
+        if (block.getId() === "minecraft:air") return;
+        if (block.hasTag("alienevo:unminable")) return;
+
+        entity.level.destroyBlock(bp, true);
+    });
+}
+
 
 StartupEvents.registry('palladium:abilities', event => {
     event.create('omni_extras:burrow_destroy')
         .icon(palladium.createItemIcon('minecraft:iron_shovel'))
         .addProperty("distance", "float", 5, "Ray distance")
-        .addProperty("add_meter", "integer", 8, "How much it gives the points")
+        .addProperty("drill_shape", "string", "caving_in", "shape of the drill")
         .tick((entity, entry, holder, enabled) => {
 
             if (!enabled || !entity.isPlayer()) return;
             if (entity.level.isClientSide()) return;
 
             let maxDist = entry.getPropertyByName("distance");
-            let points = entry.getPropertyByName("add_meter");
+            let drillShape = entry.getPropertyByName("drill_shape");
 
             let hit = entity.rayTrace(maxDist, false);
             if (!hit || !hit.block) return;
@@ -46,25 +70,13 @@ StartupEvents.registry('palladium:abilities', event => {
             let cy = pos.getY();
             let cz = pos.getZ();
 
-            for (let off of OFFSETS) {
+            if (drillShape === "3x3") {
+                drillBlocks(entity, cx, cy, cz, threeXthree, null);
 
-                let ox = off[0];
-                let oy = off[1];
-                let oz = off[2];
+            }
+            else if (drillShape === "caving_in") {
+                drillBlocks(entity, cx, cy, cz, caveIn, 2.5);
 
-                if (!isCircle(ox, oy, oz, 2.5)) continue;
-
-                let bp = new BlockPos(cx + ox, cy + oy, cz + oz);
-                let block = entity.level.getBlock(bp);
-                if (!block) continue;
-
-                let id = block.getId();
-                if (id === 'minecraft:air') continue;
-                if (block.hasTag("alienevo:unminable")) return;
-
-                entity.level.destroyBlock(bp, true);
-                if (palladium.scoreboard.getScore(entity, "Talpaedan.DigMeter") >= 3200) return
-                palladium.scoreboard.addScore(entity, "Talpaedan.DigMeter", points)
             }
         });
 });
